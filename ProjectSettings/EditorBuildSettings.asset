@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: be8dc7fa84ef5b84898d2041b5140c05
+  - enabled: 1
+    path: Assets/Scenes/GameOverScreen.unity
+    guid: d47e0b0852050194caee6edc7d0fd21d
+  - enabled: 1
+    path: Assets/Scenes/NewPawTown.unity
+    guid: bfb8b22077de3bc40aba0c72d1059f3d
   m_configObjects: {}
