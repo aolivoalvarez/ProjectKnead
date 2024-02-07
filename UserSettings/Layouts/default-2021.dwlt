@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Git for Unity
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 15
+  controlID: 111
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 311.19995
     height: 722.8
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 15}
@@ -95,8 +95,8 @@ MonoBehaviour:
     y: 0
     width: 303.2
     height: 436.8
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 16
+  controlID: 112
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 17
+  controlID: 113
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 921.60004
     height: 436.8
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -314,8 +314,8 @@ MonoBehaviour:
   currentStatusEntriesHasUpdate: 0
   repositoryProgressHasUpdate: 0
   appManagerProgressHasUpdate: 0
-  changeTab: 2
-  activeTab: 2
+  changeTab: 4
+  activeTab: 4
   initProjectView:
     hasCompletedInitialCheck: 0
     isUserDataPresent: 0
@@ -326,8 +326,19 @@ MonoBehaviour:
     treeLocals:
       IsRemote: 0
       folders:
-        keys: []
-        values: []
+        keys:
+        - Local branches
+        values:
+        - path: Local branches
+          label: Local branches
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
       checkedFileNodes:
         keys: []
         values: []
@@ -336,11 +347,30 @@ MonoBehaviour:
       displayRootNode: 1
       isSelectable: 1
       isCheckable: 0
-      nodes: []
-      selectedNode:
-        path: 
-        label: 
+      nodes:
+      - path: Local branches
+        label: Local branches
         level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: alex-branch
+        label: alex-branch
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 1
+        treeIsCheckable: 0
+        checkState: 0
+      - path: main
+        label: main
+        level: 1
         isFolder: 0
         isContainer: 0
         isCollapsed: 0
@@ -348,11 +378,44 @@ MonoBehaviour:
         isActive: 0
         treeIsCheckable: 0
         checkState: 0
+      selectedNode:
+        path: alex-branch
+        label: alex-branch
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 1
+        treeIsCheckable: 0
+        checkState: 0
     treeRemotes:
       IsRemote: 1
       folders:
-        keys: []
-        values: []
+        keys:
+        - Remote branches
+        - origin
+        values:
+        - path: Remote branches
+          label: Remote branches
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+        - path: origin
+          label: origin
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
       checkedFileNodes:
         keys: []
         values: []
@@ -361,7 +424,67 @@ MonoBehaviour:
       displayRootNode: 1
       isSelectable: 1
       isCheckable: 0
-      nodes: []
+      nodes:
+      - path: Remote branches
+        label: Remote branches
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin
+        label: origin
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/alex-branch
+        label: alex-branch
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/HEAD
+        label: HEAD
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/main
+        label: main
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/mom-i-need-help-what-is-character-sprites-and-concepts
+        label: mom-i-need-help-what-is-character-sprites-and-concepts
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
       selectedNode:
         path: 
         label: 
@@ -376,35 +499,47 @@ MonoBehaviour:
     mode: 0
     newBranchName: 
     scroll: {x: 0, y: 0}
-    disableDelete: 0
+    disableDelete: 1
     disableCreate: 0
     lastLocalAndRemoteBranchListChangedEvent:
-      updatedTimeString: 
-      cacheType: 0
+      updatedTimeString: 2024-02-06T18:04:43.751-06:00
+      cacheType: 2
     lastCurrentBranchAndRemoteChange:
-      updatedTimeString: 
-      cacheType: 0
+      updatedTimeString: 2024-02-06T18:04:45.126-06:00
+      cacheType: 1
     currentBranch:
-      name: 
-      tracking: 
+      name: alex-branch
+      tracking: origin/alex-branch
     currentRemote:
-      name: 
-      url: 
+      name: origin
+      url: https://github.com/aolivoalvarez/ProjectKnead.git
       login: 
       user: 
       host: 
       function: 0
       token: 
-    localBranches: []
-    remoteBranches: []
+    localBranches:
+    - name: alex-branch
+      tracking: origin/alex-branch
+    - name: main
+      tracking: origin/main
+    remoteBranches:
+    - name: origin/alex-branch
+      tracking: '[None]'
+    - name: origin/HEAD
+      tracking: '[None]'
+    - name: origin/main
+      tracking: '[None]'
+    - name: origin/mom-i-need-help-what-is-character-sprites-and-concepts
+      tracking: '[None]'
   changesView:
     currentBranchHasUpdate: 0
     currentStatusEntriesHasUpdate: 0
     currentLocksHasUpdate: 0
     commitBody: 
     commitMessage: 
-    currentBranch: '[unknown]'
-    treeScroll: {x: 0, y: 0}
+    currentBranch: alex-branch
+    treeScroll: {x: 0, y: 970}
     treeChanges:
       assets:
         keys: []
@@ -416,12 +551,30 @@ MonoBehaviour:
         keys: []
         values: []
       title: 
-      pathSeparator: /
+      pathSeparator: \
       displayRootNode: 0
       isSelectable: 1
       isCheckable: 1
       isUsingGlobalSelection: 1
-      nodes: []
+      nodes:
+      - path: 
+        label: 
+        level: -1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
       selectedNode:
         path: 
         label: 
@@ -444,18 +597,362 @@ MonoBehaviour:
     gitStatusEntries: []
     changedFilesText: No changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 
-      cacheType: 0
+      updatedTimeString: 2024-02-06T18:04:45.126-06:00
+      cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 
-      cacheType: 0
+      updatedTimeString: 2024-02-06T18:04:46.067-06:00
+      cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 
-      cacheType: 0
+      updatedTimeString: 2024-02-06T18:04:46.290-06:00
+      cacheType: 7
   historyView:
     currentLogHasUpdate: 0
     currentTrackingStatusHasUpdate: 0
     logEntries:
+    - commitID: f41a69266e5e7c589b9269ea5dd43203964c6e27
+      mergeA: 
+      mergeB: 
+      authorName: roseQuartzUnderTheMoon
+      authorEmail: alexis.olivo.alvarez@gmail.com
+      commitEmail: alexis.olivo.alvarez@gmail.com
+      commitName: roseQuartzUnderTheMoon
+      summary: Package + Scene Additions
+      description: '-- added Input System package
+
+        -- added Cinemachine
+        package
+
+        -- added DOTween (i think)
+
+        -- added two scenes:
+        End Scene + NewPawTown'
+      timeString: 2024-02-06T17:56:13.000-06:00
+      commitTimeString: 2024-02-06T17:56:13.000-06:00
+      changes:
+      - path: Assets\Plugins.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins.meta
+        projectPath: Assets\Plugins.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant.meta
+        projectPath: Assets\Plugins\Demigiant.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.XML
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.XML
+        projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.XML
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.dll
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.dll
+        projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.dll
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\readme.txt
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\readme.txt
+        projectPath: Assets\Plugins\Demigiant\DOTween\readme.txt
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Resources.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources.meta
+        projectPath: Assets\Resources.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Resources\DOTweenSettings.asset
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources\DOTweenSettings.asset
+        projectPath: Assets\Resources\DOTweenSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Resources\DOTweenSettings.asset.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources\DOTweenSettings.asset.meta
+        projectPath: Assets\Resources\DOTweenSettings.asset.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\EndScene.unity
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\EndScene.unity
+        projectPath: Assets\Scenes\EndScene.unity
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\EndScene.unity.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\EndScene.unity.meta
+        projectPath: Assets\Scenes\EndScene.unity.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\NewPawTown.unity
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\NewPawTown.unity
+        projectPath: Assets\Scenes\NewPawTown.unity
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\NewPawTown.unity.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\NewPawTown.unity.meta
+        projectPath: Assets\Scenes\NewPawTown.unity.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Packages\manifest.json
+        fullPath: E:\College\Project Dev\ProjectKnead\Packages\manifest.json
+        projectPath: Packages\manifest.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Packages\packages-lock.json
+        fullPath: E:\College\Project Dev\ProjectKnead\Packages\packages-lock.json
+        projectPath: Packages\packages-lock.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: ProjectSettings\ProjectSettings.asset
+        fullPath: E:\College\Project Dev\ProjectKnead\ProjectSettings\ProjectSettings.asset
+        projectPath: ProjectSettings\ProjectSettings.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: UserSettings\EditorUserSettings.asset
+        fullPath: E:\College\Project Dev\ProjectKnead\UserSettings\EditorUserSettings.asset
+        projectPath: UserSettings\EditorUserSettings.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: UserSettings\Layouts\default-2021.dwlt
+        fullPath: E:\College\Project Dev\ProjectKnead\UserSettings\Layouts\default-2021.dwlt
+        projectPath: UserSettings\Layouts\default-2021.dwlt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
     - commitID: d25e445d182103aca68a736a19b94de5d45f415f
       mergeA: 
       mergeB: 
@@ -776,14 +1273,358 @@ MonoBehaviour:
         workTreeStatus: 0
     statusAhead: 0
     lastLogChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2024-02-06T18:03:49.337-06:00
       cacheType: 3
     lastTrackingStatusChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2024-02-06T18:03:49.272-06:00
       cacheType: 5
     historyControl:
       scroll: {x: 0, y: 0}
       entries:
+      - commitID: f41a69266e5e7c589b9269ea5dd43203964c6e27
+        mergeA: 
+        mergeB: 
+        authorName: roseQuartzUnderTheMoon
+        authorEmail: alexis.olivo.alvarez@gmail.com
+        commitEmail: alexis.olivo.alvarez@gmail.com
+        commitName: roseQuartzUnderTheMoon
+        summary: Package + Scene Additions
+        description: '-- added Input System package
+
+          -- added Cinemachine
+          package
+
+          -- added DOTween (i think)
+
+          -- added two
+          scenes: End Scene + NewPawTown'
+        timeString: 2024-02-06T17:56:13.000-06:00
+        commitTimeString: 2024-02-06T17:56:13.000-06:00
+        changes:
+        - path: Assets\Plugins.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins.meta
+          projectPath: Assets\Plugins.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant.meta
+          projectPath: Assets\Plugins\Demigiant.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\DOTween.XML
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.XML
+          projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.XML
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\DOTween.dll
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.dll
+          projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.dll
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\readme.txt
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\readme.txt
+          projectPath: Assets\Plugins\Demigiant\DOTween\readme.txt
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Resources.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources.meta
+          projectPath: Assets\Resources.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Resources\DOTweenSettings.asset
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources\DOTweenSettings.asset
+          projectPath: Assets\Resources\DOTweenSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Resources\DOTweenSettings.asset.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources\DOTweenSettings.asset.meta
+          projectPath: Assets\Resources\DOTweenSettings.asset.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scenes\EndScene.unity
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\EndScene.unity
+          projectPath: Assets\Scenes\EndScene.unity
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scenes\EndScene.unity.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\EndScene.unity.meta
+          projectPath: Assets\Scenes\EndScene.unity.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scenes\NewPawTown.unity
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\NewPawTown.unity
+          projectPath: Assets\Scenes\NewPawTown.unity
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scenes\NewPawTown.unity.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\NewPawTown.unity.meta
+          projectPath: Assets\Scenes\NewPawTown.unity.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Packages\manifest.json
+          fullPath: E:\College\Project Dev\ProjectKnead\Packages\manifest.json
+          projectPath: Packages\manifest.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Packages\packages-lock.json
+          fullPath: E:\College\Project Dev\ProjectKnead\Packages\packages-lock.json
+          projectPath: Packages\packages-lock.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: ProjectSettings\ProjectSettings.asset
+          fullPath: E:\College\Project Dev\ProjectKnead\ProjectSettings\ProjectSettings.asset
+          projectPath: ProjectSettings\ProjectSettings.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: UserSettings\EditorUserSettings.asset
+          fullPath: E:\College\Project Dev\ProjectKnead\UserSettings\EditorUserSettings.asset
+          projectPath: UserSettings\EditorUserSettings.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: UserSettings\Layouts\default-2021.dwlt
+          fullPath: E:\College\Project Dev\ProjectKnead\UserSettings\Layouts\default-2021.dwlt
+          projectPath: UserSettings\Layouts\default-2021.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
       - commitID: d25e445d182103aca68a736a19b94de5d45f415f
         mergeA: 
         mergeB: 
@@ -1103,37 +1944,1840 @@ MonoBehaviour:
           indexStatus: 4
           workTreeStatus: 0
       statusAhead: 0
-      selectedIndex: -1
+      selectedIndex: 0
     selectedEntry:
-      commitID: 
+      commitID: f41a69266e5e7c589b9269ea5dd43203964c6e27
       mergeA: 
       mergeB: 
-      authorName: 
-      authorEmail: 
-      commitEmail: 
-      commitName: 
-      summary: 
-      description: 
-      timeString: 0001-01-01T00:00:00.000+00:00
-      commitTimeString: 0001-01-01T00:00:00.000+00:00
-      changes: []
+      authorName: roseQuartzUnderTheMoon
+      authorEmail: alexis.olivo.alvarez@gmail.com
+      commitEmail: alexis.olivo.alvarez@gmail.com
+      commitName: roseQuartzUnderTheMoon
+      summary: Package + Scene Additions
+      description: '-- added Input System package
+
+        -- added Cinemachine
+        package
+
+        -- added DOTween (i think)
+
+        -- added two scenes:
+        End Scene + NewPawTown'
+      timeString: 2024-02-06T17:56:13.000-06:00
+      commitTimeString: 2024-02-06T17:56:13.000-06:00
+      changes:
+      - path: Assets\Plugins.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins.meta
+        projectPath: Assets\Plugins.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant.meta
+        projectPath: Assets\Plugins\Demigiant.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.XML
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.XML
+        projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.XML
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.dll
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.dll
+        projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.dll
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\readme.txt
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\readme.txt
+        projectPath: Assets\Plugins\Demigiant\DOTween\readme.txt
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+        projectPath: Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Resources.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources.meta
+        projectPath: Assets\Resources.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Resources\DOTweenSettings.asset
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources\DOTweenSettings.asset
+        projectPath: Assets\Resources\DOTweenSettings.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Resources\DOTweenSettings.asset.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources\DOTweenSettings.asset.meta
+        projectPath: Assets\Resources\DOTweenSettings.asset.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\EndScene.unity
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\EndScene.unity
+        projectPath: Assets\Scenes\EndScene.unity
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\EndScene.unity.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\EndScene.unity.meta
+        projectPath: Assets\Scenes\EndScene.unity.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\NewPawTown.unity
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\NewPawTown.unity
+        projectPath: Assets\Scenes\NewPawTown.unity
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\NewPawTown.unity.meta
+        fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\NewPawTown.unity.meta
+        projectPath: Assets\Scenes\NewPawTown.unity.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Packages\manifest.json
+        fullPath: E:\College\Project Dev\ProjectKnead\Packages\manifest.json
+        projectPath: Packages\manifest.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Packages\packages-lock.json
+        fullPath: E:\College\Project Dev\ProjectKnead\Packages\packages-lock.json
+        projectPath: Packages\packages-lock.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: ProjectSettings\ProjectSettings.asset
+        fullPath: E:\College\Project Dev\ProjectKnead\ProjectSettings\ProjectSettings.asset
+        projectPath: ProjectSettings\ProjectSettings.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: UserSettings\EditorUserSettings.asset
+        fullPath: E:\College\Project Dev\ProjectKnead\UserSettings\EditorUserSettings.asset
+        projectPath: UserSettings\EditorUserSettings.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: UserSettings\Layouts\default-2021.dwlt
+        fullPath: E:\College\Project Dev\ProjectKnead\UserSettings\Layouts\default-2021.dwlt
+        projectPath: UserSettings\Layouts\default-2021.dwlt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
     treeChanges:
       assets:
         keys: []
         values: []
       folders:
-        keys: []
-        values: []
+        keys:
+        - Assets
+        - Assets\Plugins
+        - Assets\Plugins\Demigiant
+        - Assets\Plugins\Demigiant\DOTween
+        - Assets\Plugins\Demigiant\DOTween\Editor
+        - Assets\Plugins\Demigiant\DOTween\Editor\Imgs
+        - Assets\Plugins\Demigiant\DOTween\Modules
+        - Assets\Resources
+        - Assets\Scenes
+        - Packages
+        - ProjectSettings
+        - UserSettings
+        - UserSettings\Layouts
+        values:
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins
+          label: Plugins
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant
+          label: Demigiant
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween
+          label: DOTween
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor
+          label: Editor
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs
+          label: Imgs
+          level: 5
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\Demigiant\DOTween\Modules
+          label: Modules
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Resources
+          label: Resources
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes
+          label: Scenes
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Packages
+          label: Packages
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: ProjectSettings
+          label: ProjectSettings
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: UserSettings
+          label: UserSettings
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: UserSettings\Layouts
+          label: Layouts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
       checkedFileNodes:
         keys: []
         values: []
       title: 
-      pathSeparator: /
+      pathSeparator: \
       displayRootNode: 0
       isSelectable: 1
       isCheckable: 0
       isUsingGlobalSelection: 0
-      nodes: []
+      nodes:
+      - path: 
+        label: 
+        level: -1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets
+        label: Assets
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins.meta
+        label: Plugins.meta
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins.meta
+          projectPath: Assets\Plugins.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins
+        label: Plugins
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant.meta
+        label: Demigiant.meta
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant.meta
+          projectPath: Assets\Plugins\Demigiant.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant
+        label: Demigiant
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween.meta
+        label: DOTween.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween
+        label: DOTween
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.XML
+        label: DOTween.XML
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\DOTween.XML
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.XML
+          projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.XML
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+        label: DOTween.XML.meta
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.XML.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.dll
+        label: DOTween.dll
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\DOTween.dll
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.dll
+          projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.dll
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+        label: DOTween.dll.meta
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\DOTween.dll.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor.meta
+        label: Editor.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor
+        label: Editor
+        level: 4
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+        label: DOTweenEditor.XML
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+        label: DOTweenEditor.XML.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.XML.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+        label: DOTweenEditor.dll
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+        label: DOTweenEditor.dll.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+        label: Imgs.meta
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs
+        label: Imgs
+        level: 5
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+        label: DOTweenIcon.png
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+        label: DOTweenIcon.png.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenIcon.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+        label: DOTweenMiniIcon.png
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+        label: DOTweenMiniIcon.png.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\DOTweenMiniIcon.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+        label: Footer.png
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+        label: Footer.png.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+        label: Footer_dark.png
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+        label: Footer_dark.png.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Footer_dark.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+        label: Header.jpg
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+        label: Header.jpg.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Editor\Imgs\Header.jpg.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules.meta
+        label: Modules.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules
+        label: Modules
+        level: 4
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+        label: DOTweenModuleAudio.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+        label: DOTweenModuleAudio.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+        label: DOTweenModuleEPOOutline.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+        label: DOTweenModuleEPOOutline.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+        label: DOTweenModulePhysics.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+        label: DOTweenModulePhysics.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+        label: DOTweenModulePhysics2D.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+        label: DOTweenModulePhysics2D.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+        label: DOTweenModuleSprite.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+        label: DOTweenModuleSprite.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+        label: DOTweenModuleUI.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+        label: DOTweenModuleUI.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+        label: DOTweenModuleUnityVersion.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+        label: DOTweenModuleUnityVersion.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+        label: DOTweenModuleUtils.cs
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+        label: DOTweenModuleUtils.cs.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\readme.txt
+        label: readme.txt
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\readme.txt
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\readme.txt
+          projectPath: Assets\Plugins\Demigiant\DOTween\readme.txt
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+        label: readme.txt.meta
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+          projectPath: Assets\Plugins\Demigiant\DOTween\readme.txt.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Resources.meta
+        label: Resources.meta
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Resources.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources.meta
+          projectPath: Assets\Resources.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Resources
+        label: Resources
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Resources\DOTweenSettings.asset
+        label: DOTweenSettings.asset
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Resources\DOTweenSettings.asset
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources\DOTweenSettings.asset
+          projectPath: Assets\Resources\DOTweenSettings.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Resources\DOTweenSettings.asset.meta
+        label: DOTweenSettings.asset.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Resources\DOTweenSettings.asset.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Resources\DOTweenSettings.asset.meta
+          projectPath: Assets\Resources\DOTweenSettings.asset.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Scenes
+        label: Scenes
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scenes\EndScene.unity
+        label: EndScene.unity
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\EndScene.unity
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\EndScene.unity
+          projectPath: Assets\Scenes\EndScene.unity
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Scenes\EndScene.unity.meta
+        label: EndScene.unity.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\EndScene.unity.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\EndScene.unity.meta
+          projectPath: Assets\Scenes\EndScene.unity.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Scenes\NewPawTown.unity
+        label: NewPawTown.unity
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\NewPawTown.unity
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\NewPawTown.unity
+          projectPath: Assets\Scenes\NewPawTown.unity
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Scenes\NewPawTown.unity.meta
+        label: NewPawTown.unity.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\NewPawTown.unity.meta
+          fullPath: E:\College\Project Dev\ProjectKnead\Assets\Scenes\NewPawTown.unity.meta
+          projectPath: Assets\Scenes\NewPawTown.unity.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Packages
+        label: Packages
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Packages\manifest.json
+        label: manifest.json
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Packages\manifest.json
+          fullPath: E:\College\Project Dev\ProjectKnead\Packages\manifest.json
+          projectPath: Packages\manifest.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Packages\packages-lock.json
+        label: packages-lock.json
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Packages\packages-lock.json
+          fullPath: E:\College\Project Dev\ProjectKnead\Packages\packages-lock.json
+          projectPath: Packages\packages-lock.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: ProjectSettings
+        label: ProjectSettings
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: ProjectSettings\ProjectSettings.asset
+        label: ProjectSettings.asset
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: ProjectSettings\ProjectSettings.asset
+          fullPath: E:\College\Project Dev\ProjectKnead\ProjectSettings\ProjectSettings.asset
+          projectPath: ProjectSettings\ProjectSettings.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: UserSettings
+        label: UserSettings
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: UserSettings\EditorUserSettings.asset
+        label: EditorUserSettings.asset
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: UserSettings\EditorUserSettings.asset
+          fullPath: E:\College\Project Dev\ProjectKnead\UserSettings\EditorUserSettings.asset
+          projectPath: UserSettings\EditorUserSettings.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: UserSettings\Layouts
+        label: Layouts
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: UserSettings\Layouts\default-2021.dwlt
+        label: default-2021.dwlt
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: UserSettings\Layouts\default-2021.dwlt
+          fullPath: E:\College\Project Dev\ProjectKnead\UserSettings\Layouts\default-2021.dwlt
+          projectPath: UserSettings\Layouts\default-2021.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
       selectedNode:
         path: 
         label: 
@@ -1156,31 +3800,31 @@ MonoBehaviour:
     detailsScroll: {x: 0, y: 0}
   settingsView:
     gitPathView:
-      gitPath: 
-      gitLfsPath: 
+      gitPath: C:\Users\Alex Olivo\AppData\Local\GitForUnity\git\cmd\git.exe
+      gitLfsPath: C:\Users\Alex Olivo\AppData\Local\GitForUnity\git\mingw64\libexec\git-core\git-lfs.exe
       errorMessage: 
       resetToBundled: 0
       resetToSystem: 0
       changingManually: 0
-    hasRemote: 0
+    hasRemote: 1
     lastCurrentRemoteChangedEvent:
-      updatedTimeString: 
-      cacheType: 0
-    newRepositoryRemoteUrl: 
-    repositoryRemoteName: 
-    repositoryRemoteUrl: 
+      updatedTimeString: 2024-02-06T18:00:29.090-06:00
+      cacheType: 1
+    newRepositoryRemoteUrl: https://github.com/aolivoalvarez/ProjectKnead.git
+    repositoryRemoteName: origin
+    repositoryRemoteUrl: https://github.com/aolivoalvarez/ProjectKnead.git
     scroll: {x: 0, y: 0}
     userSettingsView:
-      gitName: 
-      gitEmail: 
-      newGitName: 
-      newGitEmail: 
-      needsSaving: 0
+      gitName: roseQuartzUnderTheMoon
+      gitEmail: alexis.olivo.alvarez@gmail.com
+      newGitName: alex
+      newGitEmail: alexis.olivo.alvarez@gmail.com
+      needsSaving: 1
       lastCheckUserChangedEvent:
-        updatedTimeString: 
-        cacheType: 0
-    webTimeout: 0
-    gitTimeout: 0
+        updatedTimeString: 2024-02-06T18:03:55.848-06:00
+        cacheType: 8
+    webTimeout: 100000
+    gitTimeout: 5000
   locksView:
     currentRemoteHasUpdate: 0
     currentStatusEntriesHasUpdate: 0
@@ -1227,14 +3871,14 @@ MonoBehaviour:
       m_Tooltip: 
   hasRemote: 1
   currentRemoteName: origin
-  currentBranch: main
+  currentBranch: alex-branch
   currentRemoteUrl: https://github.com/aolivoalvarez/ProjectKnead.git
   statusAhead: 0
   statusBehind: 0
-  hasItemsToCommit: 1
+  hasItemsToCommit: 0
   isTrackingRemoteBranch: 1
   currentBranchContent:
-    m_Text: main
+    m_Text: alex-branch
     m_Image: {fileID: 0}
     m_Tooltip: Active branch
   currentRemoteUrlContent:
@@ -1242,13 +3886,13 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2024-02-06T11:51:27.018-06:00
+    updatedTimeString: 2024-02-06T18:04:45.126-06:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2024-02-06T11:51:26.365-06:00
+    updatedTimeString: 2024-02-06T18:04:46.226-06:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2024-02-06T12:04:19.797-06:00
+    updatedTimeString: 2024-02-06T18:04:46.067-06:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -1340,22 +3984,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\College\Project Dev\ProjectKnead
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ae660000
-    m_LastClickedID: 26286
-    m_ExpandedIDs: 000000008666000000ca9a3bffffff7f
+    m_SelectedIDs: cc660000
+    m_LastClickedID: 26316
+    m_ExpandedIDs: 00000000a866000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1383,7 +4027,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000086660000
+    m_ExpandedIDs: 00000000a8660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1410,7 +4054,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1511,7 +4155,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 24f2ffff
+      m_SelectedIDs: 50ecffff
       m_LastClickedID: 0
       m_ExpandedIDs: 08fbffff
       m_RenameOverlay:
