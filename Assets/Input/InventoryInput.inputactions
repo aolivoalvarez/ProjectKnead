@@ -1,14 +1,14 @@
 {
-    "name": "pauseMenuInput",
+    "name": "InventoryInput",
     "maps": [
         {
-            "name": "pauseMenu",
-            "id": "86dca960-698c-4e26-8cb7-0c11d99b646d",
+            "name": "Inventory",
+            "id": "57c26af1-1eef-4c3c-9b0a-c17a59d06258",
             "actions": [
                 {
-                    "name": "pressButton",
+                    "name": "Open",
                     "type": "Button",
-                    "id": "0674acab-da5f-4918-b68a-953c17814e83",
+                    "id": "7dd92c90-423d-4fd0-9dc6-fcb9b6e82969",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -18,17 +18,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "ba368b98-701e-4c08-8fe2-1eaf5848353e",
-                    "path": "<Keyboard>/p",
+                    "id": "b3673ed5-a11e-4612-bf74-86be93fcbb6c",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "pressButton",
+                    "groups": "Keyboard",
+                    "action": "Open",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": []
+        }
+    ]
 }
