@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] Vector2 inputDirection;
     public Vector2 roughPosition; // keeps track of what the transform.position would be if it wasn't being locked to a unit/pixel grid
+    Vector2 lookDirection; // keeps track of the direction Canela last moved (for the animator)
 
     [Header("Jumping")]
     [SerializeField, Tooltip("How many pixels high one jump is.")]
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public bool isJumping { get; private set; }
     bool canJump;
     float roughJumpPosition; // keeps track of what the graphic.position.y would be if it wasn't being locked to a unit/pixel grid
+    float initialGraphicPositionY; // stores the initial value of graphic.position.y (for when the player is not jumping)
 
     [Header("Combat")]
     [SerializeField] float swordSwingTime = 0.75f; // how many seconds the swing takes
@@ -40,8 +42,10 @@ public class PlayerController : MonoBehaviour
         health = maxHealth;
         money = 0;
         inputDirection = Vector2.zero;
+        lookDirection = Vector2.down;
         roughPosition = new Vector2(transform.position.x, transform.position.y);
         roughJumpPosition = 0;
+        initialGraphicPositionY = graphic.transform.position.y;
         isJumping = false;
         canJump = true;
         boxCollider = GetComponent<BoxCollider2D>();
@@ -60,6 +64,13 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(JumpRoutine());
         }
         //--------------------------------------------------//
+
+        if (inputDirection != Vector2.zero)
+        {
+            lookDirection = inputDirection.normalized;
+        }
+        animator.SetFloat("Look X", lookDirection.x);
+        animator.SetFloat("Look Y", lookDirection.y);
     }
 
     void FixedUpdate()
@@ -69,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
         //---------------- Set final transform -------------//
         transform.position = new Vector2(Mathf.Floor(roughPosition.x), Mathf.Floor(roughPosition.y)); // locks position to a unit/pixel grid
-        graphic.localPosition = new Vector2(graphic.localPosition.x, 30 + Mathf.Floor(roughJumpPosition)); // locks position of the graphic to a unit/pixel grid
+        graphic.localPosition = new Vector2(graphic.localPosition.x, initialGraphicPositionY + Mathf.Floor(roughJumpPosition)); // locks position of the graphic to a unit/pixel grid
     }
 
     IEnumerator JumpRoutine()
