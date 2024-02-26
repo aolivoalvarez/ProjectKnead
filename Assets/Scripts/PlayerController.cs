@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    PlayerInput pInput;
+    public PlayerInput pInput { get; private set; }
 
     [SerializeField] int maxHealth = 12;
     [SerializeField] int health;
     [SerializeField] int money;
     [SerializeField] Transform graphic;
+    [SerializeField] Transform attackRotationPoint;
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
     Animator animator;
@@ -31,9 +32,6 @@ public class PlayerController : MonoBehaviour
     bool canJump;
     float roughJumpPosition; // keeps track of what the graphic.position.y would be if it wasn't being locked to a unit/pixel grid
     float initialGraphicPositionY; // stores the initial value of graphic.position.y (for when the player is not jumping)
-
-    [Header("Combat")]
-    [SerializeField] float swordSwingTime = 0.75f; // how many seconds the swing takes
 
     void Start()
     {
@@ -67,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
         if (inputDirection != Vector2.zero)
         {
-            lookDirection = inputDirection.normalized;
+            lookDirection = new Vector2(Mathf.Round(inputDirection.normalized.x), Mathf.Round(inputDirection.normalized.y));
         }
         animator.SetFloat("Look X", lookDirection.x);
         animator.SetFloat("Look Y", lookDirection.y);
@@ -81,6 +79,28 @@ public class PlayerController : MonoBehaviour
         //---------------- Set final transform -------------//
         transform.position = new Vector2(Mathf.Floor(roughPosition.x), Mathf.Floor(roughPosition.y)); // locks position to a unit/pixel grid
         graphic.localPosition = new Vector2(graphic.localPosition.x, initialGraphicPositionY + Mathf.Floor(roughJumpPosition)); // locks position of the graphic to a unit/pixel grid
+        switch (lookDirection.x)
+        {
+            case -1.0f:
+                attackRotationPoint.localEulerAngles = new Vector3(0, 0, -90);
+                break;
+            case 1.0f:
+                attackRotationPoint.localEulerAngles = new Vector3(0, 0, 90);
+                break;
+            default:
+                break;
+        }
+        switch (lookDirection.y)
+        {
+            case -1.0f:
+                attackRotationPoint.localEulerAngles = new Vector3(0, 0, 0);
+                break;
+            case 1.0f:
+                attackRotationPoint.localEulerAngles = new Vector3(0, 0, 180);
+                break;
+            default:
+                break;
+        }
     }
 
     IEnumerator JumpRoutine()
