@@ -20,6 +20,6 @@ public class GameManager : MonoBehaviour
     public void RespawnAtCheckpoint(int damageToInflict = 0)
     {
         player.DecreaseHealth(damageToInflict);
-        player.roughPosition = checkpoint.position;
+        player.transform.position = checkpoint.position;
     }
 }

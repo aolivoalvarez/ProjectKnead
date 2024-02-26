@@ -14,7 +14,22 @@ public class PitPullScript : MonoBehaviour
             {
                 Vector3 distance = transform.position - other.gameObject.transform.position;
                 Vector3 pullDirection = distance.normalized;
-                player.roughPosition += new Vector2(pullDirection.x * pullSpeed, pullDirection.y * pullSpeed);
+                player.rigidBody.AddForce(new Vector2(pullDirection.x * pullSpeed, pullDirection.y * pullSpeed)); // pulls the player towards the pit
+                player.moveSpeedMult = 0.5f; // slows the player to half speed
+                player.canJump = false;
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PlayerController player = other.gameObject.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                player.moveSpeedMult = 1f;
+                player.canJump = true;
             }
         }
     }
