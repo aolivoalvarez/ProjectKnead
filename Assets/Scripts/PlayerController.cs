@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    PlayerInput pInput;
+    public PlayerInput pInput { get; private set; }
 
     [SerializeField] int maxHealth = 12;
     [SerializeField] int health;
     [SerializeField] int money;
     [SerializeField] Transform graphic;
+    [SerializeField] Transform attackRotationPoint;
     BoxCollider2D boxCollider;
-    Rigidbody2D rigidBody;
+    public Rigidbody2D rigidBody { get; private set; }
     Animator animator;
 
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 5f;
+    [SerializeField, Tooltip("Speed in units per second.")]
+    float moveSpeed = 5f;
+    public float moveSpeedMult { get; set; } = 1f; // will normally be 1, but various hazards can modify it to lower the player's speed
     [SerializeField] Vector2 inputDirection;
-    public Vector2 roughPosition; // keeps track of what the transform.position would be if it wasn't being locked to a unit/pixel grid
+    Vector2 lookDirection; // keeps track of the direction the player last moved (for the animator)
 
     [Header("Jumping")]
-    [SerializeField, Tooltip("How many pixels high one jump is.")]
-    float jumpHeight = 15f;
-    [SerializeField, Tooltip("How many frames it takes to land.")]
-    int jumpTime = 60;
+    [SerializeField, Tooltip("How many units high one jump is. Purely visual.")]
+    float jumpHeight = 0.5f;
+    [SerializeField, Tooltip("How long it takes to land, in seconds.")]
+    float jumpTime = 1f;
     [SerializeField, Tooltip("Buffer after every jump, in seconds.")]
-    float jumpBuffer = 0.5f;
+    float jumpBuffer = 0.05f;
     public bool isJumping { get; private set; }
-    bool canJump;
-    float roughJumpPosition; // keeps track of what the graphic.position.y would be if it wasn't being locked to a unit/pixel grid
-
-    [Header("Combat")]
-    [SerializeField] float swordSwingTime = 0.75f; // how many seconds the swing takes
+    public bool canJump { get; set; }
+    float initialGraphicPositionY; // stores the initial value of graphic.position.y (for when the player is not jumping)
 
     void Start()
     {
@@ -39,9 +39,10 @@ public class PlayerController : MonoBehaviour
         pInput.Enable();
         health = maxHealth;
         money = 0;
+        moveSpeedMult = 1f;
         inputDirection = Vector2.zero;
-        roughPosition = new Vector2(transform.position.x, transform.position.y);
-        roughJumpPosition = 0;
+        lookDirection = Vector2.down;
+        initialGraphicPositionY = graphic.transform.position.y;
         isJumping = false;
         canJump = true;
         boxCollider = GetComponent<BoxCollider2D>();
@@ -56,20 +57,47 @@ public class PlayerController : MonoBehaviour
 
         if (pInput.Player.Jump.triggered)
         {
-            if (canJump)
+            if (canJump && !isJumping)
                 StartCoroutine(JumpRoutine());
         }
         //--------------------------------------------------//
+
+        if (inputDirection != Vector2.zero)
+        {
+            lookDirection = new Vector2(Mathf.Round(inputDirection.normalized.x), Mathf.Round(inputDirection.normalized.y));
+        }
+        animator.SetFloat("Look X", lookDirection.x);
+        animator.SetFloat("Look Y", lookDirection.y);
     }
 
     void FixedUpdate()
     {
-        roughPosition = new Vector2(roughPosition.x + inputDirection.x * moveSpeed * Time.deltaTime,
-            roughPosition.y + inputDirection.y * moveSpeed * Time.deltaTime);
-
-        //---------------- Set final transform -------------//
-        transform.position = new Vector2(Mathf.Floor(roughPosition.x), Mathf.Floor(roughPosition.y)); // locks position to a unit/pixel grid
-        graphic.localPosition = new Vector2(graphic.localPosition.x, 30 + Mathf.Floor(roughJumpPosition)); // locks position of the graphic to a unit/pixel grid
+        //---------------- Set final values ----------------//
+        rigidBody.velocity = new Vector2(inputDirection.x * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50,
+            inputDirection.y * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50);
+        
+        switch (lookDirection.x)
+        {
+            case -1.0f:
+                attackRotationPoint.localEulerAngles = new Vector3(0, 0, -90);
+                break;
+            case 1.0f:
+                attackRotationPoint.localEulerAngles = new Vector3(0, 0, 90);
+                break;
+            default:
+                break;
+        }
+        switch (lookDirection.y)
+        {
+            case -1.0f:
+                attackRotationPoint.localEulerAngles = new Vector3(0, 0, 0);
+                break;
+            case 1.0f:
+                attackRotationPoint.localEulerAngles = new Vector3(0, 0, 180);
+                break;
+            default:
+                break;
+        }
     }
 
     IEnumerator JumpRoutine()
@@ -78,16 +106,17 @@ public class PlayerController : MonoBehaviour
         canJump = false;
         float jumpArc = .55f; // the percentage of jumpTime spent ascending
         float fallArc = .45f; // the percentage of jumpTime spent decending
-        for (int i = 0; i < Mathf.FloorToInt(jumpTime * jumpArc); i++)
+        for (float i = 0; i < jumpTime * jumpArc; i += Time.fixedDeltaTime)
         {
             yield return new WaitForFixedUpdate();
-            roughJumpPosition += jumpHeight / Mathf.FloorToInt(jumpTime * jumpArc);
+            graphic.localPosition = new Vector3(graphic.localPosition.x, Mathf.Lerp(initialGraphicPositionY, initialGraphicPositionY + jumpHeight, i / (jumpTime * jumpArc)));
         }
-        for (int i = 0; i < Mathf.FloorToInt(jumpTime * fallArc); i++)
+        for (float i = 0; i < jumpTime * fallArc; i += Time.fixedDeltaTime)
         {
             yield return new WaitForFixedUpdate();
-            roughJumpPosition -= jumpHeight / Mathf.FloorToInt(jumpTime * fallArc);
+            graphic.localPosition = new Vector3(graphic.localPosition.x, Mathf.Lerp(initialGraphicPositionY + jumpHeight, initialGraphicPositionY, i / (jumpTime * fallArc)));
         }
+        graphic.localPosition = new Vector3(graphic.localPosition.x, initialGraphicPositionY);
         isJumping = false;
         yield return new WaitForSeconds(jumpBuffer);
         canJump = true;
