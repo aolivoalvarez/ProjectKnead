@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerAttackScript : MonoBehaviour
 {
-    PlayerController playerController;
     bool canAttack;
+    PlayerController playerController;
+    Animator animator;
 
     [Header("Sword")]
-    [SerializeField] GameObject swordSwingHitbox;
+    public GameObject swordSwingHitbox;
     [SerializeField, Tooltip("Max time an attack lasts, in seconds.")]
     float swordSwingTime = 0.5f;
     [SerializeField, Tooltip("Buffer after every attack, in seconds.")]
@@ -16,8 +17,9 @@ public class PlayerAttackScript : MonoBehaviour
 
     void Start()
     {
-        playerController = GetComponentInParent<PlayerController>();
         canAttack = true;
+        playerController = GetComponentInParent<PlayerController>();
+        animator = GetComponentInChildren<Animator>();
         swordSwingHitbox.SetActive(false);
     }
 
@@ -32,11 +34,14 @@ public class PlayerAttackScript : MonoBehaviour
 
     IEnumerator SwordAttackRoutine()
     {
+        animator.SetTrigger("Attack");
+        playerController.isAttacking = true; // player stops moving when attacking
         canAttack = false;
-        swordSwingHitbox.SetActive(true);
+        //swordSwingHitbox.SetActive(true);
         yield return new WaitForSeconds(swordSwingTime);
-        swordSwingHitbox.SetActive(false);
+        //swordSwingHitbox.SetActive(false);
         yield return new WaitForSeconds(swordSwingBuffer);
         canAttack = true;
+        playerController.isAttacking = false; // player can move again after attack ends
     }
 }

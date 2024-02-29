@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     BoxCollider2D boxCollider;
     public Rigidbody2D rigidBody { get; private set; }
     Animator animator;
+    public bool isAttacking { get; set; }
 
     [Header("Movement")]
     [SerializeField, Tooltip("Speed in units per second.")]
@@ -53,16 +54,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //------------------ Take Input --------------------//
-        inputDirection = pInput.Player.Movement.ReadValue<Vector2>();
+        inputDirection = (isAttacking && !isJumping) ? Vector2.zero : pInput.Player.Movement.ReadValue<Vector2>(); // takes input unless attacking while grounded
 
         if (pInput.Player.Jump.triggered)
         {
-            if (canJump && !isJumping)
+            if (canJump && !isJumping && !isAttacking)
                 StartCoroutine(JumpRoutine());
         }
         //--------------------------------------------------//
 
-        if (inputDirection != Vector2.zero)
+        if (inputDirection != Vector2.zero && !(isAttacking && isJumping)) // a jumping attack forces you to look in just one direction
         {
             lookDirection = new Vector2(Mathf.Round(inputDirection.normalized.x), Mathf.Round(inputDirection.normalized.y));
         }
