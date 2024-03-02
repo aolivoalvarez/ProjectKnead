@@ -27,7 +27,7 @@ public class PlayerAttackScript : MonoBehaviour
     {
         if (playerController.pInput.Player.Attack.triggered)
         {
-            if (canAttack)
+            if (canAttack && !playerController.isHoldingObject)
                 StartCoroutine(SwordAttackRoutine());
         }
     }

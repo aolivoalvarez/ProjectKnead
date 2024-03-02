@@ -6,22 +6,27 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerInput pInput { get; private set; }
 
+    //------------------------ Misc ------------------------//
     [SerializeField] int maxHealth = 12;
     [SerializeField] int health;
     [SerializeField] int money;
     [SerializeField] Transform graphic;
     [SerializeField] Transform attackRotationPoint;
-    BoxCollider2D boxCollider;
+    [SerializeField] Transform liftRotationPoint;
     public Rigidbody2D rigidBody { get; private set; }
     Animator animator;
     public bool isAttacking { get; set; }
+    public bool isLifting { get; set; }
+    public bool isHoldingObject { get; set; }
+    //------------------------------------------------------//
 
     [Header("Movement")]
     [SerializeField, Tooltip("Speed in units per second.")]
     float moveSpeed = 5f;
     public float moveSpeedMult { get; set; } = 1f; // will normally be 1, but various hazards can modify it to lower the player's speed
     [SerializeField] Vector2 inputDirection;
-    Vector2 lookDirection; // keeps track of the direction the player last moved (for the animator)
+    public Vector2 lookDirection { get; private set; } // keeps track of the direction the player last moved (for the animator)
+    public Vector2 simpleLookDirection { get; private set; } // reduces lookDirection to just the 4 cardinal directions
 
     [Header("Jumping")]
     [SerializeField, Tooltip("How many units high one jump is. Purely visual.")]
@@ -40,13 +45,16 @@ public class PlayerController : MonoBehaviour
         pInput.Enable();
         health = maxHealth;
         money = 0;
+        isAttacking = false;
+        isLifting = false;
+        isHoldingObject = false;
         moveSpeedMult = 1f;
         inputDirection = Vector2.zero;
         lookDirection = Vector2.down;
+        simpleLookDirection = Vector2.down;
         initialGraphicPositionY = graphic.transform.position.y;
         isJumping = false;
         canJump = true;
-        boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
     }
@@ -54,11 +62,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //------------------ Take Input --------------------//
-        inputDirection = (isAttacking && !isJumping) ? Vector2.zero : pInput.Player.Movement.ReadValue<Vector2>(); // takes input unless attacking while grounded
+        inputDirection = ((isAttacking && !isJumping) || isLifting) ? Vector2.zero : pInput.Player.Movement.ReadValue<Vector2>(); // takes input unless lifting an object or attacking while grounded
 
         if (pInput.Player.Jump.triggered)
         {
-            if (canJump && !isJumping && !isAttacking)
+            if (canJump && !isJumping && !isAttacking && !isHoldingObject)
                 StartCoroutine(JumpRoutine());
         }
         //--------------------------------------------------//
@@ -80,10 +88,14 @@ public class PlayerController : MonoBehaviour
         switch (lookDirection.x)
         {
             case -1.0f:
+                simpleLookDirection = Vector2.left;
                 attackRotationPoint.localEulerAngles = new Vector3(0, 0, -90);
+                liftRotationPoint.localEulerAngles = new Vector3(0, 0, -90);
                 break;
             case 1.0f:
+                simpleLookDirection = Vector2.right;
                 attackRotationPoint.localEulerAngles = new Vector3(0, 0, 90);
+                liftRotationPoint.localEulerAngles = new Vector3(0, 0, 90);
                 break;
             default:
                 break;
@@ -91,10 +103,14 @@ public class PlayerController : MonoBehaviour
         switch (lookDirection.y)
         {
             case -1.0f:
+                simpleLookDirection = Vector2.down;
                 attackRotationPoint.localEulerAngles = new Vector3(0, 0, 0);
+                liftRotationPoint.localEulerAngles = new Vector3(0, 0, 0);
                 break;
             case 1.0f:
+                simpleLookDirection = Vector2.up;
                 attackRotationPoint.localEulerAngles = new Vector3(0, 0, 180);
+                liftRotationPoint.localEulerAngles = new Vector3(0, 0, 180);
                 break;
             default:
                 break;
