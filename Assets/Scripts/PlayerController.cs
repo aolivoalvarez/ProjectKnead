@@ -125,5 +125,7 @@ public class PlayerController : MonoBehaviour
     public void DecreaseHealth(int healthToLose)
     {
         health -= healthToLose;
+       // Debug.Log("decrease health triggered");
+        //Debug.Log(health);
     }
 }

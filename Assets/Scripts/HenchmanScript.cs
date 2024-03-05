@@ -27,21 +27,24 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] Group group;
     [SerializeField] Animal animal;
-    [SerializeField] float targetRange = 10f; //once player is in this range, henchman will pursue
-    [SerializeField] float attackRange = 5f; //range to player to be able to attack
-    [SerializeField] GameObject player; //holds reference to player
-    [SerializeField] float roamDistMax = 30f;
-    [SerializeField] float roamDistMin = 10f;
+    [SerializeField] float targetRange = 5f; //once player is in this range, henchman will pursue
+    [SerializeField] float attackRange = 2f; //range to player to be able to attack
+    [SerializeField] Transform player; //holds reference to player's transform
+    [SerializeField] float roamDistMax = 10f;
+    [SerializeField] float roamDistMin = 5f;
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
     Animator animator;
     Vector2 startingPosition; //holds henchman's starting position
     Vector2 roamPosition; //holds henchman's roaming position
+    
+
 
     void Start()
     {
         startingPosition = transform.position; //gets henchman's starting position
         roamPosition = RoamingPosition(); //gets henchman's first roaming position
+        
 
         switch (group) //sets max health + attack damage according to group
         {
@@ -73,26 +76,38 @@ public class HenchmanScript : MonoBehaviour
         health = maxHealth; //sets health to max
 
         //references to components
-        boxCollider = GetComponent<BoxCollider2D>();
-        rigidBody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        boxCollider = this.GetComponent<BoxCollider2D>();
+        rigidBody = this.GetComponent<Rigidbody2D>();
+        //animator = this.GetComponent.<Animator>();
 
-        MoveToPosition(startingPosition, roamPosition);
+ 
 ;    }
 
     void Update()
     {
         //MoveToPosition(startingPosition, roamPosition);
         //roamPosition = RoamingPosition();
-        
+
         //FindTarget();
-        
-        if (Vector2.Distance(transform.position, player.transform.position) < attackRange)
+
+        //Debug.Log(Vector2.Distance(transform.position, player.position));
+        if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             AttackTarget();
             Debug.Log("in attack range");
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+
+        do
+        {
+            MoveToPosition(startingPosition, roamPosition);
+            startingPosition = transform.position;
+            roamPosition = RoamingPosition();
+        } while (Vector2.Distance(transform.position, player.position) > targetRange);
     }
 
 
@@ -111,12 +126,13 @@ public class HenchmanScript : MonoBehaviour
 
     void MoveToPosition(Vector2 startPos, Vector2 targetPos)
     {
-        Debug.Log(transform.position);
-        transform.position = Vector2.Lerp(startPos, targetPos, Time.deltaTime);
-        Debug.Log("move to positon");
-        Debug.Log(startPos);
-        Debug.Log(targetPos);
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
+        targetPos = startPos - targetPos;
+        rigidBody.MovePosition(startPos + (targetPos * moveSpeed * Time.deltaTime));
+        //Debug.Log("move to positon");
+        //Debug.Log(startPos);
+        //Debug.Log(targetPos);
+        //Debug.Log(transform.position);
         return;
     }
    
@@ -136,6 +152,8 @@ public class HenchmanScript : MonoBehaviour
         PlayerController pController = player.GetComponent<PlayerController>();
         pController.DecreaseHealth(attackDamage);
         Debug.Log("attack target triggered");
+        Debug.Log(attackDamage);
+        
         return;
     }
 }
