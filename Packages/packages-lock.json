@@ -1,27 +1,14 @@
 {
   "dependencies": {
-    "com.spoiledcat.git": {
-      "version": "1.0.18",
+    "com.seanba.super-tiled2unity": {
+      "version": "file:super-tiled2unity.v2.1.1",
       "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://registry.spoiledcat.com"
-    },
-    "com.spoiledcat.git.api": {
-      "version": "1.0.18",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://registry.spoiledcat.com"
-    },
-    "com.spoiledcat.git.ui": {
-      "version": "1.0.18",
-      "depth": 0,
-      "source": "registry",
+      "source": "embedded",
       "dependencies": {
-        "com.spoiledcat.git.api": "1.0.18"
-      },
-      "url": "https://registry.spoiledcat.com"
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.physics2d": "1.0.0",
+        "com.unity.modules.tilemap": "1.0.0"
+      }
     },
     "com.unity.2d.animation": {
       "version": "7.0.9",
