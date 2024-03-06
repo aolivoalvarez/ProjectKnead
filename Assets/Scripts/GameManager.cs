@@ -1,15 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     [SerializeField] Transform checkpoint;
-    PlayerController player;
 
-    void Start()
+    void Awake()
     {
-        player = FindObjectOfType<PlayerController>();
+        //---------- Make this script a singleton ----------//
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+        //--------------------------------------------------//
     }
 
     void Update()
@@ -19,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public void RespawnAtCheckpoint(int damageToInflict = 0)
     {
-        player.DecreaseHealth(damageToInflict);
-        player.transform.position = checkpoint.position;
+        PlayerController.instance.DecreaseHealth(damageToInflict);
+        PlayerController.instance.transform.position = checkpoint.position;
     }
 }

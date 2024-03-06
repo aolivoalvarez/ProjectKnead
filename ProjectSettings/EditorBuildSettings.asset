@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestArea.unity
     guid: ab63e5faf9bd6634d9b07971753fc07f
+  - enabled: 0
+    path: Assets/Scenes/TestAreaJohn.unity
+    guid: afa5c401e9ade824788db6a6543d1335
   - enabled: 0
     path: Assets/Scenes/TitleScreen.unity
     guid: be8dc7fa84ef5b84898d2041b5140c05
@@ -17,4 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/NewPawTown.unity
     guid: bfb8b22077de3bc40aba0c72d1059f3d
+  - enabled: 1
+    path: Assets/Scenes/BigBirchForest.unity
+    guid: 4bdec0ba91c77144d9e5b710d88d25cd
+  - enabled: 1
+    path: Assets/Scenes/Dungeon0.unity
+    guid: 3f97e32bbe515824f8af458a9065420d
   m_configObjects: {}
