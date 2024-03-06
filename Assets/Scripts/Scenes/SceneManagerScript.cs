@@ -1,4 +1,5 @@
 // PARTS OF SCRIPT TAKEN FROM A VIDEO BY SASQUATCH B STUDIOS
+using Cinemachine;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class SceneManagerScript : MonoBehaviour
 {
     public static SceneManagerScript instance;
+
+    public SceneField[] dungeons;
     static bool loadedFromDoor;
     SceneChangeDoorScript.DoorToSpawnAt doorToSpawnPlayer;
     Vector2 playerSpawnPosition;
@@ -53,10 +56,23 @@ public class SceneManagerScript : MonoBehaviour
     {
         SceneFadeManager.instance.StartFadeIn();
 
+        foreach (SceneField s in dungeons)
+        {
+            if (s.SceneName == currentScene.name)
+            {
+                Camera.main.GetComponent<CinemachineBrain>().enabled = false;
+            }
+            else
+            {
+                Camera.main.GetComponent<CinemachineBrain>().enabled = true;
+            }
+        }
+
         if (loadedFromDoor)
         {
             FindDoor(doorToSpawnPlayer);
             PlayerController.instance.gameObject.transform.position = playerSpawnPosition;
+            GameObject.FindGameObjectWithTag("Checkpoint").gameObject.transform.position = playerSpawnPosition;
             loadedFromDoor = false;
         }
         StartCoroutine(EnablePlayerInput());
@@ -78,7 +94,7 @@ public class SceneManagerScript : MonoBehaviour
 
     IEnumerator EnablePlayerInput()
     {
-        while (SceneFadeManager.instance.isFadingIn)
+        while (SceneFadeManager.instance.isFadingIn || PlayerController.instance.pInput == null)
         {
             yield return null;
         }
