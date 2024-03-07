@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class InventoryMenuScript : MonoBehaviour
 {
+    public static InventoryMenuScript instance;
+
     [SerializeField] GameObject inventoryMenu; //gets inventory menu panel
 
     InventoryInput iInput; //reference to input -- letter E for keyboard
 
     void Awake()
     {
+        //---------- Make this script a singleton ----------//
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+        //--------------------------------------------------//
+
         iInput = new InventoryInput(); //reference to input
     }
     void Start()

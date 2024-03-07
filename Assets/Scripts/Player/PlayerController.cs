@@ -1,12 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     public PlayerInput pInput { get; private set; }
 
-    //------------------------ Misc ------------------------//
+    //---------------------- Misc ----------------------//
     [SerializeField] int maxHealth = 12;
     [SerializeField] int health;
     [SerializeField] int money;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool isAttacking { get; set; }
     public bool isLifting { get; set; }
     public bool isHoldingObject { get; set; }
-    //------------------------------------------------------//
+    //--------------------------------------------------//
 
     [Header("Movement")]
     [SerializeField, Tooltip("Speed in units per second.")]
@@ -38,6 +38,16 @@ public class PlayerController : MonoBehaviour
     public bool isJumping { get; private set; }
     public bool canJump { get; set; }
     float initialGraphicPositionY; // stores the initial value of graphic.position.y (for when the player is not jumping)
+
+    void Awake()
+    {
+        //---------- Make this script a singleton ----------//
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+        //--------------------------------------------------//
+    }
 
     void Start()
     {
