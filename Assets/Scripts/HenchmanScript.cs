@@ -24,26 +24,26 @@ public class HenchmanScript : MonoBehaviour
     int health;
     [SerializeField] int maxHealth = 4;
     [SerializeField] int attackDamage = 2;
-    [SerializeField] float moveSpeed = 5f;
-    [SerializeField] Group group;
-    [SerializeField] Animal animal;
+    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] Group group; //what area the henchman belongs to
+    [SerializeField] Animal animal; //what animal the henchman is <-- for special cases
     [SerializeField] float targetRange = 5f; //once player is in this range, henchman will pursue
     [SerializeField] float attackRange = 2f; //range to player to be able to attack
     [SerializeField] Transform player; //holds reference to player's transform
-    [SerializeField] float roamDistMax = 10f;
-    [SerializeField] float roamDistMin = 5f;
+   // [SerializeField] float roamDistMax = 10f;
+   // [SerializeField] float roamDistMin = 5f;
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
     Animator animator;
     Vector2 startingPosition; //holds henchman's starting position
-    Vector2 roamPosition; //holds henchman's roaming position
+    //Vector2 roamPosition; //holds henchman's roaming position
     
 
 
     void Start()
     {
         startingPosition = transform.position; //gets henchman's starting position
-        roamPosition = RoamingPosition(); //gets henchman's first roaming position
+        //roamPosition = RoamingPosition(); //gets henchman's first roaming position
         
 
         switch (group) //sets max health + attack damage according to group
@@ -83,69 +83,58 @@ public class HenchmanScript : MonoBehaviour
  
 ;    }
 
-    void Update()
-    {
-        //MoveToPosition(startingPosition, roamPosition);
-        //roamPosition = RoamingPosition();
-
-        //FindTarget();
-
-        //Debug.Log(Vector2.Distance(transform.position, player.position));
-        if (Vector2.Distance(transform.position, player.position) <= attackRange)
-        {
-            AttackTarget();
-            Debug.Log("in attack range");
-        }
-
-    }
 
     private void FixedUpdate()
     {
 
-        do
+        FindPlayer(); //finds where player is + checks if player is in chasing range
+        
+        if (Vector2.Distance(transform.position, player.position) <= attackRange) //checks if player is in attack range
         {
-            MoveToPosition(startingPosition, roamPosition);
-            startingPosition = transform.position;
-            roamPosition = RoamingPosition();
-        } while (Vector2.Distance(transform.position, player.position) > targetRange);
+            AttackTarget(); //attacks player
+        }
     }
 
 
-    void TakeDamage(int damage) //takes damage
+    void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
     {
         health -= damage;
+        
+        if (health <= 0) //checks if health is 0 or less
+        {
+            Destroy(this.gameObject); //destroys gameObject
+        }
         return;
     }
 
-    Vector2 RoamingPosition() //gets position for henchman to roam to while player is out of range
+    /*Vector2 RoamingPosition() //gets position for henchman to roam to while player is out of range
     {
         Vector2 roamPos = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
 
         return startingPosition + roamPos * Random.Range(roamDistMin, roamDistMax);
-    }
+    } */
 
-    void MoveToPosition(Vector2 startPos, Vector2 targetPos)
+    void FindPlayer() //checks if player is in chasing range and follows them if they are
     {
-        //Debug.Log(transform.position);
-        targetPos = startPos - targetPos;
-        rigidBody.MovePosition(startPos + (targetPos * moveSpeed * Time.deltaTime));
-        //Debug.Log("move to positon");
-        //Debug.Log(startPos);
-        //Debug.Log(targetPos);
-        //Debug.Log(transform.position);
-        return;
-    }
-   
-    
-    void FindTarget()
-    {
-        if (Vector2.Distance(transform.position, player.transform.position) < targetRange)
+        if (Vector2.Distance(transform.position, player.position) <= targetRange)
         {
-            
+            MoveToPlayer();
         }
 
         return;
     }
+    
+    void MoveToPlayer() //moves henchman towards player
+    {
+        Vector2 movement = player.position - transform.position;
+        movement.Normalize();
+
+        rigidBody.MovePosition((Vector2)transform.position + (movement * moveSpeed * Time.deltaTime));
+        
+        return;
+    }
+   
+    
 
     void AttackTarget() //attacks target once target is in attack range
     {
