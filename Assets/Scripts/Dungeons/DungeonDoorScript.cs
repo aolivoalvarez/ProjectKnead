@@ -19,7 +19,7 @@ public class DungeonDoorScript : MonoBehaviour
             camControl.maxPos += newCamPos;
 
             other.transform.position += newPlayerPos;
-            GameObject.FindGameObjectWithTag("Checkpoint").transform.position = other.transform.position;
+            CheckpointScript.instance.transform.position = other.transform.position;
         }
     }
 }

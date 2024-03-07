@@ -7,9 +7,11 @@ public class PlayerController : MonoBehaviour
     public PlayerInput pInput { get; private set; }
 
     //---------------------- Misc ----------------------//
-    [SerializeField] int maxHealth = 12;
-    [SerializeField] int health;
+    public int maxHealth = 12;
+    public int health = 12;
     [SerializeField] int money;
+    [SerializeField, Tooltip("After taking damage, how long the player is invincible, in seconds.")]
+    float invincibilityTime;
     [SerializeField] Transform graphic;
     [SerializeField] Transform attackRotationPoint;
     [SerializeField] Transform liftRotationPoint;
@@ -18,8 +20,9 @@ public class PlayerController : MonoBehaviour
     public bool isAttacking { get; set; }
     public bool isLifting { get; set; }
     public bool isHoldingObject { get; set; }
+    bool isInvincible;
 
-    private Inventory inventory;
+    Inventory inventory;
     //--------------------------------------------------//
 
     [Header("Movement")]
@@ -91,6 +94,7 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetFloat("Look X", lookDirection.x);
         animator.SetFloat("Look Y", lookDirection.y);
+        animator.SetBool("isJumping", isJumping);
     }
 
     void FixedUpdate()
@@ -155,8 +159,35 @@ public class PlayerController : MonoBehaviour
 
     public void DecreaseHealth(int healthToLose)
     {
-        health -= healthToLose;
-       // Debug.Log("decrease health triggered");
-        //Debug.Log(health);
+        if (!isInvincible)
+        {
+            health -= healthToLose;
+            GameManager.instance.UpdatePlayerHearts();
+            StartCoroutine(InvincibleRoutine());
+        }
+        if (health <= 0)
+        {
+            GameManager.instance.GameOverSequence();
+        }
+    }
+
+    IEnumerator InvincibleRoutine()
+    {
+        isInvincible = true;
+        StartCoroutine(FlashingRoutine());
+        yield return new WaitForSeconds(invincibilityTime);
+        isInvincible = false;
+    }
+
+    IEnumerator FlashingRoutine()
+    {
+        while (isInvincible)
+        {
+            yield return new WaitForFixedUpdate();
+            graphic.GetComponent<SpriteRenderer>().color = Color.clear;
+            yield return new WaitForFixedUpdate();
+            graphic.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        graphic.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed19b50b5b460dd419627e6db0076f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dungeons:
+  - _sceneAsset: {fileID: 102900000, guid: 3f97e32bbe515824f8af458a9065420d, type: 3}
+    _sceneName: Dungeon0
+  nonPlayerScenes:
+  - _sceneAsset: {fileID: 102900000, guid: be8dc7fa84ef5b84898d2041b5140c05, type: 3}
+    _sceneName: TitleScreen
+  - _sceneAsset: {fileID: 102900000, guid: d47e0b0852050194caee6edc7d0fd21d, type: 3}
+    _sceneName: GameOverScreen

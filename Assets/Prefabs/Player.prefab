@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 986628746}
   m_Layer: 0
   m_Name: SwordSwingHitbox
-  m_TagString: Untagged
+  m_TagString: PlayerSword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,6 +414,7 @@ MonoBehaviour:
   maxHealth: 12
   health: 12
   money: 0
+  invincibilityTime: 1
   graphic: {fileID: 443351867189412524}
   attackRotationPoint: {fileID: 672210072}
   liftRotationPoint: {fileID: 1256587883}
@@ -434,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95edb7cd85da2d47996039b19a24b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liftTime: 1
+  liftTime: 0.1
   liftOffsetY: 2
   throwForce: 10
   thrownObjectLifetime: 0.5
@@ -523,11 +524,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
+  m_SortingLayerID: -2127917023
+  m_SortingLayer: 1
+  m_SortingOrder: -1
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

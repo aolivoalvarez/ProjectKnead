@@ -40,7 +40,7 @@ public class PlayerLiftThrowScript : MonoBehaviour
                 liftedObject.transform.SetParent(null);
                 liftedObject.GetComponent<Collider2D>().enabled = true; // when an object is thrown, its collider is turned back on
                 liftedObject.GetComponent<Collider2D>().isTrigger = true; // collider becomes trigger that only hurts enemies
-                liftedObject.AddComponent<ThrowableObjectScript>();
+                liftedObject.GetComponent<ThrowableObjectScript>().isLifted = true;
                 liftedObject.AddComponent<Rigidbody2D>();
 
                 // if throwing up or down, turn thrown object's gravity off
@@ -73,5 +73,6 @@ public class PlayerLiftThrowScript : MonoBehaviour
         liftedObject.transform.position = new Vector2(playerController.transform.position.x, playerController.transform.position.y + liftOffsetY);
         liftedObject.transform.SetParent(playerController.transform);
         liftedObject.GetComponent<Collider2D>().enabled = false; // while an object is held, its collider is turned off
+        liftedObject.GetComponent<SpriteRenderer>().sortingLayerName = "AboveCharacter";
     }
 }

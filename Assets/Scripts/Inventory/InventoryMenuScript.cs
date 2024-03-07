@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryMenuScript : MonoBehaviour
 {
     public static InventoryMenuScript instance;
+    public InventoryInput iInput { get; private set; } //reference to input -- letter E for keyboard
 
+    [SerializeField] SceneField titleScene;
     private Inventory inventory;
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
 
     [SerializeField] GameObject inventoryMenu; //gets inventory menu panel
-
-    InventoryInput iInput; //reference to input -- letter E for keyboard
 
     void Awake()
     {
@@ -37,13 +35,24 @@ public class InventoryMenuScript : MonoBehaviour
         if (iInput.Inventory.Open.triggered)
         {
             ToggleInventoryMenu();
-            RefreshInventoryItems();
+            //RefreshInventoryItems();
         }
     }
 
     public void ToggleInventoryMenu() //toggles inventory menu on or off
     {
         inventoryMenu.SetActive(!inventoryMenu.activeSelf); //turns menu on or off based on previous value
+    }
+
+    public void ReturnToTitle()
+    {
+        ToggleInventoryMenu();
+        SceneManagerScript.SwapScene(titleScene);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void SetInventory(Inventory inventory)
@@ -56,7 +65,7 @@ public class InventoryMenuScript : MonoBehaviour
         int x = 0;
         int y = 0;
         float itemSlotCellSize = 30f;
-        foreach (Item item in inventory.GetItemList()) 
+        foreach (Item item in inventory.GetItemList())
         { 
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate,itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);

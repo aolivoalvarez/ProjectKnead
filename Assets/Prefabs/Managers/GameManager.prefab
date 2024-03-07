@@ -44,4 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d402f7f8e89f07a4998d19ee1f19dae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: {fileID: 0}
+  gameOverScene:
+    _sceneAsset: {fileID: 102900000, guid: d47e0b0852050194caee6edc7d0fd21d, type: 3}
+    _sceneName: GameOverScreen
+  menuCanvas: {fileID: 0}
+  mainCanvas: {fileID: 0}
+  playerPrefab: {fileID: 4414660508208036153, guid: 30893695b92f3dc4898e5b3c0a2bdbd8, type: 3}
+  hearts: []

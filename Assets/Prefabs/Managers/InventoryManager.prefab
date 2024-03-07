@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a244b034b05270e40bc254a7fefbf638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleScene:
+    _sceneAsset: {fileID: 102900000, guid: be8dc7fa84ef5b84898d2041b5140c05, type: 3}
+    _sceneName: TitleScreen
   inventoryMenu: {fileID: 0}

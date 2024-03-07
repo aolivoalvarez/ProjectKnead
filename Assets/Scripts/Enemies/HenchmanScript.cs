@@ -29,7 +29,7 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] Animal animal; //what animal the henchman is <-- for special cases
     [SerializeField] float targetRange = 5f; //once player is in this range, henchman will pursue
     [SerializeField] float attackRange = 2f; //range to player to be able to attack
-    [SerializeField] Transform player; //holds reference to player's transform
+    Transform player; //holds reference to player's transform
    // [SerializeField] float roamDistMax = 10f;
    // [SerializeField] float roamDistMin = 5f;
     BoxCollider2D boxCollider;
@@ -44,6 +44,8 @@ public class HenchmanScript : MonoBehaviour
     {
         startingPosition = transform.position; //gets henchman's starting position
         //roamPosition = RoamingPosition(); //gets henchman's first roaming position
+        player = PlayerController.instance.gameObject.transform;
+        player = null; // DELETE THIS AFTER MVP
         
 
         switch (group) //sets max health + attack damage according to group
@@ -96,13 +98,13 @@ public class HenchmanScript : MonoBehaviour
     }
 
 
-    void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
+    public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
     {
         health -= damage;
         
         if (health <= 0) //checks if health is 0 or less
         {
-            Destroy(this.gameObject); //destroys gameObject
+            Destroy(gameObject); //destroys gameObject
         }
         return;
     }
