@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public bool isAttacking { get; set; }
     public bool isLifting { get; set; }
     public bool isHoldingObject { get; set; }
+
+    private Inventory inventory;
     //--------------------------------------------------//
 
     [Header("Movement")]
@@ -47,6 +49,8 @@ public class PlayerController : MonoBehaviour
         else
             Destroy(gameObject);
         //--------------------------------------------------//
+
+        inventory = new Inventory();
     }
 
     void Start()

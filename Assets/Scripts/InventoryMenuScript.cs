@@ -6,6 +6,10 @@ public class InventoryMenuScript : MonoBehaviour
 {
     public static InventoryMenuScript instance;
 
+    private Inventory inventory;
+    private Transform itemSlotContainer;
+    private Transform itemSlotTemplate;
+
     [SerializeField] GameObject inventoryMenu; //gets inventory menu panel
 
     InventoryInput iInput; //reference to input -- letter E for keyboard
@@ -33,11 +37,36 @@ public class InventoryMenuScript : MonoBehaviour
         if (iInput.Inventory.Open.triggered)
         {
             ToggleInventoryMenu();
+            RefreshInventoryItems();
         }
     }
 
     public void ToggleInventoryMenu() //toggles inventory menu on or off
     {
         inventoryMenu.SetActive(!inventoryMenu.activeSelf); //turns menu on or off based on previous value
+    }
+
+    public void SetInventory(Inventory inventory)
+    {
+        this.inventory = inventory;
+    }
+
+    public void RefreshInventoryItems()
+    {
+        int x = 0;
+        int y = 0;
+        float itemSlotCellSize = 30f;
+        foreach (Item item in inventory.GetItemList()) 
+        { 
+            RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate,itemSlotContainer).GetComponent<RectTransform>();
+            itemSlotRectTransform.gameObject.SetActive(true);
+            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
+            x++;
+            if (x > 4)
+            {
+                x = 0;
+                y++;
+            }
+        }
     }
 }
