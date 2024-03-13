@@ -1,0 +1,30 @@
+{
+    "activeFile": "Tilemaps/Dungeon0.tmx",
+    "expandedProjectPaths": [
+        "Tilemaps",
+        "."
+    ],
+    "fileStates": {
+        "Tilemaps/Dungeon0.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 450,
+                "y": 500
+            }
+        },
+        "Tilesets/CaveDungeon.tsx": {
+            "scaleInDock": 1
+        },
+        "Tilesets/TileSheetTopDownGame.tsx": {
+            "scaleInDock": 1
+        }
+    },
+    "openFiles": [
+        "Tilemaps/Dungeon0.tmx"
+    ],
+    "project": "ProjectKnead.tiled-project",
+    "recentFiles": [
+        "Tilemaps/Dungeon0.tmx"
+    ]
+}

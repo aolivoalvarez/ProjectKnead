@@ -61,9 +61,6 @@ sysinfo.txt
 *.unitypackage
 *.app
 
-# Tiled
-*.tiled-session
-
 # Crashlytics generated file
 crashlytics-build.properties
 
