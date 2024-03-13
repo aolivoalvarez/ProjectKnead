@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: To be attached to a GameObject in the TitleScreen scene. Contains relevant functions to assign UI buttons to.
+-----------------------------------------*/
+
 using UnityEngine;
 
 public class TitleScreenScript : MonoBehaviour

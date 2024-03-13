@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: The main script for the Player object. Controls player input, movement, most animations, and variables like health and money.
+-----------------------------------------*/
+
 using System.Collections;
 using UnityEngine;
 

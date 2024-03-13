@@ -1,5 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: Attached to the Player's child GameObject, Graphic. Contains functions to call from animation events.
+-----------------------------------------*/
+
 using UnityEngine;
 
 public class PlayerAnimationEvents : MonoBehaviour

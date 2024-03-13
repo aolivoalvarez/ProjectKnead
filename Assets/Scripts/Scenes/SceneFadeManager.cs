@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: To be attached to Canvas_Fade. Handles fade in and fade out between scene changes.
+-----------------------------------------*/
+
 // SCRIPT TAKEN FROM A VIDEO BY SASQUATCH B STUDIOS
 using UnityEngine;
 using UnityEngine.UI;

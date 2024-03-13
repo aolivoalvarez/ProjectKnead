@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: For the GameManager prefab. Performs a variety of tasks, such as updating UI elements, performing player respawns, and the GameOver sequence.
+-----------------------------------------*/
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;

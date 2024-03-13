@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: alex
+Description: Handles the UI panel for the player's inventory.
+-----------------------------------------*/
+
 using UnityEngine;
 
 public class InventoryMenuScript : MonoBehaviour

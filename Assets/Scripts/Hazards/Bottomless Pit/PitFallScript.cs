@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: Attached to the inner Collider2D of the Pit prefab. Damages the player and respawns them at the checkpoint.
+-----------------------------------------*/
+
 using UnityEngine;
 
 public class PitFallScript : MonoBehaviour

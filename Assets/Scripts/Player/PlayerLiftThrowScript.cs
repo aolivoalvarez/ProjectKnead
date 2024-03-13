@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: Handles the lifting and throwing of objects by the Player.
+-----------------------------------------*/
+
 using System.Collections;
 using UnityEngine;
 

@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: Creates a new serializable field for Scenes to be used in the editor.
+-----------------------------------------*/
+
 // SCRIPT TAKEN FROM A VIDEO BY SASQUATCH B STUDIOS
 using UnityEngine;
 

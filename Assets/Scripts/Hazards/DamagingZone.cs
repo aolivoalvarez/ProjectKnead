@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: To be attached to a GameObject with a Collider2D trigger. Damages the player for a specified amount.
+-----------------------------------------*/
+
 using UnityEngine;
 
 public class DamagingZone : MonoBehaviour

@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: For the Door prefab. Keeps track of this door's number, as well as the scene and door number it will move the player to.
+-----------------------------------------*/
+
 // PARTS OF SCRIPT TAKEN FROM A VIDEO BY SASQUATCH B STUDIOS
 using System.Collections;
 using UnityEngine;

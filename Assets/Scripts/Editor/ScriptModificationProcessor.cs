@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: 13 March 2024
+Author: theco
+Description: An editor script that, when a new script is created, replaces the custom keys #DATETIME#, #DEVELOPER#, and #PROJECTNAME# with their respective values.
+-----------------------------------------*/
+
 using UnityEditor;
 using UnityEngine;
 

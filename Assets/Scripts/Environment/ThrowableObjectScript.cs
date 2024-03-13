@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: For thrown objects, keeps track of what they should damage and how much damage they should deal.
+-----------------------------------------*/
+
 using UnityEngine;
 
 public class ThrowableObjectScript : MonoBehaviour
@@ -7,7 +13,7 @@ public class ThrowableObjectScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (isLifted)
+        if (isLifted && GetComponent<Rigidbody2D>() != null)
         {
             if (other.gameObject.CompareTag("Enemy"))
             {

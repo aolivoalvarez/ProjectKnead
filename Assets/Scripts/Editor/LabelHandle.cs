@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: An editor script that displays the number of a selected SceneChangeDoor as a Gizmo in the editor.
+-----------------------------------------*/
+
 // SCRIPT TAKEN FROM A VIDEO BY SASQUATCH B STUDIOS
 using UnityEngine;
 using UnityEditor;

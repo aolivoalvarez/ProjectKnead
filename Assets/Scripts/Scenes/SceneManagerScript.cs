@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: Handles most scene change functions.
+-----------------------------------------*/
+
 // PARTS OF SCRIPT TAKEN FROM A VIDEO BY SASQUATCH B STUDIOS
 using Cinemachine;
 using System.Collections;

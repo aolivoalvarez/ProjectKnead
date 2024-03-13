@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: When attached to the Main Camera, performs camera movement in dungeons.
+-----------------------------------------*/
+
 // SCRIPT TAKEN FROM A VIDEO BY EXPAT STUDIOS
 using UnityEngine;
 

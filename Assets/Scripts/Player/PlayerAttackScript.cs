@@ -1,5 +1,10 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: Handles all of the Player's attack actions and animations.
+-----------------------------------------*/
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttackScript : MonoBehaviour

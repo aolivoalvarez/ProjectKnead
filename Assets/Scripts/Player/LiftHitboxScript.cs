@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: Attached to a child GameObject on the Player with a Collider2D trigger component. Determines whether the player can lift an object.
+-----------------------------------------*/
+
 using UnityEngine;
 
 public class LiftHitboxScript : MonoBehaviour

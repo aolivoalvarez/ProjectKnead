@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: Attached to the outer Collider2D of the Pit prefab. Pulls the player towards the center of the pit.
+-----------------------------------------*/
+
 using UnityEngine;
 
 public class PitPullScript : MonoBehaviour

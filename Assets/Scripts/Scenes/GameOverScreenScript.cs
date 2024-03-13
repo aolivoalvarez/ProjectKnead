@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: To be attached to a GameObject in the GameOverScreen scene. Contains relevant functions to assign UI buttons to.
+-----------------------------------------*/
+
 using UnityEngine;
 
 public class GameOverScreenScript : MonoBehaviour

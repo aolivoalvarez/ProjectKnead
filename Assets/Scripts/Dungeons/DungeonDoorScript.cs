@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: When attached to a door transition trigger, tells DungeonCameraController when to move the camera in a dungeon.
+-----------------------------------------*/
+
 // SCRIPT TAKEN FROM A VIDEO BY EXPAT STUDIOS
 using UnityEngine;
 

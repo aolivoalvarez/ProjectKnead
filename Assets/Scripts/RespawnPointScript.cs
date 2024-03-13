@@ -1,3 +1,9 @@
+/*-----------------------------------------
+Creation Date: N/A
+Author: theco
+Description: To be attached to a RespawnPoint GameObject, a simple Transform used to keep track of where the player should respawn after a Game Over.
+-----------------------------------------*/
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
