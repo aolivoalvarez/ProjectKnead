@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
             menuCanvas.SetActive(true);
             mainCanvas.SetActive(true);
         }
+        UpdatePlayerHearts();
     }
 
     void InitializePlayerHearts()
@@ -70,14 +71,19 @@ public class GameManager : MonoBehaviour
             InitializePlayerHearts();
 
         int maxHeartsCount = PlayerController.instance.maxHealth / 4;
+        Debug.Log(PlayerController.instance.maxHealth);
         int fullHeartsCount = PlayerController.instance.health / 4;
+        Debug.Log(PlayerController.instance.health);
         float partialHeart = (float)(PlayerController.instance.health % 4) / 4;
+        //Debug.Log(partialHeart);
         for (int i = 0; i < hearts.Length; i++)
         {
             emptyHearts[i].color = maxHeartsCount < i + 1 ? Color.clear : Color.white;
             fullHearts[i].color = fullHeartsCount < i ? Color.clear : Color.white;
             if (i == fullHeartsCount)
                 fullHearts[i].fillAmount = partialHeart;
+            else
+                fullHearts[i].fillAmount = 1f;
         }
     }
 
@@ -91,7 +97,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManagerScript.SwapScene(RespawnPointScript.instance.respawnSceneIndex);
         PlayerController.instance.gameObject.SetActive(true);
-        PlayerController.instance.health = PlayerController.instance.maxHealth;
+        PlayerController.instance.HealthToMax();
         UpdatePlayerHearts();
         PlayerController.instance.transform.position = RespawnPointScript.instance.transform.position;
     }
@@ -99,6 +105,7 @@ public class GameManager : MonoBehaviour
     public void GameOverSequence()
     {
         PlayerController.instance.pInput.Disable();
+        PlayerController.instance.EndPlayerCoroutines();
         RespawnPointScript.instance.respawnSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManagerScript.SwapScene(gameOverScene);
     }

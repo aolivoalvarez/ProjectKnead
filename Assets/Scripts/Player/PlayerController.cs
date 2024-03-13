@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     //---------------------- Misc ----------------------//
     public int maxHealth = 12;
-    public int health = 12;
+    public int health { get; private set; }
     [SerializeField] int money;
     [SerializeField, Tooltip("After taking damage, how long the player is invincible, in seconds.")]
     float invincibilityTime;
@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
         isAttacking = false;
         isLifting = false;
         isHoldingObject = false;
+        isInvincible = false;
         moveSpeedMult = 1f;
         inputDirection = Vector2.zero;
         lookDirection = Vector2.down;
@@ -177,6 +178,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void HealthToMax()
+    {
+        health = maxHealth;
+    }
+
     IEnumerator InvincibleRoutine()
     {
         isInvincible = true;
@@ -194,6 +200,21 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForFixedUpdate();
             graphic.GetComponent<SpriteRenderer>().color = Color.white;
         }
+        graphic.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    // For when the player dies. Stops all coroutines and sets various values to default.
+    public void EndPlayerCoroutines()
+    {
+        StopAllCoroutines();
+        isAttacking = false;
+        isLifting = false;
+        isHoldingObject = false;
+        isInvincible = false;
+        moveSpeedMult = 1f;
+        graphic.localPosition = new Vector3(graphic.localPosition.x, initialGraphicPositionY);
+        isJumping = false;
+        canJump = true;
         graphic.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
