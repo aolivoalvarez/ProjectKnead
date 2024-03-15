@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
         {
             lookDirection = new Vector2(Mathf.Round(inputDirection.normalized.x), Mathf.Round(inputDirection.normalized.y));
         }
+        animator.SetFloat("Speed", rigidBody.velocity.magnitude);
         animator.SetFloat("Look X", lookDirection.x);
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetBool("isJumping", isJumping);
