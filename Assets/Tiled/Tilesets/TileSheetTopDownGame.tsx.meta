@@ -8,10 +8,8 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
-  missingFiles:
-  - ../Art/TileSheetTopDownGame.png
-  errors:
-  - 'Missing texture asset: ../Art/TileSheetTopDownGame.png'
+  missingFiles: []
+  errors: []
   warnings: []
   missingSortingLayers: []
   missingLayers: []
@@ -19,7 +17,7 @@ ScriptedImporter:
   importerVersion: 14
   pixelsPerUnit: 32
   edgesPerEllipse: 32
-  numberOfObjectsImported: 2
+  numberOfObjectsImported: 453
   useSpriteAtlas: 1
   atlasWidth: 2048
   atlasHeight: 2048

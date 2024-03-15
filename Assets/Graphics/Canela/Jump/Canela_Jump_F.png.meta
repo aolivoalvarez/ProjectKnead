@@ -200,6 +200,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Canela_Jump_F_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9137cb0ccd9e56a43afc3a3158e58d8d
+      internalID: 1447059883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Canela_Jump_F_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb02c7417ee7484ab34ebaa1e3930bb
+      internalID: -409441970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -213,6 +255,8 @@ TextureImporter:
     nameFileIdTable:
       Canela_Jump_F_3: 389192092
       Canela_Jump_F_1: 977060377
+      Canela_Jump_F_5: -409441970
+      Canela_Jump_F_4: 1447059883
       Canela_Jump_F_0: 495755083
       Canela_Jump_F_2: 1904371194
   spritePackingTag: 
