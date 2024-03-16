@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5fdcb79869e9cfb44a3bca4c7f76e75b
+guid: 3daff143d221aa143af73c9af7cfaf61
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -117,169 +117,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Control_Keys_0
+      name: PlayerHearts_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e27c1792d3372e419682ce9a570b158
-      internalID: 282337248
+      spriteID: d05c2df9988c1fb43a4051ea0ee1c208
+      internalID: 1122820807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Control_Keys_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d718531658793f745b89da23a6bff0dc
-      internalID: 112316079
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Control_Keys_2
+      name: PlayerHearts_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f674be4e3f66864a85791e300adcb2d
-      internalID: 1279339637
+      spriteID: 3f3f08918757b194bbaf37111150fda4
+      internalID: 718964969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Control_Keys_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1a5f2120b588ee4bbf5bd671367cec0
-      internalID: -1112516740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Control_Keys_4
+      name: PlayerHearts_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49720d5bbdc68e349a01b099fa4486fc
-      internalID: 2050912797
+      spriteID: 10f43f3dbadcf3b478cbe7bb02bcd807
+      internalID: 694227701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Control_Keys_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91dff385ad070f0478961eff2fd95aa2
-      internalID: 329362038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Control_Keys_6
+      name: PlayerHearts_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24c1bfa5471eead428e3f227540a70b3
-      internalID: -1558869887
+      spriteID: e405c53feca58b44896e8cd3fa9a08da
+      internalID: 598456559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Control_Keys_7
+      name: PlayerHearts_4
       rect:
         serializedVersion: 2
-        x: 112
+        x: 128
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7f51a8242962184f9a700f290a4a457
-      internalID: 1237922440
+      spriteID: 39661be5c02dc5f43ad6267fd081b9bf
+      internalID: -26548511
       vertices: []
       indices: 
       edges: []
@@ -295,14 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Control_Keys_7: 1237922440
-      Control_Keys_5: 329362038
-      Control_Keys_1: 112316079
-      Control_Keys_2: 1279339637
-      Control_Keys_4: 2050912797
-      Control_Keys_0: 282337248
-      Control_Keys_3: -1112516740
-      Control_Keys_6: -1558869887
+      PlayerHearts_0: 1122820807
+      PlayerHearts_3: 598456559
+      PlayerHearts_4: -26548511
+      PlayerHearts_2: 694227701
+      PlayerHearts_1: 718964969
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
