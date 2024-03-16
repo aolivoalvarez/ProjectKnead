@@ -12,12 +12,21 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
+    enum SceneType
+    {
+        Standard,
+        Dungeon,
+        NonPlayer
+    }
+
     public static SceneManagerScript instance;
 
     public SceneField[] dungeons, nonPlayerScenes;
+    SceneType currentSceneType;
     static bool loadedFromDoor;
     SceneChangeDoorScript.DoorToSpawnAt doorToSpawnPlayer;
     Vector2 playerSpawnPosition;
+    Vector3 dungeonCameraPosition;
 
     void Awake()
     {
@@ -82,38 +91,55 @@ public class SceneManagerScript : MonoBehaviour
     void OnSceneChanged(Scene lastScene, Scene currentScene)
     {
         SceneFadeManager.instance.StartFadeIn();
+
+        currentSceneType = SceneType.Standard;
         foreach (SceneField s in dungeons)
         {
             if (s.SceneName == currentScene.name)
             {
-                Camera.main.GetComponent<CinemachineBrain>().enabled = false;
+                currentSceneType = SceneType.Dungeon;
                 break;
             }
-            else
-            {
-                Camera.main.GetComponent<CinemachineBrain>().enabled = true;
-            }
         }
-
         foreach (SceneField s in nonPlayerScenes)
         {
             if (s.SceneName == currentScene.name)
             {
+                currentSceneType = SceneType.NonPlayer;
+                break;
+            }
+        }
+
+        switch (currentSceneType)
+        {
+            case SceneType.NonPlayer:
                 PlayerController.instance.gameObject.SetActive(false);
                 InventoryMenuScript.instance.iInput.Disable();
                 break;
-            }
-            else
-            {
+            case SceneType.Dungeon:
+                Camera.main.GetComponent<CinemachineBrain>().enabled = false;
                 PlayerController.instance.gameObject.SetActive(true);
                 InventoryMenuScript.instance.iInput.Enable();
                 GameManager.instance.UpdatePlayerHearts();
-            }
+                break;
+            default:
+                Camera.main.GetComponent<CinemachineBrain>().enabled = true;
+                PlayerController.instance.gameObject.SetActive(true);
+                InventoryMenuScript.instance.iInput.Enable();
+                GameManager.instance.UpdatePlayerHearts();
+                break;
         }
 
         if (loadedFromDoor)
         {
             FindDoor(doorToSpawnPlayer);
+            if (currentSceneType == SceneType.Dungeon)
+            {
+                Camera.main.transform.position = dungeonCameraPosition;
+                var camControl = Camera.main.GetComponent<DungeonCameraController>();
+                camControl.minPos = dungeonCameraPosition;
+                camControl.maxPos = dungeonCameraPosition;
+            }
             PlayerController.instance.gameObject.transform.position = playerSpawnPosition;
             CheckpointScript.instance.transform.position = playerSpawnPosition;
             RespawnPointScript.instance.transform.position = playerSpawnPosition;
@@ -131,6 +157,8 @@ public class SceneManagerScript : MonoBehaviour
             if (d.currentDoorPosition == doorSpawnNumber)
             {
                 playerSpawnPosition = d.playerSpawnPosition.position;
+                if (currentSceneType == SceneType.Dungeon)
+                    dungeonCameraPosition = d.initialCameraPosition.position;
                 return;
             }
         }

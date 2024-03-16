@@ -7,6 +7,7 @@ Description: For the Door prefab. Keeps track of this door's number, as well as 
 // PARTS OF SCRIPT TAKEN FROM A VIDEO BY SASQUATCH B STUDIOS
 using System.Collections;
 using UnityEngine;
+using CustomAttributes;
 
 public class SceneChangeDoorScript : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class SceneChangeDoorScript : MonoBehaviour
     [Header("This Door")]
     public DoorToSpawnAt currentDoorPosition;
     public Transform playerSpawnPosition;
+    [SerializeField] bool isDungeonEntrance = false;
+    [ShowIf(ActionOnConditionFail.DontDraw, ConditionOperator.And, nameof(isDungeonEntrance))]
+    public Transform initialCameraPosition;
 
     [Header("Connected Door")]
     [SerializeField] SceneField sceneToLoad;
