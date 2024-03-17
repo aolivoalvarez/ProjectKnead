@@ -9,17 +9,29 @@ using UnityEngine;
 public class ThrowableObjectScript : MonoBehaviour
 {
     [SerializeField] int damageAmount = 2;
-    public bool isLifted { get; set; }
+    public bool isThrown { get; set; }
+    GameObject graphic;
+
+    void Start()
+    {
+        graphic = GetComponentInChildren<SpriteRenderer>().gameObject;
+    }
+
+    void Update()
+    {
+        if (isThrown && graphic.transform.localPosition.y <= 0.5f)
+            Destroy(gameObject);
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (isLifted && GetComponent<Rigidbody2D>() != null)
+        if (isThrown && !other.isTrigger)
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
                 other.gameObject.GetComponent<HenchmanScript>().TakeDamage(damageAmount);
-                Destroy(gameObject);
             }
+            Destroy(gameObject);
         }
     }
 }

@@ -71,9 +71,9 @@ public class GameManager : MonoBehaviour
             InitializePlayerHearts();
 
         int maxHeartsCount = PlayerController.instance.maxHealth / 4;
-        Debug.Log(PlayerController.instance.maxHealth);
+        //Debug.Log(PlayerController.instance.maxHealth);
         int fullHeartsCount = PlayerController.instance.health / 4;
-        Debug.Log(PlayerController.instance.health);
+        //Debug.Log(PlayerController.instance.health);
         float partialHeart = (float)(PlayerController.instance.health % 4) / 4;
         //Debug.Log(partialHeart);
         for (int i = 0; i < hearts.Length; i++)
