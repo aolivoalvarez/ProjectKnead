@@ -1,7 +1,7 @@
 /*-----------------------------------------
 Creation Date: 3/18/2024 6:01:18 PM
 Author: theco
-Description: Project Knead
+Description: For the FallingItem prefab. Stores an object and makes it look like it's falling to the ground. When it hits the ground, releases the object and destroys self.
 -----------------------------------------*/
 
 using UnityEngine;
@@ -19,6 +19,8 @@ public class FallingItemScript : MonoBehaviour
     void Start()
     {
         GetComponentInChildren<Collider2D>().enabled = false; // while an item is falling, it should have no collision
+        GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Default";
+        GetComponentInChildren<SpriteRenderer>().sortingOrder = 0;
         Instantiate(shadowPrefab, new Vector2(transform.position.x, groundLevelY), Quaternion.identity, transform); // creates a child object from the shadow prefab
         CreateBezierPath();
         fallTween = storedItem.transform.DOPath(bezierPathWaypoints, timeToFall, PathType.CubicBezier); // start the fall tween
