@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb5acb7542ca354e9060daf3d300f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagThatDestroysThisObject: PlayerSword
+  tagsThatDestroyThisObject:
+  - PlayerSword

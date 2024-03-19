@@ -8,13 +8,16 @@ using UnityEngine;
 
 public class BreakableObjectScript : MonoBehaviour
 {
-    [SerializeField] string tagThatDestroysThisObject;
+    [SerializeField] string[] tagsThatDestroyThisObject;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag(tagThatDestroysThisObject))
+        foreach (string currentTag in tagsThatDestroyThisObject)
         {
-            Destroy(gameObject);
+            if (other.gameObject.CompareTag(currentTag))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
