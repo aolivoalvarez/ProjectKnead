@@ -13,6 +13,36 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 2,
+            "members": [
+                {
+                    "name": "unity:SortingLayer",
+                    "type": "string",
+                    "value": "Ground"
+                },
+                {
+                    "name": "unity:SortingOrder",
+                    "type": "int",
+                    "value": 0
+                }
+            ],
+            "name": "Ground",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 1,
             "members": [
             ],
@@ -33,12 +63,22 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
-            "id": 2,
+            "id": 4,
             "members": [
+                {
+                    "name": "spriteSortPointX",
+                    "type": "float",
+                    "value": 0.5
+                },
+                {
+                    "name": "spriteSortPointY",
+                    "type": "float",
+                    "value": 0.5
+                },
                 {
                     "name": "unity:SortingLayer",
                     "type": "string",
-                    "value": ""
+                    "value": "Entity"
                 },
                 {
                     "name": "unity:SortingOrder",
@@ -46,7 +86,7 @@
                     "value": 0
                 }
             ],
-            "name": "Ground",
+            "name": "Wall",
             "type": "class",
             "useAs": [
                 "property",

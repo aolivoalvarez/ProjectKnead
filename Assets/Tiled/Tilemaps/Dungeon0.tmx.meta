@@ -21,5 +21,5 @@ ScriptedImporter:
   tilesAsObjects: 0
   sortingMode: 0
   isIsometric: 0
-  customImporterClassName: 
+  customImporterClassName: TiledSortPointImporter
   internalTilesets: []
