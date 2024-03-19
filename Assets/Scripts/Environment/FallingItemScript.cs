@@ -19,7 +19,7 @@ public class FallingItemScript : MonoBehaviour
     void Start()
     {
         GetComponentInChildren<Collider2D>().enabled = false; // while an item is falling, it should have no collision
-        GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Default";
+        GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Entity";
         GetComponentInChildren<SpriteRenderer>().sortingOrder = 0;
         Instantiate(shadowPrefab, new Vector2(transform.position.x, groundLevelY), Quaternion.identity, transform); // creates a child object from the shadow prefab
         CreateBezierPath();

@@ -280,7 +280,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &5552978750991962323
 Animator:
   serializedVersion: 5
@@ -463,15 +463,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6048653904086461259, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6048653904086461259, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
-      propertyPath: m_SortingOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6048653904086461259, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -2127917023
       objectReference: {fileID: 0}
     - target: {fileID: 6960135516368046356, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
       propertyPath: m_RootOrder

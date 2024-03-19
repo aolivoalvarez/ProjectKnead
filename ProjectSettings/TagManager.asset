@@ -45,13 +45,19 @@ TagManager:
   - name: Ground
     uniqueID: 3014561397
     locked: 0
+  - name: AboveGround
+    uniqueID: 3470052831
+    locked: 0
+  - name: Shadow
+    uniqueID: 3728423131
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Character
+  - name: Entity
     uniqueID: 2167050273
     locked: 0
-  - name: AboveCharacter
+  - name: AboveEntity
     uniqueID: 515221235
     locked: 0
   - name: UI

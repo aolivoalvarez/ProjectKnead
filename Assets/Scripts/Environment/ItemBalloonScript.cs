@@ -23,12 +23,12 @@ public class ItemBalloonScript : MonoBehaviour
         // find the item's sprite renderer and change its sorting layer
         if (storedItem.GetComponent<SpriteRenderer>() != null)
         {
-            storedItem.GetComponent<SpriteRenderer>().sortingLayerName = "AboveCharacter";
+            storedItem.GetComponent<SpriteRenderer>().sortingLayerName = "AboveEntity";
             storedItem.GetComponent<SpriteRenderer>().sortingOrder = -1; // ensures it will be behind the balloon
         }
         else
         {
-            storedItem.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "AboveCharacter";
+            storedItem.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "AboveEntity";
             storedItem.GetComponentInChildren<SpriteRenderer>().sortingOrder = -1; // ensures it will be behind the balloon
         }
     }

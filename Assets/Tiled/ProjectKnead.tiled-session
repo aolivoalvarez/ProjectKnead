@@ -24,6 +24,7 @@
         "Tilemaps/Dungeon0.tmx"
     ],
     "project": "ProjectKnead.tiled-project",
+    "property.type": "int",
     "recentFiles": [
         "Tilemaps/Dungeon0.tmx"
     ]
