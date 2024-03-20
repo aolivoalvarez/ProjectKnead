@@ -21,15 +21,17 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -1863070332, guid: 89ec37025259fee4d9f789190558c54b, type: 3}
-    - time: 0.14285715
+    - time: 0.1
       value: {fileID: 1402382332, guid: 89ec37025259fee4d9f789190558c54b, type: 3}
-    - time: 0.21428572
+    - time: 0.15
       value: {fileID: 1077973005, guid: 89ec37025259fee4d9f789190558c54b, type: 3}
+    - time: 0.2
+      value: {fileID: 2062302891, guid: 89ec37025259fee4d9f789190558c54b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 14
+  m_SampleRate: 20
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -47,12 +49,13 @@ AnimationClip:
     - {fileID: -1863070332, guid: 89ec37025259fee4d9f789190558c54b, type: 3}
     - {fileID: 1402382332, guid: 89ec37025259fee4d9f789190558c54b, type: 3}
     - {fileID: 1077973005, guid: 89ec37025259fee4d9f789190558c54b, type: 3}
+    - {fileID: 2062302891, guid: 89ec37025259fee4d9f789190558c54b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.35714287
+    m_StopTime: 0.3
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,7 +82,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.35714287
+  - time: 0.3
     functionName: DeactivateSwordHitbox
     data: 
     objectReferenceParameter: {fileID: 0}
