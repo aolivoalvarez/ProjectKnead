@@ -184,6 +184,16 @@ public class PlayerController : MonoBehaviour
         health = maxHealth;
     }
 
+    public void IncreaseMoney(int amount)
+    {
+        money = (money + amount < 999) ? money + amount : 999;
+    }
+
+    public void DecreaseMoney(int amount)
+    {
+        money = (money - amount > 0) ? money - amount : 0;
+    }
+
     IEnumerator InvincibleRoutine()
     {
         isInvincible = true;
