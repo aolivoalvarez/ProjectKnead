@@ -1,16 +1,16 @@
 {
     "activeFile": "Tilemaps/Dungeon0.tmx",
     "expandedProjectPaths": [
-        "Tilemaps",
-        "."
+        ".",
+        "Tilemaps"
     ],
     "fileStates": {
         "Tilemaps/Dungeon0.tmx": {
             "scale": 0.5,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 450,
-                "y": 500
+                "x": 980,
+                "y": 506
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
@@ -31,7 +31,7 @@
     "project": "ProjectKnead.tiled-project",
     "property.type": "float",
     "recentFiles": [
-        "Tilesets/1080x1920Topdown.tsx",
-        "Tilemaps/Dungeon0.tmx"
+        "Tilemaps/Dungeon0.tmx",
+        "Tilesets/1080x1920Topdown.tsx"
     ]
 }

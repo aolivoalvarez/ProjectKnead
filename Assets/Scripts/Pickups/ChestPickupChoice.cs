@@ -1,12 +1,12 @@
 /*-----------------------------------------
-Creation Date: 3/21/2024 3:16:34 PM
+Creation Date: 3/21/2024 3:16:58 PM
 Author: theco
-Description: For pickups that are collected by walking into them.
+Description: For pickups that are collected from chests.
 -----------------------------------------*/
 
 using UnityEngine;
 
-public class WorldPickup : Pickup
+public class ChestPickupChoice : PickupChoice
 {
     void Start()
     {

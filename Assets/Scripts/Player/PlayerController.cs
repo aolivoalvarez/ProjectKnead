@@ -165,6 +165,11 @@ public class PlayerController : MonoBehaviour
         canJump = true;
     }
 
+    public void IncreaseHealth(int healthToGain)
+    {
+        health = (health + healthToGain < maxHealth) ? health + healthToGain : maxHealth;
+    }
+
     public void DecreaseHealth(int healthToLose)
     {
         if (!isInvincible)

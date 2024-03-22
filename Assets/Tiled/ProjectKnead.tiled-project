@@ -78,7 +78,7 @@
                 {
                     "name": "unity:SortingLayer",
                     "type": "string",
-                    "value": "Entity"
+                    "value": "Default"
                 },
                 {
                     "name": "unity:SortingOrder",

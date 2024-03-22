@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1912698747114784254}
   - component: {fileID: 1912698747114784224}
   - component: {fileID: 2987976610587362378}
+  - component: {fileID: 6315996802372465990}
   m_Layer: 0
   m_Name: LiftableObject
   m_TagString: LiftableObject
@@ -73,6 +74,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 2
+  worldPickupPrefab: {fileID: 2601237028607197377, guid: 387431bb6e8d7a94a8f3041b0e254aa2, type: 3}
+--- !u!114 &6315996802372465990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912698747114784225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e372751a49afec47a1422e7ff29b81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisPickup: 0
+  pickupPrefabs:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 0}
+    - Key: 1
+      Value: {fileID: 4056665493405578874, guid: 50319d90246bc9e4b8b93b2ebcb4199a, type: 3}
+    - Key: 2
+      Value: {fileID: 220995193763495495, guid: 675bd28d5babbb74da7496b4760f94c3, type: 3}
+    - Key: 3
+      Value: {fileID: 2812927696352829320, guid: c8b06ba650ae2054eb115c2f3fcb2153, type: 3}
+    - Key: 4
+      Value: {fileID: 7882705756193437975, guid: bb114d6eeb3f87d47896dcf0437df7d8, type: 3}
+    - Key: 5
+      Value: {fileID: 0}
+    - Key: 6
+      Value: {fileID: 0}
+  pickupChance:
+    _serializedList:
+    - Key: 0
+      Value: 50
+    - Key: 1
+      Value: 20
+    - Key: 2
+      Value: 8
+    - Key: 3
+      Value: 1
+    - Key: 4
+      Value: 15
+    - Key: 5
+      Value: 3
+    - Key: 6
+      Value: 3
 --- !u!1 &3168207870544510860
 GameObject:
   m_ObjectHideFlags: 0
