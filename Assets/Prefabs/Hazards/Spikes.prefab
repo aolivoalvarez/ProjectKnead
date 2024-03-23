@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5662475967592758555}
   - component: {fileID: 5987001616934184643}
   - component: {fileID: 8363303315143046822}
+  - component: {fileID: 4106649720016277987}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4888cc26efcee3f40bddf100a2791770, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -124,3 +125,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900a47fb805b33f48943903d5e478bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 2
+--- !u!114 &4106649720016277987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478999797311981709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff

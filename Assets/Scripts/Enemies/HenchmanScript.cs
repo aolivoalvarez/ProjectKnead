@@ -7,6 +7,7 @@ Description:
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HenchmanScript : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] Animal animal; //what animal the henchman is <-- for special cases
     [SerializeField] float targetRange = 5f; //once player is in this range, henchman will pursue
     [SerializeField] float attackRange = 2f; //range to player to be able to attack
-    Transform player; //holds reference to player's transform
+    [SerializeField] Transform player; //holds reference to player's transform
    // [SerializeField] float roamDistMax = 10f;
    // [SerializeField] float roamDistMin = 5f;
     BoxCollider2D boxCollider;
@@ -43,6 +44,7 @@ public class HenchmanScript : MonoBehaviour
     Animator animator;
     Vector2 startingPosition; //holds henchman's starting position
     //Vector2 roamPosition; //holds henchman's roaming position
+    NavMeshAgent agent; //holds reference to henchman's navmesh agent
     
 
 
@@ -50,9 +52,7 @@ public class HenchmanScript : MonoBehaviour
     {
         startingPosition = transform.position; //gets henchman's starting position
         //roamPosition = RoamingPosition(); //gets henchman's first roaming position
-        player = PlayerController.instance.gameObject.transform;
-        player = null; // DELETE THIS AFTER MVP
-        
+        //player = PlayerController.instance.gameObject.transform;
 
         switch (group) //sets max health + attack damage according to group
         {
@@ -87,15 +87,20 @@ public class HenchmanScript : MonoBehaviour
         boxCollider = this.GetComponent<BoxCollider2D>();
         rigidBody = this.GetComponent<Rigidbody2D>();
         //animator = this.GetComponent.<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
 
- 
-;    }
+
+        ;    }
 
 
     private void FixedUpdate()
     {
 
-        FindPlayer(); //finds where player is + checks if player is in chasing range
+        //FindPlayer(); //finds where player is + checks if player is in chasing range
+
+        //agent.SetDestination(player.position);
         
         if (Vector2.Distance(transform.position, player.position) <= attackRange) //checks if player is in attack range
         {
@@ -103,6 +108,10 @@ public class HenchmanScript : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        agent.SetDestination(player.position);
+    }
 
     public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
     {
@@ -134,10 +143,11 @@ public class HenchmanScript : MonoBehaviour
     
     void MoveToPlayer() //moves henchman towards player
     {
-        Vector2 movement = player.position - transform.position;
+        /*Vector2 movement = player.position - transform.position;
         movement.Normalize();
 
-        rigidBody.MovePosition((Vector2)transform.position + (movement * moveSpeed * Time.deltaTime));
+        rigidBody.MovePosition((Vector2)transform.position + (movement * moveSpeed * Time.deltaTime));*/
+        agent.SetDestination(player.position);
         
         return;
     }
