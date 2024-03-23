@@ -9,6 +9,7 @@ using UnityEngine;
 public class ThrowableObjectScript : MonoBehaviour
 {
     [SerializeField] int damageAmount = 2;
+    [SerializeField] GameObject worldPickupPrefab;
     public bool isThrown { get; set; }
     GameObject graphic;
 
@@ -20,7 +21,17 @@ public class ThrowableObjectScript : MonoBehaviour
     void Update()
     {
         if (isThrown && graphic.transform.localPosition.y <= 0.5f)
-            Destroy(gameObject);
+            BreakObject();
+    }
+
+    void BreakObject()
+    {
+        if (GetComponent<BreakableObjectPickupChoice>().GetPickup() != PickupType.None)
+        {
+            GameObject newPickupObject = Instantiate(worldPickupPrefab, transform.position, Quaternion.identity);
+            newPickupObject.GetComponent<WorldPickupChoice>().SetPickup(GetComponent<BreakableObjectPickupChoice>().GetPickup());
+        }
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,7 +42,7 @@ public class ThrowableObjectScript : MonoBehaviour
             {
                 other.gameObject.GetComponent<HenchmanScript>().TakeDamage(damageAmount);
             }
-            Destroy(gameObject);
+            BreakObject();
         }
     }
 }

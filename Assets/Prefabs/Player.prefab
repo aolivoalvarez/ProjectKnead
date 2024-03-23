@@ -95,8 +95,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672210071}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.03125, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.53125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -160,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.1508598}
+  m_Size: {x: 2, y: 1.1508598}
   m_EdgeRadius: 0
 --- !u!1 &1256587882
 GameObject:
@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218857819911091461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.78125, z: 0}
+  m_LocalPosition: {x: 0, y: 0.15625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -280,7 +280,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &5552978750991962323
 Animator:
   serializedVersion: 5
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordSwingHitbox: {fileID: 986628744}
   swordSwingTime: 0.25
-  swordSwingBuffer: 0.1
+  swordSwingBuffer: 0.025
 --- !u!1001 &4145172324723605993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -463,15 +463,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6048653904086461259, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6048653904086461259, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
-      propertyPath: m_SortingOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6048653904086461259, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -2127917023
       objectReference: {fileID: 0}
     - target: {fileID: 6960135516368046356, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
       propertyPath: m_RootOrder

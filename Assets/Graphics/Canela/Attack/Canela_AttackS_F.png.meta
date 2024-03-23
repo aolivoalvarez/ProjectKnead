@@ -122,10 +122,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 84
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 88
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27272728}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,12 +141,12 @@ TextureImporter:
       name: Canela_AttackS_F_1
       rect:
         serializedVersion: 2
-        x: 84
+        x: 88
         y: 0
-        width: 84
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 88
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27272728}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Canela_AttackS_F_2
       rect:
         serializedVersion: 2
-        x: 168
+        x: 176
         y: 0
-        width: 84
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 88
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27272728}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,6 +175,27 @@ TextureImporter:
       bones: []
       spriteID: 27d5ec93b03316345a32b6dc5cd70967
       internalID: 1077973005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Canela_AttackS_F_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 88
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.27272728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cadee96569981494b895bde6eb67e2fd
+      internalID: 2062302891
       vertices: []
       indices: 
       edges: []
@@ -192,6 +213,7 @@ TextureImporter:
     nameFileIdTable:
       Canela_AttackS_F_2: 1077973005
       Canela_AttackS_F_1: 1402382332
+      Canela_AttackS_F_3: 2062302891
       Canela_AttackS_F_0: -1863070332
   spritePackingTag: 
   pSDRemoveMatte: 0

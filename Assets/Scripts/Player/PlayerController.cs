@@ -165,6 +165,11 @@ public class PlayerController : MonoBehaviour
         canJump = true;
     }
 
+    public void IncreaseHealth(int healthToGain)
+    {
+        health = (health + healthToGain < maxHealth) ? health + healthToGain : maxHealth;
+    }
+
     public void DecreaseHealth(int healthToLose)
     {
         if (!isInvincible)
@@ -182,6 +187,16 @@ public class PlayerController : MonoBehaviour
     public void HealthToMax()
     {
         health = maxHealth;
+    }
+
+    public void IncreaseMoney(int amount)
+    {
+        money = (money + amount < 999) ? money + amount : 999;
+    }
+
+    public void DecreaseMoney(int amount)
+    {
+        money = (money - amount > 0) ? money - amount : 0;
     }
 
     IEnumerator InvincibleRoutine()

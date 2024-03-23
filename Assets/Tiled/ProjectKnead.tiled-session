@@ -1,17 +1,21 @@
 {
     "activeFile": "Tilemaps/Dungeon0.tmx",
     "expandedProjectPaths": [
-        "Tilemaps",
-        "."
+        ".",
+        "Tilemaps"
     ],
     "fileStates": {
         "Tilemaps/Dungeon0.tmx": {
             "scale": 0.5,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 450,
-                "y": 500
+                "x": 980,
+                "y": 506
             }
+        },
+        "Tilesets/1080x1920Topdown.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "Tilesets/CaveDungeon.tsx": {
             "scaleInDock": 1
@@ -20,11 +24,14 @@
             "scaleInDock": 1
         }
     },
+    "last.objectTypesPath": "C:/Users/theco/Documents/Unity Projects/ProjectKnead/Assets/Tiled/propertytypes.xml",
     "openFiles": [
         "Tilemaps/Dungeon0.tmx"
     ],
     "project": "ProjectKnead.tiled-project",
+    "property.type": "float",
     "recentFiles": [
-        "Tilemaps/Dungeon0.tmx"
+        "Tilemaps/Dungeon0.tmx",
+        "Tilesets/1080x1920Topdown.tsx"
     ]
 }

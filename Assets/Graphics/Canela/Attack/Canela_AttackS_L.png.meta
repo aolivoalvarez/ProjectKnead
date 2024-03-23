@@ -122,10 +122,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 72
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.29166666}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,12 +141,12 @@ TextureImporter:
       name: Canela_AttackS_L_1
       rect:
         serializedVersion: 2
-        x: 72
+        x: 96
         y: 0
-        width: 72
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.29166666}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Canela_AttackS_L_2
       rect:
         serializedVersion: 2
-        x: 144
+        x: 192
         y: 0
-        width: 72
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.29166666}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,6 +175,27 @@ TextureImporter:
       bones: []
       spriteID: 462bd5e8aa4e1ce47a8b58f27f404c7c
       internalID: -1267968902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Canela_AttackS_L_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.29166666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe262d682a648434db398f7c835b2954
+      internalID: -1056207032
       vertices: []
       indices: 
       edges: []
@@ -191,6 +212,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Canela_AttackS_L_1: 626052390
+      Canela_AttackS_L_3: -1056207032
       Canela_AttackS_L_0: -1817475938
       Canela_AttackS_L_2: -1267968902
   spritePackingTag: 
