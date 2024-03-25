@@ -212,7 +212,9 @@ public class PlayerController : MonoBehaviour
         while (isInvincible)
         {
             yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
             graphic.GetComponent<SpriteRenderer>().color = Color.clear;
+            yield return new WaitForFixedUpdate();
             yield return new WaitForFixedUpdate();
             graphic.GetComponent<SpriteRenderer>().color = Color.white;
         }

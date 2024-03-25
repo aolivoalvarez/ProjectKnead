@@ -1,25 +1,33 @@
 /*-----------------------------------------
 Creation Date: 3/21/2024 6:10:02 PM
 Author: theco
-Description: For pickups that are spawned by breaking objects.
+Description: For pickups that are spawned from objects and enemies.
 -----------------------------------------*/
 
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
 using System.Collections.Generic;
 
-public class BreakableObjectPickupChoice : PickupChoice
+public class SpawnPickup : ChoosePickup
 {
+    [SerializeField] bool randomizePickup = false;
     [SerializeField, SerializedDictionary("Pickup Type", "Item Weight")]
     SerializedDictionary<PickupType, int> pickupChance;
 
     void Start()
     {
-        thisPickup = GetRandomWeightedIndex(pickupChance);
+        if (randomizePickup)
+            thisPickup = GetRandomWeightedIndex(pickupChance);
     }
 
-    public override void EditorUpdatePickupObject() { return; }
-    public override void UpdatePickupObject() { return; }
+    public void SpawnThisPickup()
+    {
+        if (thisPickup != PickupType.None)
+        {
+            if (pickupPrefabs[thisPickup] != null)
+                Instantiate(pickupPrefabs[thisPickup], transform.position, Quaternion.identity);
+        }
+    }
 
     PickupType GetRandomWeightedIndex(Dictionary<PickupType, int> weights)
     {
@@ -46,7 +54,7 @@ public class BreakableObjectPickupChoice : PickupChoice
     }
 
     // FUNCTION TAKEN FROM USER LORDOFDUCT ON UNITY FORUMS
-    int GetRandomWeightedIndex(int[] weights)
+    /*int GetRandomWeightedIndex(int[] weights)
     {
         if (weights == null || weights.Length == 0) return -1;
 
@@ -68,5 +76,5 @@ public class BreakableObjectPickupChoice : PickupChoice
         }
 
         return -1;
-    }
+    }*/
 }

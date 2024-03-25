@@ -9,15 +9,11 @@ using UnityEngine;
 public class BreakableObjectScript : MonoBehaviour
 {
     [SerializeField] string[] tagsThatDestroyThisObject;
-    [SerializeField] GameObject worldPickupPrefab;
 
     void BreakObject()
     {
-        if (GetComponent<BreakableObjectPickupChoice>().GetPickup() != PickupType.None)
-        {
-            GameObject newPickupObject = Instantiate(worldPickupPrefab, transform.position, Quaternion.identity);
-            newPickupObject.GetComponent<WorldPickupChoice>().SetPickup(GetComponent<BreakableObjectPickupChoice>().GetPickup());
-        }
+        if (GetComponent<SpawnPickup>() != null)
+            GetComponent<SpawnPickup>().SpawnThisPickup();
         Destroy(gameObject);
     }
 

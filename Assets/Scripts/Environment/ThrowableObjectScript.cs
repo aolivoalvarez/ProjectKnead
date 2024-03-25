@@ -9,7 +9,6 @@ using UnityEngine;
 public class ThrowableObjectScript : MonoBehaviour
 {
     [SerializeField] int damageAmount = 2;
-    [SerializeField] GameObject worldPickupPrefab;
     public bool isThrown { get; set; }
     GameObject graphic;
 
@@ -26,11 +25,8 @@ public class ThrowableObjectScript : MonoBehaviour
 
     void BreakObject()
     {
-        if (GetComponent<BreakableObjectPickupChoice>().GetPickup() != PickupType.None)
-        {
-            GameObject newPickupObject = Instantiate(worldPickupPrefab, transform.position, Quaternion.identity);
-            newPickupObject.GetComponent<WorldPickupChoice>().SetPickup(GetComponent<BreakableObjectPickupChoice>().GetPickup());
-        }
+        if (GetComponent<SpawnPickup>() != null)
+            GetComponent<SpawnPickup>().SpawnThisPickup();
         Destroy(gameObject);
     }
 

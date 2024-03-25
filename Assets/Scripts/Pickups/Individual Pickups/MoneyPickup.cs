@@ -6,11 +6,11 @@ Description: Used for all money pickups.
 
 using UnityEngine;
 
-public class MoneyPickup : MonoBehaviour, IPickup
+public class MoneyPickup : Pickup
 {
     [SerializeField] int moneyAmount;
 
-    public void PlayerCollect()
+    protected override void PlayerCollect()
     {
         PlayerController.instance.IncreaseMoney(moneyAmount);
         Destroy(transform.root.gameObject);
