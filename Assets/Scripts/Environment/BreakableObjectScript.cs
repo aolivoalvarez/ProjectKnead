@@ -9,6 +9,17 @@ using UnityEngine;
 public class BreakableObjectScript : MonoBehaviour
 {
     [SerializeField] string[] tagsThatDestroyThisObject;
+    [SerializeField] GameObject worldPickupPrefab;
+
+    void BreakObject()
+    {
+        if (GetComponent<BreakableObjectPickupChoice>().GetPickup() != PickupType.None)
+        {
+            GameObject newPickupObject = Instantiate(worldPickupPrefab, transform.position, Quaternion.identity);
+            newPickupObject.GetComponent<WorldPickupChoice>().SetPickup(GetComponent<BreakableObjectPickupChoice>().GetPickup());
+        }
+        Destroy(gameObject);
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,7 +27,7 @@ public class BreakableObjectScript : MonoBehaviour
         {
             if (other.gameObject.CompareTag(currentTag))
             {
-                Destroy(gameObject);
+                BreakObject();
             }
         }
     }

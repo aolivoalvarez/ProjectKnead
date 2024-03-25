@@ -65,3 +65,23 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 702fdaba0c98a0c43bc61f16dc9c2f7a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a904d1f3eccb516498053924d2e5a6f9, type: 3}
+--- !u!1 &5622854517408129046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1912698747114784225, guid: a904d1f3eccb516498053924d2e5a6f9, type: 3}
+  m_PrefabInstance: {fileID: 6089747422699021815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5232552043749338581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5622854517408129046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb5acb7542ca354e9060daf3d300f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagsThatDestroyThisObject:
+  - PlayerSword
+  worldPickupPrefab: {fileID: 2601237028607197377, guid: 387431bb6e8d7a94a8f3041b0e254aa2, type: 3}
