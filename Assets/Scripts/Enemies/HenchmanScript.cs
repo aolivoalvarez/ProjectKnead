@@ -28,6 +28,13 @@ public class HenchmanScript : MonoBehaviour
         Duck
     }
 
+    enum Status //what status the henchman is currently in 
+    {
+        Roaming,
+        Chasing,
+        Returning
+    }
+
     int health;
     [SerializeField] int maxHealth = 4;
     [SerializeField] int attackDamage = 2;
@@ -37,13 +44,14 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] float targetRange = 5f; //once player is in this range, henchman will pursue
     [SerializeField] float attackRange = 2f; //range to player to be able to attack
     [SerializeField] Transform player; //holds reference to player's transform
-   // [SerializeField] float roamDistMax = 10f;
-   // [SerializeField] float roamDistMin = 5f;
+   [SerializeField] float roamDistMax = 10f;
+   [SerializeField] float roamDistMin = 5f;
+    Status status; // what activity state the henchman is in (ie. if it is roaming or chasing)
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
     Animator animator;
     Vector2 startingPosition; //holds henchman's starting position
-    //Vector2 roamPosition; //holds henchman's roaming position
+    Vector2 roamPosition; //holds henchman's roaming position
     NavMeshAgent agent; //holds reference to henchman's navmesh agent
     
 
@@ -92,7 +100,7 @@ public class HenchmanScript : MonoBehaviour
         agent.updateUpAxis = false;
 
 
-        ;    }
+       }
 
 
     private void FixedUpdate()
@@ -100,17 +108,13 @@ public class HenchmanScript : MonoBehaviour
 
         //FindPlayer(); //finds where player is + checks if player is in chasing range
 
-        //agent.SetDestination(player.position);
+        //Roam(transform.position);
+        Roam();
         
         if (Vector2.Distance(transform.position, player.position) <= attackRange) //checks if player is in attack range
         {
             AttackTarget(); //attacks player
         }
-    }
-
-    private void Update()
-    {
-        agent.SetDestination(player.position);
     }
 
     public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
@@ -119,17 +123,22 @@ public class HenchmanScript : MonoBehaviour
         
         if (health <= 0) //checks if health is 0 or less
         {
-            Destroy(gameObject); //destroys gameObject
+            Destroy(this.gameObject); //destroys gameObject
         }
         return;
     }
 
-    /*Vector2 RoamingPosition() //gets position for henchman to roam to while player is out of range
+    void Roam() //gets random position and sets it as henchman's destination within a certain range of its starting position
     {
-        Vector2 roamPos = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
+        //Vector2 currentPos
 
-        return startingPosition + roamPos * Random.Range(roamDistMin, roamDistMax);
-    } */
+
+        Vector2 roamPos = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized; //random vector
+
+        roamPos = startingPosition + roamPos * Random.Range(roamDistMin, roamDistMax); //multiplies vector by random distance
+
+        agent.SetDestination(roamPos); //sets henchman's destination
+    }
 
     void FindPlayer() //checks if player is in chasing range and follows them if they are
     {
