@@ -1752,6 +1752,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5951544308669244107, guid: da46a22621781d2478010fffbfd23ce1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6069889814827003193, guid: da46a22621781d2478010fffbfd23ce1, type: 3}
       propertyPath: m_Name
       value: BeaverHenchman
