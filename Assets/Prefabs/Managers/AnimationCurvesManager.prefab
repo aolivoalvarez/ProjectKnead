@@ -44,6 +44,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1194088f1db00134480bde04dbdb1761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallingItem:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.46631265
+      value: 0.40432137
+      inSlope: 2.9169602
+      outSlope: 2.9169602
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.16331814
+      outWeight: 0.3853746
+    - serializedVersion: 3
+      time: 0.6017805
+      value: 0.997144
+      inSlope: 5.856935
+      outSlope: -1.3071043
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.3768854
+      outWeight: 0.14082235
+    - serializedVersion: 3
+      time: 0.8681515
+      value: 0.9962059
+      inSlope: 1.6571494
+      outSlope: -1.5279293
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.47227523
+      outWeight: 0.14506854
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2.0504704
+      outSlope: 2.0504704
+      tangentMode: 0
+      weightedMode: 1
+      inWeight: 0.36639932
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   droppedPickup:
     serializedVersion: 2
     m_Curve:

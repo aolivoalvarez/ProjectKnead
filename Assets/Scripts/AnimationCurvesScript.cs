@@ -10,6 +10,7 @@ public class AnimationCurvesScript : MonoBehaviour
 {
     public static AnimationCurvesScript instance;
 
+    public AnimationCurve fallingItem;
     public AnimationCurve droppedPickup;
 
     void Awake()
