@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3682445821808716040}
   - component: {fileID: 5987001616934184643}
   - component: {fileID: 8363303315143046822}
-  - component: {fileID: 4106649720016277987}
+  - component: {fileID: 9125646678968415764}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 2
---- !u!114 &4106649720016277987
+--- !u!114 &9125646678968415764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

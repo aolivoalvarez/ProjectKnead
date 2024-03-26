@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6808076295884387371}
   - component: {fileID: 6808076295884387349}
   - component: {fileID: 6808076295884387370}
-  - component: {fileID: -2889930063285362479}
+  - component: {fileID: 6208090592854120673}
   m_Layer: 0
   m_Name: Pit
   m_TagString: Untagged
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pullSpeed: 15
---- !u!114 &-2889930063285362479
+--- !u!114 &6208090592854120673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
