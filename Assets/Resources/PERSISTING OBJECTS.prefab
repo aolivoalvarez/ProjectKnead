@@ -143,10 +143,10 @@ RectTransform:
   m_Father: {fileID: 1558725215301778006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.4843181}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.3899994}
+  m_SizeDelta: {x: 0, y: 0.7900009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3151635252599719725
 MonoBehaviour:
@@ -161,9 +161,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 20
+    m_Left: 10
     m_Right: 0
-    m_Top: 20
+    m_Top: 10
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
@@ -434,10 +434,10 @@ Canvas:
   m_GameObject: {fileID: 1969878513893710976}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 768019424765511209}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -458,10 +458,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 32
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 480, y: 288}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_AssetsPPU: 32
   m_RefResolutionX: 480
   m_RefResolutionY: 288
-  m_UpscaleRT: 0
+  m_UpscaleRT: 1
   m_PixelSnapping: 0
   m_CropFrameX: 1
   m_CropFrameY: 1
@@ -1721,7 +1721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.30800003, y: 0}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.076999664, y: -0.000011444092}
+  m_AnchoredPosition: {x: 0.07699585, y: -0.0000076293945}
   m_SizeDelta: {x: -6.1279907, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3976759940153753727
@@ -1779,7 +1779,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.3
+  m_fontSize: 20.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2224,6 +2224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4012904347226856609}
+  - component: {fileID: 2130897976477115850}
   m_Layer: 5
   m_Name: MoneyCounter
   m_TagString: Untagged
@@ -2248,10 +2249,36 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.216, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0.4843181}
+  m_AnchoredPosition: {x: -0.48999023, y: -0.37449646}
+  m_SizeDelta: {x: -0.98999023, y: -0.75}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2130897976477115850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7062370491019070594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 7
+    m_Right: 0
+    m_Top: 5
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &7773954475215794279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,10 +2449,10 @@ RectTransform:
   m_Father: {fileID: 5249697994446037994}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.6346443}
+  m_AnchorMin: {x: 0, y: 0.46651006}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.69999695}
+  m_SizeDelta: {x: 0, y: -1.4100037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7227023127680425593
 CanvasRenderer:
@@ -2624,9 +2651,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -27.766998, y: 30.277}
-  m_SizeDelta: {x: -89.41301, y: -61.235}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4831713557430967952
 CanvasRenderer:
@@ -3261,6 +3288,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 26559367584239588}
     - target: {fileID: 6238719514270901507, guid: 5bb1b3dc1e608de44a52cf8d77526f64, type: 3}
+      propertyPath: moneyCounter
+      value: 
+      objectReference: {fileID: 7062370491019070594}
+    - target: {fileID: 6238719514270901507, guid: 5bb1b3dc1e608de44a52cf8d77526f64, type: 3}
       propertyPath: hearts.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -3711,7 +3742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2475494024273398935, guid: a3b9c43160ea1d742ba6577f8b54848d, type: 3}
       propertyPath: m_fontSize
-      value: 116.4
+      value: 113.25
       objectReference: {fileID: 0}
     - target: {fileID: 2475494024277729284, guid: a3b9c43160ea1d742ba6577f8b54848d, type: 3}
       propertyPath: m_AnchorMax.y
