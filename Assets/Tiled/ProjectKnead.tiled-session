@@ -1,17 +1,21 @@
 {
-    "activeFile": "Tilemaps/Dungeon0.tmx",
+    "activeFile": "Tilesets/TileSheetTopDownGame.tsx",
     "expandedProjectPaths": [
-        ".",
         "Tilesets",
-        "Tilemaps"
+        "Tilemaps",
+        "ObjectTemplates",
+        "."
     ],
     "fileStates": {
         "Tilemaps/Dungeon0.tmx": {
-            "scale": 1,
+            "expandedGroupLayers": [
+                13
+            ],
+            "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1058,
-                "y": 1180
+                "x": 476,
+                "y": 842
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
@@ -28,7 +32,7 @@
         },
         "Tilesets/TileSheetTopDownGame.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInEditor": 2
         }
     },
     "last.objectTemplatePath": "C:/Users/theco/Documents/Unity Projects/ProjectKnead/Assets/Tiled/ObjectTemplates",
@@ -40,8 +44,8 @@
     "project": "ProjectKnead.tiled-project",
     "property.type": "float",
     "recentFiles": [
-        "Tilesets/TileSheetTopDownGame.tsx",
         "Tilemaps/Dungeon0.tmx",
+        "Tilesets/TileSheetTopDownGame.tsx",
         "Tilesets/FantasyWorldSample500x500.tsx",
         "Tilesets/CaveDungeon.tsx",
         "Tilesets/1080x1920Topdown.tsx"

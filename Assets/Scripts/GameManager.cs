@@ -4,6 +4,7 @@ Author: theco
 Description: For the GameManager prefab. Performs a variety of tasks, such as updating UI elements, performing player respawns, and the GameOver sequence.
 -----------------------------------------*/
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] SceneField gameOverScene;
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject mainCanvas;
+    [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] GameObject[] hearts;
     Image[] emptyHearts;
     Image[] fullHearts;
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
             menuCanvas.SetActive(true);
             mainCanvas.SetActive(true);
         }
-        UpdatePlayerHearts();
+        //UpdatePlayerHearts();
     }
 
     void InitializePlayerHearts()
@@ -85,6 +87,11 @@ public class GameManager : MonoBehaviour
             else
                 fullHearts[i].fillAmount = 1f;
         }
+    }
+
+    public void UpdatePlayerMoney()
+    {
+        moneyText.SetText(PlayerController.instance.money.ToString("0000"));
     }
 
     public void RespawnAtCheckpoint(int damageToInflict = 0)
