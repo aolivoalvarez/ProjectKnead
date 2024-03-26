@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     //---------------------- Misc ----------------------//
     public int maxHealth = 12;
     public int health { get; private set; }
-    [SerializeField] int money;
+    public int money { get; private set; }
     [SerializeField, Tooltip("After taking damage, how long the player is invincible, in seconds.")]
     float invincibilityTime;
     [SerializeField] Transform graphic;
@@ -168,6 +168,7 @@ public class PlayerController : MonoBehaviour
     public void IncreaseHealth(int healthToGain)
     {
         health = (health + healthToGain < maxHealth) ? health + healthToGain : maxHealth;
+        GameManager.instance.UpdatePlayerHearts();
     }
 
     public void DecreaseHealth(int healthToLose)
@@ -187,16 +188,19 @@ public class PlayerController : MonoBehaviour
     public void HealthToMax()
     {
         health = maxHealth;
+        GameManager.instance.UpdatePlayerHearts();
     }
 
     public void IncreaseMoney(int amount)
     {
-        money = (money + amount < 999) ? money + amount : 999;
+        money = (money + amount < 9999) ? money + amount : 9999;
+        GameManager.instance.UpdatePlayerMoney();
     }
 
     public void DecreaseMoney(int amount)
     {
         money = (money - amount > 0) ? money - amount : 0;
+        GameManager.instance.UpdatePlayerMoney();
     }
 
     IEnumerator InvincibleRoutine()
@@ -212,7 +216,9 @@ public class PlayerController : MonoBehaviour
         while (isInvincible)
         {
             yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
             graphic.GetComponent<SpriteRenderer>().color = Color.clear;
+            yield return new WaitForFixedUpdate();
             yield return new WaitForFixedUpdate();
             graphic.GetComponent<SpriteRenderer>().color = Color.white;
         }

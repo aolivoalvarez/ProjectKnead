@@ -6,11 +6,11 @@ Description: Used for all health pickups.
 
 using UnityEngine;
 
-public class HealthPickup : MonoBehaviour, IPickup
+public class HealthPickup : Pickup
 {
     [SerializeField] int healthAmount;
 
-    public void PlayerCollect()
+    protected override void PlayerCollect()
     {
         PlayerController.instance.IncreaseHealth(healthAmount);
         Destroy(transform.root.gameObject);

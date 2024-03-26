@@ -66,12 +66,12 @@ public class InventoryMenuScript : MonoBehaviour
         this.inventory = inventory;
     }
 
-    public void RefreshInventoryItems()
+    /*public void RefreshInventoryItems()
     {
         int x = 0;
         int y = 0;
         float itemSlotCellSize = 30f;
-        foreach (Item item in inventory.GetItemList())
+        foreach (Item item in inventory.currentItem())
         { 
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate,itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
@@ -83,5 +83,5 @@ public class InventoryMenuScript : MonoBehaviour
                 y++;
             }
         }
-    }
+    } */
 }

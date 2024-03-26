@@ -10,13 +10,20 @@ public class BreakableObjectScript : MonoBehaviour
 {
     [SerializeField] string[] tagsThatDestroyThisObject;
 
+    void BreakObject()
+    {
+        if (GetComponent<SpawnPickup>() != null)
+            GetComponent<SpawnPickup>().SpawnThisPickup();
+        Destroy(gameObject);
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         foreach (string currentTag in tagsThatDestroyThisObject)
         {
             if (other.gameObject.CompareTag(currentTag))
             {
-                Destroy(gameObject);
+                BreakObject();
             }
         }
     }

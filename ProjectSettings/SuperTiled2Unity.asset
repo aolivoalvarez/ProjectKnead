@@ -54,9 +54,22 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 0.7372549, g: 0.56078434, b: 0.56078434, a: 1}
   m_CustomObjectTypes:
-  - m_Name: ThrowableObject
+  - m_Name: Ground
     m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
-    m_CustomProperties: []
-  m_PrefabReplacements:
-  - m_TypeName: ThrowableObject
-    m_Prefab: {fileID: 1912698747114784225, guid: a904d1f3eccb516498053924d2e5a6f9, type: 3}
+    m_CustomProperties:
+    - m_Name: unity:SortingLayer
+      m_Type: string
+      m_Value: Ground
+    - m_Name: unity:SortingOrder
+      m_Type: int
+      m_Value: 0
+  - m_Name: Wall
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: unity:SortingLayer
+      m_Type: string
+      m_Value: Default
+    - m_Name: unity:SortingOrder
+      m_Type: int
+      m_Value: 0
+  m_PrefabReplacements: []

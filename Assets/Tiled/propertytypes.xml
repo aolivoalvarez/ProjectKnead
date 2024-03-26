@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objecttypes>
- <objecttype name="ThrowableObject" color="#a0a0a4"/>
  <objecttype name="Ground" color="#a0a0a4">
-  <property name="unity:SortingLayer" type="string" default=""/>
+  <property name="unity:SortingLayer" type="string" default="Ground"/>
   <property name="unity:SortingOrder" type="int" default="0"/>
  </objecttype>
  <objecttype name="Wall" color="#a0a0a4">
-  <property name="spriteSortPointX" type="float" default="0"/>
-  <property name="spriteSortPointY" type="float" default="0"/>
-  <property name="unity:SortingLayer" type="string" default=""/>
+  <property name="unity:SortingLayer" type="string" default="Default"/>
   <property name="unity:SortingOrder" type="int" default="0"/>
  </objecttype>
 </objecttypes>

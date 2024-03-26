@@ -74,7 +74,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 2
-  worldPickupPrefab: {fileID: 2601237028607197377, guid: 387431bb6e8d7a94a8f3041b0e254aa2, type: 3}
 --- !u!114 &6315996802372465990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +103,7 @@ MonoBehaviour:
       Value: {fileID: 0}
     - Key: 6
       Value: {fileID: 0}
+  randomizePickup: 1
   pickupChance:
     _serializedList:
     - Key: 0

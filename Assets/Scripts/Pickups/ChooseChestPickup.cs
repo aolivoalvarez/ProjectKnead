@@ -6,7 +6,7 @@ Description: For pickups that are collected from chests.
 
 using UnityEngine;
 
-public class ChestPickupChoice : PickupChoice
+public class ChooseChestPickup : ChoosePickup
 {
     void Start()
     {
