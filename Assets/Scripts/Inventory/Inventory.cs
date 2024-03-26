@@ -10,22 +10,35 @@ using UnityEngine;
 
 public class Inventory
 {
-    private List<Item> itemList;
-
-    public Inventory()
+    public enum Weapon
     {
-        itemList = new List<Item>();
-
-        AddItem(new Item { itemType = Item.ItemType.Bomb, amount = 1 });
-        Debug.Log(itemList.Count);
+        Spoon,
+        RollingPin,
+        Chancla,
     }
-    public void AddItem(Item item)
+    public enum Shield
     {
-        itemList.Add(item);
+        PotLid,
+        TinFoil,
     }
-
-    public List<Item> GetItemList()
+    public enum Subweapon
     {
-        return itemList;
+        Bomb,
     }
+    public enum Item
+    {
+        Spoon,
+        RollingPin,
+        Chancla,
+        PotLid,
+        TinFoil,
+        Bomb,
+    }
+    
+    public Weapon currentWeapon;
+    public Shield currentShield;
+    public Subweapon currentSubweapon;
+    public Item currentItem;
+
+    Dictionary<Item, bool> collectedItems = new Dictionary<Item, bool>();
 }

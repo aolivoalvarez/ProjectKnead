@@ -8,21 +8,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
+
 public class Item
 {
-    public enum ItemType
-    {
-        Bomb,
-    }
-    public enum WeaponType
-    {
-        Spoon,
-        RollingPin,
-        Chancla,
-    }
-
-    public ItemType itemType;
-    public int amount;
+    
     // Start is called before the first frame update
     void Start()
     {
