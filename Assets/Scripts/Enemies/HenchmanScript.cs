@@ -110,11 +110,16 @@ public class HenchmanScript : MonoBehaviour
 
         //Roam(transform.position);
         Roam();
-        
-        if (Vector2.Distance(transform.position, player.position) <= attackRange) //checks if player is in attack range
+        if (Vector2.Distance(transform.position, player.position) <= targetRange)
+        {
+            Chase();
+        }
+
+
+        /*if (Vector2.Distance(transform.position, player.position) <= attackRange) //checks if player is in attack range
         {
             AttackTarget(); //attacks player
-        }
+        }*/
     }
 
     public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
@@ -138,19 +143,12 @@ public class HenchmanScript : MonoBehaviour
         roamPos = startingPosition + roamPos * Random.Range(roamDistMin, roamDistMax); //multiplies vector by random distance
 
         agent.SetDestination(roamPos); //sets henchman's destination
-    }
-
-    void FindPlayer() //checks if player is in chasing range and follows them if they are
-    {
-        if (Vector2.Distance(transform.position, player.position) <= targetRange)
-        {
-            MoveToPlayer();
-        }
 
         return;
     }
+
     
-    void MoveToPlayer() //moves henchman towards player
+    void Chase() //moves henchman towards player
     {
         /*Vector2 movement = player.position - transform.position;
         movement.Normalize();
