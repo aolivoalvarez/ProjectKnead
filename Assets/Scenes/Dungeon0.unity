@@ -2412,7 +2412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3300117751669150713, guid: 0d0e821fe58389a4ab3faab5f62af4c0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -27.766998
+      value: -27.767014
       objectReference: {fileID: 0}
     - target: {fileID: 3846425151397150519, guid: 0d0e821fe58389a4ab3faab5f62af4c0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2464,11 +2464,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3981112421081104695, guid: 0d0e821fe58389a4ab3faab5f62af4c0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4.056099
+      value: -4.0561066
       objectReference: {fileID: 0}
     - target: {fileID: 4012904347226856609, guid: 0d0e821fe58389a4ab3faab5f62af4c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012904347226856609, guid: 0d0e821fe58389a4ab3faab5f62af4c0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.699997
       objectReference: {fileID: 0}
     - target: {fileID: 4086856789124457376, guid: 0d0e821fe58389a4ab3faab5f62af4c0, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -7842,7 +7846,7 @@ PrefabInstance:
     - target: {fileID: 7748520293542609949, guid: b000c04c0200dce4ea89cb748c676074, type: 3}
       propertyPath: itemToDrop
       value: 
-      objectReference: {fileID: 5622854517408129046, guid: 42962c68ef5583e449e050311b31b728, type: 3}
+      objectReference: {fileID: 220995193763495495, guid: 675bd28d5babbb74da7496b4760f94c3, type: 3}
     - target: {fileID: 7748520293608156236, guid: b000c04c0200dce4ea89cb748c676074, type: 3}
       propertyPath: m_Name
       value: ItemBalloon (1)
@@ -12386,7 +12390,7 @@ PrefabInstance:
     - target: {fileID: 7748520293542609949, guid: b000c04c0200dce4ea89cb748c676074, type: 3}
       propertyPath: itemToDrop
       value: 
-      objectReference: {fileID: 5622854517408129046, guid: 42962c68ef5583e449e050311b31b728, type: 3}
+      objectReference: {fileID: 7882705756193437975, guid: bb114d6eeb3f87d47896dcf0437df7d8, type: 3}
     - target: {fileID: 7748520293608156236, guid: b000c04c0200dce4ea89cb748c676074, type: 3}
       propertyPath: m_Name
       value: ItemBalloon

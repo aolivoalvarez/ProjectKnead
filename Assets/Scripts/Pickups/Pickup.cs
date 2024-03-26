@@ -12,18 +12,29 @@ public abstract class Pickup : MonoBehaviour
 {
     [SerializeField, Tooltip("How long it takes for this pickup to despawn, in seconds.")]
     protected float timeToDespawn = 5f;
-    bool isFlashing;
+    [SerializeField, Tooltip("If true, this pickup will start its despawn routine during its Start function. " +
+                             "If false, this pickup will not despawn until its StartDespawnRoutine function is called.")]
+    public bool autoDespawn = true;
+
+    void Awake()
+    {
+        GetComponent<BoxCollider2D>().isTrigger = true;
+    }
 
     void Start()
     {
-        isFlashing = false;
+        if (autoDespawn)
+            StartDespawnRoutine();
+    }
+
+    public void StartDespawnRoutine()
+    {
         StartCoroutine(DespawnRoutine());
     }
 
     IEnumerator DespawnRoutine()
     {
         yield return new WaitForSeconds(timeToDespawn * 0.5f);
-        isFlashing = true;
         StartCoroutine(FlashingRoutine());
         yield return new WaitForSeconds(timeToDespawn * 0.5f);
         Destroy(gameObject);
@@ -31,7 +42,7 @@ public abstract class Pickup : MonoBehaviour
 
     IEnumerator FlashingRoutine()
     {
-        while (isFlashing)
+        while (true)
         {
             yield return new WaitForFixedUpdate();
             yield return new WaitForFixedUpdate();

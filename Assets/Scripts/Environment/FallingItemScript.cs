@@ -32,6 +32,8 @@ public class FallingItemScript : MonoBehaviour
         {
             GetComponentInChildren<Collider2D>().enabled = true;
             storedItem.transform.SetParent(null);
+            if (storedItem.GetComponent<Pickup>() != null)
+                storedItem.GetComponent<Pickup>().StartDespawnRoutine();
             Destroy(gameObject);
         }
     }

@@ -15,6 +15,11 @@ public class ItemBalloonScript : MonoBehaviour
     void Start()
     {
         storedItem = Instantiate(itemToDrop, GetComponentInChildren<SpriteRenderer>().transform);
+        if (storedItem.GetComponent<Pickup>() != null)
+        {
+            storedItem.GetComponent<Pickup>().StopAllCoroutines();
+            storedItem.GetComponent<Pickup>().autoDespawn = false;
+        }
         // item in balloon should not be collectable yet
         if (storedItem.GetComponent<Collider2D>() != null)
             storedItem.GetComponent<Collider2D>().enabled = false;
