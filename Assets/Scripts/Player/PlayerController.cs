@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidBody { get; private set; }
     public Animator animator;
     public bool isAttacking { get; set; }
+    public bool isShielding { get; set; }
     public bool isLifting { get; set; }
     public bool isHoldingObject { get; set; }
     bool isInvincible;
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour
         health = maxHealth;
         money = 0;
         isAttacking = false;
+        isShielding = false;
         isLifting = false;
         isHoldingObject = false;
         isInvincible = false;
@@ -96,7 +98,7 @@ public class PlayerController : MonoBehaviour
         }
         //--------------------------------------------------//
 
-        if (inputDirection != Vector2.zero && !(isAttacking && isJumping)) // a jumping attack forces you to look in just one direction
+        if (inputDirection != Vector2.zero && !isShielding && !(isAttacking && isJumping)) // a jumping attack forces you to look in just one direction
         {
             lookDirection = new Vector2(Mathf.Round(inputDirection.normalized.x), Mathf.Round(inputDirection.normalized.y));
         }

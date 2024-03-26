@@ -20,17 +20,20 @@ public class PlayerShieldScript : MonoBehaviour
 
     void Update()
     {
-        animator.SetFloat("Look X", playerController.simpleLookDirection.x);
-        animator.SetFloat("Look Y", playerController.simpleLookDirection.y);
-        if (playerController.pInput.Player.Shield.inProgress)
+        if (playerController.pInput.Player.Shield.inProgress && !playerController.isAttacking && !playerController.isHoldingObject &&
+            !playerController.isLifting && !playerController.isJumping)
         {
+            playerController.isShielding = true;
             shield.SetActive(true);
             playerController.moveSpeedMult = 0.5f;
         }
         else
         {
+            playerController.isShielding = false;
             shield.SetActive(false);
             playerController.moveSpeedMult = 1f;
         }
+        animator.SetFloat("Look X", playerController.simpleLookDirection.x);
+        animator.SetFloat("Look Y", playerController.simpleLookDirection.y);
     }
 }

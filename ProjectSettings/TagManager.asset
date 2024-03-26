@@ -8,7 +8,7 @@ TagManager:
   - Checkpoint
   - Enemy
   - PlayerSword
-  - PlayerShield
+  - BlockedByShield
   layers:
   - Default
   - TransparentFX
