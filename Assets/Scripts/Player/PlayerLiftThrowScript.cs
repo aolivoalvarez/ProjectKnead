@@ -80,7 +80,7 @@ public class PlayerLiftThrowScript : MonoBehaviour
 
         GameObject graphic = liftedObject.GetComponentInChildren<SpriteRenderer>().gameObject;
         graphic.transform.position = new Vector2(playerController.transform.position.x, playerController.transform.position.y + liftOffsetY); // object's sprite will appear above the player
-        graphic.GetComponent<SpriteRenderer>().sortingLayerName = "AboveCharacter";
+        graphic.GetComponent<SpriteRenderer>().sortingLayerName = "AboveEntity";
         graphic.GetComponent<Animator>().enabled = true;
     }
 }

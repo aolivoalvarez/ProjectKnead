@@ -4,6 +4,7 @@ Author: theco
 Description: Base class for all pickups.
 -----------------------------------------*/
 
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 
@@ -30,6 +31,16 @@ public abstract class Pickup : MonoBehaviour
     public void StartDespawnRoutine()
     {
         StartCoroutine(DespawnRoutine());
+    }
+
+    public IEnumerator BounceRoutine(Tween bounceTween)
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
+        while (bounceTween.IsActive())
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        GetComponent<BoxCollider2D>().enabled = true;
     }
 
     IEnumerator DespawnRoutine()
