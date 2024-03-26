@@ -54,9 +54,58 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 0.7372549, g: 0.56078434, b: 0.56078434, a: 1}
   m_CustomObjectTypes:
-  - m_Name: ThrowableObject
+  - m_Name: Bush
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties: []
+  - m_Name: Chest
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties: []
+  - m_Name: Ground
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: unity:SortingLayer
+      m_Type: string
+      m_Value: Ground
+    - m_Name: unity:SortingOrder
+      m_Type: int
+      m_Value: 0
+  - m_Name: ItemBalloon
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties: []
+  - m_Name: Pit
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties: []
+  - m_Name: Pot
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties: []
+  - m_Name: Wall
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: spriteSortPointX
+      m_Type: float
+      m_Value: 0.5
+    - m_Name: spriteSortPointY
+      m_Type: float
+      m_Value: 0.5
+    - m_Name: unity:SortingLayer
+      m_Type: string
+      m_Value: Default
+    - m_Name: unity:SortingOrder
+      m_Type: int
+      m_Value: 0
+  - m_Name: Spikes
     m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
     m_CustomProperties: []
   m_PrefabReplacements:
-  - m_TypeName: ThrowableObject
-    m_Prefab: {fileID: 1912698747114784225, guid: a904d1f3eccb516498053924d2e5a6f9, type: 3}
+  - m_TypeName: Pot
+    m_Prefab: {fileID: 6573353802304816287, guid: 6f5c655d0277c784588e5e9611e56ab2, type: 3}
+  - m_TypeName: Bush
+    m_Prefab: {fileID: 8047604975241241305, guid: 9b5ded7fffb9da94c891ef66502bb65a, type: 3}
+  - m_TypeName: Chest
+    m_Prefab: {fileID: 7833335025448247421, guid: 88bf8afb4e53c04469ca7a97e9a73e65, type: 3}
+  - m_TypeName: ItemBalloon
+    m_Prefab: {fileID: 1864272350505069159, guid: 54f5bb2cb4a01374ab3e65efc11cb9fd, type: 3}
+  - m_TypeName: Pit
+    m_Prefab: {fileID: 5192178500379542223, guid: 64546f0cf60ef254ab57ac5de284aa56, type: 3}
+  - m_TypeName: Spikes
+    m_Prefab: {fileID: 1947793067076813164, guid: b94fbdce1c602b34bb6ea701a674566f, type: 3}

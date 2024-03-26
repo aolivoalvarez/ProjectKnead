@@ -5,9 +5,7 @@ Description: Base class for all pickups.
 -----------------------------------------*/
 
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent (typeof(BoxCollider2D)), RequireComponent (typeof(SpriteRenderer))]
 public abstract class Pickup : MonoBehaviour

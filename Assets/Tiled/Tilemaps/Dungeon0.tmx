@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="32" height="38" tilewidth="32" tileheight="32" infinite="1" nextlayerid="7" nextobjectid="11">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="32" height="47" tilewidth="32" tileheight="32" infinite="1" nextlayerid="15" nextobjectid="198">
  <tileset firstgid="1" source="../Tilesets/TileSheetTopDownGame.tsx"/>
- <tileset firstgid="226" source="../Tilesets/CaveDungeon.tsx"/>
- <layer id="5" name="Floor" class="Ground" width="32" height="38" locked="1">
+ <layer id="5" name="Floor" class="Ground" width="32" height="47" locked="1">
   <properties>
    <property name="unity:SortingLayer" value="Ground"/>
   </properties>
   <data encoding="csv">
-   <chunk x="0" y="-16" width="16" height="16">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+   <chunk x="0" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,5,5,5,5,5,5,0,5,5,5,5,5,118,0,
 0,5,5,5,5,5,5,118,5,118,5,5,5,5,117,117,
@@ -23,16 +15,16 @@
 0,0,5,5,117,117,117,117,117,117,117,117,117,5,117,117,
 0,5,117,5,117,117,117,117,117,117,117,117,117,5,117,117,
 0,5,117,5,117,5,5,5,5,5,5,5,5,5,117,117,
-0,5,117,5,5,5,117,117,5,117,117,117,117,117,117,117
-</chunk>
-   <chunk x="0" y="0" width="16" height="16">
+0,5,117,5,5,5,117,117,5,117,117,117,117,117,117,117,
 0,0,118,118,118,118,118,118,5,118,118,118,118,118,118,0,
 0,0,5,5,5,5,5,5,5,5,5,5,5,5,118,0,
 0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
 0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
 0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
 0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
-0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
+0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0
+</chunk>
+   <chunk x="0" y="16" width="16" height="16">
 0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
 0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
 0,0,118,118,118,118,118,118,5,118,118,118,118,118,118,0,
@@ -41,16 +33,16 @@
 0,117,5,5,117,117,117,117,117,117,117,5,5,117,117,117,
 0,117,5,5,117,5,5,5,5,117,117,5,5,117,117,117,
 0,117,5,5,117,5,5,5,5,5,117,5,5,117,117,117,
-0,117,5,5,5,5,117,117,5,5,5,5,117,117,117,117
-</chunk>
-   <chunk x="0" y="16" width="16" height="16">
+0,117,5,5,5,5,117,117,5,5,5,5,117,117,117,117,
 0,117,117,5,5,5,5,5,5,117,117,117,117,117,117,117,
 0,117,117,117,117,117,0,5,5,117,117,117,117,117,117,117,
 0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
 0,0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 0,117,117,118,118,118,118,118,5,117,117,117,117,117,117,117,
 0,117,117,117,117,5,5,5,5,5,5,5,117,117,117,117,
-0,117,117,117,5,5,5,5,5,5,5,5,5,117,117,117,
+0,117,117,117,5,5,5,5,5,5,5,5,5,117,117,117
+</chunk>
+   <chunk x="0" y="32" width="16" height="16">
 0,117,117,5,5,117,117,117,117,117,117,117,5,5,117,117,
 0,117,117,5,5,5,5,5,5,5,5,5,5,5,117,117,
 0,117,117,117,5,5,5,5,5,5,5,5,5,117,117,117,
@@ -59,16 +51,16 @@
 0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
 0,117,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 0,117,117,117,117,117,117,5,5,5,117,117,117,117,117,5,
-0,117,117,117,117,117,117,5,5,5,117,117,117,117,117,5
+0,117,117,117,117,117,117,5,5,5,117,117,117,117,117,5,
+0,117,117,117,117,117,117,117,5,5,5,5,5,5,5,5,
+0,117,117,117,117,117,117,117,5,117,117,117,117,117,117,118,
+0,117,117,117,117,117,117,117,5,117,117,117,117,117,117,118,
+0,117,117,117,117,117,117,117,5,117,117,117,117,117,117,118,
+0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
-   <chunk x="16" y="16" width="16" height="16">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+   <chunk x="16" y="32" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 118,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 118,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -77,61 +69,25 @@
 0,117,117,117,117,117,117,117,117,117,117,117,117,117,0,0,
 5,5,5,5,5,5,5,5,5,5,5,5,5,5,118,0,
 5,117,117,117,117,117,117,117,117,117,117,117,117,117,118,0,
-118,117,117,117,117,117,117,117,117,117,117,117,117,117,118,0
-</chunk>
-   <chunk x="0" y="32" width="16" height="16">
-0,117,117,117,117,117,117,117,5,5,5,5,5,5,5,5,
-0,117,117,117,117,117,117,117,5,117,117,117,117,117,117,118,
-0,117,117,117,117,117,117,117,5,117,117,117,117,117,117,118,
-0,117,117,117,117,117,117,117,5,117,117,117,117,117,117,118,
-0,0,117,117,117,117,117,117,5,117,117,117,117,117,117,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-</chunk>
-   <chunk x="16" y="32" width="16" height="16">
+118,117,117,117,117,117,117,117,117,117,117,117,117,117,118,0,
 5,5,5,5,5,5,5,117,117,117,117,117,117,117,118,0,
 118,117,117,117,117,117,5,5,117,117,117,117,117,117,118,0,
 118,117,117,117,117,117,117,5,117,117,117,117,117,117,118,0,
 118,117,117,117,117,117,117,5,117,117,117,117,117,117,118,0,
 0,118,118,118,118,118,118,5,118,118,118,118,118,118,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
   </data>
  </layer>
- <layer id="3" name="Walls" class="Wall" width="32" height="38">
+ <layer id="3" name="Walls" class="Wall" width="32" height="47" locked="1">
   <properties>
    <property name="spriteSortPointX" type="float" value="0.5"/>
    <property name="spriteSortPointY" type="float" value="0.5"/>
    <property name="unity:SortingLayer" value="Default"/>
   </properties>
   <data encoding="csv">
-   <chunk x="0" y="-16" width="16" height="16">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,114,114,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+   <chunk x="0" y="0" width="16" height="16">
 112,112,195,195,195,195,195,195,112,195,195,195,195,195,195,112,
 112,112,222,222,222,222,222,222,214,222,222,222,222,222,222,112,
 112,110,0,0,0,0,0,0,222,0,0,0,0,0,0,111,
@@ -140,43 +96,14 @@
 112,112,164,0,195,222,222,222,222,222,222,222,223,0,0,111,
 112,110,0,0,225,0,0,0,0,0,0,0,0,0,0,111,
 112,110,128,0,0,0,0,0,0,0,0,0,0,0,0,111,
-112,110,0,0,0,0,186,185,0,0,0,0,0,0,0,111
-</chunk>
-   <chunk x="16" y="-16" width="16" height="16">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-</chunk>
-   <chunk x="0" y="0" width="16" height="16">
+112,110,0,0,0,0,186,185,0,0,0,0,0,0,0,111,
 112,112,183,183,207,207,214,215,0,209,210,210,210,188,188,112,
 112,112,112,112,222,222,222,223,0,224,222,222,222,112,112,112,
 112,112,112,110,128,128,128,128,0,128,128,128,128,111,112,112,
 112,112,112,110,0,0,0,0,0,0,0,0,0,111,112,112,
 112,112,112,110,0,0,0,0,0,0,0,0,0,111,112,112,
 112,112,112,110,0,0,0,0,0,0,0,0,0,111,112,112,
-112,112,112,110,0,0,0,0,0,0,0,0,0,111,112,112,
-112,112,112,110,0,0,0,0,0,0,0,0,0,111,112,112,
-112,112,112,110,168,168,168,170,0,171,172,172,172,111,112,112,
-112,112,214,214,207,207,207,208,0,209,210,210,210,217,217,112,
-112,112,222,222,222,222,222,223,0,224,222,222,222,222,222,112,
-112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
-112,110,0,0,216,164,164,164,164,215,0,0,0,0,0,111,
-112,110,0,0,224,0,0,0,0,223,0,0,0,0,0,111,
-112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
-112,110,0,0,0,0,183,0,0,0,0,0,0,0,0,111
+112,112,112,110,0,0,0,0,0,0,0,0,0,111,112,112
 </chunk>
    <chunk x="16" y="0" width="16" height="16">
 112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -197,22 +124,22 @@
 112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
    <chunk x="0" y="16" width="16" height="16">
+112,112,112,110,0,0,0,0,0,0,0,0,0,111,112,112,
+112,112,112,110,168,168,168,170,0,171,172,172,172,111,112,112,
+112,112,214,214,207,207,207,208,0,209,210,210,210,217,217,112,
+112,112,222,222,222,222,222,223,0,224,222,222,222,222,222,112,
+112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
+112,110,0,0,216,164,164,164,164,215,0,0,0,0,0,111,
+112,110,0,0,224,0,0,0,0,223,0,0,0,0,0,111,
+112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
+112,110,0,0,0,0,183,0,0,0,0,0,0,0,0,111,
 112,110,0,0,0,0,199,0,0,0,0,0,0,0,0,111,
 112,110,0,0,0,0,199,0,0,0,0,0,0,0,0,111,
 112,112,207,207,207,207,195,208,0,209,210,210,210,210,210,112,
 112,112,222,222,222,222,222,223,0,224,225,225,225,225,225,112,
 112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
 112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
-112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
-112,110,0,0,0,164,164,164,164,164,164,164,0,0,0,111,
-112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
-112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
-112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
-112,112,207,207,207,207,207,208,0,209,210,210,210,210,210,112,
-112,112,222,222,222,222,222,223,0,224,225,225,225,225,225,112,
-112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,112,
-112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,195,
-112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,222
+112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111
 </chunk>
    <chunk x="16" y="16" width="16" height="16">
 112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -226,49 +153,223 @@
 112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-112,195,195,195,195,195,195,195,195,195,195,195,195,195,112,202,
-112,222,222,222,222,222,222,222,222,222,222,222,222,222,112,202,
-112,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202,
-195,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202,
-222,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
    <chunk x="0" y="32" width="16" height="16">
+112,110,0,0,0,164,164,164,164,164,164,164,0,0,0,111,
+112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
+112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
+112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,111,
+112,112,207,207,207,207,207,208,0,209,210,210,210,210,210,112,
+112,112,222,222,222,222,222,223,0,224,225,225,225,225,225,112,
+112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,112,
+112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,195,
+112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,222,
 112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 112,112,164,180,164,0,0,0,0,0,0,0,0,0,0,183,
 112,110,0,0,0,0,0,0,0,0,0,0,0,0,0,199,
 112,110,0,180,0,0,0,0,0,0,0,0,0,0,0,199,
 112,112,182,183,184,184,184,189,0,182,188,188,188,188,189,199,
 112,112,112,112,112,112,112,112,112,112,112,112,112,112,112,112,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
    <chunk x="16" y="32" width="16" height="16">
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+112,195,195,195,195,195,195,195,195,195,195,195,195,195,112,202,
+112,222,222,222,222,222,222,222,222,222,222,222,222,222,112,202,
+112,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202,
+195,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202,
+222,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202,
 183,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202,
 199,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202,
 199,0,0,0,0,0,0,0,0,0,0,0,0,0,111,202,
 199,182,184,184,184,184,189,0,182,187,188,188,188,189,112,202,
 112,112,112,112,112,112,112,112,112,112,112,112,112,112,112,202,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
   </data>
  </layer>
- <objectgroup id="4" name="Pots" locked="1"/>
+ <group id="13" name="Objects" locked="1">
+  <objectgroup id="4" name="Pots" locked="1">
+   <object id="20" template="../ObjectTemplates/Pot.tx" x="576" y="1248"/>
+   <object id="21" template="../ObjectTemplates/Pot.tx" x="544" y="1248"/>
+   <object id="22" template="../ObjectTemplates/Pot.tx" x="608" y="1248"/>
+   <object id="23" template="../ObjectTemplates/Pot.tx" x="640" y="1248"/>
+   <object id="24" template="../ObjectTemplates/Pot.tx" x="704" y="1248"/>
+   <object id="25" template="../ObjectTemplates/Pot.tx" x="672" y="1248"/>
+   <object id="26" template="../ObjectTemplates/Pot.tx" x="736" y="1248"/>
+   <object id="27" template="../ObjectTemplates/Pot.tx" x="768" y="1248"/>
+   <object id="28" template="../ObjectTemplates/Pot.tx" x="832" y="1248"/>
+   <object id="29" template="../ObjectTemplates/Pot.tx" x="800" y="1248"/>
+   <object id="30" template="../ObjectTemplates/Pot.tx" x="864" y="1248"/>
+   <object id="31" template="../ObjectTemplates/Pot.tx" x="896" y="1248"/>
+   <object id="32" template="../ObjectTemplates/Pot.tx" x="928" y="1248"/>
+   <object id="33" template="../ObjectTemplates/Pot.tx" x="576" y="1280"/>
+   <object id="34" template="../ObjectTemplates/Pot.tx" x="544" y="1280"/>
+   <object id="35" template="../ObjectTemplates/Pot.tx" x="608" y="1280"/>
+   <object id="36" template="../ObjectTemplates/Pot.tx" x="640" y="1280"/>
+   <object id="37" template="../ObjectTemplates/Pot.tx" x="704" y="1280"/>
+   <object id="38" template="../ObjectTemplates/Pot.tx" x="672" y="1280"/>
+   <object id="39" template="../ObjectTemplates/Pot.tx" x="736" y="1280"/>
+   <object id="40" template="../ObjectTemplates/Pot.tx" x="768" y="1280"/>
+   <object id="41" template="../ObjectTemplates/Pot.tx" x="832" y="1280"/>
+   <object id="42" template="../ObjectTemplates/Pot.tx" x="800" y="1280"/>
+   <object id="43" template="../ObjectTemplates/Pot.tx" x="864" y="1280"/>
+   <object id="44" template="../ObjectTemplates/Pot.tx" x="896" y="1280"/>
+   <object id="45" template="../ObjectTemplates/Pot.tx" x="928" y="1280"/>
+   <object id="46" template="../ObjectTemplates/Pot.tx" x="576" y="1440"/>
+   <object id="47" template="../ObjectTemplates/Pot.tx" x="544" y="1440"/>
+   <object id="48" template="../ObjectTemplates/Pot.tx" x="608" y="1440"/>
+   <object id="49" template="../ObjectTemplates/Pot.tx" x="640" y="1440"/>
+   <object id="51" template="../ObjectTemplates/Pot.tx" x="672" y="1440"/>
+   <object id="54" template="../ObjectTemplates/Pot.tx" x="832" y="1440"/>
+   <object id="55" template="../ObjectTemplates/Pot.tx" x="800" y="1440"/>
+   <object id="56" template="../ObjectTemplates/Pot.tx" x="864" y="1440"/>
+   <object id="57" template="../ObjectTemplates/Pot.tx" x="896" y="1440"/>
+   <object id="58" template="../ObjectTemplates/Pot.tx" x="928" y="1440"/>
+   <object id="59" template="../ObjectTemplates/Pot.tx" x="576" y="1408"/>
+   <object id="60" template="../ObjectTemplates/Pot.tx" x="544" y="1408"/>
+   <object id="61" template="../ObjectTemplates/Pot.tx" x="608" y="1408"/>
+   <object id="62" template="../ObjectTemplates/Pot.tx" x="640" y="1408"/>
+   <object id="64" template="../ObjectTemplates/Pot.tx" x="672" y="1408"/>
+   <object id="67" template="../ObjectTemplates/Pot.tx" x="832" y="1408"/>
+   <object id="68" template="../ObjectTemplates/Pot.tx" x="800" y="1408"/>
+   <object id="69" template="../ObjectTemplates/Pot.tx" x="864" y="1408"/>
+   <object id="70" template="../ObjectTemplates/Pot.tx" x="896" y="1408"/>
+   <object id="71" template="../ObjectTemplates/Pot.tx" x="928" y="1408"/>
+   <object id="72" template="../ObjectTemplates/Pot.tx" x="832" y="1376"/>
+   <object id="73" template="../ObjectTemplates/Pot.tx" x="800" y="1376"/>
+   <object id="74" template="../ObjectTemplates/Pot.tx" x="864" y="1376"/>
+   <object id="75" template="../ObjectTemplates/Pot.tx" x="896" y="1376"/>
+   <object id="76" template="../ObjectTemplates/Pot.tx" x="928" y="1376"/>
+   <object id="77" template="../ObjectTemplates/Pot.tx" x="832" y="1344"/>
+   <object id="78" template="../ObjectTemplates/Pot.tx" x="800" y="1344"/>
+   <object id="79" template="../ObjectTemplates/Pot.tx" x="864" y="1344"/>
+   <object id="80" template="../ObjectTemplates/Pot.tx" x="896" y="1344"/>
+   <object id="81" template="../ObjectTemplates/Pot.tx" x="928" y="1344"/>
+   <object id="82" template="../ObjectTemplates/Pot.tx" x="832" y="1312"/>
+   <object id="83" template="../ObjectTemplates/Pot.tx" x="800" y="1312"/>
+   <object id="84" template="../ObjectTemplates/Pot.tx" x="864" y="1312"/>
+   <object id="85" template="../ObjectTemplates/Pot.tx" x="896" y="1312"/>
+   <object id="86" template="../ObjectTemplates/Pot.tx" x="928" y="1312"/>
+   <object id="87" template="../ObjectTemplates/Pot.tx" x="64" y="1152"/>
+   <object id="88" template="../ObjectTemplates/Pot.tx" x="64" y="1120"/>
+   <object id="89" template="../ObjectTemplates/Pot.tx" x="96" y="1152"/>
+   <object id="90" template="../ObjectTemplates/Pot.tx" x="64" y="960"/>
+   <object id="91" template="../ObjectTemplates/Pot.tx" x="64" y="992"/>
+   <object id="92" template="../ObjectTemplates/Pot.tx" x="96" y="960"/>
+   <object id="93" template="../ObjectTemplates/Pot.tx" x="64" y="864"/>
+   <object id="94" template="../ObjectTemplates/Pot.tx" x="128" y="864"/>
+   <object id="95" template="../ObjectTemplates/Pot.tx" x="96" y="864"/>
+   <object id="96" template="../ObjectTemplates/Pot.tx" x="160" y="864"/>
+   <object id="98" template="../ObjectTemplates/Pot.tx" x="64" y="704"/>
+   <object id="100" template="../ObjectTemplates/Pot.tx" x="128" y="384"/>
+   <object id="101" template="../ObjectTemplates/Pot.tx" x="128" y="416"/>
+   <object id="102" template="../ObjectTemplates/Pot.tx" x="128" y="448"/>
+   <object id="104" template="../ObjectTemplates/Pot.tx" x="128" y="480"/>
+   <object id="105" template="../ObjectTemplates/Pot.tx" x="128" y="512"/>
+   <object id="106" template="../ObjectTemplates/Pot.tx" x="128" y="544"/>
+   <object id="107" template="../ObjectTemplates/Pot.tx" x="128" y="576"/>
+   <object id="108" template="../ObjectTemplates/Pot.tx" x="384" y="384"/>
+   <object id="109" template="../ObjectTemplates/Pot.tx" x="384" y="416"/>
+   <object id="110" template="../ObjectTemplates/Pot.tx" x="384" y="448"/>
+   <object id="111" template="../ObjectTemplates/Pot.tx" x="384" y="480"/>
+   <object id="112" template="../ObjectTemplates/Pot.tx" x="384" y="512"/>
+   <object id="113" template="../ObjectTemplates/Pot.tx" x="384" y="544"/>
+   <object id="114" template="../ObjectTemplates/Pot.tx" x="384" y="576"/>
+  </objectgroup>
+  <objectgroup id="8" name="Chests" locked="1">
+   <object id="187" template="../ObjectTemplates/Chest.tx" x="96" y="1376"/>
+   <object id="188" template="../ObjectTemplates/Chest.tx" x="416" y="1056"/>
+  </objectgroup>
+  <objectgroup id="14" name="Balloons" locked="1">
+   <object id="189" template="../ObjectTemplates/ItemBalloon.tx" x="256" y="480"/>
+  </objectgroup>
+  <objectgroup id="9" name="Pits" locked="1">
+   <object id="115" template="../ObjectTemplates/Pit.tx" x="192" y="1248"/>
+   <object id="116" template="../ObjectTemplates/Pit.tx" x="192" y="1280"/>
+   <object id="117" template="../ObjectTemplates/Pit.tx" x="224" y="1312"/>
+   <object id="118" template="../ObjectTemplates/Pit.tx" x="256" y="1312"/>
+   <object id="119" template="../ObjectTemplates/Pit.tx" x="288" y="1312"/>
+   <object id="120" template="../ObjectTemplates/Pit.tx" x="320" y="1280"/>
+   <object id="121" template="../ObjectTemplates/Pit.tx" x="320" y="1248"/>
+   <object id="122" template="../ObjectTemplates/Pit.tx" x="160" y="1088"/>
+   <object id="123" template="../ObjectTemplates/Pit.tx" x="160" y="1120"/>
+   <object id="124" template="../ObjectTemplates/Pit.tx" x="160" y="1152"/>
+   <object id="125" template="../ObjectTemplates/Pit.tx" x="352" y="1088"/>
+   <object id="126" template="../ObjectTemplates/Pit.tx" x="352" y="1120"/>
+   <object id="127" template="../ObjectTemplates/Pit.tx" x="352" y="1152"/>
+   <object id="128" template="../ObjectTemplates/Pit.tx" x="128" y="1056"/>
+   <object id="129" template="../ObjectTemplates/Pit.tx" x="64" y="1056"/>
+   <object id="132" template="../ObjectTemplates/Pit.tx" x="192" y="960"/>
+   <object id="133" template="../ObjectTemplates/Pit.tx" x="192" y="992"/>
+   <object id="134" template="../ObjectTemplates/Pit.tx" x="192" y="1024"/>
+   <object id="135" template="../ObjectTemplates/Pit.tx" x="288" y="1024"/>
+   <object id="136" template="../ObjectTemplates/Pit.tx" x="320" y="1024"/>
+   <object id="137" template="../ObjectTemplates/Pit.tx" x="352" y="1024"/>
+   <object id="138" template="../ObjectTemplates/Pit.tx" x="320" y="992"/>
+   <object id="139" template="../ObjectTemplates/Pit.tx" x="288" y="960"/>
+   <object id="140" template="../ObjectTemplates/Pit.tx" x="320" y="960"/>
+   <object id="141" template="../ObjectTemplates/Pit.tx" x="352" y="960"/>
+   <object id="142" template="../ObjectTemplates/Pit.tx" x="64" y="768"/>
+   <object id="143" template="../ObjectTemplates/Pit.tx" x="96" y="768"/>
+   <object id="144" template="../ObjectTemplates/Pit.tx" x="128" y="768"/>
+   <object id="145" template="../ObjectTemplates/Pit.tx" x="160" y="768"/>
+   <object id="146" template="../ObjectTemplates/Pit.tx" x="192" y="768"/>
+   <object id="147" template="../ObjectTemplates/Pit.tx" x="224" y="768"/>
+   <object id="148" template="../ObjectTemplates/Pit.tx" x="256" y="768"/>
+   <object id="149" template="../ObjectTemplates/Pit.tx" x="288" y="768"/>
+   <object id="150" template="../ObjectTemplates/Pit.tx" x="320" y="768"/>
+   <object id="151" template="../ObjectTemplates/Pit.tx" x="352" y="768"/>
+   <object id="152" template="../ObjectTemplates/Pit.tx" x="384" y="768"/>
+   <object id="153" template="../ObjectTemplates/Pit.tx" x="416" y="768"/>
+   <object id="154" template="../ObjectTemplates/Pit.tx" x="448" y="768"/>
+  </objectgroup>
+  <objectgroup id="10" name="Bushes" locked="1">
+   <object id="158" template="../ObjectTemplates/Bush.tx" x="128" y="1408"/>
+   <object id="159" template="../ObjectTemplates/Bush.tx" x="128" y="1440"/>
+   <object id="160" template="../ObjectTemplates/Bush.tx" x="384" y="1248"/>
+   <object id="161" template="../ObjectTemplates/Bush.tx" x="384" y="1312"/>
+   <object id="162" template="../ObjectTemplates/Bush.tx" x="384" y="1280"/>
+   <object id="163" template="../ObjectTemplates/Bush.tx" x="384" y="1344"/>
+   <object id="164" template="../ObjectTemplates/Bush.tx" x="384" y="1376"/>
+   <object id="166" template="../ObjectTemplates/Bush.tx" x="384" y="1408"/>
+   <object id="167" template="../ObjectTemplates/Bush.tx" x="384" y="1440"/>
+   <object id="168" template="../ObjectTemplates/Bush.tx" x="288" y="800"/>
+   <object id="169" template="../ObjectTemplates/Bush.tx" x="288" y="832"/>
+   <object id="170" template="../ObjectTemplates/Bush.tx" x="288" y="864"/>
+   <object id="171" template="../ObjectTemplates/Bush.tx" x="320" y="832"/>
+   <object id="172" template="../ObjectTemplates/Bush.tx" x="352" y="832"/>
+   <object id="173" template="../ObjectTemplates/Bush.tx" x="384" y="832"/>
+   <object id="174" template="../ObjectTemplates/Bush.tx" x="416" y="832"/>
+   <object id="176" template="../ObjectTemplates/Bush.tx" x="448" y="832"/>
+   <object id="177" template="../ObjectTemplates/Bush.tx" x="448" y="864"/>
+   <object id="178" template="../ObjectTemplates/Bush.tx" x="416" y="864"/>
+   <object id="179" template="../ObjectTemplates/Bush.tx" x="384" y="864"/>
+   <object id="180" template="../ObjectTemplates/Bush.tx" x="352" y="864"/>
+   <object id="181" template="../ObjectTemplates/Bush.tx" x="320" y="864"/>
+   <object id="182" template="../ObjectTemplates/Bush.tx" x="288" y="672"/>
+   <object id="183" template="../ObjectTemplates/Bush.tx" x="288" y="256"/>
+   <object id="184" template="../ObjectTemplates/Bush.tx" x="288" y="224"/>
+   <object id="185" template="../ObjectTemplates/Bush.tx" x="288" y="288"/>
+  </objectgroup>
+  <objectgroup id="12" name="Spikes" locked="1">
+   <object id="190" template="../ObjectTemplates/Spikes.tx" x="416" y="96"/>
+   <object id="191" template="../ObjectTemplates/Spikes.tx" x="448" y="96"/>
+   <object id="192" template="../ObjectTemplates/Spikes.tx" x="416" y="160"/>
+   <object id="193" template="../ObjectTemplates/Spikes.tx" x="416" y="192"/>
+   <object id="194" template="../ObjectTemplates/Spikes.tx" x="64" y="224"/>
+   <object id="195" template="../ObjectTemplates/Spikes.tx" x="64" y="256"/>
+   <object id="196" template="../ObjectTemplates/Spikes.tx" x="64" y="800"/>
+   <object id="197" template="../ObjectTemplates/Spikes.tx" x="64" y="832"/>
+  </objectgroup>
+ </group>
 </map>
