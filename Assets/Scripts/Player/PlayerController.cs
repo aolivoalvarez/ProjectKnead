@@ -4,6 +4,7 @@ Author: theco
 Description: The main script for the Player object. Controls player input, movement, most animations, and variables like health and money.
 -----------------------------------------*/
 
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform attackRotationPoint;
     [SerializeField] Transform liftRotationPoint;
     public Rigidbody2D rigidBody { get; private set; }
-    Animator animator;
+    public Animator animator;
     public bool isAttacking { get; set; }
     public bool isLifting { get; set; }
     public bool isHoldingObject { get; set; }
@@ -80,7 +81,7 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
         canJump = true;
         rigidBody = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
+        animator = graphic.gameObject.GetComponent<Animator>();
     }
 
     void Update()
