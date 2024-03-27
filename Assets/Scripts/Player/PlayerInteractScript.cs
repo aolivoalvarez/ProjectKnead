@@ -7,10 +7,18 @@ Description: Handles the lifting and throwing of objects by the Player.
 using System.Collections;
 using UnityEngine;
 
-public class PlayerLiftThrowScript : MonoBehaviour
+public class PlayerInteractScript : MonoBehaviour
 {
     PlayerController playerController;
-    LiftHitboxScript liftHitboxScript;
+    InteractHitboxScript interactHitboxScript;
+
+    [Header("Chest Opening")]
+    [SerializeField, Tooltip("How long it takes to open a chest, in seconds.")]
+    float openingWaitTime = 0.25f;
+    [SerializeField, Tooltip("How long the chest item is held above Canela's head, in seconds.")]
+    float holdItemWaitTime = 2f;
+    [SerializeField, Tooltip("How high above the player the chest item is held.")]
+    float chestItemOffsetY = 2f;
 
     [Header("Lifting")]
     [SerializeField, Tooltip("How long it takes to lift an object, in seconds.")]
@@ -30,19 +38,23 @@ public class PlayerLiftThrowScript : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlayerController>();
-        liftHitboxScript = GetComponentInChildren<LiftHitboxScript>();
+        interactHitboxScript = GetComponentInChildren<InteractHitboxScript>();
     }
 
     void Update()
     {
         playerController.isHoldingObject = liftedObject != null;
 
-        if (playerController.pInput.Player.Interact.triggered)
+        if (playerController.pInput.Player.Interact.triggered && !playerController.isHoldingObject && !playerController.isAttacking &&
+            !playerController.isJumping && !playerController.isShielding)
         {
-            // Lift
-            if (liftHitboxScript.objectToLift != null && !playerController.isHoldingObject && !playerController.isAttacking && !playerController.isJumping)
+            // Open chest
+            if (interactHitboxScript.chestToOpen != null)
+                StartCoroutine(OpenChestRoutine(interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().OpenChest()));
+            // Lift object
+            else if (interactHitboxScript.objectToLift != null)
                 StartCoroutine(LiftRoutine());
-            // Throw
+            // Throw object
             else if (liftedObject != null && !playerController.isLifting)
             {
                 liftedObject.transform.SetParent(null);
@@ -64,7 +76,7 @@ public class PlayerLiftThrowScript : MonoBehaviour
     IEnumerator LiftRoutine()
     {
         playerController.isLifting = true;
-        liftedObject = liftHitboxScript.objectToLift;
+        liftedObject = interactHitboxScript.objectToLift;
         yield return new WaitForSeconds(liftTime);
         playerController.isLifting = false;
 
@@ -82,5 +94,19 @@ public class PlayerLiftThrowScript : MonoBehaviour
         graphic.transform.position = new Vector2(playerController.transform.position.x, playerController.transform.position.y + liftOffsetY); // object's sprite will appear above the player
         graphic.GetComponent<SpriteRenderer>().sortingLayerName = "AboveEntity";
         graphic.GetComponent<Animator>().enabled = true;
+    }
+
+    IEnumerator OpenChestRoutine(GameObject itemFromChest)
+    {
+        GameManager.instance.DisablePlayerInput();
+        yield return new WaitForSeconds(openingWaitTime);
+        var heldItem = Instantiate(itemFromChest, new Vector3(transform.position.x, transform.position.y + chestItemOffsetY, transform.position.z), Quaternion.identity);
+        heldItem.GetComponent<Collider2D>().enabled = false; // items from chests should not be tangible to the player
+        heldItem.GetComponent<Pickup>().autoDespawn = false;
+        heldItem.GetComponent<Pickup>().StopAllCoroutines();
+        heldItem.GetComponent<Pickup>().PlayerCollectDontDestroy();
+        yield return new WaitForSeconds(holdItemWaitTime);
+        Destroy(heldItem);
+        GameManager.instance.EnablePlayerInput();
     }
 }

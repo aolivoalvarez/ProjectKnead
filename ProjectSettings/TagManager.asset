@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - PlayerSword
   - BlockedByShield
+  - TreasureChest
   layers:
   - Default
   - TransparentFX

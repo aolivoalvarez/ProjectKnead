@@ -51,6 +51,18 @@ public class GameManager : MonoBehaviour
         UpdatePlayerHearts();
     }
 
+    public void EnablePlayerInput()
+    {
+        PlayerController.instance.pInput.Enable();
+        InventoryMenuScript.instance.iInput.Enable();
+    }
+
+    public void DisablePlayerInput()
+    {
+        PlayerController.instance.pInput.Disable();
+        InventoryMenuScript.instance.iInput.Disable();
+    }
+
     void InitializePlayerHearts()
     {
         emptyHearts = new Image[10];

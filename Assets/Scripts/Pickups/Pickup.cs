@@ -65,6 +65,7 @@ public abstract class Pickup : MonoBehaviour
     }
 
     protected abstract void PlayerCollect();
+    public abstract void PlayerCollectDontDestroy();
 
     void OnTriggerEnter2D(Collider2D other)
     {

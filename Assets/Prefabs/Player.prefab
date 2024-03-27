@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 404897024}
   - component: {fileID: 6560982182187840455}
   m_Layer: 0
-  m_Name: LiftHitbox
+  m_Name: InteractHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToLift: {fileID: 0}
+  chestToOpen: {fileID: 0}
 --- !u!1 &672210071
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1256587883}
   m_Layer: 0
-  m_Name: LiftRotationPoint
+  m_Name: InteractRotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

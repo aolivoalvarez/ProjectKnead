@@ -15,4 +15,9 @@ public class MoneyPickup : Pickup
         PlayerController.instance.IncreaseMoney(moneyAmount);
         Destroy(transform.root.gameObject);
     }
+
+    public override void PlayerCollectDontDestroy()
+    {
+        PlayerController.instance.IncreaseMoney(moneyAmount);
+    }
 }

@@ -15,4 +15,9 @@ public class HealthPickup : Pickup
         PlayerController.instance.IncreaseHealth(healthAmount);
         Destroy(transform.root.gameObject);
     }
+
+    public override void PlayerCollectDontDestroy()
+    {
+        PlayerController.instance.IncreaseHealth(healthAmount);
+    }
 }
