@@ -8,6 +8,7 @@ Description: For the Door prefab. Keeps track of this door's number, as well as 
 using System.Collections;
 using UnityEngine;
 using CustomAttributes;
+using UnityEditor;
 
 public class SceneChangeDoorScript : MonoBehaviour
 {
@@ -44,5 +45,14 @@ public class SceneChangeDoorScript : MonoBehaviour
         PlayerController.instance.pInput.Disable();
         yield return new WaitForSeconds(0f);
         SceneManagerScript.SwapSceneFromDoorUse(sceneToLoad, doorToSpawnAt);
+    }
+
+    void OnDrawGizmos()
+    {
+        var labelStyle = new GUIStyle();
+        labelStyle.normal.textColor = Color.yellow;
+        labelStyle.alignment = TextAnchor.MiddleCenter;
+
+        Handles.Label(transform.position, currentDoorPosition.ToString(), labelStyle);
     }
 }

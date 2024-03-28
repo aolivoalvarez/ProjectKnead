@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] SceneField gameOverScene;
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject mainCanvas;
-    [SerializeField] TextMeshProUGUI moneyText;
+    [SerializeField] GameObject moneyCounter;
     [SerializeField] GameObject[] hearts;
     Image[] emptyHearts;
     Image[] fullHearts;
@@ -48,7 +48,19 @@ public class GameManager : MonoBehaviour
             menuCanvas.SetActive(true);
             mainCanvas.SetActive(true);
         }
-        //UpdatePlayerHearts();
+        UpdatePlayerHearts();
+    }
+
+    public void EnablePlayerInput()
+    {
+        PlayerController.instance.pInput.Enable();
+        InventoryMenuScript.instance.iInput.Enable();
+    }
+
+    public void DisablePlayerInput()
+    {
+        PlayerController.instance.pInput.Disable();
+        InventoryMenuScript.instance.iInput.Disable();
     }
 
     void InitializePlayerHearts()
@@ -73,11 +85,8 @@ public class GameManager : MonoBehaviour
             InitializePlayerHearts();
 
         int maxHeartsCount = PlayerController.instance.maxHealth / 4;
-        //Debug.Log(PlayerController.instance.maxHealth);
         int fullHeartsCount = PlayerController.instance.health / 4;
-        //Debug.Log(PlayerController.instance.health);
         float partialHeart = (float)(PlayerController.instance.health % 4) / 4;
-        //Debug.Log(partialHeart);
         for (int i = 0; i < hearts.Length; i++)
         {
             emptyHearts[i].color = maxHeartsCount < i + 1 ? Color.clear : Color.white;
@@ -87,11 +96,18 @@ public class GameManager : MonoBehaviour
             else
                 fullHearts[i].fillAmount = 1f;
         }
+
+        if (maxHeartsCount <= 5)
+        {
+            moneyCounter.GetComponent<HorizontalLayoutGroup>().padding.top = -30;
+        }
+        else
+            moneyCounter.GetComponent<HorizontalLayoutGroup>().padding.top = 5;
     }
 
     public void UpdatePlayerMoney()
     {
-        moneyText.SetText(PlayerController.instance.money.ToString("0000"));
+        moneyCounter.GetComponentInChildren<TextMeshProUGUI>().SetText(PlayerController.instance.money.ToString("0000"));
     }
 
     public void RespawnAtCheckpoint(int damageToInflict = 0)

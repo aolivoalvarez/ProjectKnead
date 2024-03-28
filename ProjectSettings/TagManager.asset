@@ -8,6 +8,8 @@ TagManager:
   - Checkpoint
   - Enemy
   - PlayerSword
+  - BlockedByShield
+  - TreasureChest
   layers:
   - Default
   - TransparentFX

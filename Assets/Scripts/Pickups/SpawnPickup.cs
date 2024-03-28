@@ -7,6 +7,7 @@ Description: For pickups that are spawned from objects and enemies.
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class SpawnPickup : ChoosePickup
 {
@@ -25,7 +26,11 @@ public class SpawnPickup : ChoosePickup
         if (thisPickup != PickupType.None)
         {
             if (pickupPrefabs[thisPickup] != null)
-                Instantiate(pickupPrefabs[thisPickup], transform.position, Quaternion.identity);
+            {
+                var spawnedPickup = Instantiate(pickupPrefabs[thisPickup], new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+                spawnedPickup.GetComponent<Pickup>().StartCoroutine(spawnedPickup.GetComponent<Pickup>().BounceRoutine(
+                    spawnedPickup.transform.DOMoveY(transform.position.y, 0.5f).SetEase(AnimationCurvesScript.instance.droppedPickup)));
+            }
         }
     }
 

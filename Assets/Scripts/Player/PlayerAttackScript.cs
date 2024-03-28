@@ -27,8 +27,8 @@ public class PlayerAttackScript : MonoBehaviour
     {
         hasSword = false;
         canAttack = true;
-        playerController = GetComponentInParent<PlayerController>();
-        animator = GetComponentInChildren<Animator>();
+        playerController = PlayerController.instance;
+        animator = playerController.animator;
         swordSwingHitbox.SetActive(false);
     }
 
