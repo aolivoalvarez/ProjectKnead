@@ -28,6 +28,12 @@ public class HenchmanScript : MonoBehaviour
         Duck
     }
 
+    enum AttackType //if enemy is melee or ranged
+    {
+        Melee,
+        Ranged
+    }
+
 
     int health;
     [SerializeField] int maxHealth = 4;
@@ -35,7 +41,10 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] Group group; //what area the henchman belongs to
     [SerializeField] Animal animal; //what animal the henchman is <-- for special cases
-    [SerializeField] float targetRange = 5f; //once player is in this range, henchman will pursue
+    [SerializeField] AttackType attackType; //holds henchman's attack type
+    [SerializeField] float targetRange; //once player is in this range, henchman will pursue
+    [SerializeField] float mTargetRange = 5f; //short target range for melee attacks
+    [SerializeField] float rTargetRange = 10f; //long target range for ranged attacks
     [SerializeField] float attackRange = 2f; //range to player to be able to attack
     [SerializeField] Transform player; //holds reference to player's transform
     [SerializeField] float roamDistMax = 10f; //holds maximum roaming distance from starting point
@@ -89,6 +98,13 @@ public class HenchmanScript : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        if (attackType == AttackType.Melee)
+        {
+            targetRange = mTargetRange;
+        } else if (attackType == AttackType.Ranged)
+        {
+            targetRange = rTargetRange;
+        }
 
        }
 
