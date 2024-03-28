@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 1834234941538594084}
   - component: {fileID: 2784946735542800011}
   - component: {fileID: 2447239716782923852}
+  - component: {fileID: 4956617229341662554}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -569,6 +570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95edb7cd85da2d47996039b19a24b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingWaitTime: 0.25
+  holdItemWaitTime: 2
+  chestItemOffsetY: 2
   liftTime: 0.1
   liftOffsetY: 2
   shadow: {fileID: 8676381485292163229, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
@@ -602,6 +606,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 1226499576547229075}
+--- !u!114 &4956617229341662554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414660508208036153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da22c83ec83e344abbb3d0d13166ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 3813448857345563782, guid: c8797c58b3349ce47b8e5c8c7bbc779d, type: 3}
 --- !u!1001 &4145172324723605993
 PrefabInstance:
   m_ObjectHideFlags: 0
