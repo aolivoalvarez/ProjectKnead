@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 404897023}
   - component: {fileID: 404897024}
   - component: {fileID: 6560982182187840455}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: InteractHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 672210072}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackRotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986628745}
   - component: {fileID: 986628746}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SwordSwingHitbox
   m_TagString: PlayerSword
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1256587883}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: InteractRotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 3080962776946252528}
   - component: {fileID: 5552978750991962323}
   - component: {fileID: 2082590766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 7581573075476699511}
   - component: {fileID: 4821942702353829868}
   - component: {fileID: 6707501297711557118}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,6 +619,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 3813448857345563782, guid: c8797c58b3349ce47b8e5c8c7bbc779d, type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 65
 --- !u!1001 &4145172324723605993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -677,6 +680,10 @@ PrefabInstance:
     - target: {fileID: 8676381485292163229, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
       propertyPath: m_Name
       value: Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676381485292163229, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c27661dd8216934d95472070ad92f6c, type: 3}

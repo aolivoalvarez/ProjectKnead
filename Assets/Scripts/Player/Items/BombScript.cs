@@ -12,59 +12,42 @@ public class BombScript : MonoBehaviour
     [SerializeField, Tooltip("How long it takes for the bomb to explode, in seconds.")]
     float timeUntilExplosion = 4f;
     [SerializeField, Tooltip("Speed of the bomb in units per second.")]
-    float bombSpeed = 1f;
-    public bool movingBomb { get; set; } = false;
-    Animator animator;
-    Rigidbody2D rigidBody;
+    float bombSpeed = 3f;
 
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
-        rigidBody = GetComponent<Rigidbody2D>();
-        GetComponent<Collider2D>().enabled = movingBomb; // if it's a stationary bomb, its collider becomes a trigger
-
-        switch (PlayerController.instance.simpleLookDirection.x)
-        {
-            case -1.0f:
-                animator.SetTrigger("Left");
-                break;
-            case 1.0f:
-                animator.SetTrigger("Right");
-                break;
-            default:
-                break;
-        }
-        switch (PlayerController.instance.simpleLookDirection.y)
-        {
-            case -1.0f:
-                animator.SetTrigger("Down");
-                break;
-            case 1.0f:
-                animator.SetTrigger("Up");
-                break;
-            default:
-                break;
-        }
-
-        if (movingBomb)
-            rigidBody.velocity = PlayerController.instance.simpleLookDirection * bombSpeed;
-
         StartCoroutine(ExplosionRoutine());
+    }
+
+    public void BombStartMoving()
+    {
+        var rigidBody = gameObject.AddComponent<Rigidbody2D>();
+        rigidBody.gravityScale = 0f;
+        rigidBody.angularDrag = 0f;
+        rigidBody.freezeRotation = true;
+        rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rigidBody.interpolation = RigidbodyInterpolation2D.Interpolate;
+        rigidBody.velocity = PlayerController.instance.simpleLookDirection * bombSpeed;
     }
 
     IEnumerator ExplosionRoutine()
     {
         yield return new WaitForSeconds(timeUntilExplosion * 0.5f);
-        animator.SetTrigger("StartBlinking");
+        GetComponentInChildren<Animator>().SetBool("IsBlinking", true);
         yield return new WaitForSeconds(timeUntilExplosion * 0.5f);
-        animator.SetTrigger("Explode");
+        if (GetComponent<Rigidbody2D>() != null) GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponentInChildren<Animator>().SetTrigger("Explode");
+        if (transform.parent != null)
+        {
+            transform.SetParent(null);
+        }
     }    
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (!collision.otherCollider.isTrigger)
+        if (GetComponent<Rigidbody2D>() != null && !other.isTrigger && !other.CompareTag("Player") && !other.CompareTag("Enemy"))
         {
-            rigidBody.velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 }

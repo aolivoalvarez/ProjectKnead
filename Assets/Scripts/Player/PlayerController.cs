@@ -4,9 +4,9 @@ Author: theco
 Description: The main script for the Player object. Controls player input, movement, most animations, and variables like health and money.
 -----------------------------------------*/
 
-using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
 public class PlayerController : MonoBehaviour
 {
@@ -66,8 +66,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        pInput = new PlayerInput();
-        pInput.Enable();
+        
         health = maxHealth;
         money = 0;
         isAttacking = false;
@@ -84,6 +83,26 @@ public class PlayerController : MonoBehaviour
         canJump = true;
         rigidBody = GetComponent<Rigidbody2D>();
         animator = graphic.gameObject.GetComponent<Animator>();
+    }
+
+    void OnEnable()
+    {
+        pInput = new PlayerInput();
+        pInput.Enable();
+        pInput.Player.Item.started +=
+            _ => GetComponent<PlayerUseItemScript>().HoldBomb();
+        pInput.Player.Item.performed +=
+            context =>
+            {
+                if (context.interaction is SlowTapInteraction)
+                    GetComponent<PlayerUseItemScript>().ReleaseBomb(true);
+            };
+        pInput.Player.Item.canceled +=
+            context =>
+            {
+                if (context.interaction is SlowTapInteraction)
+                    GetComponent<PlayerUseItemScript>().ReleaseBomb();
+            };
     }
 
     void Update()

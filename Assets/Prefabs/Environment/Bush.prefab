@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush
       objectReference: {fileID: 0}
+    - target: {fileID: 5026644086886122065, guid: 7a3fe9cc9e33b7e4a999ea1e2cd9c36c, type: 3}
+      propertyPath: tagsThatDestroyThisObject.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026644086886122065, guid: 7a3fe9cc9e33b7e4a999ea1e2cd9c36c, type: 3}
+      propertyPath: tagsThatDestroyThisObject.Array.data[0]
+      value: PlayerSword
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026644086886122065, guid: 7a3fe9cc9e33b7e4a999ea1e2cd9c36c, type: 3}
+      propertyPath: tagsThatDestroyThisObject.Array.data[1]
+      value: BombExplosion
+      objectReference: {fileID: 0}
     - target: {fileID: 5026644086886122071, guid: 7a3fe9cc9e33b7e4a999ea1e2cd9c36c, type: 3}
       propertyPath: m_RootOrder
       value: 0

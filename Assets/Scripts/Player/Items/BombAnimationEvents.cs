@@ -10,6 +10,6 @@ public class BombAnimationEvents : MonoBehaviour
 {
     void BombExplode()
     {
-        Destroy(transform.root.gameObject);
+        Destroy(GetComponentInParent<BombScript>().gameObject);
     }
 }
