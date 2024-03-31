@@ -25,6 +25,7 @@ public class SceneManagerScript : MonoBehaviour
     SceneType currentSceneType;
     static bool loadedFromDoor;
     SceneChangeDoorScript.DoorToSpawnAt doorToSpawnPlayer;
+    SceneChangeDoorScript.DoorToSpawnAt doorToRespawnPlayer;
     Vector2 playerSpawnPosition;
     Vector3 dungeonCameraPosition;
 
@@ -36,6 +37,8 @@ public class SceneManagerScript : MonoBehaviour
         else
             Destroy(gameObject);
         //--------------------------------------------------//
+
+        doorToRespawnPlayer = SceneChangeDoorScript.DoorToSpawnAt.One;
     }
 
     void OnEnable()
@@ -73,6 +76,7 @@ public class SceneManagerScript : MonoBehaviour
         }
 
         doorToSpawnPlayer = doorToSpawnAt;
+        if (doorToSpawnPlayer != SceneChangeDoorScript.DoorToSpawnAt.None) doorToRespawnPlayer = doorToSpawnPlayer;
         SceneManager.LoadScene(scene);
     }
     IEnumerator FadeOutThenChangeScene(int sceneIndex, SceneChangeDoorScript.DoorToSpawnAt doorToSpawnAt = SceneChangeDoorScript.DoorToSpawnAt.None)
@@ -85,6 +89,7 @@ public class SceneManagerScript : MonoBehaviour
         }
 
         doorToSpawnPlayer = doorToSpawnAt;
+        if (doorToSpawnPlayer != SceneChangeDoorScript.DoorToSpawnAt.None) doorToRespawnPlayer = doorToSpawnPlayer;
         SceneManager.LoadScene(sceneIndex);
     }
 
@@ -130,9 +135,16 @@ public class SceneManagerScript : MonoBehaviour
                 break;
         }
 
-        if (loadedFromDoor)
+        if (loadedFromDoor || currentSceneType == SceneType.Dungeon)
         {
-            FindDoor(doorToSpawnPlayer);
+            //Debug.Log(doorToSpawnPlayer);
+            if (loadedFromDoor)
+            {
+                FindDoor(doorToSpawnPlayer);
+            }
+            else
+                FindDoor(doorToRespawnPlayer);
+            
             if (currentSceneType == SceneType.Dungeon)
             {
                 Camera.main.transform.position = dungeonCameraPosition;

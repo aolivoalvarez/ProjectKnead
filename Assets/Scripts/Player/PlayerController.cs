@@ -66,7 +66,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
         health = maxHealth;
         money = 0;
         isAttacking = false;
@@ -78,7 +77,7 @@ public class PlayerController : MonoBehaviour
         inputDirection = Vector2.zero;
         lookDirection = Vector2.down;
         simpleLookDirection = Vector2.down;
-        initialGraphicPositionY = graphic.transform.position.y;
+        initialGraphicPositionY = graphic.transform.localPosition.y;
         isJumping = false;
         canJump = true;
         rigidBody = GetComponent<Rigidbody2D>();
