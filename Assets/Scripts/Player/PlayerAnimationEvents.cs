@@ -24,4 +24,11 @@ public class PlayerAnimationEvents : MonoBehaviour
     {
         attackScript.swordSwingHitbox.SetActive(false);
     }
+
+    void EndFallingIntoPit()
+    {
+        GameManager.instance.EnablePlayerInput();
+        PlayerController.instance.GetComponent<Collider2D>().enabled = true;
+        GameManager.instance.RespawnAtCheckpoint(2);
+    }
 }

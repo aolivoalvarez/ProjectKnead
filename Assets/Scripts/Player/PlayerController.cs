@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", inputDirection.magnitude);
         animator.SetFloat("Look X", lookDirection.x);
         animator.SetFloat("Look Y", lookDirection.y);
-        animator.SetBool("isJumping", isJumping);
+        animator.SetBool("IsJumping", isJumping);
     }
 
     void FixedUpdate()
