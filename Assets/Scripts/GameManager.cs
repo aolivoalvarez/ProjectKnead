@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] SceneField gameOverScene;
+    [SerializeField] public SceneField gameOverScene;
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject mainCanvas;
     [SerializeField] GameObject moneyCounter;
@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour
         PlayerController.instance.pInput.Disable();
         PlayerController.instance.EndPlayerCoroutines();
         RespawnPointScript.instance.respawnSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManagerScript.SwapScene(gameOverScene);
+        PlayerController.instance.animator.SetBool("IsDying", true);
+        //SceneManagerScript.SwapScene(gameOverScene);
     }
 }

@@ -28,7 +28,13 @@ public class PlayerAnimationEvents : MonoBehaviour
     void EndFallingIntoPit()
     {
         GameManager.instance.EnablePlayerInput();
-        PlayerController.instance.GetComponent<Collider2D>().enabled = true;
+        PlayerController.instance.animator.SetBool("IsFallingIntoPit", false);
         GameManager.instance.RespawnAtCheckpoint(2);
+    }
+
+    void ToGameOverScene()
+    {
+        PlayerController.instance.animator.SetBool("IsDying", false);
+        SceneManagerScript.SwapScene(GameManager.instance.gameOverScene);
     }
 }

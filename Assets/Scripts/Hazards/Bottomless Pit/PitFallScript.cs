@@ -17,8 +17,7 @@ public class PitFallScript : MonoBehaviour
             {
                 GameManager.instance.DisablePlayerInput();
                 PlayerController.instance.transform.position = transform.position;
-                PlayerController.instance.GetComponent<Collider2D>().enabled = false;
-                PlayerController.instance.animator.SetTrigger("FallIntoPit");
+                PlayerController.instance.animator.SetBool("IsFallingIntoPit", true);
             }
         }
     }
