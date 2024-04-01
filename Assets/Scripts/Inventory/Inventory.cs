@@ -38,7 +38,7 @@ public class Inventory
     public Weapon currentWeapon;
     public Shield currentShield;
     public Subweapon currentSubweapon;
-    public Item currentItem;
+    [SerializeField] public Item currentItem;
 
-    Dictionary<Item, bool> collectedItems = new Dictionary<Item, bool>();
+    public Dictionary<Item, bool> collectedItems = new Dictionary<Item, bool>();
 }
