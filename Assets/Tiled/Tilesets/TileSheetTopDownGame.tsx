@@ -190,4 +190,53 @@
    <object id="1" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
+ <wangsets>
+  <wangset name="Forest Ground" type="corner" tile="-1">
+   <wangcolor name="Path" color="#00ff00" tile="-1" probability="1"/>
+   <wangcolor name="Grass" color="#ff7e3e" tile="-1" probability="1"/>
+   <wangtile tileid="0" wangid="0,2,0,1,0,2,0,2"/>
+   <wangtile tileid="1" wangid="0,2,0,0,0,0,0,2"/>
+   <wangtile tileid="2" wangid="0,2,0,2,0,1,0,2"/>
+   <wangtile tileid="3" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="10" wangid="0,1,0,2,0,1,0,1"/>
+   <wangtile tileid="11" wangid="0,1,0,2,0,0,0,1"/>
+   <wangtile tileid="12" wangid="0,1,0,2,0,2,0,1"/>
+   <wangtile tileid="13" wangid="0,1,0,0,0,2,0,1"/>
+   <wangtile tileid="14" wangid="0,1,0,1,0,2,0,1"/>
+   <wangtile tileid="15" wangid="0,0,0,0,0,2,0,2"/>
+   <wangtile tileid="16" wangid="0,1,0,1,0,1,0,1"/>
+   <wangtile tileid="17" wangid="0,2,0,2,0,0,0,0"/>
+   <wangtile tileid="25" wangid="0,0,0,2,0,1,0,1"/>
+   <wangtile tileid="26" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="27" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="28" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="29" wangid="0,1,0,1,0,2,0,0"/>
+   <wangtile tileid="30" wangid="0,0,0,0,0,2,0,2"/>
+   <wangtile tileid="31" wangid="0,1,0,1,0,1,0,1"/>
+   <wangtile tileid="32" wangid="0,2,0,2,0,0,0,0"/>
+   <wangtile tileid="40" wangid="0,2,0,2,0,1,0,1"/>
+   <wangtile tileid="41" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="42" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="43" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="44" wangid="0,1,0,1,0,2,0,2"/>
+   <wangtile tileid="45" wangid="0,1,0,2,0,2,0,2"/>
+   <wangtile tileid="46" wangid="0,0,0,2,0,2,0,0"/>
+   <wangtile tileid="47" wangid="0,2,0,2,0,2,0,1"/>
+   <wangtile tileid="55" wangid="0,2,0,2,0,1,0,1"/>
+   <wangtile tileid="56" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="57" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="58" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="59" wangid="0,1,0,1,0,2,0,2"/>
+   <wangtile tileid="70" wangid="0,2,0,0,0,1,0,1"/>
+   <wangtile tileid="71" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="72" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="73" wangid="0,2,0,2,0,2,0,2"/>
+   <wangtile tileid="74" wangid="0,1,0,1,0,0,0,2"/>
+   <wangtile tileid="85" wangid="0,2,0,1,0,1,0,1"/>
+   <wangtile tileid="86" wangid="0,2,0,1,0,1,0,0"/>
+   <wangtile tileid="87" wangid="0,2,0,1,0,1,0,2"/>
+   <wangtile tileid="88" wangid="0,0,0,1,0,1,0,2"/>
+   <wangtile tileid="89" wangid="0,1,0,1,0,1,0,2"/>
+  </wangset>
+ </wangsets>
 </tileset>

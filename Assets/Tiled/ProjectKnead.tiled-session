@@ -1,21 +1,33 @@
 {
-    "activeFile": "Tilemaps/Dungeon0.tmx",
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Tilemaps/NewPawTown.tmx",
     "expandedProjectPaths": [
+        ".",
         "ObjectTemplates",
         "Tilemaps",
-        "Tilesets",
-        "."
+        "Tilesets"
     ],
     "fileStates": {
         "Tilemaps/Dungeon0.tmx": {
             "expandedGroupLayers": [
                 13
             ],
-            "scale": 0.75,
+            "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 538.6666666666666,
-                "y": 1109.3333333333333
+                "x": 512,
+                "y": 767.6666666666665
+            }
+        },
+        "Tilemaps/NewPawTown.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 548.4848484848485,
+                "y": 916.6666666666667
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
@@ -32,20 +44,25 @@
         },
         "Tilesets/TileSheetTopDownGame.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInEditor": 2
         }
     },
     "last.objectTemplatePath": "C:/Users/theco/Documents/Unity Projects/ProjectKnead/Assets/Tiled/ObjectTemplates",
     "last.objectTypesPath": "C:/Users/theco/Documents/Unity Projects/ProjectKnead/Assets/Tiled/propertytypes.xml",
+    "map.height": 64,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 64,
     "openFiles": [
         "Tilemaps/Dungeon0.tmx",
-        "Tilesets/TileSheetTopDownGame.tsx"
+        "Tilesets/TileSheetTopDownGame.tsx",
+        "Tilemaps/NewPawTown.tmx"
     ],
     "project": "ProjectKnead.tiled-project",
     "property.type": "float",
     "recentFiles": [
-        "Tilesets/TileSheetTopDownGame.tsx",
         "Tilemaps/Dungeon0.tmx",
+        "Tilesets/TileSheetTopDownGame.tsx",
+        "Tilemaps/NewPawTown.tmx",
         "Tilesets/FantasyWorldSample500x500.tsx",
         "Tilesets/CaveDungeon.tsx",
         "Tilesets/1080x1920Topdown.tsx"
