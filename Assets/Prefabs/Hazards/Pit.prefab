@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6808076295884387371}
   - component: {fileID: 6808076295884387349}
   - component: {fileID: 6808076295884387370}
-  - component: {fileID: 6208090592854120673}
   m_Layer: 0
   m_Name: Pit
   m_TagString: Untagged
@@ -74,22 +73,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pullSpeed: 15
---- !u!114 &6208090592854120673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6808076295884387350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &8315813461316935668
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +85,7 @@ GameObject:
   - component: {fileID: 8602460777785871837}
   - component: {fileID: 1558926521971819657}
   - component: {fileID: 4271330355087687451}
+  - component: {fileID: 2523250113970765457}
   m_Layer: 0
   m_Name: InnerCollider
   m_TagString: Untagged
@@ -214,4 +198,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fe37cf66e72834fbcdec66d4a27469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+--- !u!114 &2523250113970765457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315813461316935668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff

@@ -16,18 +16,18 @@
                 13
             ],
             "scale": 0.75,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 511.99999999999994,
-                "y": 767.3333333333333
+                "x": 268,
+                "y": 714.6666666666665
             }
         },
         "Tilemaps/NewPawTown.tmx": {
             "scale": 0.5,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 1002,
-                "y": 510
+                "x": 1024,
+                "y": 630
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
@@ -58,7 +58,7 @@
         "Tilemaps/NewPawTown.tmx"
     ],
     "project": "ProjectKnead.tiled-project",
-    "property.type": "float",
+    "property.type": "bool",
     "recentFiles": [
         "Tilemaps/Dungeon0.tmx",
         "Tilesets/TileSheetTopDownGame.tsx",

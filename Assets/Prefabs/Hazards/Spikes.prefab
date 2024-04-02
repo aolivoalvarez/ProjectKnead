@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3682445821808716040}
   - component: {fileID: 5987001616934184643}
   - component: {fileID: 8363303315143046822}
-  - component: {fileID: 9125646678968415764}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -74,22 +73,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 2
---- !u!114 &9125646678968415764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478999797311981709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
+  appliesKnockback: 0
+  knockbackStrength: 1
+  damagesPlayer: 1
+  damagesEnemies: 0
 --- !u!1 &1867831901250570720
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5968215405778048917}
   - component: {fileID: 1549292535059967809}
+  - component: {fileID: 4212949525035380610}
   m_Layer: 0
   m_Name: Graphic
   m_TagString: Untagged
@@ -174,3 +162,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4212949525035380610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867831901250570720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
