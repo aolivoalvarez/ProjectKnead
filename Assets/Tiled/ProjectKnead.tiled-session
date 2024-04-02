@@ -6,28 +6,28 @@
     "activeFile": "Tilemaps/NewPawTown.tmx",
     "expandedProjectPaths": [
         ".",
-        "ObjectTemplates",
         "Tilemaps",
-        "Tilesets"
+        "Tilesets",
+        "ObjectTemplates"
     ],
     "fileStates": {
         "Tilemaps/Dungeon0.tmx": {
             "expandedGroupLayers": [
                 13
             ],
-            "scale": 1.5,
+            "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 512,
-                "y": 767.6666666666665
+                "x": 511.99999999999994,
+                "y": 767.3333333333333
             }
         },
         "Tilemaps/NewPawTown.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 0,
+            "scale": 0.5,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 548.4848484848485,
-                "y": 916.6666666666667
+                "x": 1002,
+                "y": 510
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {

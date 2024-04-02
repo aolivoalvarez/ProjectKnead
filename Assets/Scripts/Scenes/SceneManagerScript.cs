@@ -9,6 +9,7 @@ using Cinemachine;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
 
 public class SceneManagerScript : MonoBehaviour
 {
@@ -123,12 +124,16 @@ public class SceneManagerScript : MonoBehaviour
                 break;
             case SceneType.Dungeon:
                 Camera.main.GetComponent<CinemachineBrain>().enabled = false;
+                Camera.main.GetComponent<PixelPerfectCamera>().cropFrameX = true;
+                Camera.main.GetComponent<PixelPerfectCamera>().cropFrameY = true;
                 PlayerController.instance.gameObject.SetActive(true);
                 InventoryMenuScript.instance.iInput.Enable();
                 GameManager.instance.UpdatePlayerHearts();
                 break;
             default:
                 Camera.main.GetComponent<CinemachineBrain>().enabled = true;
+                Camera.main.GetComponent<PixelPerfectCamera>().cropFrameX = false;
+                Camera.main.GetComponent<PixelPerfectCamera>().cropFrameY = false;
                 PlayerController.instance.gameObject.SetActive(true);
                 InventoryMenuScript.instance.iInput.Enable();
                 GameManager.instance.UpdatePlayerHearts();
