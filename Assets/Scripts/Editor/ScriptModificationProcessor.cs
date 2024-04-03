@@ -9,10 +9,11 @@ using UnityEngine;
 
 public class ScriptModificationProcessor : AssetModificationProcessor
 {
-	public static void OnWillCreateAsset (string path) 
+	public static void OnWillCreateAsset (string path)
 	{
 		path = path.Replace(".meta", "");
 		int index = path.LastIndexOf(".");
+		if (index == -1) return;
 		string file = path.Substring(index);
 
 		if (file != ".cs" && file != ".js" && file != ".boo") return;
