@@ -4,8 +4,6 @@ Author: alex
 Description: 
 -----------------------------------------*/
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -34,7 +32,6 @@ public class HenchmanScript : MonoBehaviour
         Ranged
     }
 
-
     int health;
     [SerializeField] int maxHealth = 4;
     [SerializeField] int attackDamage = 2;
@@ -46,54 +43,53 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] float mTargetRange = 5f; //short target range for melee attacks
     [SerializeField] float rTargetRange = 10f; //long target range for ranged attacks
     [SerializeField] float attackRange = 2f; //range to player to be able to attack
-    [SerializeField] Transform player; //holds reference to player's transform
     [SerializeField] float roamDistMax = 10f; //holds maximum roaming distance from starting point
     [SerializeField] float roamDistMin = 5f; //holds minimum roaming distance from starting point
+    Transform player; //holds reference to player's transform
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
     Animator animator;
     Vector2 startingPosition; //holds henchman's starting position
     NavMeshAgent agent; //holds reference to henchman's navmesh agent
     
-
-
     void Start()
     {
+        player = PlayerController.instance.transform;
         startingPosition = transform.position; //gets henchman's starting position
 
         switch (group) //sets max health + attack damage according to group
         {
             case Group.AreaOne:
-                {
-                    maxHealth = 4;
-                    attackDamage = 2;
-                    break;
-                }
+            {
+                maxHealth = 4;
+                attackDamage = 2;
+                break;
+            }
             case Group.AreaTwo:
-                {
-                    maxHealth = 8;
-                    attackDamage = 4;
-                    break;
-                }
+            {
+                maxHealth = 8;
+                attackDamage = 4;
+                break;
+            }
             case Group.AreaThree:
-                {
-                    maxHealth = 12;
-                    attackDamage = 8;
-                    break;
-                }
+            {
+                maxHealth = 12;
+                attackDamage = 8;
+                break;
+            }
             default:
-                {
-                    Debug.Log("no area set");
-                    break;
-                }
+            {
+                Debug.Log("no area set");
+                break;
+            }
         }
 
         health = maxHealth; //sets health to max
 
         //references to components
-        boxCollider = this.GetComponent<BoxCollider2D>();
-        rigidBody = this.GetComponent<Rigidbody2D>();
-        //animator = this.GetComponent.<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
+        //animator = this.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -101,12 +97,12 @@ public class HenchmanScript : MonoBehaviour
         if (attackType == AttackType.Melee)
         {
             targetRange = mTargetRange;
-        } else if (attackType == AttackType.Ranged)
+        }
+        else if (attackType == AttackType.Ranged)
         {
             targetRange = rTargetRange;
         }
-
-       }
+    }
 
 
     private void FixedUpdate()
@@ -130,41 +126,29 @@ public class HenchmanScript : MonoBehaviour
         
         if (health <= 0) //checks if health is 0 or less
         {
-            Death(); //kills hencham if health is 0
+            Death(); //kills henchman if health is 0
         }
-
-        return;
     }
 
     void Roam() //gets random position and sets it as henchman's destination within a certain range of its starting position
     {
-        
         Vector2 roamPos = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized; //random vector
 
         roamPos = startingPosition + roamPos * Random.Range(roamDistMin, roamDistMax); //multiplies vector by random distance
 
         agent.SetDestination(roamPos); //sets henchman's destination
-
-        return;
     }
 
     
     void Chase() //moves henchman towards player
     {
-
         agent.SetDestination(player.position);
-        
-        return;
     }
 
     void Death() //henchman death
     {
-        Destroy(this.gameObject); //destroys gameObject
-
-        return;
+        Destroy(gameObject); //destroys gameObject
     }
-   
-    
 
     void AttackTarget() //attacks target once target is in attack range
     {
@@ -172,7 +156,5 @@ public class HenchmanScript : MonoBehaviour
         pController.DecreaseHealth(attackDamage);
         Debug.Log("attack target triggered");
         Debug.Log(attackDamage);
-        
-        return;
     }
 }

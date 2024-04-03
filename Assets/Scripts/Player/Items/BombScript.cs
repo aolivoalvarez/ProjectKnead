@@ -35,7 +35,16 @@ public class BombScript : MonoBehaviour
         yield return new WaitForSeconds(timeUntilExplosion * 0.5f);
         GetComponentInChildren<Animator>().SetBool("IsBlinking", true);
         yield return new WaitForSeconds(timeUntilExplosion * 0.5f);
-        if (GetComponent<Rigidbody2D>() != null) GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        if (GetComponent<Rigidbody2D>() == null)
+        {
+            var rigidBody = gameObject.AddComponent<Rigidbody2D>();
+            rigidBody.gravityScale = 0f;
+            rigidBody.angularDrag = 0f;
+            rigidBody.freezeRotation = true;
+            rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            rigidBody.interpolation = RigidbodyInterpolation2D.Interpolate;
+        }    
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponentInChildren<Animator>().SetTrigger("Explode");
         if (transform.parent != null)
         {
