@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Tooltip("After taking damage, how long the player is invincible, in seconds.")]
     float invincibilityTime;
     [SerializeField] Transform graphic;
-    [SerializeField] Transform attackRotationPoint;
     [SerializeField] Transform liftRotationPoint;
     public Rigidbody2D rigidBody { get; private set; }
     public Animator animator;
@@ -121,8 +120,8 @@ public class PlayerController : MonoBehaviour
             lookDirection = new Vector2(Mathf.Round(inputDirection.normalized.x), Mathf.Round(inputDirection.normalized.y));
         }
         animator.SetFloat("Speed", inputDirection.magnitude);
-        animator.SetFloat("Look X", lookDirection.x);
-        animator.SetFloat("Look Y", lookDirection.y);
+        animator.SetFloat("Look X", simpleLookDirection.x);
+        animator.SetFloat("Look Y", simpleLookDirection.y);
         animator.SetBool("IsJumping", isJumping);
     }
 
@@ -136,12 +135,10 @@ public class PlayerController : MonoBehaviour
         {
             case -1.0f:
                 simpleLookDirection = Vector2.left;
-                attackRotationPoint.localEulerAngles = new Vector3(0, 0, -90);
                 liftRotationPoint.localEulerAngles = new Vector3(0, 0, -90);
                 break;
             case 1.0f:
                 simpleLookDirection = Vector2.right;
-                attackRotationPoint.localEulerAngles = new Vector3(0, 0, 90);
                 liftRotationPoint.localEulerAngles = new Vector3(0, 0, 90);
                 break;
             default:
@@ -151,12 +148,10 @@ public class PlayerController : MonoBehaviour
         {
             case -1.0f:
                 simpleLookDirection = Vector2.down;
-                attackRotationPoint.localEulerAngles = new Vector3(0, 0, 0);
                 liftRotationPoint.localEulerAngles = new Vector3(0, 0, 0);
                 break;
             case 1.0f:
                 simpleLookDirection = Vector2.up;
-                attackRotationPoint.localEulerAngles = new Vector3(0, 0, 180);
                 liftRotationPoint.localEulerAngles = new Vector3(0, 0, 180);
                 break;
             default:
