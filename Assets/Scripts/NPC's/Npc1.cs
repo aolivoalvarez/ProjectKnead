@@ -34,7 +34,7 @@ public class Npc1 : MonoBehaviour
         // Upon reaching destination move to next 
         if(transform.position == points[targetPoints].position){
         
-            // Integer Countdown
+            
             elapsedTime += Time.deltaTime;
 
             if(elapsedTime >= waitTime){
