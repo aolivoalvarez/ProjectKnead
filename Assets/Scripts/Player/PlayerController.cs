@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         //--------------------------------------------------//
 
-        inventory = new Inventory();
+        inventory = Inventory.instance;
     }
 
     void Start()
@@ -81,26 +81,8 @@ public class PlayerController : MonoBehaviour
         canJump = true;
         rigidBody = GetComponent<Rigidbody2D>();
         animator = graphic.gameObject.GetComponent<Animator>();
-    }
 
-    void OnEnable()
-    {
-        pInput = new PlayerInput();
-        pInput.Enable();
-        pInput.Player.Item.started +=
-            _ => GetComponent<PlayerUseItemScript>().HoldBomb();
-        pInput.Player.Item.performed +=
-            context =>
-            {
-                if (context.interaction is SlowTapInteraction)
-                    GetComponent<PlayerUseItemScript>().ReleaseBomb(true);
-            };
-        pInput.Player.Item.canceled +=
-            context =>
-            {
-                if (context.interaction is SlowTapInteraction)
-                    GetComponent<PlayerUseItemScript>().ReleaseBomb();
-            };
+        InitializePlayerInput();
     }
 
     void Update()
@@ -239,6 +221,26 @@ public class PlayerController : MonoBehaviour
             graphic.GetComponent<SpriteRenderer>().color = Color.white;
         }
         graphic.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    void InitializePlayerInput()
+    {
+        pInput = new PlayerInput();
+        pInput.Enable();
+        pInput.Player.Item.started +=
+            _ => GetComponent<PlayerUseItemScript>().UseItem_Hold();
+        pInput.Player.Item.performed +=
+            context =>
+            {
+                if (context.interaction is SlowTapInteraction)
+                    GetComponent<PlayerUseItemScript>().UseItem_Release();
+            };
+        pInput.Player.Item.canceled +=
+            context =>
+            {
+                if (context.interaction is SlowTapInteraction)
+                    GetComponent<PlayerUseItemScript>().UseItem_EarlyRelease();
+            };
     }
 
     // For when the player dies. Stops all coroutines and sets various values to default.

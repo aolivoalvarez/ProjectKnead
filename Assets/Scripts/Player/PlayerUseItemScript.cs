@@ -9,9 +9,10 @@ using UnityEngine;
 public class PlayerUseItemScript : MonoBehaviour
 {
     [SerializeField] GameObject bombPrefab;
-    [SerializeField] LayerMask layerMask;
+    [SerializeField] LayerMask wallLayer;
     PlayerController playerController;
     GameObject heldItem;
+    Inventory.Subweapon lastUsedItem;
 
     void Start()
     {
@@ -31,7 +32,53 @@ public class PlayerUseItemScript : MonoBehaviour
         }
     }
 
-    public void HoldBomb()
+    public void UseItem_Hold()
+    {
+        switch (Inventory.instance.currentSubweapon)
+        {
+            case Inventory.Subweapon.Bomb:
+                if (Inventory.instance.collectedItems[Inventory.Item.Bomb])
+                {
+                    lastUsedItem = Inventory.Subweapon.Bomb;
+                    HoldBomb(); 
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void UseItem_Release()
+    {
+        switch (lastUsedItem)
+        {
+            case Inventory.Subweapon.Bomb:
+                if (Inventory.instance.collectedItems[Inventory.Item.Bomb])
+                {
+                    ReleaseBomb(true);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void UseItem_EarlyRelease()
+    {
+        switch (lastUsedItem)
+        {
+            case Inventory.Subweapon.Bomb:
+                if (Inventory.instance.collectedItems[Inventory.Item.Bomb])
+                {
+                    ReleaseBomb();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    void HoldBomb()
     {
         heldItem = Instantiate(bombPrefab, transform);
         heldItem.GetComponent<Collider2D>().enabled = false;
@@ -39,7 +86,7 @@ public class PlayerUseItemScript : MonoBehaviour
         heldItem.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "AboveEntity";
     }
 
-    public void ReleaseBomb(bool movingBomb = false)
+    void ReleaseBomb(bool movingBomb = false)
     {
         if (heldItem == null)
             return;
@@ -48,9 +95,9 @@ public class PlayerUseItemScript : MonoBehaviour
         heldItem.GetComponent<Collider2D>().enabled = true;
         heldItem.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Entity";
         
-        if (Physics2D.Raycast(transform.position, playerController.simpleLookDirection, 1f, layerMask))
+        if (Physics2D.Raycast(transform.position, playerController.simpleLookDirection, 1f, wallLayer))
         {
-            Vector2 hitPoint = Physics2D.Raycast(transform.position, playerController.simpleLookDirection, 1f, layerMask).point;
+            Vector2 hitPoint = Physics2D.Raycast(transform.position, playerController.simpleLookDirection, 1f, wallLayer).point;
             heldItem.transform.position = hitPoint;
         }
         else

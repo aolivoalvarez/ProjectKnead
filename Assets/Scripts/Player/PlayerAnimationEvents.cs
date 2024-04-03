@@ -18,11 +18,13 @@ public class PlayerAnimationEvents : MonoBehaviour
     void ActivateSwordHitbox()
     {
         attackScript.swordSwingHitbox.SetActive(true);
+        PlayerController.instance.isAttacking = true;
     }
 
     void DeactivateSwordHitbox()
     {
         attackScript.swordSwingHitbox.SetActive(false);
+        PlayerController.instance.isAttacking = false;
     }
 
     void EndFallingIntoPit()

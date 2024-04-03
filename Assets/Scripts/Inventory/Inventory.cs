@@ -4,15 +4,13 @@ Author: jose
 Description: 
 -----------------------------------------*/
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
-using Unity.VisualScripting;
 
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
+
     public enum Weapon
     {
         Spoon,
@@ -43,13 +41,15 @@ public class Inventory : MonoBehaviour
     public Subweapon currentSubweapon;
     //[SerializeField] public Item currentItem;
 
-    public SerializedDictionary<Item, bool> collectedItems = new SerializedDictionary<Item, bool>();
+    public SerializedDictionary<Item, bool> collectedItems;
 
-    public void Start()
+    void Awake()
     {
-        foreach(var(key,value) in collectedItems)
-        {
-            collectedItems[key] = false;
-        }
+        //---------- Make this script a singleton ----------//
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+        //--------------------------------------------------//
     }
 }

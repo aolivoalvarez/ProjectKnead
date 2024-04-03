@@ -19,13 +19,9 @@ public class PlayerAttackScript : MonoBehaviour
     float swordSwingTime = 0.5f;
     [SerializeField, Tooltip("Buffer after every attack, in seconds.")]
     float swordSwingBuffer = 0.1f;
-    //temporary
-    public bool hasSword { get; set; }
-    //
 
     void Start()
     {
-        hasSword = false;
         canAttack = true;
         playerController = PlayerController.instance;
         animator = playerController.animator;
@@ -36,7 +32,8 @@ public class PlayerAttackScript : MonoBehaviour
     {
         if (playerController.pInput.Player.Attack.triggered)
         {
-            if (hasSword && canAttack && !playerController.isHoldingObject)
+            if (Inventory.instance.collectedItems[Inventory.Item.Spoon] == true && Inventory.instance.currentWeapon == Inventory.Weapon.Spoon &&
+                canAttack && !playerController.isHoldingObject)
                 StartCoroutine(SwordAttackRoutine());
         }
     }
