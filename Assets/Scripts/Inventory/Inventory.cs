@@ -7,9 +7,12 @@ Description:
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AYellowpaper.SerializedCollections;
+using Unity.VisualScripting;
 
-public class Inventory
+public class Inventory : MonoBehaviour
 {
+    public static Inventory instance;
     public enum Weapon
     {
         Spoon,
@@ -38,7 +41,15 @@ public class Inventory
     public Weapon currentWeapon;
     public Shield currentShield;
     public Subweapon currentSubweapon;
-    [SerializeField] public Item currentItem;
+    //[SerializeField] public Item currentItem;
 
-    public Dictionary<Item, bool> collectedItems = new Dictionary<Item, bool>();
+    public SerializedDictionary<Item, bool> collectedItems = new SerializedDictionary<Item, bool>();
+
+    public void Start()
+    {
+        foreach(var(key,value) in collectedItems)
+        {
+            collectedItems[key] = false;
+        }
+    }
 }

@@ -12,24 +12,24 @@ using UnityEngine;
 
 public class ItemScript : Pickup
 {
-    Inventory inventory = new Inventory();
+    
     [SerializeField] protected Inventory.Item thisItem;
 
     protected override void PlayerCollect()
     {
         
-        inventory.collectedItems[thisItem] = true;
+        Inventory.instance.collectedItems[thisItem] = true;
+        Destroy(gameObject);
     }
 
     public override void PlayerCollectDontDestroy()
     {
-        throw new System.NotImplementedException();
+        Inventory.instance.collectedItems[thisItem] = true;
     }
     // Start is called before the first frame update
     void Start()
     {
-        
-
+        Inventory inventory = Inventory.instance;
     }
 
     // Update is called once per frame
