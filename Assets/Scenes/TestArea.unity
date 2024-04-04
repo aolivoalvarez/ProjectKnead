@@ -1837,6 +1837,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6479880599369929335, guid: 5fb5cb515a8727642bc0ec233f5833a0, type: 3}
+      propertyPath: bomb
+      value: 
+      objectReference: {fileID: 3813448857345563782, guid: c8797c58b3349ce47b8e5c8c7bbc779d, type: 3}
+    - target: {fileID: -6479880599369929335, guid: 5fb5cb515a8727642bc0ec233f5833a0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 615218263}
     - target: {fileID: 943571956037620463, guid: 5fb5cb515a8727642bc0ec233f5833a0, type: 3}
       propertyPath: m_Name
       value: CheddarSqueaks

@@ -20,8 +20,8 @@ public class CheddarScript : MonoBehaviour
     }
 
     int health;
-    [SerializeField] int maxHealth = 4;
-    [SerializeField] int attackDamage = 2;
+    [SerializeField] int maxHealth = 10;
+    [SerializeField] int attackDamage = 4;
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] State state; //what state cheddar is in
     [SerializeField] Transform player; //holds reference to player's transform
@@ -46,7 +46,18 @@ public class CheddarScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = PlayerController.instance.transform;
+        startingPosition = transform.position; //gets cheddar's starting position
+        health = maxHealth; //sets health to max
+
+        //references to components
+        boxCollider = GetComponent<BoxCollider2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
+        //animator = this.GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        state = State.Idle;
     }
 
     // Update is called once per frame
