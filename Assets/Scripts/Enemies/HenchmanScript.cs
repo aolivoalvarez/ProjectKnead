@@ -171,18 +171,6 @@ public class HenchmanScript : MonoBehaviour
         return;
     }
 
-    void MeleeAttack() //fuction for melee attack
-    {
-        if (animal == Animal.Beaver)
-        {
-            MeleeAttack();
-        } else if (animal == Animal.Squirrel)
-        {
-            RangedAttack();
-        }
-        
-        return;
-    }
 
     void MeleeAttack() //fuction for melee attack
     {
