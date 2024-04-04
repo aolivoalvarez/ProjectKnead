@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public bool isHoldingObject { get; set; }
     bool isInvincible;
 
+    bool bossKeyCollected;
+
     Inventory inventory;
     //--------------------------------------------------//
 
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour
         canJump = true;
         rigidBody = GetComponent<Rigidbody2D>();
         animator = graphic.gameObject.GetComponent<Animator>();
+        bossKeyCollected = false;
 
         InitializePlayerInput();
     }
@@ -256,5 +259,15 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
         canJump = true;
         graphic.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    //Dylan BossKey Code
+    private void OnTriggerEnter2D(Collider2D other){
+        if((other.tag == "Key")){
+            bossKeyCollected = true;
+            Destroy(other.gameObject);
+            Debug.Log("Key Collected");
+
+        }
     }
 }
