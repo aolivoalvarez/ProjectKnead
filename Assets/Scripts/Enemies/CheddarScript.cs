@@ -63,7 +63,15 @@ public class CheddarScript : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        
+        Idle();
+
+        if (Vector2.Distance(transform.position, player.position) <= attackRange && throwAmt < 3)
+        {
+            Attack();
+        } else if (throwAmt == 3)
+        {
+            Charge();
+        }
     }
 
     public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
@@ -74,13 +82,15 @@ public class CheddarScript : MonoBehaviour
         {
             Death(); //kills cheddar if health is 0
         }
+
+        Stun();
     }
 
-    private void Death() //henchman death
+    private void Death() //cheddar death
     {
 
-        Instantiate(key, transform.position, Quaternion.identity);
-        Instantiate(cake, transform.position, Quaternion.identity);
+        Instantiate(key, transform.position, Quaternion.identity); //spawns key
+        Instantiate(cake, transform.position, Quaternion.identity); //spawns cake
 
         Destroy(this.gameObject); //destroys gameObject
     }
