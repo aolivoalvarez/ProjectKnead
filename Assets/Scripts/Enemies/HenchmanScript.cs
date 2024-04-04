@@ -138,7 +138,7 @@ public class HenchmanScript : MonoBehaviour
         }
     }
 
-    void Roam() //gets random position and sets it as henchman's destination within a certain range of its starting position
+    private void Roam() //gets random position and sets it as henchman's destination within a certain range of its starting position
     {
         Vector2 roamPos = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized; //random vector
 
@@ -148,17 +148,17 @@ public class HenchmanScript : MonoBehaviour
     }
 
     
-    void Chase() //moves henchman towards player
+    private void Chase() //moves henchman towards player
     {
         agent.SetDestination(player.position);
     }
 
-    void Death() //henchman death
+    private void Death() //henchman death
     {
         Destroy(gameObject); //destroys gameObject
     }
 
-    void AttackTarget() //attacks target once target is in attack range
+    private void AttackTarget() //attacks target once target is in attack range
     {
         if (animal == Animal.Beaver)
         {
@@ -172,14 +172,14 @@ public class HenchmanScript : MonoBehaviour
     }
 
 
-    void MeleeAttack() //fuction for melee attack
+    private void MeleeAttack() //fuction for melee attack
     {
         PlayerController pController = player.GetComponent<PlayerController>();
         pController.DecreaseHealth(attackDamage);
         return;
     }
 
-    void RangedAttack() //function for ranged attack
+    private void RangedAttack() //function for ranged attack
     {
         if (nextFire < Time.time)
         {

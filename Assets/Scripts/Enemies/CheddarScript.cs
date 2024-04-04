@@ -11,21 +11,13 @@ using UnityEngine.AI;
 
 public class CheddarScript : MonoBehaviour
 {
-    enum State //cheddar's activity state
-    {
-        Idle,
-        Throw,
-        Charge,
-        Stun
-    }
 
     int health;
     [SerializeField] int maxHealth = 10;
     [SerializeField] int attackDamage = 4;
     [SerializeField] float moveSpeed = 2f;
-    [SerializeField] State state; //what state cheddar is in
     [SerializeField] Transform player; //holds reference to player's transform
-    [SerializeField] float attackRange; //once player is in this range, cheddar will begin throwing
+    [SerializeField] float attackRange = 10f; //once player is in this range, cheddar will begin throwing
     [SerializeField] float roamDistMax = 10f; //holds maximum roaming distance from starting point
     [SerializeField] float roamDistMin = 5f; //holds minimum roaming distance from starting point
     [SerializeField] GameObject bomb; //holds reference to weapon prefab
@@ -57,18 +49,17 @@ public class CheddarScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        state = State.Idle;
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        Idle();
+        Idle(); //default idling
 
-        if (Vector2.Distance(transform.position, player.position) <= attackRange && throwAmt < 3)
+        if (Vector2.Distance(transform.position, player.position) <= attackRange && throwAmt < 3) //if player is close and he hasn't thrown 3 bombs, cheddar attacks
         {
             Attack();
-        } else if (throwAmt == 3)
+        } else if (throwAmt == 3) //once cheddar throws three bombs, he charges
         {
             Charge();
         }
@@ -83,7 +74,7 @@ public class CheddarScript : MonoBehaviour
             Death(); //kills cheddar if health is 0
         }
 
-        Stun();
+        Stun(); //when cheddar is hit on the head, he is stunned
     }
 
     private void Death() //cheddar death
@@ -93,5 +84,29 @@ public class CheddarScript : MonoBehaviour
         Instantiate(cake, transform.position, Quaternion.identity); //spawns cake
 
         Destroy(this.gameObject); //destroys gameObject
+    }
+
+    private void Idle() //gets random position and sets it as cheddar's destination within a certain range of its starting position
+    {
+        Vector2 roamPos = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized; //random vector
+
+        roamPos = startingPosition + roamPos * Random.Range(roamDistMin, roamDistMax); //multiplies vector by random distance
+
+        agent.SetDestination(roamPos); //sets cheddar's destination
+    }
+
+    private void Attack()
+    {
+
+    }
+
+    private void Charge()
+    {
+
+    }
+
+    private void Stun()
+    {
+
     }
 }
