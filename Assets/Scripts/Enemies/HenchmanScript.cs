@@ -42,10 +42,16 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] float targetRange; //once player is in this range, henchman will pursue
     [SerializeField] float mTargetRange = 5f; //short target range for melee attacks
     [SerializeField] float rTargetRange = 10f; //long target range for ranged attacks
-    [SerializeField] float attackRange = 2f; //range to player to be able to attack
+    [SerializeField] float attackRange; //range to player to be able to attack
+    [SerializeField] float mAttackRange = 2f; //range for melee attack
+    [SerializeField] float rAttackRange = 5f; //range for ranged attack
+    [SerializeField] Transform player; //holds reference to player's transform
     [SerializeField] float roamDistMax = 10f; //holds maximum roaming distance from starting point
     [SerializeField] float roamDistMin = 5f; //holds minimum roaming distance from starting point
-    Transform player; //holds reference to player's transform
+    [SerializeField] GameObject weapon; //holds reference to weapon prefab
+    [SerializeField] GameObject weaponParent; //holds reference to weapon parent game object
+    [SerializeField] float fireRate = 1f; //fire rate for ranged weapon
+    float nextFire; //for fire rate calculations
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
     Animator animator;
@@ -94,13 +100,15 @@ public class HenchmanScript : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        //sets target and attack ranges based on attack type
         if (attackType == AttackType.Melee)
         {
             targetRange = mTargetRange;
-        }
-        else if (attackType == AttackType.Ranged)
+            attackRange = mAttackRange;
+        } else if (attackType == AttackType.Ranged)
         {
             targetRange = rTargetRange;
+            attackRange = rAttackRange;
         }
     }
 
@@ -109,7 +117,7 @@ public class HenchmanScript : MonoBehaviour
     {
         Roam(); //calls function for henchman to roam in it's area
 
-        if (Vector2.Distance(transform.position, player.position) <= targetRange) //checks if player is nearby
+        if (Vector2.Distance(transform.position, player.position) <= targetRange && Vector2.Distance(transform.position, player.position) > attackRange) //checks if player is nearby
         {
             Chase(); //calls function for henchman to chase
         }
@@ -152,9 +160,32 @@ public class HenchmanScript : MonoBehaviour
 
     void AttackTarget() //attacks target once target is in attack range
     {
+        if (animal == Animal.Beaver)
+        {
+            MeleeAttack();
+        } else if (animal == Animal.Squirrel)
+        {
+            RangedAttack();
+        }
+        
+        return;
+    }
+
+    void MeleeAttack() //fuction for melee attack
+    {
         PlayerController pController = player.GetComponent<PlayerController>();
         pController.DecreaseHealth(attackDamage);
-        Debug.Log("attack target triggered");
-        Debug.Log(attackDamage);
+        return;
+    }
+
+    void RangedAttack() //function for ranged attack
+    {
+        if (nextFire < Time.time)
+        {
+            Instantiate(weapon, weaponParent.transform.position, Quaternion.identity); //spawns bullet
+            nextFire = Time.time + fireRate; //updates nextFire according to fireRate
+        }
+
+        return;
     }
 }
