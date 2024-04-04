@@ -61,8 +61,27 @@ public class CheddarScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         
+    }
+
+    public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
+    {
+        health -= damage;
+
+        if (health <= 0) //checks if health is 0 or less
+        {
+            Death(); //kills cheddar if health is 0
+        }
+    }
+
+    private void Death() //henchman death
+    {
+
+        Instantiate(key, transform.position, Quaternion.identity);
+        Instantiate(cake, transform.position, Quaternion.identity);
+
+        Destroy(this.gameObject); //destroys gameObject
     }
 }
