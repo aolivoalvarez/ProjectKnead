@@ -12,6 +12,7 @@ TagManager:
   - TreasureChest
   - BombExplosion
   - Key
+  - Door
   layers:
   - Default
   - TransparentFX

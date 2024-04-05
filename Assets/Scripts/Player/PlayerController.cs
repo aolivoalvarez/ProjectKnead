@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public bool isHoldingObject { get; set; }
     bool isInvincible;
 
-    bool bossKeyCollected;
+    public bool bossKeyCollected;
 
     Inventory inventory;
     //--------------------------------------------------//
@@ -262,7 +262,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Dylan BossKey Code
-    private void OnTriggerEnter2D(Collider2D other){
+    public void OnTriggerEnter2D(Collider2D other){
         if((other.tag == "Key")){
             bossKeyCollected = true;
             Destroy(other.gameObject);
