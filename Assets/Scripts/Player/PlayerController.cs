@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseMoney(int amount)
     {
-        money = (money + amount < 9999) ? money + amount : 9999;
+        money = (money + amount < 999) ? money + amount : 999;
         GameManager.instance.UpdatePlayerMoney();
     }
 

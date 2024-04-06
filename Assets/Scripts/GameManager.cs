@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public SceneField gameOverScene;
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject mainCanvas;
+    [SerializeField] GameObject healthPanel;
     [SerializeField] GameObject moneyCounter;
     [SerializeField] GameObject[] hearts;
     Image[] emptyHearts;
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
             mainCanvas.SetActive(true);
         }
         UpdatePlayerHearts();
+        CheckPlayerBehindUI();
     }
 
     public void EnablePlayerInput()
@@ -102,12 +104,62 @@ public class GameManager : MonoBehaviour
             moneyCounter.GetComponent<HorizontalLayoutGroup>().padding.top = -30;
         }
         else
-            moneyCounter.GetComponent<HorizontalLayoutGroup>().padding.top = 5;
+            moneyCounter.GetComponent<HorizontalLayoutGroup>().padding.top = 0;
     }
 
     public void UpdatePlayerMoney()
     {
-        moneyCounter.GetComponentInChildren<TextMeshProUGUI>().SetText(PlayerController.instance.money.ToString("0000"));
+        moneyCounter.GetComponentInChildren<TextMeshProUGUI>().SetText(PlayerController.instance.money.ToString("000"));
+    }
+
+    void CheckPlayerBehindUI()
+    {
+        if (IsPointInRectTransform(PlayerController.instance.transform.position, healthPanel.GetComponent<RectTransform>(), Camera.main))
+        {
+            foreach (Image i in healthPanel.GetComponentsInChildren<Image>())
+            {
+                if (i.color.a > 0f) i.color = new Color(i.color.r, i.color.g, i.color.b, 0.5f);
+            }
+            foreach (TextMeshProUGUI t in healthPanel.GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                if (t.color.a > 0f) t.color = new Color(t.color.r, t.color.g, t.color.b, 0.5f);
+            }
+            //Debug.Log("helloo");
+        }
+        else
+        {
+            foreach (Image i in healthPanel.GetComponentsInChildren<Image>())
+            {
+                if (i.color.a > 0f) i.color = new Color(i.color.r, i.color.g, i.color.b, 1f);
+            }
+            foreach (TextMeshProUGUI t in healthPanel.GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                if (t.color.a > 0f) t.color = new Color(t.color.r, t.color.g, t.color.b, 1f);
+            }
+        }
+    }
+
+    bool IsPointInRectTransform(Vector2 point, RectTransform rt, Camera cam)
+    {
+        int screenWidth = cam.scaledPixelWidth;
+        int screenHeight = cam.scaledPixelHeight;
+
+        float leftSide = cam.ScreenToWorldPoint(rt.anchorMin * screenWidth).x;
+        float rightSide = cam.ScreenToWorldPoint(rt.anchorMax * screenWidth).x;
+        float topSide = cam.ScreenToWorldPoint(rt.anchorMax * screenHeight).y;
+        float bottomSide = cam.ScreenToWorldPoint(rt.anchorMin * screenHeight).y;
+
+        //Debug.Log(leftSide + ", " + rightSide + ", " + topSide + ", " + bottomSide);
+
+        // Check to see if the point is in the calculated bounds
+        if (point.x >= leftSide &&
+            point.x <= rightSide &&
+            point.y >= bottomSide &&
+            point.y <= topSide)
+        {
+            return true;
+        }
+        return false;
     }
 
     public void RespawnAtCheckpoint(int damageToInflict = 0)
