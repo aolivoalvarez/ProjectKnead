@@ -3,11 +3,11 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Tilemaps/Dungeon0.tmx",
+    "activeFile": "Tilemaps/Dungeon1_draft.tmx",
     "expandedProjectPaths": [
-        ".",
         "Tilemaps",
         "Tilesets",
+        ".",
         "ObjectTemplates"
     ],
     "fileStates": {
@@ -15,19 +15,27 @@
             "expandedGroupLayers": [
                 13
             ],
-            "scale": 0.75,
+            "scale": 1.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 458.66666666666663,
-                "y": 1072
+                "x": 259.99999999999994,
+                "y": 1288.6666666666665
+            }
+        },
+        "Tilemaps/Dungeon1_draft.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 888,
+                "y": 2344
             }
         },
         "Tilemaps/NewPawTown.tmx": {
-            "scale": 0.5,
+            "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1024,
-                "y": 630
+                "x": 802,
+                "y": 575.5
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
@@ -38,6 +46,10 @@
             "scaleInDock": 0.33,
             "scaleInEditor": 1
         },
+        "Tilesets/DungeonTesting.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
         "Tilesets/FantasyWorldSample500x500.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1.5
@@ -47,24 +59,30 @@
             "scaleInEditor": 2
         }
     },
+    "last.imagePath": "C:/Users/theco/Documents/Unity Projects/ProjectKnead/Assets/Tiled/Art",
     "last.objectTemplatePath": "C:/Users/theco/Documents/Unity Projects/ProjectKnead/Assets/Tiled/ObjectTemplates",
     "last.objectTypesPath": "C:/Users/theco/Documents/Unity Projects/ProjectKnead/Assets/Tiled/propertytypes.xml",
     "map.height": 64,
     "map.lastUsedFormat": "tmx",
     "map.width": 64,
     "openFiles": [
-        "Tilemaps/Dungeon0.tmx",
+        "Tilemaps/NewPawTown.tmx",
         "Tilesets/TileSheetTopDownGame.tsx",
-        "Tilemaps/NewPawTown.tmx"
+        "Tilesets/DungeonTesting.tsx",
+        "Tilemaps/Dungeon0.tmx",
+        "Tilemaps/Dungeon1_draft.tmx"
     ],
     "project": "ProjectKnead.tiled-project",
     "property.type": "bool",
     "recentFiles": [
         "Tilemaps/NewPawTown.tmx",
         "Tilesets/TileSheetTopDownGame.tsx",
+        "Tilesets/DungeonTesting.tsx",
         "Tilemaps/Dungeon0.tmx",
+        "Tilemaps/Dungeon1_draft.tmx",
         "Tilesets/FantasyWorldSample500x500.tsx",
         "Tilesets/CaveDungeon.tsx",
         "Tilesets/1080x1920Topdown.tsx"
-    ]
+    ],
+    "tileset.lastUsedFormat": "tsx"
 }
