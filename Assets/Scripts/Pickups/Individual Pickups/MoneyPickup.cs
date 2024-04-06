@@ -5,19 +5,16 @@ Description: Used for all money pickups.
 -----------------------------------------*/
 
 using UnityEngine;
-using DG.Tweening;
 
+[RequireComponent(typeof(Animator))]
 public class MoneyPickup : Pickup
 {
     [SerializeField] int moneyAmount;
-    Tween turn1, turn2;
 
-    void Update()
+    protected new void Start()
     {
-        if (transform.localScale.x == 1f)
-            turn1 = transform.DOScaleX(-1f, 0.5f);
-        if (!turn1.IsActive() && transform.localScale.x == -1f)
-            turn2 = transform.DOScaleX(1f, 0.5f);
+        base.Start();
+        GetComponent<Animator>().SetInteger("Value", moneyAmount);
     }
 
     protected override void PlayerCollect()
