@@ -3,7 +3,12 @@ guid: 5d833dfbd656f9047b37bbdba3dbfd99
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {fileID: 6903119828378740589, guid: 30893695b92f3dc4898e5b3c0a2bdbd8, type: 3}
+  - bomb: {instanceID: 0}
+  - bombParent: {instanceID: 0}
+  - key: {instanceID: 0}
+  - cake: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

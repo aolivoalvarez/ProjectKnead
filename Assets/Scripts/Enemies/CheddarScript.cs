@@ -25,7 +25,8 @@ public class CheddarScript : MonoBehaviour
     [SerializeField] GameObject key; //dungeon key that cheddar drops
     [SerializeField] GameObject cake; //cake slice that cheddar drops
     int throwAmt; //amount of times cheddar has thrown a bomb
-    [SerializeField] int throwRate = 1; //rate that cheddar throws bombs
+    float nextThrow; //for throw rate calculations
+    [SerializeField] int throwRate = 3; //rate that cheddar throws bombs
     int stunTimer = 5; //how long cheddar is stunned for
 
     BoxCollider2D boxCollider;
@@ -97,7 +98,14 @@ public class CheddarScript : MonoBehaviour
 
     private void Attack()
     {
+        if (nextThrow < Time.time)
+        {
+            Instantiate(bomb, bombParent.transform.position, Quaternion.identity); //spawns bomb
+            nextThrow = Time.time + throwRate; //updates nextFire according to fireRate
+            throwAmt++; //upda
+        }
 
+        return;
     }
 
     private void Charge()
