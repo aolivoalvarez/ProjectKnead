@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class ItemBalloonScript : MonoBehaviour
 {
+    [SerializeField] GameObject balloonParent;
     [SerializeField] GameObject itemToDrop;
     [SerializeField] GameObject fallingItemPrefab;
     GameObject storedItem;
@@ -47,7 +48,7 @@ public class ItemBalloonScript : MonoBehaviour
             storedItem.transform.SetParent(fallingItem.transform);
             fallingItem.GetComponent<FallingItemScript>().storedItem = storedItem;
             fallingItem.GetComponent<FallingItemScript>().groundLevelY = transform.root.position.y;
-            Destroy(transform.root.gameObject); // gets rid of the item balloon
+            Destroy(balloonParent); // gets rid of the item balloon
         }
     }
 }

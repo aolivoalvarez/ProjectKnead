@@ -1,7 +1,7 @@
 /*-----------------------------------------
 Creation Date: 4/7/2024 3:46:44 PM
 Author: theco
-Description: Project Knead
+Description: Stores specific info about a dungeon.
 -----------------------------------------*/
 
 using UnityEngine;

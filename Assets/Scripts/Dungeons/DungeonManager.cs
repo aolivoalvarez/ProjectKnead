@@ -1,7 +1,7 @@
 /*-----------------------------------------
 Creation Date: 4/7/2024 6:22:40 PM
 Author: theco
-Description: Project Knead
+Description: Initializes and keeps track of each dungeon and its rooms.
 -----------------------------------------*/
 
 using System.Collections.Generic;
@@ -31,7 +31,7 @@ public class DungeonManager : MonoBehaviour
         if (dungeons == null) dungeons = new();
         while (dungeons.Count <= currentDungeon) dungeons.Add(new Dungeon());
         if (dungeons[currentDungeon].rooms == null) dungeons[currentDungeon].rooms = new DungeonRoomScript[FindObjectsOfType<DungeonRoomScript>().Length];
-        if (dungeons[currentDungeon].roomStates == null) dungeons[currentDungeon].roomStates = new DungeonRoomScript.RoomState[FindObjectsOfType<DungeonRoomScript>().Length];
+        if (dungeons[currentDungeon].roomStates == null) dungeons[currentDungeon].roomStates = new RoomState[FindObjectsOfType<DungeonRoomScript>().Length];
 
         for (int i = 0; i < dungeons[currentDungeon].rooms.Length; i++)
         {
@@ -41,6 +41,8 @@ public class DungeonManager : MonoBehaviour
             }
         }
         currentRoom = CalculateCurrentRoom();
+
+        if (dungeons[currentDungeon].roomStates[currentRoom] != null) ReEnterDungeon();
     }
 
     public void ChangeRoom()
@@ -52,7 +54,6 @@ public class DungeonManager : MonoBehaviour
 
         currentRoom = CalculateCurrentRoom();
 
-        dungeons[currentDungeon].rooms[currentRoom].gameObject.SetActive(true);
         Destroy(dungeons[currentDungeon].rooms[currentRoom].gameObject);
         dungeons[currentDungeon].rooms[currentRoom] = Instantiate(dungeonsInfo[currentDungeon].roomPrefabs[currentRoom].GetComponent<DungeonRoomScript>());
         dungeons[currentDungeon].rooms[currentRoom].currentState = dungeons[currentDungeon].roomStates[currentRoom];
@@ -74,5 +75,28 @@ public class DungeonManager : MonoBehaviour
         }
 
         return closestRoom;
+    }
+
+    public void LeaveDungeon()
+    {
+        dungeons[currentDungeon].roomStates[currentRoom] = dungeons[currentDungeon].rooms[currentRoom].SaveToStateLists();
+        for (int i = 0; i < dungeons[currentDungeon].roomStates.Length; i++)
+        {
+            if (dungeons[currentDungeon].roomStates[i] != null)
+            {
+                for (int n = 0; n < dungeons[currentDungeon].roomStates[i].respawnOnLeave.Count; n++)
+                {
+                    dungeons[currentDungeon].roomStates[i].respawnOnLeave[n] = true;
+                }
+            }
+        }
+        currentRoom = -1;
+    }
+
+    void ReEnterDungeon()
+    {
+        Destroy(dungeons[currentDungeon].rooms[currentRoom].gameObject);
+        dungeons[currentDungeon].rooms[currentRoom] = Instantiate(dungeonsInfo[currentDungeon].roomPrefabs[currentRoom].GetComponent<DungeonRoomScript>());
+        dungeons[currentDungeon].rooms[currentRoom].currentState = dungeons[currentDungeon].roomStates[currentRoom];
     }
 }

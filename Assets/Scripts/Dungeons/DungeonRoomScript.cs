@@ -1,31 +1,31 @@
 /*-----------------------------------------
 Creation Date: 4/7/2024 6:47:15 PM
 Author: theco
-Description: Project Knead
+Description: Saves/loads all relevant objects and their states in a given room.
 -----------------------------------------*/
 
 using System.Collections.Generic;
 using UnityEngine;
 
+public class RoomState
+{
+    public List<bool> chests;
+    public List<bool> respawnOnFloorChange;
+    public List<bool> respawnOnLeave;
+    public List<bool> dontRespawn;
+}
+
 public class DungeonRoomScript : MonoBehaviour
 {
-    public struct RoomState
-    {
-        public List<bool> chests;
-        public List<bool> enemies;
-        public List<bool> respawnOnLeave;
-        public List<bool> dontRespawn;
-    }
-
     public int roomIndex = 0;
 
     [SerializeField] GameObject chestsParent;
-    [SerializeField] GameObject enemiesParent;
+    [SerializeField] GameObject respawnOnFloorChangeParent;
     [SerializeField] GameObject respawnOnLeaveParent;
     [SerializeField] GameObject dontRespawnParent;
 
     public List<GameObject> chests { get; private set; }
-    public List<GameObject> enemies { get; private set; }
+    public List<GameObject> respawnOnFloorChange { get; private set; }
     public List<GameObject> respawnOnLeave { get; private set; }
     public List<GameObject> dontRespawn { get; private set; }
 
@@ -44,10 +44,10 @@ public class DungeonRoomScript : MonoBehaviour
         {
             if (chests[i].GetComponent<ChooseChestPickup>().chestOpened) currentState.chests[i] = false;
         }
-        for (int i = 0; i < enemies.Count; i++)
+        for (int i = 0; i < respawnOnFloorChange.Count; i++)
         {
-            if (enemies[i] == null) currentState.enemies[i] = false;
-            else currentState.enemies[i] = enemies[i].activeSelf;
+            if (respawnOnFloorChange[i] == null) currentState.respawnOnFloorChange[i] = false;
+            else currentState.respawnOnFloorChange[i] = respawnOnFloorChange[i].activeSelf;
         }
         for (int i = 0; i < respawnOnLeave.Count; i++)
         {
@@ -69,9 +69,9 @@ public class DungeonRoomScript : MonoBehaviour
         {
             if (!currentState.chests[i]) chests[i].GetComponent<ChooseChestPickup>().OpenChest();
         }
-        for (int i = 0; i < enemies.Count; i++)
+        for (int i = 0; i < respawnOnFloorChange.Count; i++)
         {
-            if (!currentState.enemies[i]) enemies[i].SetActive(false);
+            if (!currentState.respawnOnFloorChange[i]) respawnOnFloorChange[i].SetActive(false);
         }
         for (int i = 0; i < respawnOnLeave.Count; i++)
         {
@@ -86,46 +86,46 @@ public class DungeonRoomScript : MonoBehaviour
     void InitializeObjectLists()
     {
         chests = new();
-        enemies = new();
+        respawnOnFloorChange = new();
         respawnOnLeave = new();
         dontRespawn = new();
 
-        foreach (var c in chestsParent.GetComponentsInChildren<ChooseChestPickup>())
-            chests.Add(c.gameObject);
-        foreach (var e in enemiesParent.GetComponentsInChildren<HenchmanScript>())
-            enemies.Add(e.gameObject);
-        foreach (var r in respawnOnLeaveParent.GetComponentsInChildren<Transform>())
-            if (r != respawnOnLeaveParent) respawnOnLeave.Add(r.gameObject);
-        foreach (var d in dontRespawnParent.GetComponentsInChildren<Transform>())
-            if (d != dontRespawnParent) dontRespawn.Add(d.gameObject);
+        foreach (var chest in chestsParent.GetComponentsInChildren<ChooseChestPickup>())
+            chests.Add(chest.gameObject);
+        foreach (var tf in respawnOnFloorChangeParent.GetComponentsInChildren<Transform>())
+            if (tf != respawnOnFloorChangeParent) respawnOnFloorChange.Add(tf.gameObject);
+        foreach (var tf in respawnOnLeaveParent.GetComponentsInChildren<Transform>())
+            if (tf != respawnOnLeaveParent) respawnOnLeave.Add(tf.gameObject);
+        foreach (var tf in dontRespawnParent.GetComponentsInChildren<Transform>())
+            if (tf != dontRespawnParent) dontRespawn.Add(tf.gameObject);
     }
 
     void InitializeStateLists()
     {
-        if (currentState.Equals(null)) currentState = new();
+        if (currentState == null) currentState = new();
 
         if (currentState.chests == null)
         {
             currentState.chests = new();
-            foreach (var c in chests)
+            foreach (var obj in chests)
                 currentState.chests.Add(true);
         }
-        if (currentState.enemies == null)
+        if (currentState.respawnOnFloorChange == null)
         {
-            currentState.enemies = new();
-            foreach (var e in enemies)
-                currentState.enemies.Add(true);
+            currentState.respawnOnFloorChange = new();
+            foreach (var obj in respawnOnFloorChange)
+                currentState.respawnOnFloorChange.Add(true);
         }
         if (currentState.respawnOnLeave == null)
         {
             currentState.respawnOnLeave = new();
-            foreach (var r in respawnOnLeave)
+            foreach (var obj in respawnOnLeave)
                 currentState.respawnOnLeave.Add(true);
         }
         if (currentState.dontRespawn == null)
         {
             currentState.dontRespawn = new();
-            foreach (var d in dontRespawn)
+            foreach (var obj in dontRespawn)
                 currentState.dontRespawn.Add(true);
         }
     }

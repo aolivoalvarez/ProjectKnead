@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ab1a478f195c6418db4c238f00b19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  balloonParent: {fileID: 7748520293608156236}
   itemToDrop: {fileID: 0}
   fallingItemPrefab: {fileID: 6121658515856071695, guid: 34595185fcb30e24ab6668361bbfd3cc, type: 3}
 --- !u!1 &7748520293608156236

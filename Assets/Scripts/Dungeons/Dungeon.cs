@@ -1,13 +1,11 @@
 /*-----------------------------------------
 Creation Date: 4/7/2024 10:20:57 PM
 Author: theco
-Description: Project Knead
+Description: Probably doesn't need to be its own script. Stores all rooms and roomStates of a dungeon for saving/loading.
 -----------------------------------------*/
-
-using UnityEngine;
 
 public class Dungeon
 {
     public DungeonRoomScript[] rooms;
-    public DungeonRoomScript.RoomState[] roomStates;
+    public RoomState[] roomStates;
 }
