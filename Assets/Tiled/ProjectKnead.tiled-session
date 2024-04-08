@@ -3,10 +3,10 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Tilesets/TileSheetTopDownGame.tsx",
+    "activeFile": "Tilemaps/Dungeon0.tmx",
     "expandedProjectPaths": [
-        "Tilemaps",
         ".",
+        "Tilemaps",
         "ObjectTemplates",
         "Tilesets"
     ],
@@ -15,11 +15,11 @@
             "expandedGroupLayers": [
                 13
             ],
-            "scale": 1.5,
+            "scale": 5.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 316,
-                "y": 1358
+                "x": 282.3636363636364,
+                "y": 1446.727272727273
             }
         },
         "Tilemaps/Dungeon1_draft.tmx": {
@@ -51,7 +51,7 @@
         },
         "Tilesets/DungeonTesting.tsx": {
             "scaleInDock": 1.5,
-            "scaleInEditor": 4
+            "scaleInEditor": 2
         },
         "Tilesets/FantasyWorldSample500x500.tsx": {
             "scaleInDock": 1,
@@ -79,10 +79,10 @@
     "property.type": "bool",
     "recentFiles": [
         "Tilemaps/NewPawTown.tmx",
+        "Tilesets/TileSheetTopDownGame.tsx",
+        "Tilesets/DungeonTesting.tsx",
         "Tilemaps/Dungeon1_draft.tmx",
         "Tilemaps/Dungeon0.tmx",
-        "Tilesets/DungeonTesting.tsx",
-        "Tilesets/TileSheetTopDownGame.tsx",
         "Tilesets/FantasyWorldSample500x500.tsx",
         "Tilesets/CaveDungeon.tsx",
         "Tilesets/1080x1920Topdown.tsx"

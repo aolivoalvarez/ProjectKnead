@@ -99,12 +99,18 @@ public class SceneManagerScript : MonoBehaviour
         SceneFadeManager.instance.StartFadeIn();
 
         currentSceneType = SceneType.Standard;
-        foreach (SceneField s in dungeons)
+        for (int i = 0; i < dungeons.Length; i++)
         {
-            if (s.SceneName == currentScene.name)
+            if (dungeons[i].SceneName == currentScene.name)
             {
                 currentSceneType = SceneType.Dungeon;
+                DungeonManager.instance.currentDungeon = i;
+                DungeonManager.instance.InitializeDungeon();
                 break;
+            }
+            else
+            {
+                DungeonManager.instance.currentDungeon = -1;
             }
         }
         foreach (SceneField s in nonPlayerScenes)
