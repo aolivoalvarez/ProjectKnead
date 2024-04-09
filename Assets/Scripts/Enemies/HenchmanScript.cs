@@ -51,6 +51,8 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] GameObject weapon; //holds reference to weapon prefab
     [SerializeField] GameObject weaponParent; //holds reference to weapon parent game object
     [SerializeField] float fireRate = 1f; //fire rate for ranged weapon
+    [SerializeField, Range(0f, 1f), Tooltip("Percentage of incoming knockback this henchman takes. At 0, no knockback is taken.")]
+    float knockbackMultiplier = 1f;
     float nextFire; //for fire rate calculations
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
@@ -112,19 +114,30 @@ public class HenchmanScript : MonoBehaviour
         }
     }
 
-
-    private void FixedUpdate()
+    void Update()
     {
-        Roam(); //calls function for henchman to roam in it's area
-
-        if (Vector2.Distance(transform.position, player.position) <= targetRange && Vector2.Distance(transform.position, player.position) > attackRange) //checks if player is nearby
+        //After knockback is over, return movement control to the navmesh agent
+        if (!agent.enabled && rigidBody.velocity.magnitude <= 0.1f)
         {
-            Chase(); //calls function for henchman to chase
+            agent.enabled = true;
         }
+    }
 
-        if (Vector2.Distance(transform.position, player.position) <= attackRange) //checks if player is in attack range
+    void FixedUpdate()
+    {
+        if (agent.enabled)
         {
-            AttackTarget(); //attacks player
+            Roam(); //calls function for henchman to roam in it's area
+
+            if (Vector2.Distance(transform.position, player.position) <= targetRange && Vector2.Distance(transform.position, player.position) > attackRange) //checks if player is nearby
+            {
+                Chase(); //calls function for henchman to chase
+            }
+
+            if (Vector2.Distance(transform.position, player.position) <= attackRange) //checks if player is in attack range
+            {
+                AttackTarget(); //attacks player
+            }
         }
     }
 
@@ -137,6 +150,13 @@ public class HenchmanScript : MonoBehaviour
             Death(); //kills henchman if health is 0
         }
     }
+    public void TakeDamage(int damage, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to this enemy
+    {
+        TakeDamage(damage);
+
+        agent.enabled = false; //navmesh agent must be disabled for AddForce to work properly
+        rigidBody.AddForce(100f * knockbackMultiplier * knockbackStrength * knockbackDirection.normalized);
+    }
 
     void Roam() //gets random position and sets it as henchman's destination within a certain range of its starting position
     {
@@ -147,7 +167,6 @@ public class HenchmanScript : MonoBehaviour
         agent.SetDestination(roamPos); //sets henchman's destination
     }
 
-    
     void Chase() //moves henchman towards player
     {
         agent.SetDestination(player.position);

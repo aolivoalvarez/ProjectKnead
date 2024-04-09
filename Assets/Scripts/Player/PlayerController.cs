@@ -185,6 +185,20 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.GameOverSequence();
         }
     }
+    public void DecreaseHealth(int healthToLose, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to player
+    {
+        if (!isInvincible)
+        {
+            health -= healthToLose;
+            GameManager.instance.UpdatePlayerHearts();
+            rigidBody.AddForce(100f * knockbackStrength * knockbackDirection.normalized);
+            StartCoroutine(InvincibleRoutine());
+        }
+        if (health <= 0)
+        {
+            GameManager.instance.GameOverSequence();
+        }
+    }
 
     public void HealthToMax()
     {
@@ -250,10 +264,12 @@ public class PlayerController : MonoBehaviour
     public void EndPlayerCoroutines()
     {
         StopAllCoroutines();
+        animator.StopPlayback();
         isAttacking = false;
         isLifting = false;
         isHoldingObject = false;
         isInvincible = false;
+        isShielding = false;
         moveSpeedMult = 1f;
         graphic.localPosition = new Vector3(graphic.localPosition.x, initialGraphicPositionY);
         isJumping = false;

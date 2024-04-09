@@ -7,6 +7,12 @@ Description: Initializes and keeps track of each dungeon and its rooms.
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Dungeon
+{
+    public DungeonRoomScript[] rooms;
+    public RoomState[] roomStates;
+}
+
 public class DungeonManager : MonoBehaviour
 {
     public static DungeonManager instance;

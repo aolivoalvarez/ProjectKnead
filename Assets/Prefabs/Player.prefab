@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986628745}
   - component: {fileID: 5616939238311475765}
+  - component: {fileID: 5164974385699768347}
   m_Layer: 3
   m_Name: SwordSwingHitbox
   m_TagString: PlayerSword
@@ -121,6 +122,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.4, y: 1.25}
   m_Direction: 0
+--- !u!114 &5164974385699768347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986628744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25398bf000608ce42b62c4025ee32db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 1
+  knockbackStrength: 1
 --- !u!1 &1256587882
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +526,7 @@ MonoBehaviour:
   graphic: {fileID: 443351867189412524}
   liftRotationPoint: {fileID: 1256587883}
   animator: {fileID: 5552978750991962323}
+  bossKeyCollected: 0
   moveSpeed: 3
   inputDirection: {x: 0, y: 0}
   jumpHeight: 1
@@ -577,9 +593,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 3813448857345563782, guid: c8797c58b3349ce47b8e5c8c7bbc779d, type: 3}
-  layerMask:
+  wallLayer:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1
+  heldItem: {fileID: 0}
 --- !u!114 &2931263266652161719
 MonoBehaviour:
   m_ObjectHideFlags: 0
