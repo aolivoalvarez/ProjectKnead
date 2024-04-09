@@ -39,9 +39,16 @@ public class Npc1 : MonoBehaviour
 
             if(elapsedTime >= waitTime){
 
-                    elapsedTime = 0;
+                elapsedTime = 0;
                 
+                int rIndex = UnityEngine.Random.Range(0, points.Length);
+                while(rIndex == targetPoints)
+                {
+                    rIndex = UnityEngine.Random.Range(0, points.Length);
+                }
+                targetPoints = rIndex;
 
+                /*
                 if(Outwalk == true){   
                     targetPoints++;
                 }
@@ -61,6 +68,7 @@ public class Npc1 : MonoBehaviour
                     Outwalk = true;
                 }
             
+                */
 
             }
         
