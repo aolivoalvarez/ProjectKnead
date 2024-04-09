@@ -46,5 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dungeonsInfo:
   - {fileID: 11400000, guid: 8b08725daa9cade41ab63a66490c1e4b, type: 2}
+  - {fileID: 11400000, guid: 019714e02ce4ffc44b29397d2e1a6085, type: 2}
   currentDungeon: -1
-  currentRoom: {fileID: 0}
+  currentRoom: -1
