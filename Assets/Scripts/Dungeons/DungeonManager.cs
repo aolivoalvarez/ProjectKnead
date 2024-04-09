@@ -9,8 +9,15 @@ using UnityEngine;
 
 public class Dungeon
 {
+    public enum SwitchColor
+    {
+        Red,
+        Blue
+    }
+
     public DungeonRoomScript[] rooms;
     public RoomState[] roomStates;
+    public SwitchColor currentColor;
 }
 
 public class DungeonManager : MonoBehaviour
@@ -43,10 +50,15 @@ public class DungeonManager : MonoBehaviour
         {
             foreach (var room in FindObjectsOfType<DungeonRoomScript>())
             {
-                if (room.roomIndex == i) dungeons[currentDungeon].rooms[i] = room;
+                if (room.roomIndex == i) 
+                {
+                    dungeons[currentDungeon].rooms[i] = room;
+                    dungeons[currentDungeon].rooms[i].gameObject.SetActive(false);
+                }
             }
         }
         currentRoom = CalculateCurrentRoom();
+        dungeons[currentDungeon].rooms[currentRoom].gameObject.SetActive(true);
 
         if (dungeons[currentDungeon].roomStates[currentRoom] != null) ReEnterDungeon();
     }
@@ -97,6 +109,7 @@ public class DungeonManager : MonoBehaviour
             }
         }
         ChangeFloor();
+        dungeons[currentDungeon].currentColor = Dungeon.SwitchColor.Red;
         currentRoom = -1;
     }
 

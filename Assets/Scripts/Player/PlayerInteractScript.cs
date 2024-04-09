@@ -45,11 +45,11 @@ public class PlayerInteractScript : MonoBehaviour
     {
         playerController.isHoldingObject = liftedObject != null;
 
-        if (playerController.pInput.Player.Interact.triggered && !playerController.isHoldingObject && !playerController.isAttacking &&
+        if (playerController.pInput.Player.Interact.triggered && !playerController.isAttacking &&
             !playerController.isJumping && !playerController.isShielding)
         {
             // Open chest
-            if (interactHitboxScript.chestToOpen != null)
+            if (interactHitboxScript.chestToOpen != null && !playerController.isHoldingObject)
                 StartCoroutine(OpenChestRoutine(interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().OpenChest()));
             // Lift object
             else if (interactHitboxScript.objectToLift != null)
