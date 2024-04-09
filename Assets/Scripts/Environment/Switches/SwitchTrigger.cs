@@ -60,7 +60,7 @@ public class SwitchTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PlayerSword"))
+        if (other.gameObject.CompareTag("PlayerSword") || other.gameObject.CompareTag("BombExplosion"))
         {
             ChangeColor();
         }
