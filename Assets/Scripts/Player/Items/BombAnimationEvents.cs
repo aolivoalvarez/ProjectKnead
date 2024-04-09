@@ -8,6 +8,13 @@ using UnityEngine;
 
 public class BombAnimationEvents : MonoBehaviour
 {
+    void BombStartExplosion()
+    {
+        GetComponentInParent<BombScript>().transform.SetParent(null);
+        if (PlayerController.instance.GetComponent<PlayerUseItemScript>().heldItem == GetComponentInParent<BombScript>().gameObject)
+            PlayerController.instance.GetComponent<PlayerUseItemScript>().heldItem = null;
+    }
+
     void BombExplode()
     {
         Destroy(GetComponentInParent<BombScript>().gameObject);

@@ -19,7 +19,7 @@ public class BombScript : MonoBehaviour
         StartCoroutine(ExplosionRoutine());
     }
 
-    public void BombStartMoving()
+    public void BombStartMoving(Vector2 moveDirection)
     {
         var rigidBody = gameObject.AddComponent<Rigidbody2D>();
         rigidBody.gravityScale = 0f;
@@ -27,7 +27,7 @@ public class BombScript : MonoBehaviour
         rigidBody.freezeRotation = true;
         rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rigidBody.interpolation = RigidbodyInterpolation2D.Interpolate;
-        rigidBody.velocity = PlayerController.instance.simpleLookDirection * bombSpeed;
+        rigidBody.velocity = moveDirection * bombSpeed;
     }
 
     IEnumerator ExplosionRoutine()

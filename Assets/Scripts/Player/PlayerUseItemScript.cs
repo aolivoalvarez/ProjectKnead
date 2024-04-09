@@ -11,7 +11,7 @@ public class PlayerUseItemScript : MonoBehaviour
     [SerializeField] GameObject bombPrefab;
     [SerializeField] LayerMask wallLayer;
     PlayerController playerController;
-    GameObject heldItem;
+    public GameObject heldItem;
     Inventory.Subweapon lastUsedItem;
 
     void Start()
@@ -106,7 +106,7 @@ public class PlayerUseItemScript : MonoBehaviour
                 transform.position.y + playerController.simpleLookDirection.y);
         }
 
-        if (movingBomb) heldItem.GetComponent<BombScript>().BombStartMoving();
+        if (movingBomb) heldItem.GetComponent<BombScript>().BombStartMoving(playerController.simpleLookDirection);
         heldItem = null;
     }
 }

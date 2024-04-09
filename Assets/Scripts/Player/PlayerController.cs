@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public bool isHoldingObject { get; set; }
     bool isInvincible;
 
+    public bool bossKeyCollected;
+
     Inventory inventory;
     //--------------------------------------------------//
 
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour
         canJump = true;
         rigidBody = GetComponent<Rigidbody2D>();
         animator = graphic.gameObject.GetComponent<Animator>();
+        bossKeyCollected = false;
 
         InitializePlayerInput();
     }
@@ -182,6 +185,20 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.GameOverSequence();
         }
     }
+    public void DecreaseHealth(int healthToLose, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to player
+    {
+        if (!isInvincible)
+        {
+            health -= healthToLose;
+            GameManager.instance.UpdatePlayerHearts();
+            rigidBody.AddForce(100f * knockbackStrength * knockbackDirection.normalized);
+            StartCoroutine(InvincibleRoutine());
+        }
+        if (health <= 0)
+        {
+            GameManager.instance.GameOverSequence();
+        }
+    }
 
     public void HealthToMax()
     {
@@ -191,7 +208,7 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseMoney(int amount)
     {
-        money = (money + amount < 9999) ? money + amount : 9999;
+        money = (money + amount < 999) ? money + amount : 999;
         GameManager.instance.UpdatePlayerMoney();
     }
 
@@ -247,14 +264,26 @@ public class PlayerController : MonoBehaviour
     public void EndPlayerCoroutines()
     {
         StopAllCoroutines();
+        animator.StopPlayback();
         isAttacking = false;
         isLifting = false;
         isHoldingObject = false;
         isInvincible = false;
+        isShielding = false;
         moveSpeedMult = 1f;
         graphic.localPosition = new Vector3(graphic.localPosition.x, initialGraphicPositionY);
         isJumping = false;
         canJump = true;
         graphic.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    //Dylan BossKey Code
+    public void OnTriggerEnter2D(Collider2D other){
+        if((other.tag == "Key")){
+            bossKeyCollected = true;
+            Destroy(other.gameObject);
+            Debug.Log("Key Collected");
+
+        }
     }
 }

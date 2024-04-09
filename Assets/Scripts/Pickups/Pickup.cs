@@ -22,7 +22,7 @@ public abstract class Pickup : MonoBehaviour
         GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
-    void Start()
+    protected virtual void Start()
     {
         if (autoDespawn)
             StartDespawnRoutine();

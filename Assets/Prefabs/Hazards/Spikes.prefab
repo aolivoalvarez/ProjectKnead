@@ -75,8 +75,9 @@ MonoBehaviour:
   damageAmount: 2
   appliesKnockback: 0
   knockbackStrength: 1
+  canJumpOver: 1
   damagesPlayer: 1
-  damagesEnemies: 0
+  damagesEnemies: 1
 --- !u!1 &1867831901250570720
 GameObject:
   m_ObjectHideFlags: 0

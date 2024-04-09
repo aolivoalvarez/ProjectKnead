@@ -11,10 +11,12 @@ public class DungeonDoorScript : MonoBehaviour
 {
     [SerializeField] Vector3 newCamPos, newPlayerPos;
     DungeonCameraController camControl;
+    DungeonManager dungeonManager;
 
     void Start()
     {
         camControl = Camera.main.GetComponent<DungeonCameraController>();
+        dungeonManager = DungeonManager.instance;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -26,6 +28,11 @@ public class DungeonDoorScript : MonoBehaviour
 
             other.transform.position += newPlayerPos;
             CheckpointScript.instance.transform.position = other.transform.position;
+
+            if (dungeonManager.currentDungeon >= 0)
+            {
+                dungeonManager.ChangeRoom();
+            }
         }
     }
 }

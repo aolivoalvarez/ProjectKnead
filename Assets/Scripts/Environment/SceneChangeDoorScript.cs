@@ -44,6 +44,10 @@ public class SceneChangeDoorScript : MonoBehaviour
     {
         PlayerController.instance.pInput.Disable();
         yield return new WaitForSeconds(0f);
+        if (isDungeonEntrance)
+        {
+            DungeonManager.instance.LeaveDungeon();
+        }
         SceneManagerScript.SwapSceneFromDoorUse(sceneToLoad, doorToSpawnAt);
     }
 
