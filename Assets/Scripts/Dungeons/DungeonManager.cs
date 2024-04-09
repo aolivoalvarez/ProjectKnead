@@ -96,7 +96,23 @@ public class DungeonManager : MonoBehaviour
                 }
             }
         }
+        ChangeFloor();
         currentRoom = -1;
+    }
+
+    public void ChangeFloor()
+    {
+        dungeons[currentDungeon].roomStates[currentRoom] = dungeons[currentDungeon].rooms[currentRoom].SaveToStateLists();
+        for (int i = 0; i < dungeons[currentDungeon].roomStates.Length; i++)
+        {
+            if (dungeons[currentDungeon].roomStates[i] != null)
+            {
+                for (int n = 0; n < dungeons[currentDungeon].roomStates[i].respawnOnFloorChange.Count; n++)
+                {
+                    dungeons[currentDungeon].roomStates[i].respawnOnFloorChange[n] = true;
+                }
+            }
+        }
     }
 
     void ReEnterDungeon()
