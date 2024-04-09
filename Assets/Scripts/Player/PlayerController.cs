@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     float moveSpeed = 5f;
     public float moveSpeedMult { get; set; } = 1f; // will normally be 1, but various hazards can modify it to lower the player's speed
     [SerializeField] Vector2 inputDirection;
-    public Vector2 lookDirection { get; private set; } // keeps track of the direction the player last moved (for the animator)
+    public Vector2 lookDirection { get; set; } // keeps track of the direction the player last moved (for the animator)
     public Vector2 simpleLookDirection { get; private set; } // reduces lookDirection to just the 4 cardinal directions
 
     [Header("Jumping")]
