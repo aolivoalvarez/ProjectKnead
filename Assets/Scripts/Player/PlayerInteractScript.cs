@@ -102,6 +102,7 @@ public class PlayerInteractScript : MonoBehaviour
         yield return new WaitForSeconds(openingWaitTime);
         var heldItem = Instantiate(itemFromChest, new Vector3(transform.position.x, transform.position.y + chestItemOffsetY, transform.position.z), Quaternion.identity);
         heldItem.GetComponent<Collider2D>().enabled = false; // items from chests should not be tangible to the player
+        heldItem.GetComponent<SpriteRenderer>().sortingLayerName = "AboveEntity";
         heldItem.GetComponent<Pickup>().autoDespawn = false;
         heldItem.GetComponent<Pickup>().StopAllCoroutines();
         heldItem.GetComponent<Pickup>().PlayerCollectDontDestroy();

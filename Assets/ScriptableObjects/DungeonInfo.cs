@@ -10,4 +10,16 @@ using UnityEngine;
 public class DungeonInfo : ScriptableObject
 {
     public GameObject[] roomPrefabs;
+    public int keysCollected = 0;
+    public int keysUsed = 0;
+    public bool hasBossKey = false;
+
+    public void ResetValues()
+    {
+        keysCollected = 0;
+        keysUsed = 0;
+        hasBossKey = false;
+    }
+
+    public bool CanUseKey() { return keysCollected > keysUsed; }
 }

@@ -15,7 +15,9 @@ public enum PickupType
     Money20,
     Heart,
     AttackUp,
-    DefenseUp
+    DefenseUp,
+    Key,
+    BossKey
 }
 
 public abstract class ChoosePickup : MonoBehaviour

@@ -11,8 +11,7 @@ TagManager:
   - BlockedByShield
   - TreasureChest
   - BombExplosion
-  - Key
-  - Door
+  - LockedDoor
   layers:
   - Default
   - TransparentFX

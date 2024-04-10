@@ -20,7 +20,7 @@ public class MoneyPickup : Pickup
     protected override void PlayerCollect()
     {
         PlayerController.instance.IncreaseMoney(moneyAmount);
-        Destroy(transform.root.gameObject);
+        base.PlayerCollect();
     }
 
     public override void PlayerCollectDontDestroy()

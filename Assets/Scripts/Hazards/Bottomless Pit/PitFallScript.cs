@@ -25,6 +25,7 @@ public class PitFallScript : MonoBehaviour
         {
             Destroy(other.gameObject.GetComponent<HenchmanScript>().agent);
             other.gameObject.GetComponent<Collider2D>().enabled = false;
+            other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             other.gameObject.transform.position = transform.position;
             other.gameObject.transform.DOScale(0f, 1f);
             Destroy(other.gameObject, 1f);

@@ -232,6 +232,10 @@ MonoBehaviour:
       Value: {fileID: 0}
     - Key: 6
       Value: {fileID: 0}
+    - Key: 7
+      Value: {fileID: 3011918042975807704, guid: ef57b416d49ed36478d478f00ed9f974, type: 3}
+    - Key: 8
+      Value: {fileID: 3011918042975807704, guid: c9d30c9173daa904a89d9ecd20a18953, type: 3}
   chestClosed: {fileID: -444870485, guid: e1c2dbbc634f14d4a90861354aec25b8, type: 3}
   chestOpen: {fileID: 1032120657, guid: e1c2dbbc634f14d4a90861354aec25b8, type: 3}
   graphic: {fileID: 4041196912287083248}

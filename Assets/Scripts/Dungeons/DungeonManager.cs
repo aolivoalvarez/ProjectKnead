@@ -42,7 +42,11 @@ public class DungeonManager : MonoBehaviour
     public void InitializeDungeon()
     {
         if (dungeons == null) dungeons = new();
-        while (dungeons.Count <= currentDungeon) dungeons.Add(new Dungeon());
+        while (dungeons.Count <= currentDungeon)
+        {
+            dungeons.Add(new Dungeon());
+            dungeonsInfo[currentDungeon].ResetValues();
+        }
         if (dungeons[currentDungeon].rooms == null) dungeons[currentDungeon].rooms = new DungeonRoomScript[FindObjectsOfType<DungeonRoomScript>().Length];
         if (dungeons[currentDungeon].roomStates == null) dungeons[currentDungeon].roomStates = new RoomState[FindObjectsOfType<DungeonRoomScript>().Length];
 

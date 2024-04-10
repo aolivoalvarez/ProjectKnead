@@ -10,6 +10,7 @@ public class InteractHitboxScript : MonoBehaviour
 {
     public GameObject objectToLift;
     public GameObject chestToOpen;
+    public GameObject doorToUnlock;
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -21,11 +22,17 @@ public class InteractHitboxScript : MonoBehaviour
         {
             chestToOpen = other.gameObject;
         }
+        
+        if (other.gameObject.CompareTag("LockedDoor"))
+        {
+            doorToUnlock = other.gameObject;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         objectToLift = null;
         chestToOpen = null;
+        doorToUnlock = null;
     }
 }
