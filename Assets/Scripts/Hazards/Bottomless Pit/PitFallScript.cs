@@ -30,5 +30,13 @@ public class PitFallScript : MonoBehaviour
             other.gameObject.transform.DOScale(0f, 1f);
             Destroy(other.gameObject, 1f);
         }
+        else if (other.gameObject.GetComponent<PushObjectScript>() != null)
+        {
+            other.gameObject.GetComponent<Collider2D>().enabled = false;
+            other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            other.gameObject.transform.position = transform.position;
+            other.gameObject.transform.DOScale(0f, 1f);
+            Destroy(other.gameObject, 1f);
+        }
     }
 }

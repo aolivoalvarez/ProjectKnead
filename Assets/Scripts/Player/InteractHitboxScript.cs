@@ -9,6 +9,7 @@ using UnityEngine;
 public class InteractHitboxScript : MonoBehaviour
 {
     public GameObject objectToLift;
+    public GameObject objectToPush;
     public GameObject chestToOpen;
     public GameObject doorToUnlock;
 
@@ -22,6 +23,11 @@ public class InteractHitboxScript : MonoBehaviour
         {
             chestToOpen = other.gameObject;
         }
+
+        if (other.gameObject.CompareTag("PushObject"))
+        {
+            objectToPush = other.gameObject;
+        }
         
         if (other.gameObject.CompareTag("LockedDoor"))
         {
@@ -32,6 +38,7 @@ public class InteractHitboxScript : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         objectToLift = null;
+        objectToPush = null;
         chestToOpen = null;
         doorToUnlock = null;
     }

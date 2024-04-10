@@ -12,6 +12,7 @@ TagManager:
   - TreasureChest
   - BombExplosion
   - LockedDoor
+  - PushObject
   layers:
   - Default
   - TransparentFX
