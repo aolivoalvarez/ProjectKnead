@@ -18,6 +18,8 @@ public class InventoryMenuScript : MonoBehaviour
 
     [SerializeField] GameObject inventoryMenu; //gets inventory menu panel
 
+    public bool isPaused;
+
     void Awake()
     {
         //---------- Make this script a singleton ----------//
@@ -41,6 +43,9 @@ public class InventoryMenuScript : MonoBehaviour
         if (iInput.Inventory.Open.triggered)
         {
             ToggleInventoryMenu();
+            isPaused = !isPaused;
+            Time.timeScale = isPaused ? 0 : 1;
+            inventoryMenu.SetActive(isPaused);
             //RefreshInventoryItems();
         }
     }
