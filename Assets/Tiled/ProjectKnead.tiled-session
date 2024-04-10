@@ -5,10 +5,10 @@
     },
     "activeFile": "Tilesets/TileSheetTopDownGame.tsx",
     "expandedProjectPaths": [
-        ".",
+        "Tilemaps",
         "ObjectTemplates",
         "Tilesets",
-        "Tilemaps"
+        "."
     ],
     "fileStates": {
         "Tilemaps/Dungeon0.tmx": {
@@ -23,11 +23,11 @@
             }
         },
         "Tilemaps/Dungeon1.tmx": {
-            "scale": 2,
-            "selectedLayer": 0,
+            "scale": 1.5,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 545.5,
-                "y": 2389.5
+                "x": 321.3333333333333,
+                "y": 2425.333333333333
             }
         },
         "Tilemaps/Dungeon1_draft.tmx": {
@@ -59,7 +59,7 @@
         },
         "Tilesets/DungeonTesting.tsx": {
             "scaleInDock": 1.5,
-            "scaleInEditor": 3
+            "scaleInEditor": 5.5
         },
         "Tilesets/FantasyWorldSample500x500.tsx": {
             "scaleInDock": 1,

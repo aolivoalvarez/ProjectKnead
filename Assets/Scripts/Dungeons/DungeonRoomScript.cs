@@ -90,13 +90,13 @@ public class DungeonRoomScript : MonoBehaviour
         respawnOnLeave = new();
         dontRespawn = new();
 
-        foreach (var chest in chestsParent.GetComponentsInChildren<ChooseChestPickup>())
+        foreach (var chest in chestsParent.GetComponentsInChildren<ChooseChestPickup>(true))
             chests.Add(chest.gameObject);
-        foreach (var tf in respawnOnFloorChangeParent.GetComponentsInChildren<Transform>())
+        foreach (var tf in respawnOnFloorChangeParent.GetComponentsInChildren<Transform>(true))
             if (tf != respawnOnFloorChangeParent) respawnOnFloorChange.Add(tf.gameObject);
-        foreach (var tf in respawnOnLeaveParent.GetComponentsInChildren<Transform>())
+        foreach (var tf in respawnOnLeaveParent.GetComponentsInChildren<Transform>(true))
             if (tf != respawnOnLeaveParent) respawnOnLeave.Add(tf.gameObject);
-        foreach (var tf in dontRespawnParent.GetComponentsInChildren<Transform>())
+        foreach (var tf in dontRespawnParent.GetComponentsInChildren<Transform>(true))
             if (tf != dontRespawnParent) dontRespawn.Add(tf.gameObject);
     }
 
