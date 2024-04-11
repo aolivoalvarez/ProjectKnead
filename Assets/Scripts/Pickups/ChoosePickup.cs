@@ -17,7 +17,8 @@ public enum PickupType
     AttackUp,
     DefenseUp,
     Key,
-    BossKey
+    BossKey,
+    BombBag
 }
 
 public abstract class ChoosePickup : MonoBehaviour

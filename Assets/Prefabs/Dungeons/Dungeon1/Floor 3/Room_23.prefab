@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4665578779371321215}
     m_Modifications:
+    - target: {fileID: 2592274389862701117, guid: aa7ae3260c58e594fb17aacc6bf23ce3, type: 3}
+      propertyPath: thisPickup
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3294340027111601891, guid: aa7ae3260c58e594fb17aacc6bf23ce3, type: 3}
       propertyPath: m_Name
       value: Chest
