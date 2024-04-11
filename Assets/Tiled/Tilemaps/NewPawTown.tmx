@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="48" height="36" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="1">
  <tileset firstgid="1" source="../Tilesets/TileSheetTopDownGame.tsx"/>
- <layer id="1" name="Floor" class="Ground" width="48" height="36">
+ <layer id="1" name="Floor" class="Ground" width="48" height="36" locked="1">
   <properties>
    <property name="unity:SortingLayer" value="Ground"/>
    <property name="unity:SortingOrder" type="int" value="0"/>
@@ -125,7 +125,7 @@
 59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60,59,60
 </data>
  </layer>
- <group id="13" name="Images" locked="1">
+ <group id="13" name="Images" visible="0" locked="1">
   <imagelayer id="3" name="house0" offsetx="712" offsety="306">
    <image source="../../Graphics/Structures/house_0.png" width="145" height="120"/>
   </imagelayer>

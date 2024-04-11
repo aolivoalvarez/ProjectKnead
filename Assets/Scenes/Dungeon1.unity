@@ -12987,7 +12987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2405042601971407070, guid: fe0d03e32ece73340b79b4dfd5b189e6, type: 3}
       propertyPath: doorToSpawnAt
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2405042601971407070, guid: fe0d03e32ece73340b79b4dfd5b189e6, type: 3}
       propertyPath: isDungeonEntrance

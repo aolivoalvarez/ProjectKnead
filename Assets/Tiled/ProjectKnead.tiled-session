@@ -3,14 +3,22 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Tilemaps/Dungeon1.tmx",
+    "activeFile": "Tilemaps/NewPawTown.tmx",
     "expandedProjectPaths": [
-        "Tilesets",
-        ".",
         "ObjectTemplates",
-        "Tilemaps"
+        "Tilemaps",
+        ".",
+        "Tilesets"
     ],
     "fileStates": {
+        "Tilemaps/BigBirchForest.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 768,
+                "y": 529
+            }
+        },
         "Tilemaps/Dungeon0.tmx": {
             "expandedGroupLayers": [
                 13
@@ -26,8 +34,8 @@
             "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 459,
-                "y": 2262
+                "x": 1280,
+                "y": 1535.5
             }
         },
         "Tilemaps/Dungeon1_draft.tmx": {
@@ -42,11 +50,11 @@
             }
         },
         "Tilemaps/NewPawTown.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 0,
+            "scale": 0.75,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 836,
-                "y": 575
+                "x": 1314.6666666666665,
+                "y": 764
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
@@ -59,7 +67,7 @@
         },
         "Tilesets/DungeonTesting.tsx": {
             "scaleInDock": 1.5,
-            "scaleInEditor": 5.5
+            "scaleInEditor": 2
         },
         "Tilesets/FantasyWorldSample500x500.tsx": {
             "scaleInDock": 1,
@@ -83,17 +91,19 @@
         "Tilesets/DungeonTesting.tsx",
         "Tilemaps/Dungeon0.tmx",
         "Tilemaps/Dungeon1_draft.tmx",
-        "Tilemaps/Dungeon1.tmx"
+        "Tilemaps/Dungeon1.tmx",
+        "Tilemaps/BigBirchForest.tmx"
     ],
     "project": "ProjectKnead.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "Tilemaps/NewPawTown.tmx",
-        "Tilesets/TileSheetTopDownGame.tsx",
-        "Tilesets/DungeonTesting.tsx",
-        "Tilemaps/Dungeon0.tmx",
-        "Tilemaps/Dungeon1_draft.tmx",
+        "Tilemaps/BigBirchForest.tmx",
         "Tilemaps/Dungeon1.tmx",
+        "Tilemaps/Dungeon1_draft.tmx",
+        "Tilemaps/Dungeon0.tmx",
+        "Tilesets/DungeonTesting.tsx",
+        "Tilesets/TileSheetTopDownGame.tsx",
+        "Tilemaps/NewPawTown.tmx",
         "Tilesets/FantasyWorldSample500x500.tsx",
         "Tilesets/CaveDungeon.tsx",
         "Tilesets/1080x1920Topdown.tsx"

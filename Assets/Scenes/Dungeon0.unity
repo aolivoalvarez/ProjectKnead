@@ -309,6 +309,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6808076295884387371, guid: 8e363487ebaf787438aca71d719ed1cf, type: 3}
   m_PrefabInstance: {fileID: 57924920}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &106539369
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2932335951676416552, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_Name
+      value: WholeDungeon0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405505528013765521, guid: b1206f400363c264ea56cad25318621d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1206f400363c264ea56cad25318621d, type: 3}
 --- !u!1001 &142080657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3060,7 +3117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2405042601971407070, guid: fe0d03e32ece73340b79b4dfd5b189e6, type: 3}
       propertyPath: doorToSpawnAt
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2405042601971407070, guid: fe0d03e32ece73340b79b4dfd5b189e6, type: 3}
       propertyPath: isDungeonEntrance
@@ -4650,7 +4707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2405042601971407070, guid: fe0d03e32ece73340b79b4dfd5b189e6, type: 3}
       propertyPath: doorToSpawnAt
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2405042601971407070, guid: fe0d03e32ece73340b79b4dfd5b189e6, type: 3}
       propertyPath: isDungeonEntrance
