@@ -3,20 +3,20 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Tilemaps/NewPawTown.tmx",
+    "activeFile": "Tilemaps/Dungeon1.tmx",
     "expandedProjectPaths": [
+        "Tilesets",
         "ObjectTemplates",
         "Tilemaps",
-        ".",
-        "Tilesets"
+        "."
     ],
     "fileStates": {
         "Tilemaps/BigBirchForest.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 0,
+            "scale": 1.5,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 768,
-                "y": 529
+                "x": 926,
+                "y": 795.3333333333333
             }
         },
         "Tilemaps/Dungeon0.tmx": {
@@ -34,8 +34,8 @@
             "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 926,
-                "y": 2152
+                "x": 1430,
+                "y": 324
             }
         },
         "Tilemaps/Dungeon1_draft.tmx": {
@@ -75,7 +75,7 @@
         },
         "Tilesets/TileSheetTopDownGame.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 2
+            "scaleInEditor": 11
         }
     },
     "last.imagePath": "C:/Users/theco/Documents/Unity Projects/ProjectKnead/Assets/Tiled/Art",
@@ -97,13 +97,13 @@
     "project": "ProjectKnead.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "Tilemaps/NewPawTown.tmx",
+        "Tilesets/TileSheetTopDownGame.tsx",
+        "Tilesets/DungeonTesting.tsx",
+        "Tilemaps/Dungeon0.tmx",
+        "Tilemaps/Dungeon1_draft.tmx",
         "Tilemaps/BigBirchForest.tmx",
         "Tilemaps/Dungeon1.tmx",
-        "Tilemaps/Dungeon1_draft.tmx",
-        "Tilemaps/Dungeon0.tmx",
-        "Tilesets/DungeonTesting.tsx",
-        "Tilesets/TileSheetTopDownGame.tsx",
-        "Tilemaps/NewPawTown.tmx",
         "Tilesets/FantasyWorldSample500x500.tsx",
         "Tilesets/CaveDungeon.tsx",
         "Tilesets/1080x1920Topdown.tsx"

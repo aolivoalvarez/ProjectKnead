@@ -28,5 +28,9 @@ public class AcornBulletScript : MonoBehaviour
         {
             PlayerController.instance.DecreaseHealth(1, 1f, movement);
         }
+        if (!other.isTrigger && other.gameObject.GetComponent<HenchmanScript>() == null)
+        {
+            Destroy(gameObject);
+        }
     }
 }
