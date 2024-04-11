@@ -26,13 +26,12 @@ public class BasicEnemyScript : MonoBehaviour
     Rigidbody2D rigidBody;
     Animator animator;
     Vector2 startingPosition; //holds basic enemy's starting position
-    public NavMeshAgent agent { get; private set; } //holds reference to basic enemy's navmesh agent
+    NavMeshAgent agent; //holds reference to basic enemy's navmesh agent
     void Start()
     {
         player = PlayerController.instance.transform;
         startingPosition = transform.position; //gets basic enemy's starting position
         health = maxHealth; //sets health to max
-        agent.speed = moveSpeed; //sets speed to moveSpeed
 
         //references to components
         boxCollider = GetComponent<BoxCollider2D>();
@@ -41,6 +40,7 @@ public class BasicEnemyScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = moveSpeed; //sets speed to moveSpeed
     }
 
     void Update()
