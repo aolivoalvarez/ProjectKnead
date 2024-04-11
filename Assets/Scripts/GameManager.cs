@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] hearts;
     Image[] emptyHearts;
     Image[] fullHearts;
+    public bool heartContainerCollected = false;
 
     void Awake()
     {

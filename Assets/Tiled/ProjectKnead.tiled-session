@@ -6,11 +6,19 @@
     "activeFile": "Tilemaps/Dungeon1.tmx",
     "expandedProjectPaths": [
         "Tilesets",
-        ".",
         "ObjectTemplates",
-        "Tilemaps"
+        "Tilemaps",
+        "."
     ],
     "fileStates": {
+        "Tilemaps/BigBirchForest.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 926,
+                "y": 795.3333333333333
+            }
+        },
         "Tilemaps/Dungeon0.tmx": {
             "expandedGroupLayers": [
                 13
@@ -23,11 +31,11 @@
             }
         },
         "Tilemaps/Dungeon1.tmx": {
-            "scale": 1,
+            "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 459,
-                "y": 2262
+                "x": 1430,
+                "y": 324
             }
         },
         "Tilemaps/Dungeon1_draft.tmx": {
@@ -42,11 +50,11 @@
             }
         },
         "Tilemaps/NewPawTown.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 0,
+            "scale": 0.75,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 836,
-                "y": 575
+                "x": 1314.6666666666665,
+                "y": 764
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
@@ -59,7 +67,7 @@
         },
         "Tilesets/DungeonTesting.tsx": {
             "scaleInDock": 1.5,
-            "scaleInEditor": 5.5
+            "scaleInEditor": 2
         },
         "Tilesets/FantasyWorldSample500x500.tsx": {
             "scaleInDock": 1,
@@ -67,7 +75,7 @@
         },
         "Tilesets/TileSheetTopDownGame.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 2
+            "scaleInEditor": 11
         }
     },
     "last.imagePath": "C:/Users/theco/Documents/Unity Projects/ProjectKnead/Assets/Tiled/Art",
@@ -83,7 +91,8 @@
         "Tilesets/DungeonTesting.tsx",
         "Tilemaps/Dungeon0.tmx",
         "Tilemaps/Dungeon1_draft.tmx",
-        "Tilemaps/Dungeon1.tmx"
+        "Tilemaps/Dungeon1.tmx",
+        "Tilemaps/BigBirchForest.tmx"
     ],
     "project": "ProjectKnead.tiled-project",
     "property.type": "bool",
@@ -93,6 +102,7 @@
         "Tilesets/DungeonTesting.tsx",
         "Tilemaps/Dungeon0.tmx",
         "Tilemaps/Dungeon1_draft.tmx",
+        "Tilemaps/BigBirchForest.tmx",
         "Tilemaps/Dungeon1.tmx",
         "Tilesets/FantasyWorldSample500x500.tsx",
         "Tilesets/CaveDungeon.tsx",

@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e62e4bf2aa0054e9e214a3482d6624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCamPos: {x: 0, y: 9, z: -10}
+  newCamPos: {x: 0, y: 9, z: 0}
   newPlayerPos: {x: 0, y: 1.5, z: 0}
 --- !u!1 &1612873068549774022
 GameObject:
@@ -177,5 +177,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e62e4bf2aa0054e9e214a3482d6624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCamPos: {x: 0, y: -9, z: -10}
+  newCamPos: {x: 0, y: -9, z: 0}
   newPlayerPos: {x: 0, y: -1.5, z: 0}

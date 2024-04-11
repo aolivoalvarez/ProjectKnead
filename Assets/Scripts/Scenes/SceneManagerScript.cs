@@ -105,7 +105,6 @@ public class SceneManagerScript : MonoBehaviour
             {
                 currentSceneType = SceneType.Dungeon;
                 DungeonManager.instance.currentDungeon = i;
-                DungeonManager.instance.InitializeDungeon();
                 break;
             }
             else
@@ -155,17 +154,21 @@ public class SceneManagerScript : MonoBehaviour
             }
             else
                 FindDoor(doorToRespawnPlayer);
-            
+
+            PlayerController.instance.gameObject.transform.position = playerSpawnPosition;
+            CheckpointScript.instance.transform.position = playerSpawnPosition;
+            RespawnPointScript.instance.transform.position = playerSpawnPosition;
+
             if (currentSceneType == SceneType.Dungeon)
             {
                 Camera.main.transform.position = dungeonCameraPosition;
                 var camControl = Camera.main.GetComponent<DungeonCameraController>();
                 camControl.minPos = dungeonCameraPosition;
                 camControl.maxPos = dungeonCameraPosition;
+
+                DungeonManager.instance.InitializeDungeon();
             }
-            PlayerController.instance.gameObject.transform.position = playerSpawnPosition;
-            CheckpointScript.instance.transform.position = playerSpawnPosition;
-            RespawnPointScript.instance.transform.position = playerSpawnPosition;
+            
             loadedFromDoor = false;
         }
         StartCoroutine(EnablePlayerInput());

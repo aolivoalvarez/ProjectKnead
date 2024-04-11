@@ -46,6 +46,11 @@
    <object id="1" x="0" y="0" width="29" height="32"/>
   </objectgroup>
  </tile>
+ <tile id="51">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="32" height="32"/>
+  </objectgroup>
+ </tile>
  <tile id="57">
   <objectgroup draworder="index" id="2">
    <object id="2" x="3" y="0" width="29" height="32"/>
@@ -64,6 +69,11 @@
  <tile id="60">
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="0" width="29" height="32"/>
+  </objectgroup>
+ </tile>
+ <tile id="72">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
  <tile id="78">

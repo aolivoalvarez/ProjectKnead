@@ -195,7 +195,7 @@ public class HenchmanScript : MonoBehaviour
     private void MeleeAttack() //fuction for melee attack
     {
         PlayerController pController = player.GetComponent<PlayerController>();
-        pController.DecreaseHealth(attackDamage);
+        pController.DecreaseHealth(attackDamage, 1f, pController.transform.position - transform.position);
         return;
     }
 
