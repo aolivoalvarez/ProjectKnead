@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2127917023
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ab1366ea75742b44db41b08a060c1991, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -118,11 +118,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 6069889814827003193}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: d1e6fa116bcf4d449bf01195b8448222, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.007762432, y: 0.48848516}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.21875}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.5031993, y: 1.4631883}
   m_EdgeRadius: 0
 --- !u!114 &7721310960908685457
 MonoBehaviour:
@@ -157,11 +157,15 @@ MonoBehaviour:
   mTargetRange: 5
   rTargetRange: 10
   attackRange: 2
-  mAttackRange: 2
+  mAttackRange: 1.5
   rAttackRange: 5
   player: {fileID: 0}
   roamDistMax: 10
   roamDistMin: 5
+  weapon: {fileID: 0}
+  weaponParent: {fileID: 0}
+  fireRate: 1
+  knockbackMultiplier: 1
 --- !u!195 &4076519554882361959
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -172,7 +176,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 2
+  m_Speed: 1.25
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -181,6 +185,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

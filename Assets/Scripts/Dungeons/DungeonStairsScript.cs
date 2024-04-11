@@ -19,6 +19,7 @@ public class DungeonStairsScript : MonoBehaviour
     public StairsID thisStairs;
     public Transform playerSpawnPosition;
     public Transform initialCameraPosition;
+    public bool isRespawnPoint = false;
 
     [Header("Connected Stairs")]
     [SerializeField] StairsID stairsToSpawnAt;
@@ -65,6 +66,7 @@ public class DungeonStairsScript : MonoBehaviour
             other.transform.position = connectedStairs.playerSpawnPosition.position;
             other.GetComponent<PlayerController>().lookDirection = (other.transform.position - connectedStairs.transform.position).normalized;
             CheckpointScript.instance.transform.position = other.transform.position;
+            if (isRespawnPoint) RespawnPointScript.instance.transform.position = other.transform.position;
 
             dungeonManager.ChangeFloor();
             dungeonManager.ChangeRoom();
