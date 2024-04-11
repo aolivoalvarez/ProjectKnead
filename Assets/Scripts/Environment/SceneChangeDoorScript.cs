@@ -51,6 +51,7 @@ public class SceneChangeDoorScript : MonoBehaviour
         SceneManagerScript.SwapSceneFromDoorUse(sceneToLoad, doorToSpawnAt);
     }
 
+#if UNITY_EDITOR
     void OnDrawGizmos()
     {
         var labelStyle = new GUIStyle();
@@ -59,4 +60,5 @@ public class SceneChangeDoorScript : MonoBehaviour
 
         Handles.Label(transform.position, currentDoorPosition.ToString(), labelStyle);
     }
+#endif
 }

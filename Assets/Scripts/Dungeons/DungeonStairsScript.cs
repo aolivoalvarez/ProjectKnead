@@ -73,6 +73,7 @@ public class DungeonStairsScript : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
     void OnDrawGizmos()
     {
         var labelStyle = new GUIStyle();
@@ -81,4 +82,5 @@ public class DungeonStairsScript : MonoBehaviour
 
         Handles.Label(transform.position, thisStairs.ToString(), labelStyle);
     }
+#endif
 }

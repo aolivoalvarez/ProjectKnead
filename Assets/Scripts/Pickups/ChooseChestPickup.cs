@@ -27,6 +27,7 @@ public class ChooseChestPickup : ChoosePickup
         return pickupPrefabs[thisPickup];
     }
 
+#if UNITY_EDITOR
     void OnDrawGizmos()
     {
         var labelStyle = new GUIStyle();
@@ -35,4 +36,5 @@ public class ChooseChestPickup : ChoosePickup
 
         Handles.Label(transform.position, thisPickup.ToString(), labelStyle);
     }
+#endif
 }
