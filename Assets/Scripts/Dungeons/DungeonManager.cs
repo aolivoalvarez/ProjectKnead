@@ -15,6 +15,8 @@ public class Dungeon
         Blue
     }
 
+    public DungeonPersistence wholeDungeon;
+    public RoomState wholeDungeonState;
     public DungeonRoomScript[] rooms;
     public RoomState[] roomStates;
     public SwitchColor currentColor;
@@ -47,6 +49,8 @@ public class DungeonManager : MonoBehaviour
             dungeons.Add(new Dungeon());
             dungeonsInfo[currentDungeon].ResetValues();
         }
+        if (dungeons[currentDungeon].wholeDungeon == null) dungeons[currentDungeon].wholeDungeon = FindObjectOfType<DungeonPersistence>();
+        if (dungeons[currentDungeon].wholeDungeonState == null) dungeons[currentDungeon].wholeDungeonState = dungeons[currentDungeon].wholeDungeon.currentState;
         if (dungeons[currentDungeon].rooms == null) dungeons[currentDungeon].rooms = new DungeonRoomScript[FindObjectsOfType<DungeonRoomScript>().Length];
         if (dungeons[currentDungeon].roomStates == null) dungeons[currentDungeon].roomStates = new RoomState[FindObjectsOfType<DungeonRoomScript>().Length];
 
@@ -71,10 +75,16 @@ public class DungeonManager : MonoBehaviour
     {
         if (currentRoom == CalculateCurrentRoom()) return;
 
+        dungeons[currentDungeon].wholeDungeonState = dungeons[currentDungeon].wholeDungeon.SaveToStateLists();
+
         dungeons[currentDungeon].roomStates[currentRoom] = dungeons[currentDungeon].rooms[currentRoom].SaveToStateLists();
         dungeons[currentDungeon].rooms[currentRoom].gameObject.SetActive(false);
 
         currentRoom = CalculateCurrentRoom();
+
+        Destroy(dungeons[currentDungeon].wholeDungeon.gameObject);
+        dungeons[currentDungeon].wholeDungeon = Instantiate(dungeonsInfo[currentDungeon].wholeDungeonPrefab.GetComponent<DungeonPersistence>());
+        dungeons[currentDungeon].wholeDungeon.currentState = dungeons[currentDungeon].wholeDungeonState;
 
         Destroy(dungeons[currentDungeon].rooms[currentRoom].gameObject);
         dungeons[currentDungeon].rooms[currentRoom] = Instantiate(dungeonsInfo[currentDungeon].roomPrefabs[currentRoom].GetComponent<DungeonRoomScript>());
@@ -101,6 +111,7 @@ public class DungeonManager : MonoBehaviour
 
     public void LeaveDungeon()
     {
+        dungeons[currentDungeon].wholeDungeonState = dungeons[currentDungeon].wholeDungeon.SaveToStateLists();
         dungeons[currentDungeon].roomStates[currentRoom] = dungeons[currentDungeon].rooms[currentRoom].SaveToStateLists();
         for (int i = 0; i < dungeons[currentDungeon].roomStates.Length; i++)
         {
@@ -119,6 +130,7 @@ public class DungeonManager : MonoBehaviour
 
     public void ChangeFloor()
     {
+        dungeons[currentDungeon].wholeDungeonState = dungeons[currentDungeon].wholeDungeon.SaveToStateLists();
         dungeons[currentDungeon].roomStates[currentRoom] = dungeons[currentDungeon].rooms[currentRoom].SaveToStateLists();
         for (int i = 0; i < dungeons[currentDungeon].roomStates.Length; i++)
         {
@@ -134,6 +146,10 @@ public class DungeonManager : MonoBehaviour
 
     void ReEnterDungeon()
     {
+        Destroy(dungeons[currentDungeon].wholeDungeon.gameObject);
+        dungeons[currentDungeon].wholeDungeon = Instantiate(dungeonsInfo[currentDungeon].wholeDungeonPrefab.GetComponent<DungeonPersistence>());
+        dungeons[currentDungeon].wholeDungeon.currentState = dungeons[currentDungeon].wholeDungeonState;
+
         Destroy(dungeons[currentDungeon].rooms[currentRoom].gameObject);
         dungeons[currentDungeon].rooms[currentRoom] = Instantiate(dungeonsInfo[currentDungeon].roomPrefabs[currentRoom].GetComponent<DungeonRoomScript>());
         dungeons[currentDungeon].rooms[currentRoom].currentState = dungeons[currentDungeon].roomStates[currentRoom];

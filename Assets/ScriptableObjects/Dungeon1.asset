@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c44d375075f65e4a88cf6de236675eb, type: 3}
   m_Name: Dungeon1
   m_EditorClassIdentifier: 
+  wholeDungeonPrefab: {fileID: 2932335951676416552, guid: 7a2e8b1fd06eb35419170e9469fffb63, type: 3}
   roomPrefabs:
   - {fileID: 5821264382781960769, guid: 4716232c6b78d994cac587a94ef10134, type: 3}
   - {fileID: 5821264382781960769, guid: 419843bdc4a9b6d498bb1cdb1f14239e, type: 3}
@@ -38,3 +39,6 @@ MonoBehaviour:
   - {fileID: 5821264382781960769, guid: 5f5b34849e89bce42afa773394a129be, type: 3}
   - {fileID: 5821264382781960769, guid: 82744b4681c39c54e89587f0c8521804, type: 3}
   - {fileID: 5821264382781960769, guid: b5770081d61ff85479df0abe77ac3bb6, type: 3}
+  keysCollected: 0
+  keysUsed: 0
+  hasBossKey: 0

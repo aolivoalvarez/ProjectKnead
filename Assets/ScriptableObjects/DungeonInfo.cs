@@ -9,6 +9,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DungeonInfo : ScriptableObject
 {
+    public GameObject wholeDungeonPrefab;
     public GameObject[] roomPrefabs;
     public int keysCollected = 0;
     public int keysUsed = 0;
