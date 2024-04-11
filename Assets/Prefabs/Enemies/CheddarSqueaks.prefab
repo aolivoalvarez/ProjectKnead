@@ -173,15 +173,14 @@ MonoBehaviour:
   maxHealth: 10
   attackDamage: 4
   moveSpeed: 2
-  state: 0
   player: {fileID: 0}
   attackRange: 10
   roamDistMax: 10
   roamDistMin: 5
-  bomb: {fileID: 0}
-  bombParent: {fileID: 0}
-  key: {fileID: 0}
-  cake: {fileID: 0}
+  bombPrefab: {fileID: 3813448857345563782, guid: c8797c58b3349ce47b8e5c8c7bbc779d, type: 3}
+  bombParent: {fileID: 5509040733775525122}
+  keyPrefab: {fileID: 0}
+  cakePrefab: {fileID: 0}
   throwRate: 1
 --- !u!1 &5509040733775525122
 GameObject:
