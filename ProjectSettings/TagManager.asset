@@ -11,8 +11,8 @@ TagManager:
   - BlockedByShield
   - TreasureChest
   - BombExplosion
-  - Key
-  - Door
+  - LockedDoor
+  - PushObject
   layers:
   - Default
   - TransparentFX
@@ -20,7 +20,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - ThrownObject
   - 
   - 
   - 

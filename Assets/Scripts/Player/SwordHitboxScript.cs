@@ -35,7 +35,7 @@ public class SwordHitboxScript : MonoBehaviour
 
         if (other.gameObject.GetComponent<HenchmanScript>() != null)
         {
-            Vector2 direction = other.transform.position - transform.position;
+            Vector2 direction = other.transform.position - PlayerController.instance.transform.position;
             other.gameObject.GetComponent<HenchmanScript>().TakeDamage(attackDamage, knockbackStrength, direction);
         }
         objectsHitThisSwing.Add(other.gameObject);

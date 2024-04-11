@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c44d375075f65e4a88cf6de236675eb, type: 3}
+  m_Name: Dungeon1
+  m_EditorClassIdentifier: 
+  wholeDungeonPrefab: {fileID: 2932335951676416552, guid: 7a2e8b1fd06eb35419170e9469fffb63, type: 3}
+  roomPrefabs:
+  - {fileID: 5821264382781960769, guid: 4716232c6b78d994cac587a94ef10134, type: 3}
+  - {fileID: 5821264382781960769, guid: 419843bdc4a9b6d498bb1cdb1f14239e, type: 3}
+  - {fileID: 5821264382781960769, guid: 82f44f3572c333f4881ecd62479b901c, type: 3}
+  - {fileID: 5821264382781960769, guid: 84a3ce9eccc708c4e9f77b2d6bddb45a, type: 3}
+  - {fileID: 5821264382781960769, guid: 632bad92484212840a96183c4d962883, type: 3}
+  - {fileID: 5821264382781960769, guid: 54ad7af0b7382b94cbe7e912d8decc52, type: 3}
+  - {fileID: 5821264382781960769, guid: 34ddce2ec25e8cc469a6f3cf589c8274, type: 3}
+  - {fileID: 5821264382781960769, guid: 3e88c60cfc7e6e44ca776167dbcfbc12, type: 3}
+  - {fileID: 5821264382781960769, guid: 7f4e916b4b0227543b000ea5ba6da722, type: 3}
+  - {fileID: 5821264382781960769, guid: ee0b23a049d9dc8419c3367612a337d7, type: 3}
+  - {fileID: 5821264382781960769, guid: c40beb3d2bc845847a7601072905158f, type: 3}
+  - {fileID: 5821264382781960769, guid: 84e32f7200fc30242b5ea2adb79beda9, type: 3}
+  - {fileID: 5821264382781960769, guid: bb9f3f747a44f1341b0be539b165ce9a, type: 3}
+  - {fileID: 5821264382781960769, guid: 4f769a77a74d17c4e8592a52b91274c4, type: 3}
+  - {fileID: 5821264382781960769, guid: 6156e55e3c07e234a8ab904d4de8af01, type: 3}
+  - {fileID: 5821264382781960769, guid: 6904cfed9b3e5494ab2fb22bc168039e, type: 3}
+  - {fileID: 5821264382781960769, guid: ad1bd673842e1dc4cbd4474cf2a9cbb4, type: 3}
+  - {fileID: 5821264382781960769, guid: 1dd0ae5a6cafa9f44975f6018e9a5e12, type: 3}
+  - {fileID: 5821264382781960769, guid: 7283ace891facc4429f6c57ae956c474, type: 3}
+  - {fileID: 5821264382781960769, guid: 6c7a5f77673b8654096c6b3f0906d322, type: 3}
+  - {fileID: 5821264382781960769, guid: 67d1eb009aaf4404b8e9e94188990eed, type: 3}
+  - {fileID: 5821264382781960769, guid: b60f40418901c044a8e18930f4e38277, type: 3}
+  - {fileID: 5821264382781960769, guid: 5f5b34849e89bce42afa773394a129be, type: 3}
+  - {fileID: 5821264382781960769, guid: 82744b4681c39c54e89587f0c8521804, type: 3}
+  - {fileID: 5821264382781960769, guid: b5770081d61ff85479df0abe77ac3bb6, type: 3}
+  keysCollected: 0
+  keysUsed: 0
+  hasBossKey: 0

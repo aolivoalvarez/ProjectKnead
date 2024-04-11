@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13adebb7341fc1944b892f9166cad069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentObject: {fileID: 2812927696352829320}
   timeToDespawn: 5
   autoDespawn: 1
   moneyAmount: 20

@@ -47,6 +47,8 @@ MonoBehaviour:
   dungeons:
   - _sceneAsset: {fileID: 102900000, guid: 3f97e32bbe515824f8af458a9065420d, type: 3}
     _sceneName: Dungeon0
+  - _sceneAsset: {fileID: 102900000, guid: e6e2a5de7167b154c8bc81557d9e5124, type: 3}
+    _sceneName: Dungeon1
   nonPlayerScenes:
   - _sceneAsset: {fileID: 102900000, guid: be8dc7fa84ef5b84898d2041b5140c05, type: 3}
     _sceneName: TitleScreen

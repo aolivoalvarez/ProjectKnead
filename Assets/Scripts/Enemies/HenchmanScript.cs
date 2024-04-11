@@ -58,7 +58,7 @@ public class HenchmanScript : MonoBehaviour
     Rigidbody2D rigidBody;
     Animator animator;
     Vector2 startingPosition; //holds henchman's starting position
-    NavMeshAgent agent; //holds reference to henchman's navmesh agent
+    public NavMeshAgent agent { get; private set; } //holds reference to henchman's navmesh agent
     
     void Start()
     {
@@ -117,7 +117,7 @@ public class HenchmanScript : MonoBehaviour
     void Update()
     {
         //After knockback is over, return movement control to the navmesh agent
-        if (!agent.enabled && rigidBody.velocity.magnitude <= 0.1f)
+        if (agent != null && !agent.enabled && rigidBody.velocity.magnitude <= 0.1f)
         {
             agent.enabled = true;
         }
@@ -125,7 +125,7 @@ public class HenchmanScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (agent.enabled)
+        if (agent != null && agent.enabled)
         {
             Roam(); //calls function for henchman to roam in it's area
 

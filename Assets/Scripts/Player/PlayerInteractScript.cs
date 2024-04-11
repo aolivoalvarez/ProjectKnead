@@ -45,11 +45,11 @@ public class PlayerInteractScript : MonoBehaviour
     {
         playerController.isHoldingObject = liftedObject != null;
 
-        if (playerController.pInput.Player.Interact.triggered && !playerController.isHoldingObject && !playerController.isAttacking &&
+        if (playerController.pInput.Player.Interact.triggered && !playerController.isAttacking &&
             !playerController.isJumping && !playerController.isShielding)
         {
             // Open chest
-            if (interactHitboxScript.chestToOpen != null)
+            if (interactHitboxScript.chestToOpen != null && !playerController.isHoldingObject)
                 StartCoroutine(OpenChestRoutine(interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().OpenChest()));
             // Lift object
             else if (interactHitboxScript.objectToLift != null)
@@ -102,6 +102,7 @@ public class PlayerInteractScript : MonoBehaviour
         yield return new WaitForSeconds(openingWaitTime);
         var heldItem = Instantiate(itemFromChest, new Vector3(transform.position.x, transform.position.y + chestItemOffsetY, transform.position.z), Quaternion.identity);
         heldItem.GetComponent<Collider2D>().enabled = false; // items from chests should not be tangible to the player
+        heldItem.GetComponent<SpriteRenderer>().sortingLayerName = "AboveEntity";
         heldItem.GetComponent<Pickup>().autoDespawn = false;
         heldItem.GetComponent<Pickup>().StopAllCoroutines();
         heldItem.GetComponent<Pickup>().PlayerCollectDontDestroy();

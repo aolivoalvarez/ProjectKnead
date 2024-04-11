@@ -27,9 +27,8 @@ public class PlayerController : MonoBehaviour
     public bool isShielding { get; set; }
     public bool isLifting { get; set; }
     public bool isHoldingObject { get; set; }
+    public bool isPushingObject { get; set; }
     bool isInvincible;
-
-    public bool bossKeyCollected;
 
     Inventory inventory;
     //--------------------------------------------------//
@@ -39,8 +38,10 @@ public class PlayerController : MonoBehaviour
     float moveSpeed = 5f;
     public float moveSpeedMult { get; set; } = 1f; // will normally be 1, but various hazards can modify it to lower the player's speed
     [SerializeField] Vector2 inputDirection;
-    public Vector2 lookDirection { get; private set; } // keeps track of the direction the player last moved (for the animator)
+    public Vector2 lookDirection { get; set; } // keeps track of the direction the player last moved (for the animator)
     public Vector2 simpleLookDirection { get; private set; } // reduces lookDirection to just the 4 cardinal directions
+    public Vector2 lastDirection { get; private set; }
+    public float holdDirectionTime { get; private set; }
 
     [Header("Jumping")]
     [SerializeField, Tooltip("How many units high one jump is. Purely visual.")]
@@ -73,17 +74,19 @@ public class PlayerController : MonoBehaviour
         isShielding = false;
         isLifting = false;
         isHoldingObject = false;
+        isPushingObject = false;
         isInvincible = false;
         moveSpeedMult = 1f;
         inputDirection = Vector2.zero;
         lookDirection = Vector2.down;
         simpleLookDirection = Vector2.down;
+        lastDirection = Vector2.down;
+        holdDirectionTime = 0f;
         initialGraphicPositionY = graphic.transform.localPosition.y;
         isJumping = false;
         canJump = true;
         rigidBody = GetComponent<Rigidbody2D>();
         animator = graphic.gameObject.GetComponent<Animator>();
-        bossKeyCollected = false;
 
         InitializePlayerInput();
     }
@@ -92,6 +95,7 @@ public class PlayerController : MonoBehaviour
     {
         //------------------ Take Input --------------------//
         inputDirection = ((isAttacking && !isJumping) || isLifting) ? Vector2.zero : pInput.Player.Movement.ReadValue<Vector2>(); // takes input unless lifting an object or attacking while grounded
+        
 
         if (pInput.Player.Jump.triggered)
         {
@@ -104,17 +108,27 @@ public class PlayerController : MonoBehaviour
         {
             lookDirection = new Vector2(Mathf.Round(inputDirection.normalized.x), Mathf.Round(inputDirection.normalized.y));
         }
+
+        if (inputDirection != Vector2.zero && simpleLookDirection == lastDirection)
+        {
+            holdDirectionTime += Time.deltaTime;
+        }
+        else holdDirectionTime = 0f;
+
         animator.SetFloat("Speed", inputDirection.magnitude);
         animator.SetFloat("Look X", simpleLookDirection.x);
         animator.SetFloat("Look Y", simpleLookDirection.y);
         animator.SetBool("IsJumping", isJumping);
+
+        lastDirection = simpleLookDirection;
     }
 
     void FixedUpdate()
     {
         //---------------- Set final values ----------------//
-        rigidBody.velocity = new Vector2(inputDirection.x * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50,
-            inputDirection.y * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50);
+        if (!isPushingObject)
+            rigidBody.velocity = new Vector2(inputDirection.x * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50,
+                inputDirection.y * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50);
         
         switch (lookDirection.x)
         {
@@ -277,13 +291,17 @@ public class PlayerController : MonoBehaviour
         graphic.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    //Dylan BossKey Code
-    public void OnTriggerEnter2D(Collider2D other){
-        if((other.tag == "Key")){
-            bossKeyCollected = true;
-            Destroy(other.gameObject);
-            Debug.Log("Key Collected");
-
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject == GetComponentInChildren<InteractHitboxScript>().doorToUnlock)
+        {
+            if (holdDirectionTime >= 0.25f)
+                other.gameObject.GetComponent<LockedDoor>().UnlockDoor();
+        }
+        else if (other.gameObject == GetComponentInChildren<InteractHitboxScript>().objectToPush && !other.gameObject.GetComponent<PushObjectScript>().isPushing)
+        {
+            if (holdDirectionTime >= 0.25f)
+                other.gameObject.GetComponent<PushObjectScript>().PushObject(other.transform.position - transform.position);
         }
     }
 }

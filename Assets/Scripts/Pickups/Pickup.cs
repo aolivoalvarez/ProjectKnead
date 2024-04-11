@@ -64,7 +64,10 @@ public abstract class Pickup : MonoBehaviour
         }
     }
 
-    protected abstract void PlayerCollect();
+    protected virtual void PlayerCollect()
+    {
+        Destroy(gameObject);
+    }
     public abstract void PlayerCollectDontDestroy();
 
     void OnTriggerEnter2D(Collider2D other)

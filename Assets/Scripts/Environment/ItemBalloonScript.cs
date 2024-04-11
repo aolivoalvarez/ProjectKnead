@@ -47,7 +47,7 @@ public class ItemBalloonScript : MonoBehaviour
             storedItem.transform.position = transform.position;
             storedItem.transform.SetParent(fallingItem.transform);
             fallingItem.GetComponent<FallingItemScript>().storedItem = storedItem;
-            fallingItem.GetComponent<FallingItemScript>().groundLevelY = transform.root.position.y;
+            fallingItem.GetComponent<FallingItemScript>().groundLevelY = balloonParent.transform.position.y;
             Destroy(balloonParent); // gets rid of the item balloon
         }
     }
