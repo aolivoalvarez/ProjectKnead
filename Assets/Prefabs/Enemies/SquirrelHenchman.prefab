@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2598884308297612821}
   - component: {fileID: 2598884308297612820}
   - component: {fileID: -475492885767804479}
+  - component: {fileID: 1769732116307733}
   m_Layer: 0
   m_Name: SquirrelHenchman
   m_TagString: Enemy
@@ -189,6 +190,26 @@ NavMeshAgent:
   m_BaseOffset: 0.65
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1769732116307733
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598884308297612818}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 631e89f8988622040843efb47acf03dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &3917158358693222118
 GameObject:
   m_ObjectHideFlags: 0

@@ -97,7 +97,7 @@ public class HenchmanScript : MonoBehaviour
         //references to components
         boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
-        //animator = this.GetComponent<Animator>();
+        animator = this.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -125,6 +125,9 @@ public class HenchmanScript : MonoBehaviour
 
     void FixedUpdate()
     {
+        animator.SetFloat("lookX", agent.velocity.x);
+        animator.SetFloat("lookY", agent.velocity.y);
+        
         if (agent != null && agent.enabled)
         {
             Roam(); //calls function for henchman to roam in it's area
