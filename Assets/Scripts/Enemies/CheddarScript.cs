@@ -132,13 +132,16 @@ public class CheddarScript : MonoBehaviour
         state = State.Attack;
 
         throwAmt++; //increases throw amount
-
+        Vector2 bombMovement = (player.position - transform.position).normalized;
         GameObject thisBomb = Instantiate(bombPrefab, bombParent.transform.position, Quaternion.identity); //spawns bomb
-        thisBomb.GetComponent<BombScript>().BombStartMoving((player.position - transform.position).normalized); //makes the bomb move towards player
+        thisBomb.GetComponent<BombScript>().BombStartMoving(bombMovement); //makes the bomb move towards player
+        thisBomb.GetComponentInChildren<Animator>().SetFloat("Direction X", bombMovement.x );
+        thisBomb.GetComponentInChildren<Animator>().SetFloat("Direction Y", bombMovement.y );
+
 
         yield return new WaitForSeconds(throwRate);
 
-        if (throwAmt > 3) //if cheddar has thrown three times, the charge starts
+        if (throwAmt >= 3) //if cheddar has thrown three times, the charge starts
         {   
             StartCoroutine(ChargeRoutine());
         }
