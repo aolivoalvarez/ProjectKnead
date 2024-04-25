@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80b7d52e6c44f134886792a09f6d53f5
+guid: b32dd34466f4d8445866c5ef42a9e1c1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -117,85 +117,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_0
+      name: SwingSword_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 704f5d0ff8b74b04ebf58fa63f1e05f7
-      internalID: -1155285439
+      spriteID: 12810d454e682c94bbb7c795b4f08118
+      internalID: 1919228925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_1
+      name: SwingSword_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed4f43352b2c55f42ae653d607909c11
-      internalID: -2084740994
+      spriteID: d94f97031cbb7b54abb576ab3724c24b
+      internalID: 1240267273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_2
+      name: SwingSword_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5301badff553e445a9cded0c81df033
-      internalID: -2124190903
+      spriteID: afda8e86932148c42a38900872619f5c
+      internalID: 194076142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_3
+      name: SwingSword_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21fd1ba14ea08a149a60e68ad82ca5f8
-      internalID: -125939298
+      spriteID: 19ab1a8a4b39d3e4595dabd5dcba04ce
+      internalID: 1089666701
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Squirrel_Henchman_LS_0: -1155285439
-      Squirrel_Henchman_LS_3: -125939298
-      Squirrel_Henchman_LS_1: -2084740994
-      Squirrel_Henchman_LS_2: -2124190903
+      SwingSword_0: 1919228925
+      SwingSword_2: 194076142
+      SwingSword_1: 1240267273
+      SwingSword_3: 1089666701
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

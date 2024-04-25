@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80b7d52e6c44f134886792a09f6d53f5
+guid: 569cf5188d8c1854f99d6ea9cbb1186c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -117,85 +117,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_0
+      name: EnemyDeathCloud_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 704f5d0ff8b74b04ebf58fa63f1e05f7
-      internalID: -1155285439
+      spriteID: e7dd1876d7dce604d9970c6fe84f39aa
+      internalID: 1728957908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_1
+      name: EnemyDeathCloud_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed4f43352b2c55f42ae653d607909c11
-      internalID: -2084740994
+      spriteID: a3c636bdb876d1f46822a50edb7ed019
+      internalID: 397317882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_2
+      name: EnemyDeathCloud_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5301badff553e445a9cded0c81df033
-      internalID: -2124190903
+      spriteID: b02e0e68804637149af8bcf7bc1d91c4
+      internalID: 815577857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_3
+      name: EnemyDeathCloud_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21fd1ba14ea08a149a60e68ad82ca5f8
-      internalID: -125939298
+      spriteID: b7aa4d5cb31aea54fb3eeda62abc66b5
+      internalID: 461179053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyDeathCloud_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3e43cfe74775a4a838764426ff57c2
+      internalID: 1925339072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyDeathCloud_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec48d101771c73e48bf6ed11361975a3
+      internalID: -1938655406
       vertices: []
       indices: 
       edges: []
@@ -211,10 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Squirrel_Henchman_LS_0: -1155285439
-      Squirrel_Henchman_LS_3: -125939298
-      Squirrel_Henchman_LS_1: -2084740994
-      Squirrel_Henchman_LS_2: -2124190903
+      EnemyDeathCloud_3: 461179053
+      EnemyDeathCloud_5: -1938655406
+      EnemyDeathCloud_4: 1925339072
+      EnemyDeathCloud_0: 1728957908
+      EnemyDeathCloud_1: 397317882
+      EnemyDeathCloud_2: 815577857
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

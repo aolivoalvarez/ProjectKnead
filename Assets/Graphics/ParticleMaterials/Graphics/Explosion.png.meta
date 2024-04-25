@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80b7d52e6c44f134886792a09f6d53f5
+guid: c43fd0e62818ce94b86635cd58fdd1b7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -117,85 +117,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_0
+      name: Explosion_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 704f5d0ff8b74b04ebf58fa63f1e05f7
-      internalID: -1155285439
+      spriteID: 860304055b4f4bb4d85fb9b0be0499db
+      internalID: -198003665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_1
+      name: Explosion_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed4f43352b2c55f42ae653d607909c11
-      internalID: -2084740994
+      spriteID: e86e41d7abbd4a249afbe7a457c701e7
+      internalID: -856837692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_2
+      name: Explosion_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5301badff553e445a9cded0c81df033
-      internalID: -2124190903
+      spriteID: de6e4fd794d58ec429deead714efe2e0
+      internalID: -275526293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Squirrel_Henchman_LS_3
+      name: Explosion_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.15625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21fd1ba14ea08a149a60e68ad82ca5f8
-      internalID: -125939298
+      spriteID: 6cb0951b15299a143bc33f092f313070
+      internalID: -1904181870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f7b01b3d3614a41b7cedb0b89940ed
+      internalID: 539456966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8668dcc432dfeef4c9a04bfc07fd8e6a
+      internalID: 1322429479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0b87e7876b85342a4bd3314aba65e1
+      internalID: -621908653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cfe19ccf22dcbb4b8ca6bc487a82766
+      internalID: -1956341691
       vertices: []
       indices: 
       edges: []
@@ -211,10 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Squirrel_Henchman_LS_0: -1155285439
-      Squirrel_Henchman_LS_3: -125939298
-      Squirrel_Henchman_LS_1: -2084740994
-      Squirrel_Henchman_LS_2: -2124190903
+      Explosion_6: -621908653
+      Explosion_7: -1956341691
+      Explosion_1: -856837692
+      Explosion_4: 539456966
+      Explosion_2: -275526293
+      Explosion_0: -198003665
+      Explosion_5: 1322429479
+      Explosion_3: -1904181870
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

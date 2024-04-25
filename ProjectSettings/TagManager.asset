@@ -65,6 +65,9 @@ TagManager:
   - name: AboveEntity
     uniqueID: 515221235
     locked: 0
+  - name: Filter
+    uniqueID: 826763937
+    locked: 0
   - name: UI
     uniqueID: 3882634205
     locked: 0
