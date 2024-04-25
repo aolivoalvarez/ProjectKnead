@@ -13,6 +13,7 @@ TagManager:
   - BombExplosion
   - LockedDoor
   - PushObject
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -64,6 +65,9 @@ TagManager:
     locked: 0
   - name: AboveEntity
     uniqueID: 515221235
+    locked: 0
+  - name: Filter
+    uniqueID: 826763937
     locked: 0
   - name: UI
     uniqueID: 3882634205
