@@ -175,6 +175,7 @@ MonoBehaviour:
   roamDistMax: 10
   roamDistMin: 5
   knockbackMultiplier: 1
+  agent: {fileID: 6456001097611898903}
 --- !u!195 &6456001097611898903
 NavMeshAgent:
   m_ObjectHideFlags: 0
