@@ -4,8 +4,10 @@ Author: alex
 Description: 
 -----------------------------------------*/
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class HenchmanScript : MonoBehaviour
 {
@@ -53,6 +55,8 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] float fireRate = 1f; //fire rate for ranged weapon
     [SerializeField, Range(0f, 1f), Tooltip("Percentage of incoming knockback this henchman takes. At 0, no knockback is taken.")]
     float knockbackMultiplier = 1f;
+    public bool isShielded { get; set; } = false;
+    bool isInvincible;
     float nextFire; //for fire rate calculations
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
@@ -93,11 +97,12 @@ public class HenchmanScript : MonoBehaviour
         }
 
         health = maxHealth; //sets health to max
+        isInvincible = false;
 
         //references to components
         boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
-        animator = this.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -111,15 +116,6 @@ public class HenchmanScript : MonoBehaviour
         {
             targetRange = rTargetRange;
             attackRange = rAttackRange;
-        }
-    }
-
-    void Update()
-    {
-        //After knockback is over, return movement control to the navmesh agent
-        if (agent != null && !agent.enabled && rigidBody.velocity.magnitude <= 0.1f)
-        {
-            agent.enabled = true;
         }
     }
 
@@ -146,7 +142,13 @@ public class HenchmanScript : MonoBehaviour
 
     public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
     {
-        health -= damage;
+        if (isInvincible)
+            return;
+        if (!isShielded)
+        {
+            health -= damage;
+            StartCoroutine(InvincibleRoutine());
+        }
         
         if (health <= 0) //checks if health is 0 or less
         {
@@ -157,8 +159,39 @@ public class HenchmanScript : MonoBehaviour
     {
         TakeDamage(damage);
 
+        if (!isShielded)
+            StartCoroutine(KnockbackRoutine(knockbackStrength, knockbackDirection));
+    }
+
+    IEnumerator KnockbackRoutine(float knockbackStrength, Vector2 knockbackDirection)
+    {
         agent.enabled = false; //navmesh agent must be disabled for AddForce to work properly
         rigidBody.AddForce(100f * knockbackMultiplier * knockbackStrength * knockbackDirection.normalized);
+        yield return new WaitForSeconds(0.5f);
+        rigidBody.velocity = Vector2.zero;
+        agent.enabled = true;
+    }
+
+    IEnumerator InvincibleRoutine()
+    {
+        isInvincible = true;
+        StartCoroutine(FlashingRoutine());
+        yield return new WaitForSeconds(0.25f);
+        isInvincible = false;
+    }
+
+    IEnumerator FlashingRoutine()
+    {
+        while (isInvincible)
+        {
+            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
+            GetComponent<SpriteRenderer>().color = Color.clear;
+            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     void Roam() //gets random position and sets it as henchman's destination within a certain range of its starting position

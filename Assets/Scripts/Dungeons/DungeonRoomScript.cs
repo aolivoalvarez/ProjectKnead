@@ -57,7 +57,7 @@ public class DungeonRoomScript : MonoBehaviour
         for (int i = 0; i < currentState.dontRespawn.Count; i++)
         {
             if (dontRespawn[i] == null) currentState.dontRespawn[i] = false;
-            //else currentState.dontRespawn[i] = dontRespawn[i].activeSelf;
+            else currentState.dontRespawn[i] = dontRespawn[i].activeSelf;
         }
 
         return currentState;

@@ -13,7 +13,6 @@ TagManager:
   - BombExplosion
   - LockedDoor
   - PushObject
-  - Key
   layers:
   - Default
   - TransparentFX

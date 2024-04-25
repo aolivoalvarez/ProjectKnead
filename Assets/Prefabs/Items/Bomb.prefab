@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 2
   appliesKnockback: 1
-  knockbackStrength: 20
+  knockbackStrength: 3
   canJumpOver: 0
   damagesPlayer: 1
   damagesEnemies: 1

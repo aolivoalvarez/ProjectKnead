@@ -15,8 +15,8 @@
             "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 926,
-                "y": 795.3333333333333
+                "x": 768,
+                "y": 527.6666666666666
             }
         },
         "Tilemaps/Dungeon0.tmx": {
@@ -34,8 +34,8 @@
             "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1430,
-                "y": 324
+                "x": 1280,
+                "y": 1535
             }
         },
         "Tilemaps/Dungeon1_draft.tmx": {
@@ -53,8 +53,8 @@
             "scale": 0.75,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 1314.6666666666665,
-                "y": 764
+                "x": 813.3333333333333,
+                "y": 575.3333333333334
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
