@@ -5,10 +5,10 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - player: {fileID: 6903119828378740589, guid: 30893695b92f3dc4898e5b3c0a2bdbd8, type: 3}
-  - bomb: {instanceID: 0}
+  - bombPrefab: {fileID: 3813448857345563782, guid: c8797c58b3349ce47b8e5c8c7bbc779d, type: 3}
   - bombParent: {instanceID: 0}
-  - key: {instanceID: 0}
-  - cake: {instanceID: 0}
+  - keyPrefab: {instanceID: 0}
+  - cakePrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

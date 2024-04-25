@@ -1,7 +1,7 @@
 /*-----------------------------------------
 Creation Date: 04/04/24
-Author: alex
-Description: 
+Author: Alex Olivo
+Description: Cheddar Boss AI
 -----------------------------------------*/
 using System.Collections;
 using System.Collections.Generic;
@@ -11,15 +11,15 @@ using UnityEngine.AI;
 
 public class CheddarScript : MonoBehaviour
 {
-
     enum State //cheddar's states
     {
         Idle,
         Attack,
         Charge,
-        Stun
+        Stun,
+        Reset
     }
-    
+
     int health;
     [SerializeField] int maxHealth = 10;
     [SerializeField] int attackDamage = 4;
@@ -32,12 +32,12 @@ public class CheddarScript : MonoBehaviour
     [SerializeField] GameObject bombParent; //holds reference to weapon parent game object
     [SerializeField] GameObject keyPrefab; //dungeon key that cheddar drops
     [SerializeField] GameObject cakePrefab; //cake slice that cheddar drops
-    [SerializeField] State state; //holds cheddar's current state
+    [SerializeField] State state; //holds cheddar's state
     int throwAmt; //amount of times cheddar has thrown a bomb
-    float nextThrow; //for throw rate calculations
     [SerializeField] int throwRate = 3; //rate that cheddar throws bombs
     int attackBuffer = 2;
-    float chargeSpeed = 5f;
+    float chargeSpeed = 5f; //speed of cheddar's charge
+    int chargeWait = 3; //wait until charge coroutine calls idle coroutine
     int stunTimer = 5; //how long cheddar is stunned for
 
     BoxCollider2D boxCollider;
@@ -53,7 +53,7 @@ public class CheddarScript : MonoBehaviour
         player = PlayerController.instance.transform;
         startingPosition = transform.position; //gets cheddar's starting position
         health = maxHealth; //sets health to max
-        throwAmt = 0;
+        throwAmt = 0; //sets throw amount to 0
 
         //references to components
         boxCollider = GetComponent<BoxCollider2D>();
@@ -62,44 +62,26 @@ public class CheddarScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        StartCoroutine(IdleRoutine()); //calls idle coroutine upon start
     }
-
-    // Update is called once per frame
-    private void FixedUpdate()
-    {
-        Idle(); //default idling
-
-        if (Vector2.Distance(transform.position, player.position) <= attackRange && throwAmt < 3) //if player is close and he hasn't thrown 3 bombs, cheddar attacks
-        {
-            //Attack();
-           // StartCoroutine(AttackRoutine());
-
-        } else if (throwAmt == 3) //once cheddar throws three bombs, he charges
-        {
-            Charge();
-        }
-
-        
-    }
-
-    /* IEnumerator AttackRoutine()
-    {
-        //attacking = true;
-        // place bomb, bombstartmoving
-        yield return new WaitForSeconds(attackBuffer);
-        //attacking = false;
-    }
-    */
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (state == State.Charge) {
+
+        if (collision.gameObject.tag == "Player" && state == State.Charge)
+        {
+            collision.gameObject.GetComponent<PlayerController>().DecreaseHealth(attackDamage);
+
             return;
         }
     }
 
     public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
     {
+        if (state == State.Charge) { return; }
+        
         health -= damage;
 
         if (health <= 0) //checks if health is 0 or less
@@ -107,7 +89,8 @@ public class CheddarScript : MonoBehaviour
             Death(); //kills cheddar if health is 0
         }
 
-        Stun(); //when cheddar is hit on the head, he is stunned
+        GetStunned(); //when cheddar is hit on the head, he is stunned
+      
     }
 
     private void Death() //cheddar death
@@ -119,45 +102,81 @@ public class CheddarScript : MonoBehaviour
         Destroy(this.gameObject); //destroys gameObject
     }
 
-    private void Idle() //gets random position and sets it as cheddar's destination within a certain range of its starting position
+    IEnumerator IdleRoutine()
     {
-        state = State.Idle;
-        
-        Vector2 roamPos = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized; //random vector
+        while (true) //looks scary, but it's fine. As long as it has the yield return new WaitForFixedUpdate(), there will never be an infinite loop error
+        {
+            agent.speed = moveSpeed; //resets move speed if called after charge
 
-        roamPos = startingPosition + roamPos * Random.Range(roamDistMin, roamDistMax); //multiplies vector by random distance
+            if (Vector2.Distance(transform.position, player.position) <= attackRange) //checks if player is in range
+            {
+                break; //breaks from idle loop
+            }
 
-        agent.SetDestination(roamPos); //sets cheddar's destination
+            state = State.Idle;
+
+            Vector2 roamPos = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized; //random vector
+
+            roamPos = startingPosition + roamPos * Random.Range(roamDistMin, roamDistMax); //multiplies vector by random distance
+
+            agent.SetDestination(roamPos); //sets cheddar's destination
+
+            yield return new WaitForFixedUpdate();
+        }
+        throwAmt = 0; //resets throw amount to 0
+        StartCoroutine(AttackRoutine()); //calls attack routine
     }
 
-    private void Attack()
+    IEnumerator AttackRoutine() //cheddar attack routine
     {
         state = State.Attack;
-        
-        if (nextThrow < Time.time)
+
+        throwAmt++; //increases throw amount
+
+        GameObject thisBomb = Instantiate(bombPrefab, bombParent.transform.position, Quaternion.identity); //spawns bomb
+        thisBomb.GetComponent<BombScript>().BombStartMoving((player.position - transform.position).normalized); //makes the bomb move towards player
+
+        yield return new WaitForSeconds(throwRate);
+
+        if (throwAmt > 3) //if cheddar has thrown three times, the charge starts
+        {   
+            StartCoroutine(ChargeRoutine());
+        }
+        else //if he hasn't, he attacks again
         {
-            GameObject thisBomb = Instantiate(bombPrefab, bombParent.transform.position, Quaternion.identity); //spawns bomb
-            thisBomb.GetComponent<BombScript>().BombStartMoving(player.position - transform.position);
-            nextThrow = Time.time + throwRate; //updates nextThrow according to throwRate
-            throwAmt++; //updates amount of throws
+            StartCoroutine(AttackRoutine());
         }
 
-        return;
     }
 
-    private void Charge()
+    IEnumerator ChargeRoutine()
     {
+
         state = State.Charge;
-        
-        throwAmt = 0; //resets throw amount
 
         agent.speed = chargeSpeed; //increases cheddar's speed
         agent.SetDestination(player.position); //sets cheddar's destination to player
 
+        yield return new WaitForSeconds(chargeWait); //waits a little bit before calling idle routine
+
+        StartCoroutine(IdleRoutine());
+
     }
 
-    private void Stun()
+    public void GetStunned() //starts the process of stunning cheddar
+    {
+        StopAllCoroutines(); //stops all the coroutines
+        StartCoroutine(StunRoutine()); //starts cheddar's stun routine
+    }
+
+    IEnumerator StunRoutine() //cheddar's stun routine
     {
         state = State.Stun;
+
+        //stun stuff here:
+
+        yield return new WaitForSeconds(stunTimer); //waits for how long cheddar is stunned for
+
+        StartCoroutine(IdleRoutine()); //starts idle routine
     }
 }
