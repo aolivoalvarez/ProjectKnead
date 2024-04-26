@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Tooltip("Speed in units per second.")]
     float moveSpeed = 5f;
     public float moveSpeedMult { get; set; } = 1f; // will normally be 1, but various hazards can modify it to lower the player's speed
+    float dashMult; // will normally be 1, but will increase when dashing
     [SerializeField] Vector2 inputDirection;
     public Vector2 lookDirection { get; set; } // keeps track of the direction the player last moved (for the animator)
     public Vector2 simpleLookDirection { get; private set; } // reduces lookDirection to just the 4 cardinal directions
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
         isPushingObject = false;
         isInvincible = false;
         moveSpeedMult = 1f;
+        dashMult = 1f;
         inputDirection = Vector2.zero;
         lookDirection = Vector2.down;
         simpleLookDirection = Vector2.down;
@@ -127,8 +129,8 @@ public class PlayerController : MonoBehaviour
     {
         //---------------- Set final values ----------------//
         if (!isPushingObject)
-            rigidBody.velocity = new Vector2(inputDirection.x * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50,
-                inputDirection.y * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50);
+            rigidBody.velocity = new Vector2(inputDirection.x * moveSpeed * moveSpeedMult * dashMult * Time.fixedDeltaTime * 50,
+                inputDirection.y * moveSpeed * moveSpeedMult * dashMult * Time.fixedDeltaTime * 50);
         
         switch (lookDirection.x)
         {
@@ -178,6 +180,16 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
         yield return new WaitForSeconds(jumpBuffer);
         canJump = true;
+    }
+
+    void StartDashing()
+    {
+        dashMult = 2f;
+    }
+
+    void StopDashing()
+    {
+        dashMult = 1f;
     }
 
     public void IncreaseHealth(int healthToGain)
@@ -272,6 +284,23 @@ public class PlayerController : MonoBehaviour
                 if (context.interaction is SlowTapInteraction)
                     GetComponent<PlayerUseItemScript>().UseItem_EarlyRelease();
             };
+
+        pInput.Player.Dash.started +=
+            _ => StartDashing();
+        pInput.Player.Dash.performed +=
+            context =>
+            {
+                if (context.interaction is SlowTapInteraction)
+                    StopDashing();
+            };
+        pInput.Player.Dash.canceled +=
+            context =>
+            {
+                if (context.interaction is SlowTapInteraction)
+                {
+                    StopDashing();
+                }
+            };
     }
 
     // For when the player dies. Stops all coroutines and sets various values to default.
@@ -284,7 +313,9 @@ public class PlayerController : MonoBehaviour
         isHoldingObject = false;
         isInvincible = false;
         isShielding = false;
+        isPushingObject = false;
         moveSpeedMult = 1f;
+        dashMult = 1f;
         graphic.localPosition = new Vector3(graphic.localPosition.x, initialGraphicPositionY);
         isJumping = false;
         canJump = true;
