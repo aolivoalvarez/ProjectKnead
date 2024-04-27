@@ -37,12 +37,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Tooltip("Speed in units per second.")]
     float moveSpeed = 5f;
     public float moveSpeedMult { get; set; } = 1f; // will normally be 1, but various hazards can modify it to lower the player's speed
-    float dashMult; // will normally be 1, but will increase when dashing
     [SerializeField] Vector2 inputDirection;
     public Vector2 lookDirection { get; set; } // keeps track of the direction the player last moved (for the animator)
     public Vector2 simpleLookDirection { get; private set; } // reduces lookDirection to just the 4 cardinal directions
     public Vector2 lastDirection { get; private set; }
     public float holdDirectionTime { get; private set; }
+
+    [Header("Dashing")]
+    [SerializeField, Tooltip("Roll speed in units per second.")]
+    float rollSpeed = 1.5f;
+    [SerializeField, Tooltip("How long a roll takes, in seconds.")]
+    float rollTime = 1f;
+    [SerializeField, Tooltip("Buffer after every roll, in seconds.")]
+    float rollBuffer = 0.05f;
+    bool isRolling;
+    bool isDashing;
+    float dashMult; // will normally be 1, but will increase when dashing
 
     [Header("Jumping")]
     [SerializeField, Tooltip("How many units high one jump is. Purely visual.")]
@@ -77,6 +87,8 @@ public class PlayerController : MonoBehaviour
         isHoldingObject = false;
         isPushingObject = false;
         isInvincible = false;
+        isDashing = false;
+        isRolling = false;
         moveSpeedMult = 1f;
         dashMult = 1f;
         inputDirection = Vector2.zero;
@@ -128,7 +140,9 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //---------------- Set final values ----------------//
-        if (!isPushingObject)
+        dashMult = (isDashing && !isJumping) ? 2f : 1f;
+
+        if (!isPushingObject && !isRolling)
             rigidBody.velocity = new Vector2(inputDirection.x * moveSpeed * moveSpeedMult * dashMult * Time.fixedDeltaTime * 50,
                 inputDirection.y * moveSpeed * moveSpeedMult * dashMult * Time.fixedDeltaTime * 50);
         
@@ -184,12 +198,37 @@ public class PlayerController : MonoBehaviour
 
     void StartDashing()
     {
-        dashMult = 2f;
+        isDashing = true;
     }
 
     void StopDashing()
     {
-        dashMult = 1f;
+        isDashing = false;
+    }
+
+    void DodgeRoll()
+    {
+        if (!isRolling)
+        {
+            StartCoroutine(RollRoutine());
+        }
+    }
+
+    IEnumerator RollRoutine()
+    {
+        isRolling = true;
+        Vector2 rollDirection = lookDirection.normalized;
+        GameManager.instance.DisablePlayerInput();
+        for (float i = 0; i < rollTime; i += Time.fixedDeltaTime)
+        {
+            yield return new WaitForFixedUpdate();
+            // setting the speed every FixedUpdate to account for any changes to fixedDeltaTime
+            rigidBody.velocity = new Vector2(rollDirection.x * rollSpeed * moveSpeedMult * Time.fixedDeltaTime * 50,
+                rollDirection.y * rollSpeed * moveSpeedMult * Time.fixedDeltaTime * 50);
+        }
+        yield return new WaitForSeconds(rollBuffer);
+        GameManager.instance.EnablePlayerInput();
+        isRolling = false;
     }
 
     public void IncreaseHealth(int healthToGain)
@@ -285,20 +324,23 @@ public class PlayerController : MonoBehaviour
                     GetComponent<PlayerUseItemScript>().UseItem_EarlyRelease();
             };
 
-        pInput.Player.Dash.started +=
-            _ => StartDashing();
         pInput.Player.Dash.performed +=
             context =>
             {
+                if (context.interaction is HoldInteraction)
+                    StartDashing();
                 if (context.interaction is SlowTapInteraction)
                     StopDashing();
             };
         pInput.Player.Dash.canceled +=
             context =>
             {
+                if (context.interaction is HoldInteraction)
+                    StopDashing();
                 if (context.interaction is SlowTapInteraction)
                 {
                     StopDashing();
+                    DodgeRoll();
                 }
             };
     }
@@ -314,6 +356,8 @@ public class PlayerController : MonoBehaviour
         isInvincible = false;
         isShielding = false;
         isPushingObject = false;
+        isDashing = false;
+        isRolling = false;
         moveSpeedMult = 1f;
         dashMult = 1f;
         graphic.localPosition = new Vector3(graphic.localPosition.x, initialGraphicPositionY);

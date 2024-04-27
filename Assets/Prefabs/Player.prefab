@@ -72,7 +72,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToLift: {fileID: 0}
+  objectToPush: {fileID: 0}
   chestToOpen: {fileID: 0}
+  doorToUnlock: {fileID: 0}
 --- !u!1 &986628744
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,9 +528,11 @@ MonoBehaviour:
   graphic: {fileID: 443351867189412524}
   liftRotationPoint: {fileID: 1256587883}
   animator: {fileID: 5552978750991962323}
-  bossKeyCollected: 0
   moveSpeed: 3
   inputDirection: {x: 0, y: 0}
+  rollSpeed: 6
+  rollTime: 0.4
+  rollBuffer: 0.05
   jumpHeight: 1
   jumpTime: 0.75
   jumpBuffer: 0.05
