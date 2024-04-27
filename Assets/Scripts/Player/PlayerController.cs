@@ -65,6 +65,9 @@ public class PlayerController : MonoBehaviour
     public bool canJump { get; set; }
     float initialGraphicPositionY; // stores the initial value of graphic.position.y (for when the player is not jumping)
 
+    [Header("Particle Effects")]
+    [SerializeField] ParticleSystem dashingTrail;
+
     void Awake()
     {
         //---------- Make this script a singleton ----------//
@@ -133,6 +136,16 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look X", simpleLookDirection.x);
         animator.SetFloat("Look Y", simpleLookDirection.y);
         animator.SetBool("IsJumping", isJumping);
+
+        var e_dashingTrail = dashingTrail.emission;
+        if (dashMult > 1f && rigidBody.velocity != Vector2.zero)
+        {
+            e_dashingTrail.enabled = true;
+        }
+        else
+        {
+            e_dashingTrail.enabled = false;
+        }
 
         lastDirection = simpleLookDirection;
     }

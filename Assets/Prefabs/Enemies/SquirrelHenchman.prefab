@@ -168,6 +168,7 @@ MonoBehaviour:
   weaponParent: {fileID: 3917158358693222118}
   fireRate: 1
   knockbackMultiplier: 1
+  pSysDespawnPrefab: {fileID: 5861827882714901620, guid: 741217b54809119488fb35cfc660f364, type: 3}
 --- !u!195 &-475492885767804479
 NavMeshAgent:
   m_ObjectHideFlags: 0

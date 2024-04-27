@@ -20,6 +20,7 @@ public class BasicEnemyScript : MonoBehaviour
     Transform player; //holds reference to player's transform
     [SerializeField, Range(0f, 1f), Tooltip("Percentage of incoming knockback this basic enemy takes. At 0, no knockback is taken.")]
     float knockbackMultiplier = 1f;
+    [SerializeField] GameObject pSysDespawnPrefab;
     public bool isShielded { get; set; } = false;
     bool isInvincible;
 
@@ -145,6 +146,8 @@ public class BasicEnemyScript : MonoBehaviour
 
     private void Death() //basic enemy death
     {
+        Instantiate(pSysDespawnPrefab, new Vector3(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().bounds.extents.y * 0.5f,
+            transform.position.z), Quaternion.identity);
         Destroy(gameObject); //destroys gameObject
     }
 }

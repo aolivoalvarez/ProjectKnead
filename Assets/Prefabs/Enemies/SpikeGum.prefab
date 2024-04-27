@@ -175,6 +175,7 @@ MonoBehaviour:
   roamDistMax: 10
   roamDistMin: 5
   knockbackMultiplier: 1
+  pSysDespawnPrefab: {fileID: 5861827882714901620, guid: 741217b54809119488fb35cfc660f364, type: 3}
   agent: {fileID: 6456001097611898903}
 --- !u!195 &6456001097611898903
 NavMeshAgent:
