@@ -136,6 +136,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look X", simpleLookDirection.x);
         animator.SetFloat("Look Y", simpleLookDirection.y);
         animator.SetBool("IsJumping", isJumping);
+        animator.SetBool("IsDashing", isDashing && inputDirection != Vector2.zero);
 
         var e_dashingTrail = dashingTrail.emission;
         if (dashMult > 1f && rigidBody.velocity != Vector2.zero)
