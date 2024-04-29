@@ -532,7 +532,7 @@ MonoBehaviour:
   moveSpeed: 3
   inputDirection: {x: 0, y: 0}
   rollSpeed: 6
-  rollTime: 0.4
+  rollTime: 0.72
   rollBuffer: 0.05
   jumpHeight: 1
   jumpTime: 0.75

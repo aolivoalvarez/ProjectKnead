@@ -22,7 +22,7 @@ public class PlayerShieldScript : MonoBehaviour
     {
         if (playerController.pInput.Player.Shield.inProgress &&
             Inventory.instance.collectedItems[Inventory.Item.PotLid] == true && Inventory.instance.currentShield == Inventory.Shield.PotLid &&
-            !playerController.isAttacking && !playerController.isHoldingObject && !playerController.isLifting && !playerController.isJumping)
+            !playerController.isAttacking && !playerController.isHoldingObject && !playerController.isLifting && !playerController.isJumping && !playerController.isRolling)
         {
             playerController.isShielding = true;
             shield.SetActive(true);
