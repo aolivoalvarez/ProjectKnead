@@ -5,6 +5,7 @@ Description: Handles the UI panel for the player's inventory.
 -----------------------------------------*/
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryMenuScript : MonoBehaviour
 {
@@ -71,22 +72,5 @@ public class InventoryMenuScript : MonoBehaviour
         this.inventory = inventory;
     }
 
-    /*public void RefreshInventoryItems()
-    {
-        int x = 0;
-        int y = 0;
-        float itemSlotCellSize = 30f;
-        foreach (Item item in inventory.currentItem())
-        { 
-            RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate,itemSlotContainer).GetComponent<RectTransform>();
-            itemSlotRectTransform.gameObject.SetActive(true);
-            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
-            x++;
-            if (x > 4)
-            {
-                x = 0;
-                y++;
-            }
-        }
-    } */
+    
 }
