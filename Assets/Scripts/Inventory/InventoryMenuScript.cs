@@ -6,6 +6,7 @@ Description: Handles the UI panel for the player's inventory.
 
 using UnityEngine;
 using UnityEngine.UI;
+using AYellowpaper.SerializedCollections;
 
 public class InventoryMenuScript : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class InventoryMenuScript : MonoBehaviour
     private Transform itemSlotTemplate;
 
     [SerializeField] GameObject inventoryMenu; //gets inventory menu panel
+    public SerializedDictionary<Inventory.Item, GameObject> itemSlots;
+    public SerializedDictionary<Inventory.Item, Sprite> itemImages;
 
     public bool isPaused;
 
@@ -47,7 +50,7 @@ public class InventoryMenuScript : MonoBehaviour
             isPaused = !isPaused;
             Time.timeScale = isPaused ? 0 : 1;
             inventoryMenu.SetActive(isPaused);
-            //RefreshInventoryItems();
+            //UpdateInventoryMenu();
         }
     }
 
@@ -70,6 +73,26 @@ public class InventoryMenuScript : MonoBehaviour
     public void SetInventory(Inventory inventory)
     {
         this.inventory = inventory;
+    }
+
+    public void UpdateInventoryMenu()
+    {
+        foreach(var (key,value) in inventory.collectedItems)
+        {
+            if(itemSlots.ContainsKey(key))
+            {
+                if (value == true)
+                {
+                    itemSlots[key].SetActive(true);
+                    itemSlots[key].GetComponentInChildren<Image>().color = Color.white;
+                    itemSlots[key].GetComponentInChildren<Image>().sprite = itemImages[key];
+                }
+                else
+                {
+                    itemSlots[key].GetComponentInChildren<Image>().color = Color.clear;
+                }
+            }
+        }
     }
 
     

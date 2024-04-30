@@ -48,3 +48,26 @@ MonoBehaviour:
     _sceneAsset: {fileID: 102900000, guid: be8dc7fa84ef5b84898d2041b5140c05, type: 3}
     _sceneName: TitleScreen
   inventoryMenu: {fileID: 0}
+  itemSlots:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 0}
+    - Key: 3
+      Value: {fileID: 0}
+    - Key: 5
+      Value: {fileID: 0}
+  itemImages:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 21300000, guid: 68759ebe6db62e944a73ed26ed653181, type: 3}
+    - Key: 3
+      Value: {fileID: 21300000, guid: 4351569f4aadfa941939c3540a19cdaf, type: 3}
+    - Key: 5
+      Value: {fileID: 21300000, guid: f44e9e2431848b44a8f67c08b308f8e7, type: 3}
+    - Key: 1
+      Value: {fileID: 0}
+    - Key: 4
+      Value: {fileID: 0}
+    - Key: 2
+      Value: {fileID: 0}
+  isPaused: 0
