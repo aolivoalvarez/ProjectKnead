@@ -126,7 +126,7 @@ BoxCollider2D:
   m_Offset: {x: -0.007762432, y: 0.48848516}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.1875}
+    pivot: {x: 0.5, y: 0.234375}
     oldSize: {x: 2, y: 2}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
@@ -167,6 +167,7 @@ MonoBehaviour:
   weaponParent: {fileID: 0}
   fireRate: 1
   knockbackMultiplier: 1
+  pSysDespawnPrefab: {fileID: 5861827882714901620, guid: 741217b54809119488fb35cfc660f364, type: 3}
 --- !u!195 &4076519554882361959
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -33,7 +33,7 @@ public class PlayerAttackScript : MonoBehaviour
         if (playerController.pInput.Player.Attack.triggered)
         {
             if (Inventory.instance.collectedItems[Inventory.Item.Spoon] == true && Inventory.instance.currentWeapon == Inventory.Weapon.Spoon &&
-                canAttack && !playerController.isHoldingObject)
+                canAttack && !playerController.isHoldingObject && !playerController.isLifting && !playerController.isRolling)
                 StartCoroutine(SwordAttackRoutine());
         }
     }

@@ -46,7 +46,7 @@ public class PlayerInteractScript : MonoBehaviour
         playerController.isHoldingObject = liftedObject != null;
 
         if (playerController.pInput.Player.Interact.triggered && !playerController.isAttacking &&
-            !playerController.isJumping && !playerController.isShielding)
+            !playerController.isJumping && !playerController.isShielding && !playerController.isRolling)
         {
             // Open chest
             if (interactHitboxScript.chestToOpen != null && !playerController.isHoldingObject)

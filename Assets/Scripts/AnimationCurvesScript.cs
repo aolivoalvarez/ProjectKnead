@@ -22,14 +22,4 @@ public class AnimationCurvesScript : MonoBehaviour
             Destroy(gameObject);
         //--------------------------------------------------//
     }
-
-    /*public static void InterpolateCurve(AnimationCurve curve, float valueStart, float valueEnd, float duration)
-    {
-        StartCoroutine(InterpolateCurveRoutine(curve, valueStart, valueEnd, duration));
-    }
-
-    IEnumerator InterpolateCurveRoutine(AnimationCurve curve, float valueStart, float valueEnd, float duration)
-    {
-        yield return null;
-    }*/
 }

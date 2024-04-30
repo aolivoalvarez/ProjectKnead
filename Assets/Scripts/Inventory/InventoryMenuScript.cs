@@ -5,6 +5,8 @@ Description: Handles the UI panel for the player's inventory.
 -----------------------------------------*/
 
 using UnityEngine;
+using UnityEngine.UI;
+using AYellowpaper.SerializedCollections;
 
 public class InventoryMenuScript : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class InventoryMenuScript : MonoBehaviour
     private Transform itemSlotTemplate;
 
     [SerializeField] GameObject inventoryMenu; //gets inventory menu panel
+    public SerializedDictionary<Inventory.Item, GameObject> itemSlots;
+    public SerializedDictionary<Inventory.Item, Sprite> itemImages;
 
     public bool isPaused;
 
@@ -46,7 +50,7 @@ public class InventoryMenuScript : MonoBehaviour
             isPaused = !isPaused;
             Time.timeScale = isPaused ? 0 : 1;
             inventoryMenu.SetActive(isPaused);
-            //RefreshInventoryItems();
+            //UpdateInventoryMenu();
         }
     }
 
@@ -71,22 +75,25 @@ public class InventoryMenuScript : MonoBehaviour
         this.inventory = inventory;
     }
 
-    /*public void RefreshInventoryItems()
+    public void UpdateInventoryMenu()
     {
-        int x = 0;
-        int y = 0;
-        float itemSlotCellSize = 30f;
-        foreach (Item item in inventory.currentItem())
-        { 
-            RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate,itemSlotContainer).GetComponent<RectTransform>();
-            itemSlotRectTransform.gameObject.SetActive(true);
-            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
-            x++;
-            if (x > 4)
+        foreach(var (key,value) in inventory.collectedItems)
+        {
+            if(itemSlots.ContainsKey(key))
             {
-                x = 0;
-                y++;
+                if (value == true)
+                {
+                    itemSlots[key].SetActive(true);
+                    itemSlots[key].GetComponentInChildren<Image>().color = Color.white;
+                    itemSlots[key].GetComponentInChildren<Image>().sprite = itemImages[key];
+                }
+                else
+                {
+                    itemSlots[key].GetComponentInChildren<Image>().color = Color.clear;
+                }
             }
         }
-    } */
+    }
+
+    
 }

@@ -5,7 +5,6 @@ Description: Project Knead
 -----------------------------------------*/
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,25 +17,27 @@ public class BasicEnemyScript : MonoBehaviour
     [SerializeField] float attackRange = 5f; //once player is in this range, cheddar will begin throwing
     [SerializeField] float roamDistMax = 10f; //holds maximum roaming distance from starting point
     [SerializeField] float roamDistMin = 5f; //holds minimum roaming distance from starting point
-    [SerializeField] Transform player; //holds reference to player's transform
+    Transform player; //holds reference to player's transform
     [SerializeField, Range(0f, 1f), Tooltip("Percentage of incoming knockback this basic enemy takes. At 0, no knockback is taken.")]
     float knockbackMultiplier = 1f;
+    [SerializeField] GameObject pSysDespawnPrefab;
+    public bool isShielded { get; set; } = false;
+    bool isInvincible;
 
-    BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
     Animator animator;
     Vector2 startingPosition; //holds basic enemy's starting position
-    NavMeshAgent agent; //holds reference to basic enemy's navmesh agent
+    public NavMeshAgent agent; //holds reference to basic enemy's navmesh agent
     void Start()
     {
         player = PlayerController.instance.transform;
         startingPosition = transform.position; //gets basic enemy's starting position
         health = maxHealth; //sets health to max
+        isInvincible = false;
 
         //references to components
-        boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
-        //animator = this.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -45,10 +46,10 @@ public class BasicEnemyScript : MonoBehaviour
 
     void Update()
     {
-        //After knockback is over, return movement control to the navmesh agent
-        if (agent != null && !agent.enabled && rigidBody.velocity.magnitude <= 0.1f)
+        if (agent.velocity != Vector3.zero)
         {
-            agent.enabled = true;
+            float rotateAmount = (player.position.x < transform.position.x) ? 0.1f : -0.1f;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + rotateAmount);
         }
     }
 
@@ -67,20 +68,58 @@ public class BasicEnemyScript : MonoBehaviour
 
     public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
     {
-        health -= damage;
+        if (isInvincible)
+            return;
+        if (!isShielded)
+        {
+            health -= damage;
+            StartCoroutine(InvincibleRoutine());
+        }
 
         if (health <= 0) //checks if health is 0 or less
         {
-            Death(); //kills basic enemy if health is 0
+            Death(); //kills henchman if health is 0
         }
     }
-
-    public void TakeDamage(int damage, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to this basic enemy
+    public void TakeDamage(int damage, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to this enemy
     {
         TakeDamage(damage);
 
+        if (!isShielded)
+            StartCoroutine(KnockbackRoutine(knockbackStrength, knockbackDirection));
+    }
+
+    IEnumerator KnockbackRoutine(float knockbackStrength, Vector2 knockbackDirection)
+    {
         agent.enabled = false; //navmesh agent must be disabled for AddForce to work properly
         rigidBody.AddForce(100f * knockbackMultiplier * knockbackStrength * knockbackDirection.normalized);
+        yield return new WaitForSeconds(0.5f);
+        rigidBody.velocity = Vector2.zero;
+        agent.enabled = true;
+    }
+
+    IEnumerator InvincibleRoutine()
+    {
+        isInvincible = true;
+        StartCoroutine(FlashingRoutine());
+        yield return new WaitForSeconds(0.25f);
+        isInvincible = false;
+    }
+
+    IEnumerator FlashingRoutine()
+    {
+        animator.SetBool("IsHurt", true);
+        while (isInvincible)
+        {
+            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
+            GetComponent<SpriteRenderer>().color = Color.clear;
+            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        animator.SetBool("IsHurt", false);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     void Roam() //gets random position and sets it as basic enemy's destination within a certain range of its starting position
@@ -97,7 +136,7 @@ public class BasicEnemyScript : MonoBehaviour
         agent.SetDestination(player.position);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -107,6 +146,8 @@ public class BasicEnemyScript : MonoBehaviour
 
     private void Death() //basic enemy death
     {
+        Instantiate(pSysDespawnPrefab, new Vector3(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().bounds.extents.y * 0.5f,
+            transform.position.z), Quaternion.identity);
         Destroy(gameObject); //destroys gameObject
     }
 }

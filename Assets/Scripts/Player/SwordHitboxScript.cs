@@ -44,6 +44,11 @@ public class SwordHitboxScript : MonoBehaviour
             Vector2 direction = other.transform.position - PlayerController.instance.transform.position;
             other.gameObject.GetComponent<CheddarScript>().TakeDamage(attackDamage, knockbackStrength, direction);
         }
+        if (other.gameObject.GetComponent<BasicEnemyScript>() != null)
+        {
+            Vector2 direction = other.transform.position - PlayerController.instance.transform.position;
+            other.gameObject.GetComponent<BasicEnemyScript>().TakeDamage(attackDamage, knockbackStrength, direction);
+        }
         objectsHitThisSwing.Add(other.gameObject);
     }
 }

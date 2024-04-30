@@ -7,7 +7,6 @@ Description:
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
 public class HenchmanScript : MonoBehaviour
 {
@@ -55,6 +54,7 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] float fireRate = 1f; //fire rate for ranged weapon
     [SerializeField, Range(0f, 1f), Tooltip("Percentage of incoming knockback this henchman takes. At 0, no knockback is taken.")]
     float knockbackMultiplier = 1f;
+    [SerializeField] GameObject pSysDespawnPrefab;
     public bool isShielded { get; set; } = false;
     bool isInvincible;
     float nextFire; //for fire rate calculations
@@ -211,6 +211,8 @@ public class HenchmanScript : MonoBehaviour
 
     private void Death() //henchman death
     {
+        Instantiate(pSysDespawnPrefab, new Vector3(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().bounds.extents.y * 0.5f,
+            transform.position.z), Quaternion.identity);
         Destroy(gameObject); //destroys gameObject
     }
 

@@ -42,6 +42,17 @@ public class PlayerController : MonoBehaviour
     public Vector2 simpleLookDirection { get; private set; } // reduces lookDirection to just the 4 cardinal directions
     public Vector2 lastDirection { get; private set; }
     public float holdDirectionTime { get; private set; }
+    bool isDashing;
+    float dashMult; // will normally be 1, but will increase when dashing
+
+    [Header("Rolling")]
+    [SerializeField, Tooltip("Roll speed in units per second.")]
+    float rollSpeed = 1.5f;
+    [SerializeField, Tooltip("How long a roll takes, in seconds.")]
+    float rollTime = 1f;
+    [SerializeField, Tooltip("Buffer after every roll, in seconds.")]
+    public float rollBuffer = 0.05f;
+    public bool isRolling { get; set; }
 
     [Header("Jumping")]
     [SerializeField, Tooltip("How many units high one jump is. Purely visual.")]
@@ -53,6 +64,9 @@ public class PlayerController : MonoBehaviour
     public bool isJumping { get; private set; }
     public bool canJump { get; set; }
     float initialGraphicPositionY; // stores the initial value of graphic.position.y (for when the player is not jumping)
+
+    [Header("Particle Effects")]
+    [SerializeField] ParticleSystem dashingTrail;
 
     void Awake()
     {
@@ -76,7 +90,10 @@ public class PlayerController : MonoBehaviour
         isHoldingObject = false;
         isPushingObject = false;
         isInvincible = false;
+        isDashing = false;
+        isRolling = false;
         moveSpeedMult = 1f;
+        dashMult = 1f;
         inputDirection = Vector2.zero;
         lookDirection = Vector2.down;
         simpleLookDirection = Vector2.down;
@@ -94,12 +111,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //------------------ Take Input --------------------//
-        inputDirection = ((isAttacking && !isJumping) || isLifting) ? Vector2.zero : pInput.Player.Movement.ReadValue<Vector2>(); // takes input unless lifting an object or attacking while grounded
+        inputDirection = ((isAttacking && !isJumping) || isLifting || isRolling) ? Vector2.zero : pInput.Player.Movement.ReadValue<Vector2>(); // takes input unless lifting, rolling, or attacking while grounded
         
 
         if (pInput.Player.Jump.triggered)
         {
-            if (canJump && !isJumping && !isAttacking && !isHoldingObject)
+            if (canJump && !isJumping && !isAttacking && !isHoldingObject && !isRolling)
                 StartCoroutine(JumpRoutine());
         }
         //--------------------------------------------------//
@@ -119,6 +136,17 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look X", simpleLookDirection.x);
         animator.SetFloat("Look Y", simpleLookDirection.y);
         animator.SetBool("IsJumping", isJumping);
+        animator.SetBool("IsDashing", isDashing && inputDirection != Vector2.zero);
+
+        var e_dashingTrail = dashingTrail.emission;
+        if (dashMult > 1f && rigidBody.velocity != Vector2.zero)
+        {
+            e_dashingTrail.enabled = true;
+        }
+        else
+        {
+            e_dashingTrail.enabled = false;
+        }
 
         lastDirection = simpleLookDirection;
     }
@@ -126,9 +154,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //---------------- Set final values ----------------//
-        if (!isPushingObject)
-            rigidBody.velocity = new Vector2(inputDirection.x * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50,
-                inputDirection.y * moveSpeed * moveSpeedMult * Time.fixedDeltaTime * 50);
+        dashMult = (isDashing && !isJumping && !isRolling) ? 2f : 1f;
+
+        if (!isPushingObject && !isRolling)
+            rigidBody.velocity = new Vector2(inputDirection.x * moveSpeed * moveSpeedMult * dashMult * Time.fixedDeltaTime * 50,
+                inputDirection.y * moveSpeed * moveSpeedMult * dashMult * Time.fixedDeltaTime * 50);
         
         switch (lookDirection.x)
         {
@@ -178,6 +208,44 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
         yield return new WaitForSeconds(jumpBuffer);
         canJump = true;
+    }
+
+    void StartDashing()
+    {
+        isDashing = true;
+    }
+
+    void StopDashing()
+    {
+        isDashing = false;
+    }
+
+    void DodgeRoll()
+    {
+        if (!isRolling && !isAttacking && !isJumping && !isPushingObject && !isLifting && !isShielding && !isHoldingObject)
+        {
+            StartCoroutine(RollRoutine());
+            /*Vector2 rollDirection = lookDirection.normalized;
+            rigidBody.velocity = new Vector2(rollDirection.x * rollSpeed * moveSpeedMult * Time.fixedDeltaTime * 50,
+                rollDirection.y * rollSpeed * moveSpeedMult * Time.fixedDeltaTime * 50);
+            animator.SetTrigger("DodgeRoll");*/
+        }
+    }
+
+    IEnumerator RollRoutine()
+    {
+        isRolling = true;
+        animator.SetTrigger("DodgeRoll");
+        Vector2 rollDirection = lookDirection.normalized;
+        for (float i = 0; i < rollTime; i += Time.fixedDeltaTime)
+        {
+            yield return new WaitForFixedUpdate();
+            // setting the speed every FixedUpdate to account for any changes to fixedDeltaTime
+            rigidBody.velocity = new Vector2(rollDirection.x * rollSpeed * moveSpeedMult * Time.fixedDeltaTime * 50,
+                rollDirection.y * rollSpeed * moveSpeedMult * Time.fixedDeltaTime * 50);
+        }
+        yield return new WaitForSeconds(rollBuffer);
+        isRolling = false;
     }
 
     public void IncreaseHealth(int healthToGain)
@@ -272,6 +340,26 @@ public class PlayerController : MonoBehaviour
                 if (context.interaction is SlowTapInteraction)
                     GetComponent<PlayerUseItemScript>().UseItem_EarlyRelease();
             };
+
+        pInput.Player.Dash.performed +=
+            context =>
+            {
+                if (context.interaction is HoldInteraction)
+                    StartDashing();
+                if (context.interaction is SlowTapInteraction)
+                    StopDashing();
+            };
+        pInput.Player.Dash.canceled +=
+            context =>
+            {
+                if (context.interaction is HoldInteraction)
+                    StopDashing();
+                if (context.interaction is SlowTapInteraction)
+                {
+                    StopDashing();
+                    DodgeRoll();
+                }
+            };
     }
 
     // For when the player dies. Stops all coroutines and sets various values to default.
@@ -284,7 +372,11 @@ public class PlayerController : MonoBehaviour
         isHoldingObject = false;
         isInvincible = false;
         isShielding = false;
+        isPushingObject = false;
+        isDashing = false;
+        isRolling = false;
         moveSpeedMult = 1f;
+        dashMult = 1f;
         graphic.localPosition = new Vector3(graphic.localPosition.x, initialGraphicPositionY);
         isJumping = false;
         canJump = true;
