@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class DungeonCameraController : MonoBehaviour
 {
+    public GameObject dungeonBorder;
     [SerializeField] float smoothSpeed = 0.5f;
     public Vector3 minPos, maxPos;
     Vector3 targetPos, newPos;

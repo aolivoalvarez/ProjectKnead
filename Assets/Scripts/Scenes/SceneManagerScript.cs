@@ -29,6 +29,7 @@ public class SceneManagerScript : MonoBehaviour
     SceneChangeDoorScript.DoorToSpawnAt doorToRespawnPlayer;
     Vector2 playerSpawnPosition;
     Vector3 dungeonCameraPosition;
+    PolygonCollider2D camConfiner;
 
     void Awake()
     {
@@ -50,6 +51,14 @@ public class SceneManagerScript : MonoBehaviour
     void OnDisable()
     {
         SceneManager.activeSceneChanged -= OnSceneChanged;
+    }
+
+    void Update()
+    {
+        if (camConfiner != null && FindObjectOfType<CinemachineConfiner2D>() != null && FindObjectOfType<CinemachineConfiner2D>().m_BoundingShape2D != camConfiner)
+        {
+            FindObjectOfType<CinemachineConfiner2D>().m_BoundingShape2D = camConfiner;
+        }
     }
 
     public static void SwapSceneFromDoorUse(SceneField scene, SceneChangeDoorScript.DoorToSpawnAt doorToSpawnAt)
@@ -126,19 +135,30 @@ public class SceneManagerScript : MonoBehaviour
             case SceneType.NonPlayer:
                 PlayerController.instance.gameObject.SetActive(false);
                 InventoryMenuScript.instance.iInput.Disable();
+                Camera.main.GetComponent<DungeonCameraController>().dungeonBorder.SetActive(false);
                 break;
             case SceneType.Dungeon:
                 Camera.main.GetComponent<CinemachineBrain>().enabled = false;
                 Camera.main.GetComponent<PixelPerfectCamera>().cropFrameX = true;
                 Camera.main.GetComponent<PixelPerfectCamera>().cropFrameY = true;
+                Camera.main.GetComponent<DungeonCameraController>().dungeonBorder.SetActive(true);
                 PlayerController.instance.gameObject.SetActive(true);
                 InventoryMenuScript.instance.iInput.Enable();
                 GameManager.instance.UpdatePlayerHearts();
                 break;
             default:
                 Camera.main.GetComponent<CinemachineBrain>().enabled = true;
+                PolygonCollider2D[] colliders = FindObjectsOfType<PolygonCollider2D>();
+                for (int i = 0; i < colliders.Length; i++)
+                {
+                    if (colliders[i].gameObject.CompareTag("VCamConfiner"))
+                    {
+                        camConfiner = colliders[i];
+                    }
+                }
                 Camera.main.GetComponent<PixelPerfectCamera>().cropFrameX = false;
                 Camera.main.GetComponent<PixelPerfectCamera>().cropFrameY = false;
+                Camera.main.GetComponent<DungeonCameraController>().dungeonBorder.SetActive(false);
                 PlayerController.instance.gameObject.SetActive(true);
                 InventoryMenuScript.instance.iInput.Enable();
                 GameManager.instance.UpdatePlayerHearts();
