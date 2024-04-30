@@ -162,8 +162,8 @@ MonoBehaviour:
   mAttackRange: 2
   rAttackRange: 5
   player: {fileID: 0}
-  roamDistMax: 10
-  roamDistMin: 5
+  roamDistMax: 30
+  roamDistMin: 10
   weapon: {fileID: 8344473530832241310, guid: b28db82e679518b4289912da36675e98, type: 3}
   weaponParent: {fileID: 3917158358693222118}
   fireRate: 1

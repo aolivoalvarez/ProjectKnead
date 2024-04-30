@@ -47,8 +47,8 @@ public class HenchmanScript : MonoBehaviour
     [SerializeField] float mAttackRange = 2f; //range for melee attack
     [SerializeField] float rAttackRange = 5f; //range for ranged attack
     [SerializeField] Transform player; //holds reference to player's transform
-    [SerializeField] float roamDistMax = 10f; //holds maximum roaming distance from starting point
-    [SerializeField] float roamDistMin = 5f; //holds minimum roaming distance from starting point
+    [SerializeField] float roamDistMax = 50f; //holds maximum roaming distance from starting point
+    [SerializeField] float roamDistMin = 20f; //holds minimum roaming distance from starting point
     [SerializeField] GameObject weapon; //holds reference to weapon prefab
     [SerializeField] GameObject weaponParent; //holds reference to weapon parent game object
     [SerializeField] float fireRate = 1f; //fire rate for ranged weapon
@@ -126,7 +126,8 @@ public class HenchmanScript : MonoBehaviour
         
         if (agent != null && agent.enabled)
         {
-            Roam(); //calls function for henchman to roam in it's area
+            agent.SetDestination(startingPosition);
+            Roam(); //calls coroutine for henchman to roam in it's area
 
             if (Vector2.Distance(transform.position, player.position) <= targetRange && Vector2.Distance(transform.position, player.position) > attackRange) //checks if player is nearby
             {
@@ -194,7 +195,7 @@ public class HenchmanScript : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    void Roam() //gets random position and sets it as henchman's destination within a certain range of its starting position
+    private void Roam() //gets random position and sets it as henchman's destination within a certain range of its starting position
     {
         Vector2 roamPos = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized; //random vector
 
