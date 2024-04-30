@@ -14,9 +14,7 @@ public class InventoryMenuScript : MonoBehaviour
     public InventoryInput iInput { get; private set; } //reference to input -- letter E for keyboard
 
     [SerializeField] SceneField titleScene;
-    private Inventory inventory;
-    private Transform itemSlotContainer;
-    private Transform itemSlotTemplate;
+    Inventory inventory;
 
     [SerializeField] GameObject inventoryMenu; //gets inventory menu panel
     public SerializedDictionary<Inventory.Item, GameObject> itemSlots;
@@ -35,10 +33,12 @@ public class InventoryMenuScript : MonoBehaviour
 
         iInput = new InventoryInput(); //reference to input
     }
+
     void Start()
     {
         inventoryMenu.SetActive(false); //disables inventory menu on start
         iInput.Enable();
+        inventory = Inventory.instance;
     }
 
     void Update()
@@ -47,16 +47,21 @@ public class InventoryMenuScript : MonoBehaviour
         if (iInput.Inventory.Open.triggered)
         {
             ToggleInventoryMenu();
-            isPaused = !isPaused;
-            Time.timeScale = isPaused ? 0 : 1;
-            inventoryMenu.SetActive(isPaused);
-            //UpdateInventoryMenu();
+        }
+
+        if (inventoryMenu.activeSelf)
+        {
+            UpdateInventoryMenu();
         }
     }
 
     public void ToggleInventoryMenu() //toggles inventory menu on or off
     {
-        inventoryMenu.SetActive(!inventoryMenu.activeSelf); //turns menu on or off based on previous value
+        isPaused = !isPaused;
+        Time.timeScale = isPaused ? 0 : 1;
+        if (isPaused) PlayerController.instance.pInput.Disable();
+        else PlayerController.instance.pInput.Enable();
+        inventoryMenu.SetActive(isPaused);
     }
 
     public void ReturnToTitle()
@@ -70,18 +75,13 @@ public class InventoryMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetInventory(Inventory inventory)
-    {
-        this.inventory = inventory;
-    }
-
     public void UpdateInventoryMenu()
     {
         foreach(var (key,value) in inventory.collectedItems)
         {
             if(itemSlots.ContainsKey(key))
             {
-                if (value == true)
+                if (value)
                 {
                     itemSlots[key].SetActive(true);
                     itemSlots[key].GetComponentInChildren<Image>().color = Color.white;
@@ -94,6 +94,4 @@ public class InventoryMenuScript : MonoBehaviour
             }
         }
     }
-
-    
 }

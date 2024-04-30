@@ -3,20 +3,20 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Tilemaps/Dungeon1.tmx",
+    "activeFile": "Tilemaps/BigBirchForest.tmx",
     "expandedProjectPaths": [
         "Tilesets",
-        "ObjectTemplates",
         "Tilemaps",
-        "."
+        ".",
+        "ObjectTemplates"
     ],
     "fileStates": {
         "Tilemaps/BigBirchForest.tmx": {
-            "scale": 0.75,
-            "selectedLayer": 1,
+            "scale": 0.5,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 321.3333333333333,
-                "y": 496
+                "x": 652,
+                "y": 520
             }
         },
         "Tilemaps/Dungeon0.tmx": {
@@ -102,8 +102,8 @@
         "Tilesets/DungeonTesting.tsx",
         "Tilemaps/Dungeon0.tmx",
         "Tilemaps/Dungeon1_draft.tmx",
-        "Tilemaps/BigBirchForest.tmx",
         "Tilemaps/Dungeon1.tmx",
+        "Tilemaps/BigBirchForest.tmx",
         "Tilesets/FantasyWorldSample500x500.tsx",
         "Tilesets/CaveDungeon.tsx",
         "Tilesets/1080x1920Topdown.tsx"
