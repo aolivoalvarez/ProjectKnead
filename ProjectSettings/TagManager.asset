@@ -13,6 +13,7 @@ TagManager:
   - BombExplosion
   - LockedDoor
   - PushObject
+  - VCamConfiner
   layers:
   - Default
   - TransparentFX
@@ -67,6 +68,9 @@ TagManager:
     locked: 0
   - name: Filter
     uniqueID: 826763937
+    locked: 0
+  - name: BelowUI
+    uniqueID: 2324334745
     locked: 0
   - name: UI
     uniqueID: 3882634205

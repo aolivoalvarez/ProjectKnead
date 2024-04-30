@@ -12,11 +12,11 @@
     ],
     "fileStates": {
         "Tilemaps/BigBirchForest.tmx": {
-            "scale": 1.5,
+            "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 768,
-                "y": 527.6666666666666
+                "x": 321.3333333333333,
+                "y": 496
             }
         },
         "Tilemaps/Dungeon0.tmx": {
@@ -50,11 +50,11 @@
             }
         },
         "Tilemaps/NewPawTown.tmx": {
-            "scale": 0.75,
+            "scale": 1.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 813.3333333333333,
-                "y": 575.3333333333334
+                "x": 1376,
+                "y": 502
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
