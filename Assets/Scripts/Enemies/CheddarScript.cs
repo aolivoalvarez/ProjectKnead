@@ -26,11 +26,10 @@ public class CheddarScript : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] Transform player; //holds reference to player's transform
     [SerializeField] float attackRange = 10f; //once player is in this range, cheddar will begin throwing
-    [SerializeField] float roamDistMax = 10f; //holds maximum roaming distance from starting point
+    [SerializeField] float roamDistMax = 15f; //holds maximum roaming distance from starting point
     [SerializeField] float roamDistMin = 5f; //holds minimum roaming distance from starting point
     [SerializeField] GameObject bombPrefab; //holds reference to weapon prefab
     [SerializeField] GameObject bombParent; //holds reference to weapon parent game object
-    [SerializeField] GameObject keyPrefab; //dungeon key that cheddar drops
     [SerializeField] GameObject cakePrefab; //cake slice that cheddar drops
     [SerializeField] State state; //holds cheddar's state
     int throwAmt; //amount of times cheddar has thrown a bomb
@@ -39,6 +38,9 @@ public class CheddarScript : MonoBehaviour
     float chargeSpeed = 5f; //speed of cheddar's charge
     int chargeWait = 3; //wait until charge coroutine calls idle coroutine
     int stunTimer = 5; //how long cheddar is stunned for
+    float knockbackMultiplier = 1f;
+    public bool isShielded { get; set; } = false;
+    bool isInvincible;
 
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
@@ -54,6 +56,7 @@ public class CheddarScript : MonoBehaviour
         startingPosition = transform.position; //gets cheddar's starting position
         health = maxHealth; //sets health to max
         throwAmt = 0; //sets throw amount to 0
+        state = State.Idle;
 
         //references to components
         boxCollider = GetComponent<BoxCollider2D>();
@@ -65,7 +68,13 @@ public class CheddarScript : MonoBehaviour
 
         StartCoroutine(IdleRoutine()); //calls idle coroutine upon start
     }
-    
+
+    private void FixedUpdate()
+    {
+        //walking animations
+        animator.SetFloat("lookX", agent.velocity.x);
+        animator.SetFloat("lookY", agent.velocity.y);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -80,30 +89,76 @@ public class CheddarScript : MonoBehaviour
 
     public void TakeDamage(int damage) //takes damage + destroys gameObject when health <= 0
     {
-        if (state == State.Charge) { return; }
         
         health -= damage;
+
+        if (state == State.Charge)
+        {
+            GetStunned(); //if cheddar is hit while he's charging, he gets stunned
+        }
 
         if (health <= 0) //checks if health is 0 or less
         {
             Death(); //kills cheddar if health is 0
         }
-
-        GetStunned(); //when cheddar is hit on the head, he is stunned
       
     }
+
+    public void TakeDamage(int damage, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to this enemy
+    {
+        TakeDamage(damage);
+
+        if (!isShielded)
+            StartCoroutine(KnockbackRoutine(knockbackStrength, knockbackDirection));
+    }
+
+    IEnumerator KnockbackRoutine(float knockbackStrength, Vector2 knockbackDirection)
+    {
+        agent.enabled = false; //navmesh agent must be disabled for AddForce to work properly
+        rigidBody.AddForce(100f * knockbackMultiplier * knockbackStrength * knockbackDirection.normalized);
+        yield return new WaitForSeconds(0.5f);
+        rigidBody.velocity = Vector2.zero;
+        agent.enabled = true;
+    }
+
+    IEnumerator InvincibleRoutine()
+    {
+        isInvincible = true;
+        StartCoroutine(FlashingRoutine());
+        yield return new WaitForSeconds(0.25f);
+        isInvincible = false;
+    }
+
+    IEnumerator FlashingRoutine()
+    {
+        while (isInvincible)
+        {
+            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
+            GetComponent<SpriteRenderer>().color = Color.clear;
+            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
 
     private void Death() //cheddar death
     {
 
-        Instantiate(keyPrefab, transform.position, Quaternion.identity); //spawns key
-        Instantiate(cakePrefab, transform.position, Quaternion.identity); //spawns cake
+        StopAllCoroutines();
 
-        Destroy(this.gameObject); //destroys gameObject
+        //animator.SetBool("death", true); //death animation
+
+        //Instantiate(cakePrefab, transform.position, Quaternion.identity); //spawns cake
+
+        Destroy(gameObject); //destroys gameObject
     }
 
     IEnumerator IdleRoutine()
     {
+        
         while (true) //looks scary, but it's fine. As long as it has the yield return new WaitForFixedUpdate(), there will never be an infinite loop error
         {
             agent.speed = moveSpeed; //resets move speed if called after charge
@@ -176,7 +231,7 @@ public class CheddarScript : MonoBehaviour
     {
         state = State.Stun;
 
-        //stun stuff here:
+        //animator.SetBool("stunned", true); //stun animation
 
         yield return new WaitForSeconds(stunTimer); //waits for how long cheddar is stunned for
 
