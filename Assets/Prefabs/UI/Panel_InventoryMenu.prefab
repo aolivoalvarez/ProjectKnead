@@ -141,8 +141,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281466930
-  m_fontColor: {r: 0.19607843, g: 0, b: 0.19607843, a: 1}
+    rgba: 4294959103
+  m_fontColor: {r: 1, g: 0.8726415, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 11c44e9ecd917b141ab0bae95ebe9452, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -459,7 +459,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: InventoryMenuScript, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -545,8 +545,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281466930
-  m_fontColor: {r: 0.19607843, g: 0, b: 0.19607843, a: 1}
+    rgba: 4294959103
+  m_fontColor: {r: 1, g: 0.8726415, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 11c44e9ecd917b141ab0bae95ebe9452, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -729,7 +729,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InventoryMenuScript, Assembly-CSharp
-        m_MethodName: PressContinue
+        m_MethodName: ToggleInventoryMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 11c44e9ecd917b141ab0bae95ebe9452, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1029,8 +1029,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281466930
-  m_fontColor: {r: 0.19607843, g: 0, b: 0.19607843, a: 1}
+    rgba: 4294959103
+  m_fontColor: {r: 1, g: 0.8726415, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1623,6 +1623,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572197677119703062, guid: 47709a5fdc03e7b46969112b51f68e8e, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250104882856725020, guid: 47709a5fdc03e7b46969112b51f68e8e, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5316912262537374096, guid: 47709a5fdc03e7b46969112b51f68e8e, type: 3}
