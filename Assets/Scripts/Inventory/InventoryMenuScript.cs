@@ -37,7 +37,6 @@ public class InventoryMenuScript : MonoBehaviour
     void Start()
     {
         inventoryMenu.SetActive(false); //disables inventory menu on start
-        iInput.Enable();
         inventory = Inventory.instance;
     }
 

@@ -29,7 +29,7 @@ public class TS_CloudsScript : MonoBehaviour
         if (smallCloud) transform.position = new Vector3(transform.position.x - backgroundSpeed * 60 * Time.deltaTime, transform.position.y, transform.position.z);
         else transform.position = new Vector3(transform.position.x - foregroundSpeed * 60 * Time.deltaTime, transform.position.y, transform.position.z);
 
-        if (transform.position.x < leftSide) 
+        if (transform.position.x <= leftSide) 
         {
             transform.position = new Vector3(rightSide, transform.position.y, transform.position.z);
         }
