@@ -4721,6 +4721,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2933877399711017034, guid: a3b9c43160ea1d742ba6577f8b54848d, type: 3}
   m_PrefabInstance: {fileID: 5361773544779708686}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7508169162558722282 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2475494025364548068, guid: a3b9c43160ea1d742ba6577f8b54848d, type: 3}
+  m_PrefabInstance: {fileID: 5361773544779708686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7508169163080614332 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2475494025882777778, guid: a3b9c43160ea1d742ba6577f8b54848d, type: 3}
@@ -4795,6 +4806,10 @@ PrefabInstance:
       propertyPath: isPaused
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5304938922039196995, guid: e9517473ce9d1184982968a3470876a7, type: 3}
+      propertyPath: initialButton
+      value: 
+      objectReference: {fileID: 7508169162558722282}
     - target: {fileID: 5304938922039196995, guid: e9517473ce9d1184982968a3470876a7, type: 3}
       propertyPath: inventoryMenu
       value: 

@@ -13,6 +13,7 @@ public class InventoryMenuScript : MonoBehaviour
     public static InventoryMenuScript instance;
     public InventoryInput iInput { get; private set; } //reference to input -- letter E for keyboard
 
+    [SerializeField] Button initialButton;
     [SerializeField] SceneField titleScene;
     Inventory inventory;
 
@@ -60,6 +61,7 @@ public class InventoryMenuScript : MonoBehaviour
         Time.timeScale = isPaused ? 0 : 1;
         if (isPaused) PlayerController.instance.pInput.Disable();
         else PlayerController.instance.pInput.Enable();
+        initialButton.Select();
         inventoryMenu.SetActive(isPaused);
     }
 

@@ -165,6 +165,11 @@ public class SceneManagerScript : MonoBehaviour
                 break;
         }
 
+        if (currentScene.name == "NewPawTown")
+        {
+            PlayerController.instance.transform.position = Vector3.zero;
+            PlayerController.instance.lookDirection = Vector2.down;
+        }
         if (loadedFromDoor || currentSceneType == SceneType.Dungeon)
         {
             //Debug.Log(doorToSpawnPlayer);

@@ -5,18 +5,11 @@ Description: For buttons that need a selection icon.
 -----------------------------------------*/
 
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 using UnityEngine.EventSystems;
 
 public class ButtonSelectScript : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     [SerializeField] GameObject selectIcon;
-
-    void Start()
-    {
-        selectIcon.SetActive(false);
-    }
 
     public void OnSelect(BaseEventData eventData)
     {
