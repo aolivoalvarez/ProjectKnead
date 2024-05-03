@@ -5,11 +5,17 @@ Description: To be attached to a GameObject in the GameOverScreen scene. Contain
 -----------------------------------------*/
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameOverScreenScript : MonoBehaviour
 {
     [SerializeField] SceneField titleScene;
-    
+
+    void Start()
+    {
+        GameObject.Find("Button_Continue").GetComponent<Button>().Select();
+    }
+
     public void ContinueGame()
     {
         GameManager.instance.RespawnAtRespawnPoint();
