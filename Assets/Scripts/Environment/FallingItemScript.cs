@@ -18,7 +18,7 @@ public class FallingItemScript : MonoBehaviour
 
     void OnEnable()
     {
-        if (AnimationCurvesScript.instance != null)
+        if (AnimationCurvesScript.instance != null && storedItem != null)
         {
             GetComponentInChildren<Collider2D>().enabled = false; // while an item is falling, it should have no collision
             offsetY = GetComponentInChildren<SpriteRenderer>().bounds.size.y * 0.5f;

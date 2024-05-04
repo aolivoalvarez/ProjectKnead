@@ -44,10 +44,12 @@ public class ItemBalloonScript : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerSword") && other.gameObject.GetComponentInParent<PlayerController>().isJumping)
         {
             GameObject fallingItem = Instantiate(fallingItemPrefab, transform.position, Quaternion.identity);
+            fallingItem.SetActive(false);
             storedItem.transform.position = transform.position;
             storedItem.transform.SetParent(fallingItem.transform);
             fallingItem.GetComponent<FallingItemScript>().storedItem = storedItem;
             fallingItem.GetComponent<FallingItemScript>().groundLevelY = balloonParent.transform.position.y;
+            fallingItem.SetActive(true);
             Destroy(balloonParent); // gets rid of the item balloon
         }
     }

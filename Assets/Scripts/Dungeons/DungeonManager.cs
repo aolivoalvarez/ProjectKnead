@@ -30,6 +30,7 @@ public class DungeonManager : MonoBehaviour
     public List<Dungeon> dungeons;
     public int currentDungeon = -1;
     public int currentRoom = -1;
+    DungeonCameraController camControl;
 
     void Awake()
     {
@@ -39,6 +40,11 @@ public class DungeonManager : MonoBehaviour
         else
             Destroy(gameObject);
         //--------------------------------------------------//
+    }
+
+    void Start()
+    {
+        camControl = Camera.main.GetComponent<DungeonCameraController>();
     }
 
     public void InitializeDungeon()
@@ -89,6 +95,11 @@ public class DungeonManager : MonoBehaviour
         Destroy(dungeons[currentDungeon].rooms[currentRoom].gameObject);
         dungeons[currentDungeon].rooms[currentRoom] = Instantiate(dungeonsInfo[currentDungeon].roomPrefabs[currentRoom].GetComponent<DungeonRoomScript>());
         dungeons[currentDungeon].rooms[currentRoom].currentState = dungeons[currentDungeon].roomStates[currentRoom];
+
+        camControl.minPos = new Vector3(dungeons[currentDungeon].rooms[currentRoom].transform.position.x,
+            dungeons[currentDungeon].rooms[currentRoom].transform.position.y, Camera.main.transform.position.z);
+        camControl.maxPos = new Vector3(dungeons[currentDungeon].rooms[currentRoom].transform.position.x,
+            dungeons[currentDungeon].rooms[currentRoom].transform.position.y, Camera.main.transform.position.z);
     }
 
     int CalculateCurrentRoom()

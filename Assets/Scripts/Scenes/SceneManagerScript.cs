@@ -78,6 +78,9 @@ public class SceneManagerScript : MonoBehaviour
 
     IEnumerator FadeOutThenChangeScene(SceneField scene, SceneChangeDoorScript.DoorToSpawnAt doorToSpawnAt = SceneChangeDoorScript.DoorToSpawnAt.None)
     {
+        if (SceneFadeManager.instance.isFadingOut || SceneFadeManager.instance.isFadingIn)
+            yield break;
+
         SceneFadeManager.instance.StartFadeOut();
 
         while (SceneFadeManager.instance.isFadingOut)
@@ -91,6 +94,9 @@ public class SceneManagerScript : MonoBehaviour
     }
     IEnumerator FadeOutThenChangeScene(int sceneIndex, SceneChangeDoorScript.DoorToSpawnAt doorToSpawnAt = SceneChangeDoorScript.DoorToSpawnAt.None)
     {
+        if (SceneFadeManager.instance.isFadingOut || SceneFadeManager.instance.isFadingIn)
+            yield break;
+
         SceneFadeManager.instance.StartFadeOut();
 
         while (SceneFadeManager.instance.isFadingOut)
@@ -165,6 +171,11 @@ public class SceneManagerScript : MonoBehaviour
                 break;
         }
 
+        if (currentScene.name == "NewPawTown")
+        {
+            PlayerController.instance.transform.position = Vector3.zero;
+            PlayerController.instance.lookDirection = Vector2.down;
+        }
         if (loadedFromDoor || currentSceneType == SceneType.Dungeon)
         {
             //Debug.Log(doorToSpawnPlayer);

@@ -13,18 +13,17 @@ public class ChooseChestPickup : ChoosePickup
     [SerializeField] Sprite chestOpen;
     [SerializeField] SpriteRenderer graphic;
 
-    public bool chestOpened { get; private set; }
-
-    void Start()
-    {
-        chestOpened = false;
-    }
+    public bool chestOpened = false;
 
     public GameObject OpenChest()
     {
-        chestOpened = true;
-        graphic.sprite = chestOpen;
-        return pickupPrefabs[thisPickup];
+        if (!chestOpened)
+        {
+            chestOpened = true;
+            graphic.sprite = chestOpen;
+            return pickupPrefabs[thisPickup];
+        }
+        return null;
     }
 
 #if UNITY_EDITOR
