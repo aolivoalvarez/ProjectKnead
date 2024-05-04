@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class DungeonDoorScript : MonoBehaviour
 {
-    [SerializeField] Vector3 newCamPos, newPlayerPos;
+    [SerializeField] Vector3 newPlayerPos;
     DungeonCameraController camControl;
     DungeonManager dungeonManager;
 
@@ -23,9 +23,6 @@ public class DungeonDoorScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            camControl.minPos += newCamPos;
-            camControl.maxPos += newCamPos;
-
             other.transform.position += newPlayerPos;
             CheckpointScript.instance.transform.position = other.transform.position;
 

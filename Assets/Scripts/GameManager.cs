@@ -4,6 +4,7 @@ Author: theco
 Description: For the GameManager prefab. Performs a variety of tasks, such as updating UI elements, performing player respawns, and the GameOver sequence.
 -----------------------------------------*/
 
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -172,6 +173,15 @@ public class GameManager : MonoBehaviour
     public void RespawnAtRespawnPoint()
     {
         SceneManagerScript.SwapScene(RespawnPointScript.instance.respawnSceneIndex);
+        StartCoroutine(RespawnRoutine());
+    }
+
+    IEnumerator RespawnRoutine()
+    {
+        while (SceneFadeManager.instance.isFadingOut)
+        {
+            yield return null;
+        }
         PlayerController.instance.gameObject.SetActive(true);
         PlayerController.instance.HealthToMax();
         UpdatePlayerHearts();

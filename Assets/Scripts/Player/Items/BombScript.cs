@@ -48,6 +48,7 @@ public class BombScript : MonoBehaviour
         GetComponentInChildren<Animator>().SetTrigger("Explode");
         if (transform.parent != null)
         {
+            transform.position = transform.parent.position;
             transform.SetParent(null);
         }
     }    

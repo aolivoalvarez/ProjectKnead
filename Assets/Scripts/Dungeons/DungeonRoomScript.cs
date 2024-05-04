@@ -79,7 +79,7 @@ public class DungeonRoomScript : MonoBehaviour
         }
         for (int i = 0; i < currentState.dontRespawn.Count; i++)
         {
-            if (!currentState.dontRespawn[i]) Destroy(dontRespawn[i].gameObject);
+            if (!currentState.dontRespawn[i]) dontRespawn[i].SetActive(false);
         }
     }
 

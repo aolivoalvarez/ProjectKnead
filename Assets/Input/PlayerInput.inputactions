@@ -128,7 +128,7 @@
                 {
                     "name": "Analog Stick",
                     "id": "234e6aa8-e06b-482f-99ad-44f1ce394ccf",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "StickDeadzone(min=0.2,max=0.8)",
                     "groups": "",

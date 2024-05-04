@@ -7,6 +7,7 @@ Description: Handles the UI panel for the player's inventory.
 using UnityEngine;
 using UnityEngine.UI;
 using AYellowpaper.SerializedCollections;
+using TMPro;
 
 public class InventoryMenuScript : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class InventoryMenuScript : MonoBehaviour
     public InventoryInput iInput { get; private set; } //reference to input -- letter E for keyboard
 
     [SerializeField] Button initialButton;
+    [SerializeField] Button quitButton;
     [SerializeField] SceneField titleScene;
     Inventory inventory;
 
@@ -39,6 +41,10 @@ public class InventoryMenuScript : MonoBehaviour
     {
         inventoryMenu.SetActive(false); //disables inventory menu on start
         inventory = Inventory.instance;
+
+#if UNITY_WEBGL
+        DisableQuitButton();
+#endif
     }
 
     void Update()
@@ -53,6 +59,12 @@ public class InventoryMenuScript : MonoBehaviour
         {
             UpdateInventoryMenu();
         }
+    }
+
+    void DisableQuitButton()
+    {
+        quitButton.interactable = false;
+        quitButton.GetComponentInChildren<TextMeshProUGUI>().color = new Color(0.69f, 0.655f, 0.69f);
     }
 
     public void ToggleInventoryMenu() //toggles inventory menu on or off
