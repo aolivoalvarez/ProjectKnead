@@ -33,9 +33,9 @@ public class CheddarScript : MonoBehaviour
     [SerializeField] GameObject cakePrefab; //cake slice that cheddar drops
     [SerializeField] State state; //holds cheddar's state
     int throwAmt; //amount of times cheddar has thrown a bomb
-    [SerializeField] int throwRate = 3; //rate that cheddar throws bombs
+    [SerializeField] int throwRate = 1; //rate that cheddar throws bombs
     int attackBuffer = 2;
-    float chargeSpeed = 5f; //speed of cheddar's charge
+    [SerializeField] float chargeSpeed = 5f; //speed of cheddar's charge
     int chargeWait = 3; //wait until charge coroutine calls idle coroutine
     int stunTimer = 5; //how long cheddar is stunned for
     float knockbackMultiplier = 1f;
@@ -72,8 +72,8 @@ public class CheddarScript : MonoBehaviour
     private void FixedUpdate()
     {
         //walking animations
-        animator.SetFloat("lookX", agent.velocity.x);
-        animator.SetFloat("lookY", agent.velocity.y);
+        //animator.SetFloat("lookX", agent.velocity.x);
+        //animator.SetFloat("lookY", agent.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -212,10 +212,17 @@ public class CheddarScript : MonoBehaviour
 
         state = State.Charge;
 
-        agent.speed = chargeSpeed; //increases cheddar's speed
-        agent.SetDestination(player.position); //sets cheddar's destination to player
+        agent.enabled = false;
+
+        animator.SetBool("charge", true);
+
+        Vector3 chargePos = (player.position - transform.position).normalized;
+        rigidBody.velocity = chargePos * chargeSpeed;
 
         yield return new WaitForSeconds(chargeWait); //waits a little bit before calling idle routine
+
+        rigidBody.velocity = Vector3.zero;
+        agent.enabled = true;
 
         StartCoroutine(IdleRoutine());
 
