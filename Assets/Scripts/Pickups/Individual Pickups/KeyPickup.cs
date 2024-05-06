@@ -26,5 +26,6 @@ public class KeyPickup : Pickup
         {
             DungeonManager.instance.dungeonsInfo[DungeonManager.instance.currentDungeon].keysCollected++;
         }
+        base.PlayerCollectDontDestroy();
     }
 }

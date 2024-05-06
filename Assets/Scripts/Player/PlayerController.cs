@@ -192,6 +192,7 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = true;
         canJump = false;
+        AudioManager.instance.PlaySound(0);
         float jumpArc = .55f; // the percentage of jumpTime spent ascending
         float fallArc = .45f; // the percentage of jumpTime spent decending
         for (float i = 0; i < jumpTime * jumpArc; i += Time.fixedDeltaTime)
@@ -302,6 +303,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator InvincibleRoutine()
     {
+        AudioManager.instance.PlaySound(2);
         isInvincible = true;
         StartCoroutine(FlashingRoutine());
         yield return new WaitForSeconds(invincibilityTime);

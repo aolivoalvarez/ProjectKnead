@@ -16,6 +16,7 @@ public abstract class Pickup : MonoBehaviour
     [SerializeField, Tooltip("If true, this pickup will start its despawn routine during its Start function. " +
                              "If false, this pickup will not despawn until its StartDespawnRoutine function is called.")]
     public bool autoDespawn = true;
+    [SerializeField] protected int pickupSoundIndex = -1;
 
     void Awake()
     {
@@ -68,7 +69,10 @@ public abstract class Pickup : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    public abstract void PlayerCollectDontDestroy();
+    public virtual void PlayerCollectDontDestroy()
+    {
+        if (pickupSoundIndex >= 0) AudioManager.instance.PlaySound(pickupSoundIndex);
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

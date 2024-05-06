@@ -12,12 +12,13 @@ public class HealthPickup : Pickup
 
     protected override void PlayerCollect()
     {
-        PlayerController.instance.IncreaseHealth(healthAmount);
+        PlayerCollectDontDestroy();
         base.PlayerCollect();
     }
 
     public override void PlayerCollectDontDestroy()
     {
         PlayerController.instance.IncreaseHealth(healthAmount);
+        base.PlayerCollectDontDestroy();
     }
 }

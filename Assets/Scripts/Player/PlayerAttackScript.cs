@@ -41,6 +41,7 @@ public class PlayerAttackScript : MonoBehaviour
     IEnumerator SwordAttackRoutine()
     {
         animator.SetTrigger("Attack");
+        AudioManager.instance.PlaySound(3);
         playerController.isAttacking = true; // player stops moving when attacking
         canAttack = false;
         //swordSwingHitbox.SetActive(true);

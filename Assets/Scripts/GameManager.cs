@@ -168,6 +168,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerController.instance.DecreaseHealth(damageToInflict);
         PlayerController.instance.transform.position = CheckpointScript.instance.transform.position;
+        PlayerController.instance.GetComponent<Collider2D>().enabled = true;
     }
 
     public void RespawnAtRespawnPoint()

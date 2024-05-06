@@ -126,4 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDespawn: -1
   autoDespawn: 0
+  pickupSoundIndex: 10
   isBossKey: 1
