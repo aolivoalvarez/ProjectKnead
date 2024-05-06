@@ -42,6 +42,31 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 5,
+            "members": [
+                {
+                    "name": "unity:layer",
+                    "type": "string",
+                    "value": "IgnorePlayer"
+                }
+            ],
+            "name": "IgnorePlayerWall",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 4,
             "members": [
                 {

@@ -15,27 +15,27 @@
             "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 652,
-                "y": 520
+                "x": 650,
+                "y": 518
             }
         },
         "Tilemaps/Dungeon0.tmx": {
             "expandedGroupLayers": [
                 13
             ],
-            "scale": 0.75,
+            "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 511.99999999999994,
-                "y": 767.3333333333333
+                "x": 500,
+                "y": 954
             }
         },
         "Tilemaps/Dungeon1.tmx": {
             "scale": 0.5,
-            "selectedLayer": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 1280,
-                "y": 1535
+                "x": 886,
+                "y": 1976
             }
         },
         "Tilemaps/Dungeon1_draft.tmx": {
@@ -45,16 +45,16 @@
             "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 1280,
-                "y": 1535.5
+                "x": 1279,
+                "y": 1534
             }
         },
         "Tilemaps/NewPawTown.tmx": {
             "scale": 1.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 1376,
-                "y": 502
+                "x": 790.6666666666666,
+                "y": 575.6666666666666
             }
         },
         "Tilesets/1080x1920Topdown.tsx": {
@@ -95,7 +95,7 @@
         "Tilemaps/BigBirchForest.tmx"
     ],
     "project": "ProjectKnead.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
         "Tilemaps/NewPawTown.tmx",
         "Tilesets/TileSheetTopDownGame.tsx",

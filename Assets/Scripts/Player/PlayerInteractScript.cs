@@ -52,7 +52,7 @@ public class PlayerInteractScript : MonoBehaviour
             if (interactHitboxScript.chestToOpen != null && !interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().chestOpened && !playerController.isHoldingObject)
                 StartCoroutine(OpenChestRoutine(interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().OpenChest()));
             // Lift object
-            else if (interactHitboxScript.objectToLift != null)
+            else if (interactHitboxScript.objectToLift != null && liftedObject == null)
                 StartCoroutine(LiftRoutine());
             // Throw object
             else if (liftedObject != null && !playerController.isLifting)
