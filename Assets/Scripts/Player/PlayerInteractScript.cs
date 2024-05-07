@@ -48,8 +48,13 @@ public class PlayerInteractScript : MonoBehaviour
         if (playerController.pInput.Player.Interact.triggered && !playerController.isAttacking &&
             !playerController.isJumping && !playerController.isShielding && !playerController.isRolling)
         {
+            // Talk to npc
+            if (interactHitboxScript.npcToTalk != null)
+            {
+                interactHitboxScript.npcToTalk.GetComponent<NpcTalkScript>().Talk();
+            }
             // Open chest
-            if (interactHitboxScript.chestToOpen != null && !interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().chestOpened && !playerController.isHoldingObject)
+            else if (interactHitboxScript.chestToOpen != null && !interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().chestOpened && !playerController.isHoldingObject)
                 StartCoroutine(OpenChestRoutine(interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().OpenChest()));
             // Lift object
             else if (interactHitboxScript.objectToLift != null && liftedObject == null)
