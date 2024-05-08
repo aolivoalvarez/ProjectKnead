@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7021825811017516009}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -128,3 +129,81 @@ MonoBehaviour:
   autoDespawn: 0
   pickupSoundIndex: 10
   isBossKey: 1
+--- !u!1001 &8912692826718936066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1581996324093796535}
+    m_Modifications:
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734127328775655837, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970562813287022140, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_Name
+      value: NarrationTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092863763527642944, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: disableCollider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092863763527642944, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: narration.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092863763527642944, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: narration.Array.data[0]
+      value: You got the Boss Key!\nNow you can unlock the door to the boss's lair...
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+--- !u!4 &7021825811017516009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+  m_PrefabInstance: {fileID: 8912692826718936066}
+  m_PrefabAsset: {fileID: 0}

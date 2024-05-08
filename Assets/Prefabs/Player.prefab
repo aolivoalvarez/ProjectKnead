@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c34c673487d8446a9cc37d9f47bdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcToTalk: {fileID: 0}
   objectToLift: {fileID: 0}
   objectToPush: {fileID: 0}
   chestToOpen: {fileID: 0}
@@ -551,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingWaitTime: 0.25
-  holdItemWaitTime: 2
+  holdItemWaitTime: 0.75
   chestItemOffsetY: 2
   liftTime: 0.1
   liftOffsetY: 2

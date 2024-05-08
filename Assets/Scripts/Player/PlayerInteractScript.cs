@@ -111,7 +111,8 @@ public class PlayerInteractScript : MonoBehaviour
         heldItem.GetComponent<Pickup>().autoDespawn = false;
         heldItem.GetComponent<Pickup>().StopAllCoroutines();
         heldItem.GetComponent<Pickup>().PlayerCollectDontDestroy();
-        yield return new WaitForSeconds(holdItemWaitTime);
+        if (heldItem.GetComponentInChildren<NarrationTrigger>() != null) yield return new WaitForSeconds(holdItemWaitTime * 0.25f);
+        else yield return new WaitForSeconds(holdItemWaitTime);
         Destroy(heldItem);
         GameManager.instance.EnablePlayerInput();
     }

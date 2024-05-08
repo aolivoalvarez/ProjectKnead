@@ -4,6 +4,7 @@ Author: theco
 Description: Controls displayed dialogue and text boxes.
 -----------------------------------------*/
 
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,10 +50,6 @@ public class DialogueManager : MonoBehaviour
             GameManager.instance.DisablePlayerInput();
             PlayerController.instance.pInput.Player.Interact.Enable();
         }
-        else
-        {
-            GameManager.instance.EnablePlayerInput();
-        }
     }
 
     public void SetDialogue(string text, string speaker = "null")
@@ -78,11 +75,12 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueSpeakerBox.SetActive(false);
         dialogueTextBox.SetActive(false);
+        GameManager.instance.EnablePlayerInput();
     }
 
     public void SetNarration(string text)
     {
-        Time.timeScale = 0;
+        StartCoroutine(PauseAfterFadeIn());
         narrationBox.SetActive(true);
         narrationButton.Select();
         narration.pageToDisplay = 1;
@@ -102,10 +100,20 @@ public class DialogueManager : MonoBehaviour
     {
         Time.timeScale = 1;
         narrationBox.SetActive(false);
+        GameManager.instance.EnablePlayerInput();
     }
     
     public void AdvCurrentNarration()
     {
         currentNarration.DisplayText();
+    }
+
+    IEnumerator PauseAfterFadeIn()
+    {
+        while (SceneFadeManager.instance.isFadingIn)
+        {
+            yield return null;
+        }
+        Time.timeScale = 0;
     }
 }

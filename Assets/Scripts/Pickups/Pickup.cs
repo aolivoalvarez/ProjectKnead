@@ -72,6 +72,7 @@ public abstract class Pickup : MonoBehaviour
     public virtual void PlayerCollectDontDestroy()
     {
         if (pickupSoundIndex >= 0) AudioManager.instance.PlaySound(pickupSoundIndex);
+        if (GetComponentInChildren<NarrationTrigger>() != null) GetComponentInChildren<NarrationTrigger>().DisplayText();
     }
 
     void OnTriggerEnter2D(Collider2D other)

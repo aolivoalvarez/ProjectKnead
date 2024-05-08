@@ -16,6 +16,11 @@ public class NarrationTrigger : MonoBehaviour
 
     void Start()
     {
+        if (dialogueManager == null) Initialize();
+    }
+
+    void Initialize()
+    {
         GetComponent<Collider2D>().isTrigger = true;
         if (disableCollider) GetComponent<Collider2D>().enabled = false;
         currentIndex = 0;
@@ -24,6 +29,7 @@ public class NarrationTrigger : MonoBehaviour
 
     public void DisplayText()
     {
+        if (dialogueManager == null) Initialize();
         dialogueManager.currentNarration = this;
 
         if (dialogueManager.AdvanceNarration()) { }
