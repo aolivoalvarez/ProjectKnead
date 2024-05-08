@@ -18,9 +18,11 @@ public class PitFallScript : MonoBehaviour
             {
                 AudioManager.instance.PlaySound(14);
                 GameManager.instance.DisablePlayerInput();
-                PlayerController.instance.transform.position = transform.position;
+                player.EndPlayerCoroutines();
+                player.transform.position = transform.position;
+                player.rigidBody.velocity = Vector3.zero;
                 other.gameObject.GetComponent<Collider2D>().enabled = false;
-                PlayerController.instance.animator.SetBool("IsFallingIntoPit", true);
+                player.animator.SetBool("IsFallingIntoPit", true);
             }
         }
         else if (other.gameObject.GetComponent<HenchmanScript>() != null)

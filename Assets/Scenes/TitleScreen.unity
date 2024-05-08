@@ -996,6 +996,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 768019424765511209, guid: 0d0e821fe58389a4ab3faab5f62af4c0, type: 3}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1008063424772603957, guid: 0d0e821fe58389a4ab3faab5f62af4c0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1985,7 +1989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music by Dova-Syndrome
+  m_text: Music from Dova-Syndrome
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0831fdedb8c046c4aa7e724213cde540, type: 2}
   m_sharedMaterial: {fileID: 2811614612359637193, guid: 0831fdedb8c046c4aa7e724213cde540, type: 2}

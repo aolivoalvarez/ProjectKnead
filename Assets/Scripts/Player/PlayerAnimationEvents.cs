@@ -34,6 +34,18 @@ public class PlayerAnimationEvents : MonoBehaviour
         GameManager.instance.RespawnAtCheckpoint(2);
     }
 
+    void StartInvincibility()
+    {
+        PlayerController.instance.isInvincible = true;
+        //PlayerController.instance.GetComponentInChildren<SpriteRenderer>().color = Color.green;
+    }
+
+    void EndInvincibility()
+    {
+        PlayerController.instance.isInvincible = false;
+        //PlayerController.instance.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+    }
+
     void ToGameOverScene()
     {
         PlayerController.instance.animator.SetBool("IsDying", false);

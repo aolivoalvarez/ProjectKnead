@@ -22,7 +22,7 @@ public class PitPullScript : MonoBehaviour
                 Vector3 pullDirection = distance.normalized;
                 player.rigidBody.AddForce(new Vector2(pullDirection.x * pullSpeed, pullDirection.y * pullSpeed)); // pulls the player towards the pit
                 player.moveSpeedMult = 0.5f; // slows the player to half speed
-                player.canJump = false;
+                //player.canJump = false;
             }
         }
     }
