@@ -15,6 +15,7 @@ TagManager:
   - PushObject
   - VCamConfiner
   - NPC
+  - NarrationTrigger
   layers:
   - Default
   - TransparentFX

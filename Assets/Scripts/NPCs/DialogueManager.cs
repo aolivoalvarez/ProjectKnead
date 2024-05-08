@@ -6,6 +6,7 @@ Description: Controls displayed dialogue and text boxes.
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -13,7 +14,10 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] GameObject dialogueSpeakerBox;
     [SerializeField] GameObject dialogueTextBox;
-    [SerializeField] GameObject narrationBox;
+    [SerializeField] Button dialogueButton;
+    public GameObject narrationBox;
+    [SerializeField] Button narrationButton;
+    public NarrationTrigger currentNarration { get; set; }
     TextMeshProUGUI dialogueSpeaker;
     TextMeshProUGUI dialogueText;
     TextMeshProUGUI narration;
@@ -38,15 +42,29 @@ public class DialogueManager : MonoBehaviour
         narrationBox.SetActive(false);
     }
 
+    void Update()
+    {
+        if (dialogueTextBox.activeSelf || narrationBox.activeSelf)
+        {
+            GameManager.instance.DisablePlayerInput();
+            PlayerController.instance.pInput.Player.Interact.Enable();
+        }
+        else
+        {
+            GameManager.instance.EnablePlayerInput();
+        }
+    }
+
     public void SetDialogue(string text, string speaker = "null")
     {
         dialogueSpeakerBox.SetActive(speaker != "null");
         dialogueTextBox.SetActive(true);
+        dialogueButton.Select();
         dialogueText.pageToDisplay = 1;
         dialogueSpeaker.text = speaker;
+        text = text.Replace("\\n", "\n");
         dialogueText.text = text;
     }
-
     public bool AdvanceDialogue()
     {
         if (dialogueText.pageToDisplay < dialogueText.textInfo.pageCount)
@@ -56,7 +74,6 @@ public class DialogueManager : MonoBehaviour
         }
         return false;
     }
-
     public void CloseDialogue()
     {
         dialogueSpeakerBox.SetActive(false);
@@ -65,6 +82,30 @@ public class DialogueManager : MonoBehaviour
 
     public void SetNarration(string text)
     {
+        Time.timeScale = 0;
+        narrationBox.SetActive(true);
+        narrationButton.Select();
+        narration.pageToDisplay = 1;
+        text = text.Replace("\\n", "\n");
         narration.text = text;
+    }
+    public bool AdvanceNarration()
+    {
+        if (narration.pageToDisplay < narration.textInfo.pageCount)
+        {
+            narration.pageToDisplay++;
+            return true;
+        }
+        return false;
+    }
+    public void CloseNarration()
+    {
+        Time.timeScale = 1;
+        narrationBox.SetActive(false);
+    }
+    
+    public void AdvCurrentNarration()
+    {
+        currentNarration.DisplayText();
     }
 }

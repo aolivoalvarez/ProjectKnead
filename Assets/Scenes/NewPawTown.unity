@@ -13685,6 +13685,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f9614351d4d1fa4ea833fd7e576cd1c, type: 3}
+--- !u!1001 &5430010604530828051
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928305594534420459, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970562813287022140, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: m_Name
+      value: NarrationTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092863763527642944, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: narration.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092863763527642944, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: narration.Array.data[0]
+      value: Some thief just ran off with your last wooden spoon!! Better catch them!\n\n(Press
+        D)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092863763527642944, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
+      propertyPath: narration.Array.data[1]
+      value: Move - Arrow keys\nInteract - D\nRun - Hold shift\nPause - E
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8198231073862ca4ab8a3d541bf7b58b, type: 3}
 --- !u!1001 &6826443853618317056
 PrefabInstance:
   m_ObjectHideFlags: 0
