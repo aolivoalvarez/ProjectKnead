@@ -8,6 +8,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem.Interactions;
 
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
@@ -29,8 +30,8 @@ public class PlayerController : MonoBehaviour
     public bool isHoldingObject { get; set; }
     public bool isPushingObject { get; set; }
     public bool isInvincible { get; set; }
-
-    Inventory inventory;
+    bool isDying;
+    AudioSource audi;
     //--------------------------------------------------//
 
     [Header("Movement")]
@@ -76,8 +77,6 @@ public class PlayerController : MonoBehaviour
         else
             Destroy(gameObject);
         //--------------------------------------------------//
-
-        inventory = Inventory.instance;
     }
 
     void Start()
@@ -92,6 +91,7 @@ public class PlayerController : MonoBehaviour
         isInvincible = false;
         isDashing = false;
         isRolling = false;
+        isDying = false;
         moveSpeedMult = 1f;
         dashMult = 1f;
         inputDirection = Vector2.zero;
@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
         canJump = true;
         rigidBody = GetComponent<Rigidbody2D>();
         animator = graphic.gameObject.GetComponent<Animator>();
+        audi = GetComponent<AudioSource>();
 
         InitializePlayerInput();
     }
@@ -137,6 +138,21 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look Y", simpleLookDirection.y);
         animator.SetBool("IsJumping", isJumping);
         animator.SetBool("IsDashing", isDashing && inputDirection != Vector2.zero);
+
+        if (inputDirection.magnitude > 0f && !isJumping)
+        {
+            audi.clip = (dashMult > 1f) ? AudioManager.instance.soundFX[15] : AudioManager.instance.soundFX[1];
+            audi.volume = (dashMult > 1f) ? 1f : 0.2f;
+            if (!audi.isPlaying)
+            {
+                audi.loop = true;
+                audi.Play();
+            }
+        }
+        else
+        {
+            audi.Stop();
+        }
 
         var e_dashingTrail = dashingTrail.emission;
         if (dashMult > 1f && rigidBody.velocity != Vector2.zero)
@@ -236,6 +252,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator RollRoutine()
     {
         isRolling = true;
+        AudioManager.instance.PlaySound(16);
         animator.SetTrigger("DodgeRoll");
         Vector2 rollDirection = lookDirection.normalized;
         for (float i = 0; i < rollTime; i += Time.fixedDeltaTime)
@@ -263,9 +280,11 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.UpdatePlayerHearts();
             StartCoroutine(InvincibleRoutine());
         }
-        if (health <= 0)
+        if (health <= 0 && !isDying)
         {
+            AudioManager.instance.PlaySound(17);
             GameManager.instance.GameOverSequence();
+            isDying = true;
         }
     }
     public void DecreaseHealth(int healthToLose, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to player
@@ -277,9 +296,11 @@ public class PlayerController : MonoBehaviour
             rigidBody.AddForce(100f * knockbackStrength * knockbackDirection.normalized);
             StartCoroutine(InvincibleRoutine());
         }
-        if (health <= 0)
+        if (health <= 0 && !isDying)
         {
+            AudioManager.instance.PlaySound(17);
             GameManager.instance.GameOverSequence();
+            isDying = true;
         }
     }
 
@@ -381,6 +402,7 @@ public class PlayerController : MonoBehaviour
         isPushingObject = false;
         isDashing = false;
         isRolling = false;
+        isDying = false;
         moveSpeedMult = 1f;
         dashMult = 1f;
         graphic.localPosition = new Vector3(graphic.localPosition.x, initialGraphicPositionY);

@@ -50,6 +50,7 @@ public class PushObjectScript : MonoBehaviour
         GameManager.instance.DisablePlayerInput();
         rigidbody.velocity = 50f * pushSpeed * Time.fixedDeltaTime * direction;
         PlayerController.instance.rigidBody.velocity = rigidbody.velocity;
+        AudioManager.instance.PlaySound(28);
 
         float timer = 0f;
         while (((Vector2)transform.position - targetPosition).magnitude > 0.05f)

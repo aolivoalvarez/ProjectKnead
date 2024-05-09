@@ -24,6 +24,7 @@ public class EnemyShieldScript : MonoBehaviour
     void DamageShield()
     {
         thisEnemy.isShielded = false;
+        AudioManager.instance.PlaySound(36);
         Destroy(gameObject);
     }
 

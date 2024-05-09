@@ -45,7 +45,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -141,7 +141,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4f6e70d58a5cc429ac184aab132fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgMusic: []
+  bgMusic:
+    _serializedList:
+    - Key: TitleScreen
+      Value: {fileID: 8300000, guid: 42a15191f269141458b87e2dade461f1, type: 3}
+    - Key: GameOverScreen
+      Value: {fileID: 8300000, guid: 459128f4c68248540912dae959e80ccc, type: 3}
+    - Key: NewPawTown
+      Value: {fileID: 8300000, guid: f087644133e2ba84b95d966506ca628c, type: 3}
+    - Key: BigBirchForest
+      Value: {fileID: 8300000, guid: fb7dc05f0076c5c4f845297b0df31642, type: 3}
+    - Key: Dungeon0
+      Value: {fileID: 8300000, guid: 5ff1be5bc66c6f0408a0a7d8e5656e14, type: 3}
+    - Key: Dungeon1
+      Value: {fileID: 8300000, guid: 81fe6b80d649eb548b13d300bfd0be34, type: 3}
+    - Key: BossFight
+      Value: {fileID: 8300000, guid: e86272b8f324a954994833a4969c5d55, type: 3}
   soundFX:
   - {fileID: 8300000, guid: 175a3ccd15a934244bcc3bf05b69b2d6, type: 3}
   - {fileID: 8300000, guid: e7485d903a355834f97bf02db4009a63, type: 3}
@@ -158,3 +173,30 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fccacec7bb5b91e49993177ccaca4bbd, type: 3}
   - {fileID: 8300000, guid: 59540c7cdff3ba141a3a16224168985b, type: 3}
   - {fileID: 8300000, guid: 76e28bebc6a83b24dbe61c12ced2938f, type: 3}
+  - {fileID: 8300000, guid: 527a68210ffb2094eb5c7af46635649b, type: 3}
+  - {fileID: 8300000, guid: 38c90cc1d360f2a4dbc51fc472203368, type: 3}
+  - {fileID: 8300000, guid: c06ebd9ef16cb664e8288630b10bd396, type: 3}
+  - {fileID: 8300000, guid: bbf3fc23f7e6e8744bf452f277a6eadf, type: 3}
+  - {fileID: 8300000, guid: 8da5f987c37b58548be1a173f688d46d, type: 3}
+  - {fileID: 8300000, guid: 2d6427ba4db702949b2019d5ffa1e594, type: 3}
+  - {fileID: 8300000, guid: 2f9df9d8e7f364c4da9eda3c0708483a, type: 3}
+  - {fileID: 8300000, guid: fb2bda5a9969fa84a9e6de1c9f249e1b, type: 3}
+  - {fileID: 8300000, guid: 51d97f29d0b42d14ca19143a9cfd6438, type: 3}
+  - {fileID: 8300000, guid: d7f5d9764a366d647a0e136adc112ec4, type: 3}
+  - {fileID: 8300000, guid: 85cb2bc338bec7540b44e8d29c53c420, type: 3}
+  - {fileID: 8300000, guid: f0c514c66d02ffd4f9440437fe789d8d, type: 3}
+  - {fileID: 8300000, guid: 9c6f4cc5ec57a1842809cb8561830b88, type: 3}
+  - {fileID: 8300000, guid: 42678c8622dfd664ab94c4432c855f16, type: 3}
+  - {fileID: 8300000, guid: 9a44501a7de2d7d4eb322a72da0771a2, type: 3}
+  - {fileID: 8300000, guid: 1f33fbccec86809438e32eef39d64487, type: 3}
+  - {fileID: 8300000, guid: 3e22affef75d2634c9317ac5e1b2ef6a, type: 3}
+  - {fileID: 8300000, guid: de52b825eb7e38d4f98bc7ba6a444b55, type: 3}
+  - {fileID: 8300000, guid: 952cf6631b7b9784bb6323522e603bc9, type: 3}
+  - {fileID: 8300000, guid: ed4d204af97bdb94bbd2fb0bec2a332a, type: 3}
+  - {fileID: 8300000, guid: c4f87fadec86ee94c908e104f39bccdd, type: 3}
+  - {fileID: 8300000, guid: 326e6dee258296f4bb23e494bf1ce654, type: 3}
+  - {fileID: 8300000, guid: bb032f925cddb37419fbe65f77d528ff, type: 3}
+  - {fileID: 8300000, guid: f8ba4352c4a7cb949a66c68daf3caf77, type: 3}
+  - {fileID: 8300000, guid: fd9e7a1b9c2ac1f46b7103ce5fd6ef2d, type: 3}
+  - {fileID: 8300000, guid: 204034bc89d53c048b94f01655a49cb5, type: 3}
+  - {fileID: 8300000, guid: f2d24db416d7a2f499ff6ed47e75b721, type: 3}

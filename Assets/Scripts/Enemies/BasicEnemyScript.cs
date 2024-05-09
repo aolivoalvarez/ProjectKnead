@@ -72,6 +72,7 @@ public class BasicEnemyScript : MonoBehaviour
             return;
         if (!isShielded)
         {
+            AudioManager.instance.PlaySound(33);
             health -= damage;
             StartCoroutine(InvincibleRoutine());
         }
@@ -146,6 +147,7 @@ public class BasicEnemyScript : MonoBehaviour
 
     private void Death() //basic enemy death
     {
+        AudioManager.instance.PlaySound(34);
         Instantiate(pSysDespawnPrefab, new Vector3(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().bounds.extents.y * 0.5f,
             transform.position.z), Quaternion.identity);
         Destroy(gameObject); //destroys gameObject

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2840940056629181350, guid: cd2d7c24ee798ff4f8f2816cde7a7548, type: 3}
       propertyPath: m_Name
-      value: WholeDungeon
+      value: WholeDungeon0
       objectReference: {fileID: 0}
     - target: {fileID: 7573207274873381407, guid: cd2d7c24ee798ff4f8f2816cde7a7548, type: 3}
       propertyPath: m_RootOrder

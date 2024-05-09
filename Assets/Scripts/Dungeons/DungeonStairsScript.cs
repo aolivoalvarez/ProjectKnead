@@ -8,6 +8,7 @@ using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class DungeonStairsScript : MonoBehaviour
 {
     public enum StairsID
@@ -24,12 +25,14 @@ public class DungeonStairsScript : MonoBehaviour
     [Header("Connected Stairs")]
     [SerializeField] StairsID stairsToSpawnAt;
     DungeonStairsScript connectedStairs;
+    AudioSource audi;
 
     DungeonCameraController camControl;
     DungeonManager dungeonManager;
 
     void Start()
     {
+        audi = GetComponent<AudioSource>();
         camControl = Camera.main.GetComponent<DungeonCameraController>();
         dungeonManager = DungeonManager.instance;
         FindOtherStairs();
@@ -47,10 +50,24 @@ public class DungeonStairsScript : MonoBehaviour
         }
     }
 
-    IEnumerator StairsRoutine()
+    IEnumerator StairsRoutine(Collider2D other)
     {
         GameManager.instance.DisablePlayerInput();
-        yield return new WaitForSeconds(1f);
+        audi.clip = AudioManager.instance.soundFX[30];
+        audi.loop = true;
+        audi.Play();
+        yield return new WaitForSeconds(0.5f);
+        camControl.minPos = connectedStairs.initialCameraPosition.position;
+        camControl.maxPos = connectedStairs.initialCameraPosition.position;
+        camControl.transform.position = connectedStairs.initialCameraPosition.position;
+        other.transform.position = connectedStairs.playerSpawnPosition.position;
+        other.GetComponent<PlayerController>().lookDirection = (other.transform.position - connectedStairs.transform.position).normalized;
+        CheckpointScript.instance.transform.position = other.transform.position;
+        if (isRespawnPoint) RespawnPointScript.instance.transform.position = other.transform.position;
+        dungeonManager.ChangeFloor();
+        dungeonManager.ChangeRoom();
+        yield return new WaitForSeconds(0.5f);
+        audi.Stop();
         GameManager.instance.EnablePlayerInput();
     }
 
@@ -58,18 +75,8 @@ public class DungeonStairsScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            camControl.minPos = connectedStairs.initialCameraPosition.position;
-            camControl.maxPos = connectedStairs.initialCameraPosition.position;
-            camControl.transform.position = connectedStairs.initialCameraPosition.position;
-
-            StartCoroutine(StairsRoutine());
-            other.transform.position = connectedStairs.playerSpawnPosition.position;
-            other.GetComponent<PlayerController>().lookDirection = (other.transform.position - connectedStairs.transform.position).normalized;
-            CheckpointScript.instance.transform.position = other.transform.position;
-            if (isRespawnPoint) RespawnPointScript.instance.transform.position = other.transform.position;
-
-            dungeonManager.ChangeFloor();
-            dungeonManager.ChangeRoom();
+            StartCoroutine(StairsRoutine(other));
+            
         }
     }
 

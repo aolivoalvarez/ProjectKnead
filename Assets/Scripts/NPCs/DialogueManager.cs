@@ -54,6 +54,8 @@ public class DialogueManager : MonoBehaviour
 
     public void SetDialogue(string text, string speaker = "null")
     {
+        if (!dialogueSpeakerBox.activeSelf) AudioManager.instance.PlaySound(40);
+        else AudioManager.instance.PlaySound(41);
         dialogueSpeakerBox.SetActive(speaker != "null");
         dialogueTextBox.SetActive(true);
         dialogueButton.Select();
@@ -66,6 +68,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueText.pageToDisplay < dialogueText.textInfo.pageCount)
         {
+            AudioManager.instance.PlaySound(41);
             dialogueText.pageToDisplay++;
             return true;
         }
@@ -73,6 +76,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void CloseDialogue()
     {
+        AudioManager.instance.PlaySound(41);
         dialogueSpeakerBox.SetActive(false);
         dialogueTextBox.SetActive(false);
         GameManager.instance.EnablePlayerInput();
@@ -81,6 +85,8 @@ public class DialogueManager : MonoBehaviour
     public void SetNarration(string text)
     {
         StartCoroutine(PauseAfterFadeIn());
+        if (!narrationBox.activeSelf) AudioManager.instance.PlaySound(40);
+        else AudioManager.instance.PlaySound(41);
         narrationBox.SetActive(true);
         narrationButton.Select();
         narration.pageToDisplay = 1;
@@ -91,6 +97,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (narration.pageToDisplay < narration.textInfo.pageCount)
         {
+            AudioManager.instance.PlaySound(41);
             narration.pageToDisplay++;
             return true;
         }
@@ -98,6 +105,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void CloseNarration()
     {
+        AudioManager.instance.PlaySound(41);
         Time.timeScale = 1;
         narrationBox.SetActive(false);
         GameManager.instance.EnablePlayerInput();
@@ -105,6 +113,7 @@ public class DialogueManager : MonoBehaviour
     
     public void AdvCurrentNarration()
     {
+        AudioManager.instance.PlaySound(41);
         currentNarration.DisplayText();
     }
 

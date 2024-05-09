@@ -7,6 +7,7 @@ Description: To be attached to Canvas_Fade. Handles fade in and fade out between
 // SCRIPT TAKEN FROM A VIDEO BY SASQUATCH B STUDIOS
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SceneFadeManager : MonoBehaviour
 {
@@ -61,14 +62,17 @@ public class SceneFadeManager : MonoBehaviour
     public void StartFadeOut()
     {
         fadeOutImage.color = fadeOutStartColor;
+        AudioFadeOut.FadeOut(AudioManager.instance.audi, 0.5f);
         isFadingOut = true;
     }
 
-    public void StartFadeIn()
+    public void StartFadeIn(string sceneName)
     {
         if (fadeOutImage.color.a >= 1f)
         {
             fadeOutImage.color = fadeOutStartColor;
+            AudioManager.instance.audi.clip = AudioManager.instance.bgMusic[sceneName];
+            AudioManager.instance.audi.Play();
             isFadingIn = true;
         }
     }

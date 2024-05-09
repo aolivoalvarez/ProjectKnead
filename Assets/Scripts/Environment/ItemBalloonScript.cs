@@ -43,6 +43,7 @@ public class ItemBalloonScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerSword") && other.gameObject.GetComponentInParent<PlayerController>().isJumping)
         {
+            AudioManager.instance.PlaySound(24);
             GameObject fallingItem = Instantiate(fallingItemPrefab, transform.position, Quaternion.identity);
             fallingItem.SetActive(false);
             storedItem.transform.position = transform.position;

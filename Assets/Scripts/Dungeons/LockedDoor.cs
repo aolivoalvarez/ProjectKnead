@@ -15,11 +15,13 @@ public class LockedDoor : MonoBehaviour
     {
         if (isBossDoor)
         {
+            AudioManager.instance.PlaySound(29);
             if (DungeonManager.instance.dungeonsInfo[DungeonManager.instance.currentDungeon].hasBossKey)
                 Destroy(gameObject);
         }
         else if (DungeonManager.instance.dungeonsInfo[DungeonManager.instance.currentDungeon].CanUseKey())
         {
+            AudioManager.instance.PlaySound(29);
             DungeonManager.instance.dungeonsInfo[DungeonManager.instance.currentDungeon].keysUsed++;
             Destroy(gameObject);
         }

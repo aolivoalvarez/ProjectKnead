@@ -4,6 +4,8 @@ Author: theco
 Description: Stores all music and sfx used in the game.
 -----------------------------------------*/
 
+using AYellowpaper.SerializedCollections;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -11,9 +13,10 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    AudioSource _audi;
+    public AudioSource audi { get; set; }
 
-    public AudioClip[] bgMusic;
+    [SerializedDictionary]
+    public SerializedDictionary<string, AudioClip> bgMusic;
     public AudioClip[] soundFX;
 
     void Awake()
@@ -26,13 +29,35 @@ public class AudioManager : MonoBehaviour
         //--------------------------------------------------//
     }
 
-    private void Start()
+    void Start()
     {
-        _audi = GetComponent<AudioSource>();
+        audi = GetComponent<AudioSource>();
+        audi.loop = true;
+        audi.clip = bgMusic["TitleScreen"];
+        audi.Play();
     }
 
-    public void PlaySound(int soundClip)
+    public void PlaySound(int soundClip, float volumeScale = 1f)
     {
-        _audi.PlayOneShot(soundFX[soundClip]);
+        Debug.Log("Playing sound " + soundClip);
+        audi.PlayOneShot(soundFX[soundClip], volumeScale);
+    }
+}
+
+public static class AudioFadeOut
+{
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume;
     }
 }

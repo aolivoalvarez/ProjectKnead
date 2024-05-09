@@ -62,6 +62,7 @@ public class PlayerInteractScript : MonoBehaviour
             // Throw object
             else if (liftedObject != null && !playerController.isLifting)
             {
+                AudioManager.instance.PlaySound(21);
                 liftedObject.transform.SetParent(null);
                 liftedObject.GetComponent<ThrowableObjectScript>().isThrown = true;
                 liftedObject.GetComponentInChildren<Animator>().SetTrigger("ObjectFall"); // trigger the animation to make the object appear like it's falling
@@ -84,6 +85,8 @@ public class PlayerInteractScript : MonoBehaviour
         liftedObject = interactHitboxScript.objectToLift;
         yield return new WaitForSeconds(liftTime);
         playerController.isLifting = false;
+
+        AudioManager.instance.PlaySound(20);
 
         liftedObject.transform.position = playerController.transform.position; // actual position of object and its collider will be the same as the player's position
         liftedObject.transform.SetParent(playerController.transform);

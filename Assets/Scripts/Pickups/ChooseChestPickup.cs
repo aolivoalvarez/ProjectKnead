@@ -19,6 +19,7 @@ public class ChooseChestPickup : ChoosePickup
     {
         if (!chestOpened)
         {
+            AudioManager.instance.PlaySound(23);
             chestOpened = true;
             graphic.sprite = chestOpen;
             return pickupPrefabs[thisPickup];

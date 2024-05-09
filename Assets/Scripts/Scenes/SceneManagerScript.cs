@@ -111,7 +111,7 @@ public class SceneManagerScript : MonoBehaviour
 
     void OnSceneChanged(Scene lastScene, Scene currentScene)
     {
-        SceneFadeManager.instance.StartFadeIn();
+        SceneFadeManager.instance.StartFadeIn(currentScene.name);
 
         currentSceneType = SceneType.Standard;
         for (int i = 0; i < dungeons.Length; i++)

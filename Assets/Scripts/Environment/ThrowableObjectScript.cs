@@ -27,6 +27,7 @@ public class ThrowableObjectScript : MonoBehaviour
     {
         if (GetComponent<SpawnPickup>() != null)
             GetComponent<SpawnPickup>().SpawnThisPickup();
+        AudioManager.instance.PlaySound(12);
         Destroy(gameObject);
     }
 

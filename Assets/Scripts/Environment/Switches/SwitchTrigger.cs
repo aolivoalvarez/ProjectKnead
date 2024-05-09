@@ -47,10 +47,12 @@ public class SwitchTrigger : MonoBehaviour
         switch (thisColor)
         {
             case Dungeon.SwitchColor.Red:
+                AudioManager.instance.PlaySound(26);
                 thisColor = Dungeon.SwitchColor.Blue;
                 break;
             case Dungeon.SwitchColor.Blue:
             default:
+                AudioManager.instance.PlaySound(27);
                 thisColor = Dungeon.SwitchColor.Red;
                 break;
         }

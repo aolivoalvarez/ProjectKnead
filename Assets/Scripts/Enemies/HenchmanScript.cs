@@ -147,6 +147,7 @@ public class HenchmanScript : MonoBehaviour
             return;
         if (!isShielded)
         {
+            AudioManager.instance.PlaySound(33);
             health -= damage;
             StartCoroutine(InvincibleRoutine());
         }
@@ -212,6 +213,7 @@ public class HenchmanScript : MonoBehaviour
 
     private void Death() //henchman death
     {
+        AudioManager.instance.PlaySound(34);
         Instantiate(pSysDespawnPrefab, new Vector3(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().bounds.extents.y * 0.5f,
             transform.position.z), Quaternion.identity);
         Destroy(gameObject); //destroys gameObject
@@ -242,6 +244,7 @@ public class HenchmanScript : MonoBehaviour
     {
         if (nextFire < Time.time)
         {
+            AudioManager.instance.PlaySound(35);
             Instantiate(weapon, weaponParent.transform.position, Quaternion.identity); //spawns bullet
             nextFire = Time.time + fireRate; //updates nextFire according to fireRate
         }

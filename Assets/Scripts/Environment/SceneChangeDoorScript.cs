@@ -43,6 +43,7 @@ public class SceneChangeDoorScript : MonoBehaviour
     IEnumerator EnterDoorRoutine()
     {
         PlayerController.instance.pInput.Disable();
+        AudioManager.instance.PlaySound(22);
         yield return new WaitForSeconds(0f);
         if (isDungeonEntrance)
         {
