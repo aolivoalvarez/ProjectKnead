@@ -25,5 +25,6 @@ public class HeartContainerPickup : Pickup
         PlayerController.instance.maxHealth += 4;
         PlayerController.instance.HealthToMax();
         GameManager.instance.heartContainerCollected = true;
+        base.PlayerCollectDontDestroy();
     }
 }

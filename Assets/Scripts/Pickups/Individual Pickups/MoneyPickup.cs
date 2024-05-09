@@ -17,14 +17,20 @@ public class MoneyPickup : Pickup
         GetComponent<Animator>().SetInteger("Value", moneyAmount);
     }
 
+    private void Update()
+    {
+        GetComponent<Animator>().SetInteger("Value", moneyAmount);
+    }
+
     protected override void PlayerCollect()
     {
-        PlayerController.instance.IncreaseMoney(moneyAmount);
+        PlayerCollectDontDestroy();
         base.PlayerCollect();
     }
 
     public override void PlayerCollectDontDestroy()
     {
         PlayerController.instance.IncreaseMoney(moneyAmount);
+        base.PlayerCollectDontDestroy();
     }
 }

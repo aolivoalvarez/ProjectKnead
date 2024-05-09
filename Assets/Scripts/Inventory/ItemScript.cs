@@ -12,12 +12,13 @@ public class ItemScript : Pickup
 
     protected override void PlayerCollect()
     {
-        Inventory.instance.collectedItems[thisItem] = true;
-        Destroy(gameObject);
+        PlayerCollectDontDestroy();
+        base.PlayerCollect();
     }
 
     public override void PlayerCollectDontDestroy()
     {
         Inventory.instance.collectedItems[thisItem] = true;
+        base.PlayerCollectDontDestroy();
     }
 }

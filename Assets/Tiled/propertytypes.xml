@@ -4,6 +4,9 @@
   <property name="unity:SortingLayer" type="string" default="Ground"/>
   <property name="unity:SortingOrder" type="int" default="0"/>
  </objecttype>
+ <objecttype name="IgnorePlayerWall" color="#a0a0a4">
+  <property name="unity:layer" type="string" default="IgnorePlayer"/>
+ </objecttype>
  <objecttype name="Wall" color="#a0a0a4">
   <property name="unity:SortingLayer" type="string" default="Default"/>
   <property name="unity:SortingOrder" type="int" default="0"/>

@@ -48,11 +48,16 @@ public class PlayerInteractScript : MonoBehaviour
         if (playerController.pInput.Player.Interact.triggered && !playerController.isAttacking &&
             !playerController.isJumping && !playerController.isShielding && !playerController.isRolling)
         {
+            // Talk to npc
+            if (interactHitboxScript.npcToTalk != null)
+            {
+                interactHitboxScript.npcToTalk.GetComponent<NpcTalkScript>().Talk();
+            }
             // Open chest
-            if (interactHitboxScript.chestToOpen != null && !interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().chestOpened && !playerController.isHoldingObject)
+            else if (interactHitboxScript.chestToOpen != null && !interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().chestOpened && !playerController.isHoldingObject)
                 StartCoroutine(OpenChestRoutine(interactHitboxScript.chestToOpen.GetComponent<ChooseChestPickup>().OpenChest()));
             // Lift object
-            else if (interactHitboxScript.objectToLift != null)
+            else if (interactHitboxScript.objectToLift != null && liftedObject == null)
                 StartCoroutine(LiftRoutine());
             // Throw object
             else if (liftedObject != null && !playerController.isLifting)
@@ -106,7 +111,8 @@ public class PlayerInteractScript : MonoBehaviour
         heldItem.GetComponent<Pickup>().autoDespawn = false;
         heldItem.GetComponent<Pickup>().StopAllCoroutines();
         heldItem.GetComponent<Pickup>().PlayerCollectDontDestroy();
-        yield return new WaitForSeconds(holdItemWaitTime);
+        if (heldItem.GetComponentInChildren<NarrationTrigger>() != null) yield return new WaitForSeconds(holdItemWaitTime * 0.25f);
+        else yield return new WaitForSeconds(holdItemWaitTime);
         Destroy(heldItem);
         GameManager.instance.EnablePlayerInput();
     }

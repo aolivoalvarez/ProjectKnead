@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool isLifting { get; set; }
     public bool isHoldingObject { get; set; }
     public bool isPushingObject { get; set; }
-    bool isInvincible;
+    public bool isInvincible { get; set; }
 
     Inventory inventory;
     //--------------------------------------------------//
@@ -192,6 +192,7 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = true;
         canJump = false;
+        AudioManager.instance.PlaySound(0);
         float jumpArc = .55f; // the percentage of jumpTime spent ascending
         float fallArc = .45f; // the percentage of jumpTime spent decending
         for (float i = 0; i < jumpTime * jumpArc; i += Time.fixedDeltaTime)
@@ -256,7 +257,7 @@ public class PlayerController : MonoBehaviour
 
     public void DecreaseHealth(int healthToLose)
     {
-        if (!isInvincible)
+        if (!isInvincible && health > 0)
         {
             health -= healthToLose;
             GameManager.instance.UpdatePlayerHearts();
@@ -269,7 +270,7 @@ public class PlayerController : MonoBehaviour
     }
     public void DecreaseHealth(int healthToLose, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to player
     {
-        if (!isInvincible)
+        if (!isInvincible && health > 0)
         {
             health -= healthToLose;
             GameManager.instance.UpdatePlayerHearts();
@@ -302,9 +303,14 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator InvincibleRoutine()
     {
+        AudioManager.instance.PlaySound(2);
         isInvincible = true;
         StartCoroutine(FlashingRoutine());
-        yield return new WaitForSeconds(invincibilityTime);
+        for (float i = 0; i < invincibilityTime; i += Time.deltaTime)
+        {
+            yield return new WaitForEndOfFrame();
+            isInvincible = true;
+        }
         isInvincible = false;
     }
 

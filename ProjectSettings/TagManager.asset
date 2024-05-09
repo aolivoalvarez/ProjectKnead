@@ -14,6 +14,8 @@ TagManager:
   - LockedDoor
   - PushObject
   - VCamConfiner
+  - NPC
+  - NarrationTrigger
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Water
   - UI
   - ThrownObject
-  - 
+  - IgnorePlayer
   - 
   - 
   - 

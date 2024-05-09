@@ -15,6 +15,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: BombBagPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 1728546943236160609, guid: 267c0689ec8b34a4380df1a9be85c652, type: 3}
+      propertyPath: narration.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728546943236160609, guid: 267c0689ec8b34a4380df1a9be85c652, type: 3}
+      propertyPath: narration.Array.data[0]
+      value: You found a bomb bag! You can now place cheese bombs!\n\n(Press W to
+        use items)\n(Hold W to charge up the bomb before releasing)
+      objectReference: {fileID: 0}
     - target: {fileID: 4465453567323648528, guid: 267c0689ec8b34a4380df1a9be85c652, type: 3}
       propertyPath: m_RootOrder
       value: 0

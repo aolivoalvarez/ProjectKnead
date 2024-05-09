@@ -9,9 +9,11 @@ using UnityEngine;
 public class BreakableObjectScript : MonoBehaviour
 {
     [SerializeField] string[] tagsThatDestroyThisObject;
+    [SerializeField] int breakSoundIndex = -1;
 
     void BreakObject()
     {
+        if (breakSoundIndex >= 0) AudioManager.instance.PlaySound(breakSoundIndex);
         if (GetComponent<SpawnPickup>() != null)
             GetComponent<SpawnPickup>().SpawnThisPickup();
         Destroy(gameObject);

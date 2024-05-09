@@ -977,6 +977,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsDying
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsFallingIntoPit
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1445818512096530553}
   m_Solo: 0

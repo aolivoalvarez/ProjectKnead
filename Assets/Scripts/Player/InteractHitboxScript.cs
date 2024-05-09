@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class InteractHitboxScript : MonoBehaviour
 {
+    public GameObject npcToTalk;
     public GameObject objectToLift;
     public GameObject objectToPush;
     public GameObject chestToOpen;
@@ -15,7 +16,11 @@ public class InteractHitboxScript : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("LiftableObject") && other.GetComponent<Rigidbody2D>() == null) // can't lift an object that has already been thrown
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            npcToTalk = other.gameObject;
+        }
+        else if (other.gameObject.CompareTag("LiftableObject") && other.GetComponent<Rigidbody2D>() == null) // can't lift an object that has already been thrown
         {
             objectToLift = other.gameObject;
         }
@@ -37,6 +42,7 @@ public class InteractHitboxScript : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        npcToTalk = null;
         objectToLift = null;
         objectToPush = null;
         chestToOpen = null;

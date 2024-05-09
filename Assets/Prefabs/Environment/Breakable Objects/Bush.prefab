@@ -12,6 +12,10 @@ PrefabInstance:
       value: Bush
       objectReference: {fileID: 0}
     - target: {fileID: 5026644086886122065, guid: 7a3fe9cc9e33b7e4a999ea1e2cd9c36c, type: 3}
+      propertyPath: breakSoundIndex
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026644086886122065, guid: 7a3fe9cc9e33b7e4a999ea1e2cd9c36c, type: 3}
       propertyPath: tagsThatDestroyThisObject.Array.size
       value: 2
       objectReference: {fileID: 0}

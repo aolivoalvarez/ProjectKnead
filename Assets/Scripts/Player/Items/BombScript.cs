@@ -46,6 +46,7 @@ public class BombScript : MonoBehaviour
         }    
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponentInChildren<Animator>().SetTrigger("Explode");
+        AudioManager.instance.PlaySound(4);
         if (transform.parent != null)
         {
             transform.position = transform.parent.position;

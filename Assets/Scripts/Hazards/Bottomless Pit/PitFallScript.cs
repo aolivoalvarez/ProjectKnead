@@ -16,13 +16,18 @@ public class PitFallScript : MonoBehaviour
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
             if (player != null && !player.isJumping)
             {
+                AudioManager.instance.PlaySound(14);
                 GameManager.instance.DisablePlayerInput();
-                PlayerController.instance.transform.position = transform.position;
-                PlayerController.instance.animator.SetBool("IsFallingIntoPit", true);
+                player.EndPlayerCoroutines();
+                player.transform.position = transform.position;
+                player.rigidBody.velocity = Vector3.zero;
+                other.gameObject.GetComponent<Collider2D>().enabled = false;
+                player.animator.SetBool("IsFallingIntoPit", true);
             }
         }
         else if (other.gameObject.GetComponent<HenchmanScript>() != null)
         {
+            AudioManager.instance.PlaySound(14);
             Destroy(other.gameObject.GetComponent<HenchmanScript>().agent);
             other.gameObject.GetComponent<Collider2D>().enabled = false;
             other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
@@ -32,6 +37,7 @@ public class PitFallScript : MonoBehaviour
         }
         else if (other.gameObject.GetComponent<BasicEnemyScript>() != null)
         {
+            AudioManager.instance.PlaySound(14);
             Destroy(other.gameObject.GetComponent<BasicEnemyScript>().agent);
             other.gameObject.GetComponent<Collider2D>().enabled = false;
             other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
@@ -41,6 +47,7 @@ public class PitFallScript : MonoBehaviour
         }
         else if (other.gameObject.GetComponent<PushObjectScript>() != null)
         {
+            AudioManager.instance.PlaySound(14);
             other.gameObject.GetComponent<Collider2D>().enabled = false;
             other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             other.gameObject.transform.position = transform.position;

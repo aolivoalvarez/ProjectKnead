@@ -84,4 +84,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagsThatDestroyThisObject:
   - PlayerSword
-  worldPickupPrefab: {fileID: 2601237028607197377, guid: 387431bb6e8d7a94a8f3041b0e254aa2, type: 3}
+  - BombExplosion
+  breakSoundIndex: 12

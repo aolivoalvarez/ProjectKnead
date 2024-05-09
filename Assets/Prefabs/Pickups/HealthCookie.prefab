@@ -126,5 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDespawn: 5
   autoDespawn: 1
-  parentObject: {fileID: 7882705756193437975}
+  pickupSoundIndex: 8
   healthAmount: 4
