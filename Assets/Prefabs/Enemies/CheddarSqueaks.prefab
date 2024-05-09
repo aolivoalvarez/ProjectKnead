@@ -180,10 +180,10 @@ MonoBehaviour:
   roamDistMin: 5
   bombPrefab: {fileID: 3813448857345563782, guid: c8797c58b3349ce47b8e5c8c7bbc779d, type: 3}
   bombParent: {fileID: 5509040733775525122}
-  keyPrefab: {fileID: 0}
   cakePrefab: {fileID: 0}
   state: 0
   throwRate: 1
+  chargeSpeed: 5
 --- !u!95 &-8427894056428279242
 Animator:
   serializedVersion: 5
@@ -194,7 +194,7 @@ Animator:
   m_GameObject: {fileID: 943571956037620463}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97e4b961380c41d4182b504015cf055a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -61,7 +61,7 @@ public class CheddarScript : MonoBehaviour
         //references to components
         boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
-        //animator = this.GetComponent<Animator>();
+        animator = this.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -72,8 +72,9 @@ public class CheddarScript : MonoBehaviour
     private void FixedUpdate()
     {
         //walking animations
-        //animator.SetFloat("lookX", agent.velocity.x);
-        //animator.SetFloat("lookY", agent.velocity.y);
+        animator.SetFloat("LookX", agent.velocity.x);
+        animator.SetFloat("LookY", agent.velocity.y);
+     
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -91,17 +92,29 @@ public class CheddarScript : MonoBehaviour
     {
         
         health -= damage;
+        animator.SetBool("Charge", false);
+        animator.SetBool("Throw", false);
+        animator.SetBool("Stunned", false);
+        
 
         if (state == State.Charge)
         {
             GetStunned(); //if cheddar is hit while he's charging, he gets stunned
+        } else
+        {
+            animator.SetBool("Hit", true);
         }
 
         if (health <= 0) //checks if health is 0 or less
         {
-            Death(); //kills cheddar if health is 0
+            animator.SetBool("Charge", false);
+            animator.SetBool("Throw", false);
+            animator.SetBool("Stunned", false);
+            animator.SetBool("Hit", false);
+            StartCoroutine(Death()); //kills cheddar if health is 0
         }
-      
+
+
     }
 
     public void TakeDamage(int damage, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to this enemy
@@ -144,12 +157,11 @@ public class CheddarScript : MonoBehaviour
     }
 
 
-    private void Death() //cheddar death
+    IEnumerator Death() //cheddar death
     {
+        animator.SetTrigger("Death"); //death animation
 
-        StopAllCoroutines();
-
-        //animator.SetBool("death", true); //death animation
+        yield return new WaitForSeconds(1);
 
         //Instantiate(cakePrefab, transform.position, Quaternion.identity); //spawns cake
 
@@ -158,7 +170,11 @@ public class CheddarScript : MonoBehaviour
 
     IEnumerator IdleRoutine()
     {
-        
+        animator.SetBool("Charge", false);
+        animator.SetBool("Throw", false);
+        animator.SetBool("Stunned", false);
+        animator.SetBool("Hit", false);
+
         while (true) //looks scary, but it's fine. As long as it has the yield return new WaitForFixedUpdate(), there will never be an infinite loop error
         {
             agent.speed = moveSpeed; //resets move speed if called after charge
@@ -187,7 +203,17 @@ public class CheddarScript : MonoBehaviour
         state = State.Attack;
 
         throwAmt++; //increases throw amount
+
+        animator.SetBool("Charge", false);
+        animator.SetBool("Stunned", false);
+        animator.SetBool("Hit", false);
+        animator.SetBool("Throw", true);
+        
         Vector2 bombMovement = (player.position - transform.position).normalized;
+
+        animator.SetFloat("ThrowLookX", bombMovement.x);
+        animator.SetFloat("ThrowLookY", bombMovement.y);
+
         GameObject thisBomb = Instantiate(bombPrefab, bombParent.transform.position, Quaternion.identity); //spawns bomb
         thisBomb.GetComponent<BombScript>().BombStartMoving(bombMovement); //makes the bomb move towards player
         thisBomb.GetComponentInChildren<Animator>().SetFloat("Direction X", bombMovement.x );
@@ -209,15 +235,20 @@ public class CheddarScript : MonoBehaviour
 
     IEnumerator ChargeRoutine()
     {
+        animator.SetBool("Throw", false);
+        animator.SetBool("Stunned", false);
+        animator.SetBool("Hit", false);
 
         state = State.Charge;
 
         agent.enabled = false;
 
-        animator.SetBool("charge", true);
-
         Vector3 chargePos = (player.position - transform.position).normalized;
         rigidBody.velocity = chargePos * chargeSpeed;
+
+        animator.SetFloat("ChargeLookX", rigidBody.velocity.x);
+        animator.SetFloat("ChargeLookY", rigidBody.velocity.y);
+        animator.SetBool("Charge", true);
 
         yield return new WaitForSeconds(chargeWait); //waits a little bit before calling idle routine
 
@@ -231,6 +262,9 @@ public class CheddarScript : MonoBehaviour
     public void GetStunned() //starts the process of stunning cheddar
     {
         StopAllCoroutines(); //stops all the coroutines
+        animator.SetBool("Charge", false);
+        animator.SetBool("Throw", false);
+        animator.SetBool("Hit", false);
         StartCoroutine(StunRoutine()); //starts cheddar's stun routine
     }
 
@@ -238,7 +272,7 @@ public class CheddarScript : MonoBehaviour
     {
         state = State.Stun;
 
-        //animator.SetBool("stunned", true); //stun animation
+        animator.SetBool("Stunned", true); //stun animation
 
         yield return new WaitForSeconds(stunTimer); //waits for how long cheddar is stunned for
 
