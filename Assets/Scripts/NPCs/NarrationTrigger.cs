@@ -11,7 +11,8 @@ public class NarrationTrigger : MonoBehaviour
 {
     [SerializeField] string[] narration;
     [SerializeField] bool disableCollider = false;
-    [SerializeField] bool destroyObjectOnClose = false;
+    [SerializeField] bool changeSceneOnClose = false;
+    [SerializeField] SceneField sceneToLoad;
     int currentIndex;
     DialogueManager dialogueManager;
 
@@ -42,7 +43,7 @@ public class NarrationTrigger : MonoBehaviour
         else
         {
             dialogueManager.CloseNarration();
-            if (destroyObjectOnClose) Destroy(gameObject);
+            if (changeSceneOnClose) SceneManagerScript.SwapScene(sceneToLoad);
             else Destroy(this);
         }
     }

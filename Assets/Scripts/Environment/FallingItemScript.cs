@@ -31,6 +31,7 @@ public class FallingItemScript : MonoBehaviour
 
     public IEnumerator FallRoutine(Tween fallTween)
     {
+        AudioManager.instance.PlaySound(14);
         GetComponentInChildren<Collider2D>().enabled = false;
         if (storedItem.GetComponent<BasicEnemyScript>() != null)
         {

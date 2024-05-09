@@ -19,15 +19,15 @@ public class BombScript : MonoBehaviour
 
     void Start()
     {
-        audi = GetComponent<AudioSource>();
         StartCoroutine(ExplosionRoutine());
     }
 
     public void BombStartMoving(Vector2 moveDirection)
     {
+        /*audi = GetComponent<AudioSource>();
         audi.clip = AudioManager.instance.soundFX[19];
         audi.loop = true;
-        audi.Play();
+        audi.Play();*/
         var rigidBody = gameObject.AddComponent<Rigidbody2D>();
         rigidBody.gravityScale = 0f;
         rigidBody.angularDrag = 0f;
@@ -56,7 +56,7 @@ public class BombScript : MonoBehaviour
         }    
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponentInChildren<Animator>().SetTrigger("Explode");
-        audi.Stop();
+        //audi.Stop();
         audi2.Stop();
         AudioManager.instance.PlaySound(4);
         if (transform.parent != null)

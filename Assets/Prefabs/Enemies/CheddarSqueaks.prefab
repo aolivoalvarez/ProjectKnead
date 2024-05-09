@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2127917023
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ba2ec1b1872f6d54c82608ef9ec772eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -184,6 +184,7 @@ MonoBehaviour:
   state: 0
   throwRate: 1
   chargeSpeed: 5
+  bossMusic: {fileID: 8300000, guid: e86272b8f324a954994833a4969c5d55, type: 3}
 --- !u!95 &-8427894056428279242
 Animator:
   serializedVersion: 5

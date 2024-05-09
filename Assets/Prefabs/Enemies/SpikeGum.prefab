@@ -171,7 +171,7 @@ MonoBehaviour:
   maxHealth: 2
   attackDamage: 1
   moveSpeed: 2.25
-  attackRange: 5
+  attackRange: 20
   roamDistMax: 10
   roamDistMin: 5
   knockbackMultiplier: 1

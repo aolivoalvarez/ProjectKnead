@@ -41,6 +41,7 @@ public class CheddarScript : MonoBehaviour
     float knockbackMultiplier = 1f;
     public bool isShielded { get; set; } = false;
     bool isInvincible;
+    [SerializeField] AudioClip bossMusic;
 
     BoxCollider2D boxCollider;
     Rigidbody2D rigidBody;
@@ -66,6 +67,9 @@ public class CheddarScript : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        AudioManager.instance.audi.clip = bossMusic;
+        AudioManager.instance.audi.Play();
+
         StartCoroutine(IdleRoutine()); //calls idle coroutine upon start
     }
 
@@ -74,7 +78,6 @@ public class CheddarScript : MonoBehaviour
         //walking animations
         animator.SetFloat("LookX", agent.velocity.x);
         animator.SetFloat("LookY", agent.velocity.y);
-     
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -113,8 +116,8 @@ public class CheddarScript : MonoBehaviour
             animator.SetBool("Hit", false);
             StartCoroutine(Death()); //kills cheddar if health is 0
         }
-
-
+        else
+            AudioManager.instance.PlaySound(33);
     }
 
     public void TakeDamage(int damage, float knockbackStrength, Vector2 knockbackDirection) //override that applies knockback to this enemy
@@ -164,6 +167,9 @@ public class CheddarScript : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         //Instantiate(cakePrefab, transform.position, Quaternion.identity); //spawns cake
+
+        AudioManager.instance.audi.clip = AudioManager.instance.bgMusic["Dungeon1"];
+        AudioManager.instance.audi.Play();
 
         Destroy(gameObject); //destroys gameObject
     }

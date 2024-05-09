@@ -282,6 +282,7 @@ public class PlayerController : MonoBehaviour
         }
         if (health <= 0 && !isDying)
         {
+            AudioManager.instance.audi.Stop();
             AudioManager.instance.PlaySound(17);
             GameManager.instance.GameOverSequence();
             isDying = true;
@@ -298,6 +299,7 @@ public class PlayerController : MonoBehaviour
         }
         if (health <= 0 && !isDying)
         {
+            AudioManager.instance.audi.Stop();
             AudioManager.instance.PlaySound(17);
             GameManager.instance.GameOverSequence();
             isDying = true;
